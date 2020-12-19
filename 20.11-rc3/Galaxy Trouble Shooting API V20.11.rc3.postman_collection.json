@@ -2,11 +2,12 @@
 	"info": {
 		"_postman_id": "c56a798f-308a-4ec8-a89d-a3f066bed356",
 		"name": "Galaxy Trouble Shooting API V20.11.rc3",
+		"description": "# galaxy-troubleshooting-api\n\n## Release 20.11.rc3 (11 DEC 2020)\n\n###### New Features\n\n* 增加常用快捷功能- 安装证书独立客户端IP数据趋势\n* 增加常用快捷功能-访问速度最慢TOP20 域名\n* 增加常用快捷功能-报告预置Metrics\n* 增加原始日志查询-安全策略-动作命中计数\n* 增加原始日志查询-代理策略-动作命中计数\n* 增加原始日志查询-通联-流量计数(now)\n\n\n\n\n###### Update \n\n* 改善Dashboard查询-基础统计-新建、活跃（计数）-now\n* 改善Dashboard查询-新建、活跃（趋势）\n* 目录增加编号，便于管理\n* 修改分布式调度任务-5分钟TOPN-hot表验证表名\n\n[帮助文档]: https://docs.geedge.net/pages/viewpage.action?pageId=19896569\n\n",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
-			"name": "通用检查",
+			"name": "01.通用检查",
 			"item": [
 				{
 					"name": "数据接入检查（DPI-KAFKA)",
@@ -1769,7 +1770,7 @@
 			"protocolProfileBehavior": {}
 		},
 		{
-			"name": "系统检查",
+			"name": "02.系统检查",
 			"item": [
 				{
 					"name": "查询引擎健康状态",
@@ -2110,7 +2111,7 @@
 			"protocolProfileBehavior": {}
 		},
 		{
-			"name": "Dashboard查询",
+			"name": "03.Dashboard查询",
 			"item": [
 				{
 					"name": "基础统计-流量(计数)-now",
@@ -2144,7 +2145,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://{{qgw_ip}}:{{qgw_port}}/?query=select\n     sum(new_conn_num)/300 as new_conn_num,\n     sum(live_conn_num) as live_conn_num from (\n      select\n         sum(new_conn_num) as new_conn_num,\n         avg(established_conn_num) as live_conn_num from traffic_metrics_log \n         where __time >= FROM_UNIXTIME(UNIX_TIMESTAMP(now())-300)\n         group by device_id)",
+							"raw": "http://{{qgw_ip}}:{{qgw_port}}/?query=select \n     sum(new_conn_num)/300 as new_conn_num, \n     sum(live_conn_num) as live_conn_num \nfrom (\n      select\n         sum(new_conn_num) as new_conn_num,\n         max(established_conn_num) as live_conn_num \n      from traffic_metrics_log  \n      where __time >= FROM_UNIXTIME(UNIX_TIMESTAMP(now())-300)\n      group by device_id)",
 							"protocol": "http",
 							"host": [
 								"{{qgw_ip}}"
@@ -2156,7 +2157,7 @@
 							"query": [
 								{
 									"key": "query",
-									"value": "select\n     sum(new_conn_num)/300 as new_conn_num,\n     sum(live_conn_num) as live_conn_num from (\n      select\n         sum(new_conn_num) as new_conn_num,\n         avg(established_conn_num) as live_conn_num from traffic_metrics_log \n         where __time >= FROM_UNIXTIME(UNIX_TIMESTAMP(now())-300)\n         group by device_id)"
+									"value": "select \n     sum(new_conn_num)/300 as new_conn_num, \n     sum(live_conn_num) as live_conn_num \nfrom (\n      select\n         sum(new_conn_num) as new_conn_num,\n         max(established_conn_num) as live_conn_num \n      from traffic_metrics_log  \n      where __time >= FROM_UNIXTIME(UNIX_TIMESTAMP(now())-300)\n      group by device_id)"
 								}
 							]
 						}
@@ -2194,7 +2195,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://{{qgw_ip}}:{{qgw_port}}/?query=select * from (select\nFROM_UNIXTIME(TIME_FLOOR_WITH_FILL(UNIX_TIMESTAMP(__time),\n'PT5m',\n'zero')) as statisticTime,\n'new_conn_num' as type,\nsum(new_conn_num) as sessions\nfrom\ntraffic_metrics_log\nwhere\n__time >= '{{start_time}}'\nand __time < '{{end_time}}'\ngroup by FROM_UNIXTIME(TIME_FLOOR_WITH_FILL(UNIX_TIMESTAMP(__time),\n'PT5m',\n'zero')),'new_conn_num' union all select statisticTime, 'live_conn_num' as type,sum(sessions) as sessions from ( select\nFROM_UNIXTIME(TIME_FLOOR_WITH_FILL(UNIX_TIMESTAMP(__time),\n'PT5m',\n'zero')) as statisticTime,device_id,\navg(established_conn_num) as sessions\nfrom\ntraffic_metrics_log\nwhere\n__time >= '{{start_time}}'\nand __time < '{{end_time}}'\ngroup by FROM_UNIXTIME(TIME_FLOOR_WITH_FILL(UNIX_TIMESTAMP(__time),\n'PT5m',\n'zero')),device_id) group by statisticTime,'live_conn_num' ) order by statisticTime asc limit 50000",
+							"raw": "http://{{qgw_ip}}:{{qgw_port}}/?query=select * from (select\nFROM_UNIXTIME(TIME_FLOOR_WITH_FILL(UNIX_TIMESTAMP(__time),\n'PT5m',\n'zero')) as statisticTime,\n'new_conn_num' as type,\nsum(new_conn_num) as sessions\nfrom\ntraffic_metrics_log\nwhere\n__time >= '{{start_time}}'\nand __time < '{{end_time}}'\ngroup by FROM_UNIXTIME(TIME_FLOOR_WITH_FILL(UNIX_TIMESTAMP(__time),\n'PT5m',\n'zero')),'new_conn_num' union all select statisticTime, 'live_conn_num' as type,sum(sessions) as sessions from ( select\nFROM_UNIXTIME(TIME_FLOOR_WITH_FILL(UNIX_TIMESTAMP(__time),\n'PT5m',\n'zero')) as statisticTime,device_id,\nmax(established_conn_num) as sessions\nfrom\ntraffic_metrics_log\nwhere\n__time >= '{{start_time}}'\nand __time < '{{end_time}}' \ngroup by FROM_UNIXTIME(TIME_FLOOR_WITH_FILL(UNIX_TIMESTAMP(__time),\n'PT5m',\n'zero')),device_id) group by statisticTime,'live_conn_num' ) order by statisticTime asc limit 50000",
 							"protocol": "http",
 							"host": [
 								"{{qgw_ip}}"
@@ -2206,7 +2207,7 @@
 							"query": [
 								{
 									"key": "query",
-									"value": "select * from (select\nFROM_UNIXTIME(TIME_FLOOR_WITH_FILL(UNIX_TIMESTAMP(__time),\n'PT5m',\n'zero')) as statisticTime,\n'new_conn_num' as type,\nsum(new_conn_num) as sessions\nfrom\ntraffic_metrics_log\nwhere\n__time >= '{{start_time}}'\nand __time < '{{end_time}}'\ngroup by FROM_UNIXTIME(TIME_FLOOR_WITH_FILL(UNIX_TIMESTAMP(__time),\n'PT5m',\n'zero')),'new_conn_num' union all select statisticTime, 'live_conn_num' as type,sum(sessions) as sessions from ( select\nFROM_UNIXTIME(TIME_FLOOR_WITH_FILL(UNIX_TIMESTAMP(__time),\n'PT5m',\n'zero')) as statisticTime,device_id,\navg(established_conn_num) as sessions\nfrom\ntraffic_metrics_log\nwhere\n__time >= '{{start_time}}'\nand __time < '{{end_time}}'\ngroup by FROM_UNIXTIME(TIME_FLOOR_WITH_FILL(UNIX_TIMESTAMP(__time),\n'PT5m',\n'zero')),device_id) group by statisticTime,'live_conn_num' ) order by statisticTime asc limit 50000"
+									"value": "select * from (select\nFROM_UNIXTIME(TIME_FLOOR_WITH_FILL(UNIX_TIMESTAMP(__time),\n'PT5m',\n'zero')) as statisticTime,\n'new_conn_num' as type,\nsum(new_conn_num) as sessions\nfrom\ntraffic_metrics_log\nwhere\n__time >= '{{start_time}}'\nand __time < '{{end_time}}'\ngroup by FROM_UNIXTIME(TIME_FLOOR_WITH_FILL(UNIX_TIMESTAMP(__time),\n'PT5m',\n'zero')),'new_conn_num' union all select statisticTime, 'live_conn_num' as type,sum(sessions) as sessions from ( select\nFROM_UNIXTIME(TIME_FLOOR_WITH_FILL(UNIX_TIMESTAMP(__time),\n'PT5m',\n'zero')) as statisticTime,device_id,\nmax(established_conn_num) as sessions\nfrom\ntraffic_metrics_log\nwhere\n__time >= '{{start_time}}'\nand __time < '{{end_time}}' \ngroup by FROM_UNIXTIME(TIME_FLOOR_WITH_FILL(UNIX_TIMESTAMP(__time),\n'PT5m',\n'zero')),device_id) group by statisticTime,'live_conn_num' ) order by statisticTime asc limit 50000"
 								}
 							]
 						}
@@ -2977,7 +2978,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://{{qgw_ip}}:{{qgw_port}}/?query=select sum(new_conn_num)/300 as new_conn_num, avg(established_conn_num) as live_conn_num from traffic_metrics_log  where   __time >= {{Last 5 Minutes Start}} ",
+							"raw": "http://{{qgw_ip}}:{{qgw_port}}/?query=  select\n     sum(new_conn_num)/300 as new_conn_num,\n     sum(live_conn_num) as live_conn_num from (\n      select\n         sum(new_conn_num) as new_conn_num,\n         max(established_conn_num) as live_conn_num from traffic_metrics_log \n         where __time >=  {{Last 5 Minutes Start}} \n         group by device_id)   ",
 							"protocol": "http",
 							"host": [
 								"{{qgw_ip}}"
@@ -2989,7 +2990,7 @@
 							"query": [
 								{
 									"key": "query",
-									"value": "select sum(new_conn_num)/300 as new_conn_num, avg(established_conn_num) as live_conn_num from traffic_metrics_log  where   __time >= {{Last 5 Minutes Start}} "
+									"value": "  select\n     sum(new_conn_num)/300 as new_conn_num,\n     sum(live_conn_num) as live_conn_num from (\n      select\n         sum(new_conn_num) as new_conn_num,\n         max(established_conn_num) as live_conn_num from traffic_metrics_log \n         where __time >=  {{Last 5 Minutes Start}} \n         group by device_id)   "
 								}
 							]
 						}
@@ -3098,7 +3099,7 @@
 			"protocolProfileBehavior": {}
 		},
 		{
-			"name": "原始日志查询",
+			"name": "04.原始日志查询",
 			"item": [
 				{
 					"name": "安全策略日志",
@@ -3201,6 +3202,31 @@
 					"response": []
 				},
 				{
+					"name": "安全策略-动作命中计数",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://{{qgw_ip}}:{{qgw_port}}/?query=select   (CASE WHEN common_action=1 THEN 'Monitor' WHEN common_action=2 THEN 'Intercept' WHEN common_action=16 THEN 'Deny' WHEN common_action=48 THEN 'Manipulation' WHEN common_action=128 THEN 'Allow' ELSE 'None' END) as action,\n    count(*) as hits,\n    sum(common_c2s_byte_num ) as bytes_sent,\n    sum(common_s2c_byte_num ) as bytes_received,\n    sum(common_c2s_byte_num+common_s2c_byte_num ) as bytes,sum(common_c2s_pkt_num ) as packets_sent,\n    sum(common_s2c_pkt_num ) as packets_received,\n    sum(common_c2s_pkt_num+common_s2c_pkt_num ) as packets from security_event_log where common_recv_time >= '{{start_time}}' and common_recv_time <'{{end_time}}' group by common_action",
+							"protocol": "http",
+							"host": [
+								"{{qgw_ip}}"
+							],
+							"port": "{{qgw_port}}",
+							"path": [
+								""
+							],
+							"query": [
+								{
+									"key": "query",
+									"value": "select   (CASE WHEN common_action=1 THEN 'Monitor' WHEN common_action=2 THEN 'Intercept' WHEN common_action=16 THEN 'Deny' WHEN common_action=48 THEN 'Manipulation' WHEN common_action=128 THEN 'Allow' ELSE 'None' END) as action,\n    count(*) as hits,\n    sum(common_c2s_byte_num ) as bytes_sent,\n    sum(common_s2c_byte_num ) as bytes_received,\n    sum(common_c2s_byte_num+common_s2c_byte_num ) as bytes,sum(common_c2s_pkt_num ) as packets_sent,\n    sum(common_s2c_pkt_num ) as packets_received,\n    sum(common_c2s_pkt_num+common_s2c_pkt_num ) as packets from security_event_log where common_recv_time >= '{{start_time}}' and common_recv_time <'{{end_time}}' group by common_action"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "代理策略日志",
 					"request": {
 						"method": "GET",
@@ -3219,6 +3245,31 @@
 								{
 									"key": "query",
 									"value": "select   FROM_UNIXTIME(common_recv_time) as common_recv_time,common_log_id,common_policy_id,common_subscriber_id,common_client_ip,common_client_port,common_l4_protocol,common_address_type,common_server_ip,common_server_port,common_action,common_direction,common_sled_ip,common_client_location,common_client_asn,common_server_location,common_server_asn,common_c2s_byte_num,common_s2c_byte_num,common_schema_type,common_sub_action,common_device_id, FROM_UNIXTIME(common_start_time) as common_start_time, FROM_UNIXTIME(common_end_time) as common_end_time,common_establish_latency_ms,common_con_duration_ms,common_stream_dir,common_stream_trace_id,http_url,http_host,http_domain,http_request_body,http_response_body,http_cookie,http_referer,http_user_agent,http_content_length,http_content_type,http_set_cookie,http_version,http_response_lantency_ms,http_session_duration_ms,http_action_file_size,doh_url,doh_host,doh_cookie,doh_referer,doh_user_agent,doh_content_length,doh_content_type,doh_set_cookie,doh_version,doh_message_id,doh_qr,doh_opcode,doh_aa,doh_tc,doh_rd,doh_ra,doh_rcode,doh_qdcount,doh_ancount,doh_nscount,doh_arcount,doh_qname,doh_qtype,doh_qclass,doh_cname,doh_sub,doh_rr  from proxy_event_log where  common_recv_time  >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <  UNIX_TIMESTAMP('{{end_time}}')   order by  common_recv_time desc  limit 0 , 20"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "代理策略-动作命中计数",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{qgw_ip}}:{{qgw_port}}/?query= select common_sub_action , count(*) as hits from proxy_event_log where  common_recv_time  >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <  UNIX_TIMESTAMP('{{end_time}}')  group by common_sub_action",
+							"protocol": "http",
+							"host": [
+								"{{qgw_ip}}"
+							],
+							"port": "{{qgw_port}}",
+							"path": [
+								""
+							],
+							"query": [
+								{
+									"key": "query",
+									"value": " select common_sub_action , count(*) as hits from proxy_event_log where  common_recv_time  >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <  UNIX_TIMESTAMP('{{end_time}}')  group by common_sub_action"
 								}
 							]
 						}
@@ -3319,6 +3370,31 @@
 								{
 									"key": "query",
 									"value": "select   FROM_UNIXTIME(common_recv_time) as common_recv_time,common_log_id,common_subscriber_id,common_client_ip,common_client_port,common_l4_protocol,common_address_type,common_server_ip,common_server_port,common_action,common_direction,common_sled_ip,common_client_location,common_client_asn,common_server_location,common_server_asn,common_c2s_pkt_num,common_s2c_pkt_num,common_c2s_byte_num,common_s2c_byte_num,common_schema_type,common_sub_action,common_device_id, FROM_UNIXTIME(common_start_time) as common_start_time, FROM_UNIXTIME(common_end_time) as common_end_time,common_establish_latency_ms,common_con_duration_ms,common_stream_dir,common_stream_trace_id,http_url,http_host,http_domain,http_request_body,http_response_body,http_cookie,http_referer,http_user_agent,http_content_length,http_content_type,http_set_cookie,http_version,http_response_lantency_ms,http_session_duration_ms,http_action_file_size,mail_protocol_type,mail_account,mail_from_cmd,mail_to_cmd,mail_from,mail_to,mail_cc,mail_bcc,mail_subject,mail_attachment_name,mail_eml_file,dns_message_id,dns_qr,dns_opcode,dns_aa,dns_tc,dns_rd,dns_ra,dns_rcode,dns_qdcount,dns_ancount,dns_nscount,dns_arcount,dns_qname,dns_qtype,dns_qclass,dns_cname,dns_sub,dns_rr,ssl_sni,ssl_san,ssl_cn,ssl_pinningst,ssl_intercept_state,ssl_server_side_latency,ssl_client_side_latency,ssl_server_side_version,ssl_client_side_version,ssl_cert_verify,ssl_error,quic_version,quic_sni,quic_user_agent,ftp_account,ftp_url,ftp_content  from connection_record_log where  common_recv_time  >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <  UNIX_TIMESTAMP('{{end_time}}')   order by  common_recv_time desc  limit 0 , 20"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "通联-流量计数(now)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{qgw_ip}}:{{qgw_port}}/?query=select\n\tsum(common_s2c_byte_num)* 8 / 300 as trafficInBits,\n\tsum(common_c2s_byte_num)* 8 / 300 as trafficOutBits,\n\tsum(common_s2c_byte_num + common_c2s_byte_num)* 8 / 300 as trafficTotalBits,\n\tsum(common_s2c_pkt_num)/ 300 as trafficInPackets,\n\tsum(common_c2s_pkt_num)/ 300 as trafficOutPackets,\n\tsum(common_s2c_pkt_num + common_c2s_pkt_num)/ 300 as trafficTotalPackets,\n\tsum(common_sessions)/ 300 as sessions\nfrom\n\t connection_record_log\nwhere\n\tcommon_recv_time >= UNIX_TIMESTAMP(now())-300",
+							"protocol": "http",
+							"host": [
+								"{{qgw_ip}}"
+							],
+							"port": "{{qgw_port}}",
+							"path": [
+								""
+							],
+							"query": [
+								{
+									"key": "query",
+									"value": "select\n\tsum(common_s2c_byte_num)* 8 / 300 as trafficInBits,\n\tsum(common_c2s_byte_num)* 8 / 300 as trafficOutBits,\n\tsum(common_s2c_byte_num + common_c2s_byte_num)* 8 / 300 as trafficTotalBits,\n\tsum(common_s2c_pkt_num)/ 300 as trafficInPackets,\n\tsum(common_c2s_pkt_num)/ 300 as trafficOutPackets,\n\tsum(common_s2c_pkt_num + common_c2s_pkt_num)/ 300 as trafficTotalPackets,\n\tsum(common_sessions)/ 300 as sessions\nfrom\n\t connection_record_log\nwhere\n\tcommon_recv_time >= UNIX_TIMESTAMP(now())-300"
 								}
 							]
 						}
@@ -3429,7 +3505,7 @@
 			"protocolProfileBehavior": {}
 		},
 		{
-			"name": "数据推荐查询",
+			"name": "05.数据推荐查询",
 			"item": [
 				{
 					"name": "iplearning",
@@ -3606,7 +3682,7 @@
 			"protocolProfileBehavior": {}
 		},
 		{
-			"name": "分布式调度任务",
+			"name": "06.分布式调度任务",
 			"item": [
 				{
 					"name": "5分钟TOPN",
@@ -3618,7 +3694,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"query\": \"(SELECT common_server_ip AS destination, sum( session_num ) AS session_num, sum( c2s_byte_num ) AS c2s_byte_num, sum( s2c_byte_num ) AS s2c_byte_num,sum( c2s_pkt_num ) AS c2s_pkt_num,sum( s2c_pkt_num ) AS s2c_pkt_num,TIME_FLOOR(CURRENT_TIMESTAMP,'PT5M') as stat_time,'packets' as order_by FROM server_ip_hot_log WHERE __time >=  TIME_SHIFT(TIME_FLOOR(CURRENT_TIMESTAMP,'PT5M'),'PT5M',-1) AND __time < TIME_FLOOR(CURRENT_TIMESTAMP,'PT5M') GROUP BY common_server_ip ORDER BY c2s_pkt_num+s2c_pkt_num DESC LIMIT 1000) UNION ALL (SELECT common_server_ip AS destination, sum( session_num ) AS session_num, sum( c2s_byte_num ) AS c2s_byte_num, sum( s2c_byte_num ) AS s2c_byte_num,sum( c2s_pkt_num ) AS c2s_pkt_num,sum( s2c_pkt_num ) AS s2c_pkt_num, TIME_FLOOR(CURRENT_TIMESTAMP,'PT5M') as stat_time,'bytes' as order_by FROM server_ip_hot_log WHERE __time >=  TIME_SHIFT(TIME_FLOOR(CURRENT_TIMESTAMP,'PT5M'),'PT5M',-1) AND __time < TIME_FLOOR(CURRENT_TIMESTAMP,'PT5M') GROUP BY common_server_ip ORDER BY c2s_byte_num+s2c_byte_num DESC LIMIT 1000) UNION ALL (SELECT common_server_ip AS destination, sum( session_num ) AS session_num, sum( c2s_byte_num ) AS c2s_byte_num, sum( s2c_byte_num ) AS s2c_byte_num,sum( c2s_pkt_num ) AS c2s_pkt_num, sum( s2c_pkt_num ) AS s2c_pkt_num, TIME_FLOOR(CURRENT_TIMESTAMP,'PT5M') as stat_time,'sessions' as order_by FROM server_ip_hot_log WHERE __time >=  TIME_SHIFT(TIME_FLOOR(CURRENT_TIMESTAMP,'PT5M'),'PT5M',-1) AND __time < TIME_FLOOR(CURRENT_TIMESTAMP,'PT5M') GROUP BY common_server_ip ORDER BY session_num DESC LIMIT 1000)\",\r\n    \"context\": {\r\n        \"skipEmptyBuckets\": \"false\"\r\n    },\r\n    \"resultFormat\": \"object\"\r\n}",
+									"raw": "{\r\n    \"query\": \"(SELECT common_server_ip AS destination, sum( session_num ) AS session_num, sum( c2s_byte_num ) AS c2s_byte_num, sum( s2c_byte_num ) AS s2c_byte_num,sum( c2s_pkt_num ) AS c2s_pkt_num,sum( s2c_pkt_num ) AS s2c_pkt_num,TIME_FLOOR(CURRENT_TIMESTAMP,'PT5M') as stat_time,'packets' as order_by FROM client_server_ip_hot_log WHERE __time >=  TIME_SHIFT(TIME_FLOOR(CURRENT_TIMESTAMP,'PT5M'),'PT5M',-1) AND __time < TIME_FLOOR(CURRENT_TIMESTAMP,'PT5M') GROUP BY common_server_ip ORDER BY c2s_pkt_num+s2c_pkt_num DESC LIMIT 1000) UNION ALL (SELECT common_server_ip AS destination, sum( session_num ) AS session_num, sum( c2s_byte_num ) AS c2s_byte_num, sum( s2c_byte_num ) AS s2c_byte_num,sum( c2s_pkt_num ) AS c2s_pkt_num,sum( s2c_pkt_num ) AS s2c_pkt_num, TIME_FLOOR(CURRENT_TIMESTAMP,'PT5M') as stat_time,'bytes' as order_by FROM client_server_ip_hot_log WHERE __time >=  TIME_SHIFT(TIME_FLOOR(CURRENT_TIMESTAMP,'PT5M'),'PT5M',-1) AND __time < TIME_FLOOR(CURRENT_TIMESTAMP,'PT5M') GROUP BY common_server_ip ORDER BY c2s_byte_num+s2c_byte_num DESC LIMIT 1000) UNION ALL (SELECT common_server_ip AS destination, sum( session_num ) AS session_num, sum( c2s_byte_num ) AS c2s_byte_num, sum( s2c_byte_num ) AS s2c_byte_num,sum( c2s_pkt_num ) AS c2s_pkt_num, sum( s2c_pkt_num ) AS s2c_pkt_num, TIME_FLOOR(CURRENT_TIMESTAMP,'PT5M') as stat_time,'sessions' as order_by FROM client_server_ip_hot_log WHERE __time >=  TIME_SHIFT(TIME_FLOOR(CURRENT_TIMESTAMP,'PT5M'),'PT5M',-1) AND __time < TIME_FLOOR(CURRENT_TIMESTAMP,'PT5M') GROUP BY common_server_ip ORDER BY session_num DESC LIMIT 1000)\",\r\n    \"context\": {\r\n        \"skipEmptyBuckets\": \"false\"\r\n    },\r\n    \"resultFormat\": \"object\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -3648,7 +3724,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n\t\t\"query\": \"(SELECT common_client_ip AS source, sum( session_num ) AS session_num,sum( c2s_byte_num ) AS c2s_byte_num, sum( s2c_byte_num ) AS s2c_byte_num, sum( c2s_pkt_num ) AS c2s_pkt_num,sum( s2c_pkt_num ) AS s2c_pkt_num, TIME_FLOOR(CURRENT_TIMESTAMP,'PT5M') as stat_time,'packets' as order_by FROM client_ip_hot_log WHERE __time >=  TIME_SHIFT(TIME_FLOOR(CURRENT_TIMESTAMP,'PT5M'),'PT5M',-1) AND __time < TIME_FLOOR(CURRENT_TIMESTAMP,'PT5M') GROUP BY common_client_ip ORDER BY c2s_pkt_num+s2c_pkt_num DESC LIMIT 1000) UNION ALL (SELECT common_client_ip AS source, sum( session_num ) AS session_num, sum( c2s_byte_num ) AS c2s_byte_num, sum( s2c_byte_num ) AS s2c_byte_num, sum( c2s_pkt_num ) AS c2s_pkt_num,sum( s2c_pkt_num ) AS s2c_pkt_num,TIME_FLOOR(CURRENT_TIMESTAMP,'PT5M') as stat_time,'bytes' as order_by FROM client_ip_hot_log WHERE __time >=  TIME_SHIFT(TIME_FLOOR(CURRENT_TIMESTAMP,'PT5M'),'PT5M',-1) AND __time < TIME_FLOOR(CURRENT_TIMESTAMP,'PT5M') GROUP BY common_client_ip ORDER BY c2s_byte_num+s2c_byte_num DESC LIMIT 1000) UNION ALL (SELECT common_client_ip AS source, sum( session_num ) AS session_num,sum( c2s_byte_num ) AS c2s_byte_num, sum( s2c_byte_num ) AS s2c_byte_num, sum( c2s_pkt_num ) AS c2s_pkt_num, sum( s2c_pkt_num ) AS s2c_pkt_num, TIME_FLOOR(CURRENT_TIMESTAMP,'PT5M') as stat_time, 'sessions' as order_by FROM client_ip_hot_log WHERE __time >=  TIME_SHIFT(TIME_FLOOR(CURRENT_TIMESTAMP,'PT5M'),'PT5M',-1) AND __time < TIME_FLOOR(CURRENT_TIMESTAMP,'PT5M') GROUP BY common_client_ip ORDER BY session_num DESC LIMIT 1000)\",\r\n\t\t\"context\": {\r\n\t\t\t\"skipEmptyBuckets\": \"false\"\r\n\t\t},\r\n\t\t\"resultFormat\": \"object\"\r\n\t}",
+									"raw": "{\r\n\t\t\"query\": \"(SELECT common_client_ip AS source, sum( session_num ) AS session_num,sum( c2s_byte_num ) AS c2s_byte_num, sum( s2c_byte_num ) AS s2c_byte_num, sum( c2s_pkt_num ) AS c2s_pkt_num,sum( s2c_pkt_num ) AS s2c_pkt_num, TIME_FLOOR(CURRENT_TIMESTAMP,'PT5M') as stat_time,'packets' as order_by FROM client_server_ip_hot_log WHERE __time >=  TIME_SHIFT(TIME_FLOOR(CURRENT_TIMESTAMP,'PT5M'),'PT5M',-1) AND __time < TIME_FLOOR(CURRENT_TIMESTAMP,'PT5M') GROUP BY common_client_ip ORDER BY c2s_pkt_num+s2c_pkt_num DESC LIMIT 1000) UNION ALL (SELECT common_client_ip AS source, sum( session_num ) AS session_num, sum( c2s_byte_num ) AS c2s_byte_num, sum( s2c_byte_num ) AS s2c_byte_num, sum( c2s_pkt_num ) AS c2s_pkt_num,sum( s2c_pkt_num ) AS s2c_pkt_num,TIME_FLOOR(CURRENT_TIMESTAMP,'PT5M') as stat_time,'bytes' as order_by FROM client_server_ip_hot_log WHERE __time >=  TIME_SHIFT(TIME_FLOOR(CURRENT_TIMESTAMP,'PT5M'),'PT5M',-1) AND __time < TIME_FLOOR(CURRENT_TIMESTAMP,'PT5M') GROUP BY common_client_ip ORDER BY c2s_byte_num+s2c_byte_num DESC LIMIT 1000) UNION ALL (SELECT common_client_ip AS source, sum( session_num ) AS session_num,sum( c2s_byte_num ) AS c2s_byte_num, sum( s2c_byte_num ) AS s2c_byte_num, sum( c2s_pkt_num ) AS c2s_pkt_num, sum( s2c_pkt_num ) AS s2c_pkt_num, TIME_FLOOR(CURRENT_TIMESTAMP,'PT5M') as stat_time, 'sessions' as order_by FROM client_server_ip_hot_log WHERE __time >=  TIME_SHIFT(TIME_FLOOR(CURRENT_TIMESTAMP,'PT5M'),'PT5M',-1) AND __time < TIME_FLOOR(CURRENT_TIMESTAMP,'PT5M') GROUP BY common_client_ip ORDER BY session_num DESC LIMIT 1000)\",\r\n\t\t\"context\": {\r\n\t\t\t\"skipEmptyBuckets\": \"false\"\r\n\t\t},\r\n\t\t\"resultFormat\": \"object\"\r\n\t}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -3678,7 +3754,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"query\": \"(SELECT common_internal_ip AS source, sum( session_num ) AS session_num,sum( c2s_byte_num ) AS c2s_byte_num, sum( s2c_byte_num ) AS s2c_byte_num, sum( c2s_pkt_num ) AS c2s_pkt_num,sum( s2c_pkt_num ) AS s2c_pkt_num, TIME_FLOOR(CURRENT_TIMESTAMP,'PT5M') as stat_time,'packets' as order_by FROM internal_host_hot_log WHERE __time >=  TIME_SHIFT(TIME_FLOOR(CURRENT_TIMESTAMP,'PT5M'),'PT5M',-1) AND __time < TIME_FLOOR(CURRENT_TIMESTAMP,'PT5M') AND common_internal_ip != '' GROUP BY common_internal_ip ORDER BY c2s_pkt_num+s2c_pkt_num DESC LIMIT 1000) UNION ALL (SELECT common_internal_ip AS source, sum( session_num ) AS session_num, sum( c2s_byte_num ) AS c2s_byte_num, sum( s2c_byte_num ) AS s2c_byte_num, sum( c2s_pkt_num ) AS c2s_pkt_num,sum( s2c_pkt_num ) AS s2c_pkt_num,TIME_FLOOR(CURRENT_TIMESTAMP,'PT5M') as stat_time,'bytes' as order_by FROM internal_host_hot_log WHERE __time >=  TIME_SHIFT(TIME_FLOOR(CURRENT_TIMESTAMP,'PT5M'),'PT5M',-1) AND __time < TIME_FLOOR(CURRENT_TIMESTAMP,'PT5M') AND common_internal_ip != '' GROUP BY common_internal_ip ORDER BY c2s_byte_num+s2c_byte_num DESC LIMIT 1000) UNION ALL (SELECT common_internal_ip AS source, sum( session_num ) AS session_num,sum( c2s_byte_num ) AS c2s_byte_num, sum( s2c_byte_num ) AS s2c_byte_num, sum( c2s_pkt_num ) AS c2s_pkt_num, sum( s2c_pkt_num ) AS s2c_pkt_num, TIME_FLOOR(CURRENT_TIMESTAMP,'PT5M') as stat_time, 'sessions' as order_by FROM internal_host_hot_log WHERE __time >=  TIME_SHIFT(TIME_FLOOR(CURRENT_TIMESTAMP,'PT5M'),'PT5M',-1) AND __time < TIME_FLOOR(CURRENT_TIMESTAMP,'PT5M') AND common_internal_ip != '' GROUP BY common_internal_ip ORDER BY session_num DESC LIMIT 1000)\",\r\n    \"context\": {\r\n        \"skipEmptyBuckets\": \"false\"\r\n    },\r\n    \"resultFormat\": \"object\"\r\n}",
+									"raw": "{\r\n    \"query\": \"(SELECT common_internal_ip AS source, sum( session_num ) AS session_num,sum( c2s_byte_num ) AS c2s_byte_num, sum( s2c_byte_num ) AS s2c_byte_num, sum( c2s_pkt_num ) AS c2s_pkt_num,sum( s2c_pkt_num ) AS s2c_pkt_num, TIME_FLOOR(CURRENT_TIMESTAMP,'PT5M') as stat_time,'packets' as order_by FROM internal_external_host_hot_log WHERE __time >=  TIME_SHIFT(TIME_FLOOR(CURRENT_TIMESTAMP,'PT5M'),'PT5M',-1) AND __time < TIME_FLOOR(CURRENT_TIMESTAMP,'PT5M') AND common_internal_ip != '' GROUP BY common_internal_ip ORDER BY c2s_pkt_num+s2c_pkt_num DESC LIMIT 1000) UNION ALL (SELECT common_internal_ip AS source, sum( session_num ) AS session_num, sum( c2s_byte_num ) AS c2s_byte_num, sum( s2c_byte_num ) AS s2c_byte_num, sum( c2s_pkt_num ) AS c2s_pkt_num,sum( s2c_pkt_num ) AS s2c_pkt_num,TIME_FLOOR(CURRENT_TIMESTAMP,'PT5M') as stat_time,'bytes' as order_by FROM internal_external_host_hot_log WHERE __time >=  TIME_SHIFT(TIME_FLOOR(CURRENT_TIMESTAMP,'PT5M'),'PT5M',-1) AND __time < TIME_FLOOR(CURRENT_TIMESTAMP,'PT5M') AND common_internal_ip != '' GROUP BY common_internal_ip ORDER BY c2s_byte_num+s2c_byte_num DESC LIMIT 1000) UNION ALL (SELECT common_internal_ip AS source, sum( session_num ) AS session_num,sum( c2s_byte_num ) AS c2s_byte_num, sum( s2c_byte_num ) AS s2c_byte_num, sum( c2s_pkt_num ) AS c2s_pkt_num, sum( s2c_pkt_num ) AS s2c_pkt_num, TIME_FLOOR(CURRENT_TIMESTAMP,'PT5M') as stat_time, 'sessions' as order_by FROM internal_external_host_hot_log WHERE __time >=  TIME_SHIFT(TIME_FLOOR(CURRENT_TIMESTAMP,'PT5M'),'PT5M',-1) AND __time < TIME_FLOOR(CURRENT_TIMESTAMP,'PT5M') AND common_internal_ip != '' GROUP BY common_internal_ip ORDER BY session_num DESC LIMIT 1000)\",\r\n    \"context\": {\r\n        \"skipEmptyBuckets\": \"false\"\r\n    },\r\n    \"resultFormat\": \"object\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -3708,7 +3784,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"query\": \"(SELECT common_external_ip AS destination, sum( session_num ) AS session_num, sum( c2s_byte_num ) AS c2s_byte_num, sum( s2c_byte_num ) AS s2c_byte_num,sum( c2s_pkt_num ) AS c2s_pkt_num,sum( s2c_pkt_num ) AS s2c_pkt_num,TIME_FLOOR(CURRENT_TIMESTAMP,'PT5M') as stat_time,'packets' as order_by FROM external_host_hot_log WHERE __time >=  TIME_SHIFT(TIME_FLOOR(CURRENT_TIMESTAMP,'PT5M'),'PT5M',-1) AND __time < TIME_FLOOR(CURRENT_TIMESTAMP,'PT5M') AND common_external_ip != '' GROUP BY common_external_ip ORDER BY c2s_pkt_num+s2c_pkt_num DESC LIMIT 1000) UNION ALL (SELECT common_external_ip AS destination, sum( session_num ) AS session_num, sum( c2s_byte_num ) AS c2s_byte_num, sum( s2c_byte_num ) AS s2c_byte_num,sum( c2s_pkt_num ) AS c2s_pkt_num,sum( s2c_pkt_num ) AS s2c_pkt_num, TIME_FLOOR(CURRENT_TIMESTAMP,'PT5M') as stat_time,'bytes' as order_by FROM external_host_hot_log WHERE __time >=  TIME_SHIFT(TIME_FLOOR(CURRENT_TIMESTAMP,'PT5M'),'PT5M',-1) AND __time < TIME_FLOOR(CURRENT_TIMESTAMP,'PT5M') AND common_external_ip != '' GROUP BY common_external_ip ORDER BY c2s_byte_num+s2c_byte_num DESC LIMIT 1000) UNION ALL (SELECT common_external_ip AS destination, sum( session_num ) AS session_num, sum( c2s_byte_num ) AS c2s_byte_num, sum( s2c_byte_num ) AS s2c_byte_num,sum( c2s_pkt_num ) AS c2s_pkt_num, sum( s2c_pkt_num ) AS s2c_pkt_num, TIME_FLOOR(CURRENT_TIMESTAMP,'PT5M') as stat_time,'sessions' as order_by FROM external_host_hot_log WHERE __time >=  TIME_SHIFT(TIME_FLOOR(CURRENT_TIMESTAMP,'PT5M'),'PT5M',-1) AND __time < TIME_FLOOR(CURRENT_TIMESTAMP,'PT5M') AND common_external_ip != '' GROUP BY common_external_ip ORDER BY session_num DESC LIMIT 1000)\",\r\n    \"context\": {\r\n        \"sqlTimeZone\": \"Asia/Shanghai\",\r\n        \"skipEmptyBuckets\": \"false\"\r\n    },\r\n    \"resultFormat\": \"object\"\r\n}",
+									"raw": "{\r\n    \"query\": \"(SELECT common_external_ip AS destination, sum( session_num ) AS session_num, sum( c2s_byte_num ) AS c2s_byte_num, sum( s2c_byte_num ) AS s2c_byte_num,sum( c2s_pkt_num ) AS c2s_pkt_num,sum( s2c_pkt_num ) AS s2c_pkt_num,TIME_FLOOR(CURRENT_TIMESTAMP,'PT5M') as stat_time,'packets' as order_by FROM internal_external_host_hot_log WHERE __time >=  TIME_SHIFT(TIME_FLOOR(CURRENT_TIMESTAMP,'PT5M'),'PT5M',-1) AND __time < TIME_FLOOR(CURRENT_TIMESTAMP,'PT5M') AND common_external_ip != '' GROUP BY common_external_ip ORDER BY c2s_pkt_num+s2c_pkt_num DESC LIMIT 1000) UNION ALL (SELECT common_external_ip AS destination, sum( session_num ) AS session_num, sum( c2s_byte_num ) AS c2s_byte_num, sum( s2c_byte_num ) AS s2c_byte_num,sum( c2s_pkt_num ) AS c2s_pkt_num,sum( s2c_pkt_num ) AS s2c_pkt_num, TIME_FLOOR(CURRENT_TIMESTAMP,'PT5M') as stat_time,'bytes' as order_by FROM internal_external_host_hot_log WHERE __time >=  TIME_SHIFT(TIME_FLOOR(CURRENT_TIMESTAMP,'PT5M'),'PT5M',-1) AND __time < TIME_FLOOR(CURRENT_TIMESTAMP,'PT5M') AND common_external_ip != '' GROUP BY common_external_ip ORDER BY c2s_byte_num+s2c_byte_num DESC LIMIT 1000) UNION ALL (SELECT common_external_ip AS destination, sum( session_num ) AS session_num, sum( c2s_byte_num ) AS c2s_byte_num, sum( s2c_byte_num ) AS s2c_byte_num,sum( c2s_pkt_num ) AS c2s_pkt_num, sum( s2c_pkt_num ) AS s2c_pkt_num, TIME_FLOOR(CURRENT_TIMESTAMP,'PT5M') as stat_time,'sessions' as order_by FROM internal_external_host_hot_log WHERE __time >=  TIME_SHIFT(TIME_FLOOR(CURRENT_TIMESTAMP,'PT5M'),'PT5M',-1) AND __time < TIME_FLOOR(CURRENT_TIMESTAMP,'PT5M') AND common_external_ip != '' GROUP BY common_external_ip ORDER BY session_num DESC LIMIT 1000)\",\r\n    \"context\": {\r\n        \"sqlTimeZone\": \"Asia/Shanghai\",\r\n        \"skipEmptyBuckets\": \"false\"\r\n    },\r\n    \"resultFormat\": \"object\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -3738,7 +3814,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"query\": \"(SELECT common_subscriber_id as subscriber_id, sum( session_num ) AS session_num,sum( c2s_byte_num ) AS c2s_byte_num,sum( s2c_byte_num ) AS s2c_byte_num,sum( c2s_pkt_num ) AS c2s_pkt_num, sum( s2c_pkt_num ) AS s2c_pkt_num, TIME_FLOOR(CURRENT_TIMESTAMP,'PT5M') as stat_time,'packets' as order_by FROM user_hot_log WHERE __time >=  TIME_SHIFT(TIME_FLOOR(CURRENT_TIMESTAMP,'PT5M'),'PT5M',-1) AND __time < TIME_FLOOR(CURRENT_TIMESTAMP,'PT5M') GROUP BY common_subscriber_id ORDER BY c2s_pkt_num+s2c_pkt_num DESC LIMIT 1000) UNION ALL (SELECT common_subscriber_id as subscriber_id,sum( session_num ) AS session_num, sum( c2s_byte_num ) AS c2s_byte_num, sum( s2c_byte_num ) AS s2c_byte_num,sum( c2s_pkt_num ) AS c2s_pkt_num, sum( s2c_pkt_num ) AS s2c_pkt_num, TIME_FLOOR(CURRENT_TIMESTAMP,'PT5M') as stat_time,'bytes' as order_by FROM user_hot_log WHERE __time >=  TIME_SHIFT(TIME_FLOOR(CURRENT_TIMESTAMP,'PT5M'),'PT5M',-1) AND __time < TIME_FLOOR(CURRENT_TIMESTAMP,'PT5M') GROUP BY common_subscriber_id ORDER BY c2s_byte_num+s2c_byte_num DESC LIMIT 1000) UNION ALL (SELECT common_subscriber_id as subscriber_id,sum( session_num ) AS session_num, sum( c2s_byte_num ) AS c2s_byte_num, sum( s2c_byte_num ) AS s2c_byte_num, sum( c2s_pkt_num ) AS c2s_pkt_num,sum( s2c_pkt_num ) AS s2c_pkt_num,TIME_FLOOR(CURRENT_TIMESTAMP,'PT5M') as stat_time,'sessions' as order_by FROM user_hot_log WHERE __time >=  TIME_SHIFT(TIME_FLOOR(CURRENT_TIMESTAMP,'PT5M'),'PT5M',-1) AND __time < TIME_FLOOR(CURRENT_TIMESTAMP,'PT5M') GROUP BY common_subscriber_id ORDER BY session_num DESC LIMIT 1000)\",\r\n    \"context\": {\r\n        \"skipEmptyBuckets\": \"false\"\r\n    },\r\n    \"resultFormat\": \"object\"\r\n}",
+									"raw": "{\r\n    \"query\": \"(SELECT common_subscriber_id as subscriber_id, sum( session_num ) AS session_num,sum( c2s_byte_num ) AS c2s_byte_num,sum( s2c_byte_num ) AS s2c_byte_num,sum( c2s_pkt_num ) AS c2s_pkt_num, sum( s2c_pkt_num ) AS s2c_pkt_num, TIME_FLOOR(CURRENT_TIMESTAMP,'PT5M') as stat_time,'packets' as order_by FROM user_domain_hot_log WHERE __time >=  TIME_SHIFT(TIME_FLOOR(CURRENT_TIMESTAMP,'PT5M'),'PT5M',-1) AND __time < TIME_FLOOR(CURRENT_TIMESTAMP,'PT5M') GROUP BY common_subscriber_id ORDER BY c2s_pkt_num+s2c_pkt_num DESC LIMIT 1000) UNION ALL (SELECT common_subscriber_id as subscriber_id,sum( session_num ) AS session_num, sum( c2s_byte_num ) AS c2s_byte_num, sum( s2c_byte_num ) AS s2c_byte_num,sum( c2s_pkt_num ) AS c2s_pkt_num, sum( s2c_pkt_num ) AS s2c_pkt_num, TIME_FLOOR(CURRENT_TIMESTAMP,'PT5M') as stat_time,'bytes' as order_by FROM user_domain_hot_log WHERE __time >=  TIME_SHIFT(TIME_FLOOR(CURRENT_TIMESTAMP,'PT5M'),'PT5M',-1) AND __time < TIME_FLOOR(CURRENT_TIMESTAMP,'PT5M') GROUP BY common_subscriber_id ORDER BY c2s_byte_num+s2c_byte_num DESC LIMIT 1000) UNION ALL (SELECT common_subscriber_id as subscriber_id,sum( session_num ) AS session_num, sum( c2s_byte_num ) AS c2s_byte_num, sum( s2c_byte_num ) AS s2c_byte_num, sum( c2s_pkt_num ) AS c2s_pkt_num,sum( s2c_pkt_num ) AS s2c_pkt_num,TIME_FLOOR(CURRENT_TIMESTAMP,'PT5M') as stat_time,'sessions' as order_by FROM user_domain_hot_log WHERE __time >=  TIME_SHIFT(TIME_FLOOR(CURRENT_TIMESTAMP,'PT5M'),'PT5M',-1) AND __time < TIME_FLOOR(CURRENT_TIMESTAMP,'PT5M') GROUP BY common_subscriber_id ORDER BY session_num DESC LIMIT 1000)\",\r\n    \"context\": {\r\n        \"skipEmptyBuckets\": \"false\"\r\n    },\r\n    \"resultFormat\": \"object\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -3768,7 +3844,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"query\": \"(SELECT domain,sum( session_num ) AS session_num,sum( c2s_byte_num ) AS c2s_byte_num,sum( s2c_byte_num ) AS s2c_byte_num,sum( c2s_pkt_num ) AS c2s_pkt_num,sum( s2c_pkt_num ) AS s2c_pkt_num,TIME_FLOOR(CURRENT_TIMESTAMP,'PT5M') as stat_time,'packets' as order_by FROM website_domain_hot_log WHERE __time >=  TIME_SHIFT(TIME_FLOOR(CURRENT_TIMESTAMP,'PT5M'),'PT5M',-1) AND __time < TIME_FLOOR(CURRENT_TIMESTAMP,'PT5M') GROUP BY domain ORDER BY c2s_pkt_num+s2c_pkt_num DESC LIMIT 1000) UNION ALL (SELECT domain,sum( session_num ) AS session_num,sum( c2s_byte_num ) AS c2s_byte_num,sum( s2c_byte_num ) AS s2c_byte_num,sum( c2s_pkt_num ) AS c2s_pkt_num,sum( s2c_pkt_num ) AS s2c_pkt_num,TIME_FLOOR(CURRENT_TIMESTAMP,'PT5M') as stat_time,'bytes' as order_by FROM website_domain_hot_log WHERE __time >=  TIME_SHIFT(TIME_FLOOR(CURRENT_TIMESTAMP,'PT5M'),'PT5M',-1) AND __time < TIME_FLOOR(CURRENT_TIMESTAMP,'PT5M') GROUP BY domain ORDER BY c2s_byte_num+s2c_byte_num DESC LIMIT 1000) UNION ALL (SELECT domain,sum(session_num) AS session_num, sum(c2s_byte_num) AS c2s_byte_num, sum(s2c_byte_num) AS s2c_byte_num, sum(c2s_pkt_num) AS c2s_pkt_num,sum(s2c_pkt_num) AS s2c_pkt_num, TIME_FLOOR(CURRENT_TIMESTAMP,'PT5M') as stat_time,'sessions' as order_by FROM website_domain_hot_log WHERE __time >=  TIME_SHIFT(TIME_FLOOR(CURRENT_TIMESTAMP,'PT5M'),'PT5M',-1) AND __time < TIME_FLOOR(CURRENT_TIMESTAMP,'PT5M') GROUP BY domain ORDER BY session_num DESC LIMIT 1000)\",\r\n    \"context\": {\r\n        \"skipEmptyBuckets\": \"false\"\r\n    },\r\n    \"resultFormat\": \"object\"\r\n}",
+									"raw": "{\r\n    \"query\": \"(SELECT http_domain,sum( session_num ) AS session_num,sum( c2s_byte_num ) AS c2s_byte_num,sum( s2c_byte_num ) AS s2c_byte_num,sum( c2s_pkt_num ) AS c2s_pkt_num,sum( s2c_pkt_num ) AS s2c_pkt_num,TIME_FLOOR(CURRENT_TIMESTAMP,'PT5M') as stat_time,'packets' as order_by FROM user_domain_hot_log WHERE __time >=  TIME_SHIFT(TIME_FLOOR(CURRENT_TIMESTAMP,'PT5M'),'PT5M',-1) AND __time < TIME_FLOOR(CURRENT_TIMESTAMP,'PT5M') GROUP BY http_domain ORDER BY c2s_pkt_num+s2c_pkt_num DESC LIMIT 1000) UNION ALL (SELECT http_domain,sum( session_num ) AS session_num,sum( c2s_byte_num ) AS c2s_byte_num,sum( s2c_byte_num ) AS s2c_byte_num,sum( c2s_pkt_num ) AS c2s_pkt_num,sum( s2c_pkt_num ) AS s2c_pkt_num,TIME_FLOOR(CURRENT_TIMESTAMP,'PT5M') as stat_time,'bytes' as order_by FROM user_domain_hot_log WHERE __time >=  TIME_SHIFT(TIME_FLOOR(CURRENT_TIMESTAMP,'PT5M'),'PT5M',-1) AND __time < TIME_FLOOR(CURRENT_TIMESTAMP,'PT5M') GROUP BY http_domain ORDER BY c2s_byte_num+s2c_byte_num DESC LIMIT 1000) UNION ALL (SELECT http_domain,sum(session_num) AS session_num, sum(c2s_byte_num) AS c2s_byte_num, sum(s2c_byte_num) AS s2c_byte_num, sum(c2s_pkt_num) AS c2s_pkt_num,sum(s2c_pkt_num) AS s2c_pkt_num, TIME_FLOOR(CURRENT_TIMESTAMP,'PT5M') as stat_time,'sessions' as order_by FROM user_domain_hot_log WHERE __time >=  TIME_SHIFT(TIME_FLOOR(CURRENT_TIMESTAMP,'PT5M'),'PT5M',-1) AND __time < TIME_FLOOR(CURRENT_TIMESTAMP,'PT5M') GROUP BY http_domain ORDER BY session_num DESC LIMIT 1000)\",\r\n    \"context\": {\r\n        \"skipEmptyBuckets\": \"false\"\r\n    },\r\n    \"resultFormat\": \"object\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -4304,7 +4380,7 @@
 			"protocolProfileBehavior": {}
 		},
 		{
-			"name": "常用快捷功能",
+			"name": "07.常用快捷功能",
 			"item": [
 				{
 					"name": "评估单向流",
@@ -4351,7 +4427,29 @@
 					"response": []
 				},
 				{
-					"name": "通联索引表验证",
+					"name": "系统报告-预置Metrics",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://{{qgw_ip}}:{{qgw_port}}?query=select\n\t\tsum(total_hit_sessions) as total_hit_sessions,\n\t\tsum(total_bytes_transferred) as total_bytes_transferred,\n\t\tsum(total_packets_transferred) as total_packets_transferred,\n\t\tsum(total_new_sessions) as total_new_sessions ,\n\t\tsum(total_close_sessions) as total_close_sessions,\n\t\tsum(average_new_sessions_per_second) as average_new_sessions_per_second ,\n\t\tsum(average_bytes_per_second) as average_bytes_per_second ,\n\t\tsum(average_packets_per_second) as average_packets_per_second ,\n\t\tCOUNT(DISTINCT(device_id)) as device_num,\n\t\tsum(live_sessions) as average_live_sessions\n\tfrom\n\t\t(\n\t\tselect\n\t\t\tdevice_id, \n\t\t\tsum(total_hit_sessions) as  total_hit_sessions,\n\t\t\tsum(total_bytes_transferred) as total_bytes_transferred,\n\t\t\tsum(total_packets_transferred) as total_packets_transferred,\n\t\t\tsum(total_new_sessions) as total_new_sessions,\n\t\t  sum(total_close_sessions) as total_close_sessions,\n\t\t  avg(total_new_sessions)/ 5 as average_new_sessions_per_second,\n\t\t  avg(total_bytes_transferred)* 8 / 5 as average_bytes_per_second,\n\t\t  avg(total_packets_transferred)/ 5 as average_packets_per_second,\n\t\t\tavg(live_sessions) as live_sessions\n\t\tfrom (select  __time, device_id, \n\t\t\tsum(intercept_conn_num + monitor_conn_num + deny_conn_num + allow_conn_num) as  total_hit_sessions,\n\t\t\tsum(total_in_bytes + total_out_bytes) as total_bytes_transferred,\n\t\t\tsum(total_in_packets + total_out_packets) as total_packets_transferred,\n\t\t\tsum(new_conn_num) as total_new_sessions,\n\t\t  sum(close_conn_num) as total_close_sessions,\n\t\t  max(established_conn_num) as live_sessions\n      from  traffic_metrics_log \n      where \n        __time >= FROM_UNIXTIME(UNIX_TIMESTAMP(now())-300)\n\t\t  group by\n\t\t  __time,\tdevice_id\n\t\t  )\n\t\n\t\tgroup by\n\t\t  device_id)",
+							"protocol": "http",
+							"host": [
+								"{{qgw_ip}}"
+							],
+							"port": "{{qgw_port}}",
+							"query": [
+								{
+									"key": "query",
+									"value": "select\n\t\tsum(total_hit_sessions) as total_hit_sessions,\n\t\tsum(total_bytes_transferred) as total_bytes_transferred,\n\t\tsum(total_packets_transferred) as total_packets_transferred,\n\t\tsum(total_new_sessions) as total_new_sessions ,\n\t\tsum(total_close_sessions) as total_close_sessions,\n\t\tsum(average_new_sessions_per_second) as average_new_sessions_per_second ,\n\t\tsum(average_bytes_per_second) as average_bytes_per_second ,\n\t\tsum(average_packets_per_second) as average_packets_per_second ,\n\t\tCOUNT(DISTINCT(device_id)) as device_num,\n\t\tsum(live_sessions) as average_live_sessions\n\tfrom\n\t\t(\n\t\tselect\n\t\t\tdevice_id, \n\t\t\tsum(total_hit_sessions) as  total_hit_sessions,\n\t\t\tsum(total_bytes_transferred) as total_bytes_transferred,\n\t\t\tsum(total_packets_transferred) as total_packets_transferred,\n\t\t\tsum(total_new_sessions) as total_new_sessions,\n\t\t  sum(total_close_sessions) as total_close_sessions,\n\t\t  avg(total_new_sessions)/ 5 as average_new_sessions_per_second,\n\t\t  avg(total_bytes_transferred)* 8 / 5 as average_bytes_per_second,\n\t\t  avg(total_packets_transferred)/ 5 as average_packets_per_second,\n\t\t\tavg(live_sessions) as live_sessions\n\t\tfrom (select  __time, device_id, \n\t\t\tsum(intercept_conn_num + monitor_conn_num + deny_conn_num + allow_conn_num) as  total_hit_sessions,\n\t\t\tsum(total_in_bytes + total_out_bytes) as total_bytes_transferred,\n\t\t\tsum(total_in_packets + total_out_packets) as total_packets_transferred,\n\t\t\tsum(new_conn_num) as total_new_sessions,\n\t\t  sum(close_conn_num) as total_close_sessions,\n\t\t  max(established_conn_num) as live_sessions\n      from  traffic_metrics_log \n      where \n        __time >= FROM_UNIXTIME(UNIX_TIMESTAMP(now())-300)\n\t\t  group by\n\t\t  __time,\tdevice_id\n\t\t  )\n\t\n\t\tgroup by\n\t\t  device_id)"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "通联索引表正确性验证",
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -4388,6 +4486,28 @@
 								{
 									"key": "query",
 									"value": "select\n\tstat_time,\n\tuniq(common_client_ip) as client_ips\nfrom\n\t(\n\tselect\n\t\ttoDateTime(intDiv(toUInt32(toDateTime(toDateTime(common_recv_time))), 3600)* 3600) as stat_time, \n\t\tcommon_client_ip, \n\t\tcount(*) as hits\n\tfrom\n\t\tsecurity_event_log\n\twhere common_recv_time  >='{{start_time}}' and common_recv_time < '{{end_time}}' and\n\t\tcommon_action = 2\n\t\tand ssl_pinningst = 0\n\tgroup by\n\t\tstat_time, common_client_ip\n\thaving\n\t\thits > 10 )\ngroup by\n\tstat_time\norder by\n\tstat_time"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "验证唯一计数",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://{{qgw_ip}}:{{qgw_port}}?query=select 'all' as type,\n\tcount(distinct(common_client_ip)) as client_ips,\n\tcount(distinct(common_internal_ip)) as internal_ips,\n\tcount(distinct(common_server_ip)) as server_ips,\n\tcount(distinct(common_external_ip)) as external_ips\nfrom\n\tconnection_record_log\nwhere\n\tcommon_recv_time >= '{{start_time}}'\n\tand common_recv_time < '{{end_time}}' union all select 'tcp' as type,\n\tcount(distinct(common_client_ip)) as client_ips,\n\tcount(distinct(common_internal_ip)) as internal_ips,\n\tcount(distinct(common_server_ip)) as server_ips,\n\tcount(distinct(common_external_ip)) as external_ips\nfrom\n\tconnection_record_log\nwhere\n\tcommon_recv_time >= '{{start_time}}'\n\tand common_recv_time < '{{end_time}}' and common_l4_protocol in ('IPv4_TCP','IPv6_TCP') union all select 'UDP' as type,\n\tcount(distinct(common_client_ip)) as client_ips,\n\tcount(distinct(common_internal_ip)) as internal_ips,\n\tcount(distinct(common_server_ip)) as server_ips,\n\tcount(distinct(common_external_ip)) as external_ips\nfrom\n\tconnection_record_log\nwhere\n\tcommon_recv_time >= '{{start_time}}'\n\tand common_recv_time < '{{end_time}}' and common_l4_protocol in ('IPv4_UDP','IPv6_UDP') ",
+							"protocol": "http",
+							"host": [
+								"{{qgw_ip}}"
+							],
+							"port": "{{qgw_port}}",
+							"query": [
+								{
+									"key": "query",
+									"value": "select 'all' as type,\n\tcount(distinct(common_client_ip)) as client_ips,\n\tcount(distinct(common_internal_ip)) as internal_ips,\n\tcount(distinct(common_server_ip)) as server_ips,\n\tcount(distinct(common_external_ip)) as external_ips\nfrom\n\tconnection_record_log\nwhere\n\tcommon_recv_time >= '{{start_time}}'\n\tand common_recv_time < '{{end_time}}' union all select 'tcp' as type,\n\tcount(distinct(common_client_ip)) as client_ips,\n\tcount(distinct(common_internal_ip)) as internal_ips,\n\tcount(distinct(common_server_ip)) as server_ips,\n\tcount(distinct(common_external_ip)) as external_ips\nfrom\n\tconnection_record_log\nwhere\n\tcommon_recv_time >= '{{start_time}}'\n\tand common_recv_time < '{{end_time}}' and common_l4_protocol in ('IPv4_TCP','IPv6_TCP') union all select 'UDP' as type,\n\tcount(distinct(common_client_ip)) as client_ips,\n\tcount(distinct(common_internal_ip)) as internal_ips,\n\tcount(distinct(common_server_ip)) as server_ips,\n\tcount(distinct(common_external_ip)) as external_ips\nfrom\n\tconnection_record_log\nwhere\n\tcommon_recv_time >= '{{start_time}}'\n\tand common_recv_time < '{{end_time}}' and common_l4_protocol in ('IPv4_UDP','IPv6_UDP') "
 								}
 							]
 						}
