@@ -1,5 +1,19 @@
 # galaxy-troubleshooting-api
 
+
+
+## Release 21.02 (1 FEB 2021)
+
+
+###### Update 
+
+* 改善内部测试集，应对新的功能修改
+
+
+
+
+
+
 ## Release 20.11.rc3 (11 DEC 2020)
 
 ###### New Features
