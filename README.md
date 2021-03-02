@@ -1,5 +1,15 @@
 # galaxy-troubleshooting-api
 
+## Release 21.03 (2 MAR 2021)
+
+###### New Features
+
+* 增加故障诊断-元数据功能，可分析日志字段是否与schema一致
+* 增加故障诊断-sql性能测试，可对查询引擎进行功能性验证和POC性能测试 
+
+###### Update 
+
+*  对查询引擎SQL测试集标记过时
 
 
 ## Release 21.02 (1 FEB 2021)
