@@ -1,5 +1,22 @@
 # galaxy-troubleshooting-api
 
+
+## Release 21.04 (3 APR 2021)
+
+###### New Features
+* 增加“VoIP日志”功能，辅助故障诊断
+* 增加“元数据检查”分类目录
+
+
+###### Update 
+
+* 修改“SQL语法检查”为“SQL语法验证”，支持SQL语句的静态分析和数据库语义验证
+* 迁移功能项位置，方便问题定位
+
+###### Delete
+* 删除“系统检查-查询引擎SQL测试集[过时]”功能，由“故障诊断-sql性能测试”替代。
+
+
 ## Release 21.03 (2 MAR 2021)
 
 ###### New Features
