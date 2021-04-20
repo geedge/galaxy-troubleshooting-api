@@ -2,7 +2,7 @@
 	"info": {
 		"_postman_id": "c5e52a8f-0cbc-44fb-92a8-26e2a5c8b5f0",
 		"name": "Galaxy Trouble Shooting API V21.04",
-		"description": "# galaxy-troubleshooting-api\n\n## Release 21.04 (3 APR 2021)\n\n###### New Features\n* 增加“VoIP日志”功能，辅助故障诊断\n* 增加“元数据检查”分类目录\n\n\n###### Update \n\n* 修改“SQL语法检查”为“SQL语法验证”，支持SQL语句的静态分析和数据库语义验证\n* 迁移功能项位置，方便问题定位\n\n###### Delete\n* 删除“系统检查-查询引擎SQL测试集[过时]”功能，由“故障诊断-sql性能测试”替代。\n\n\n[帮助文档]: https://docs.geedge.net/pages/viewpage.action?pageId=19896569",
+		"description": "# galaxy-troubleshooting-api\n\n## Release 21.04 (3 APR 2021)\n\n###### New Features\n* 增加“VoIP日志”功能，辅助故障诊断\n* 增加“元数据检查”分类目录\n* 增加“HOS对象存储”目录，用于定位对象存储\n\n\n###### Update \n\n* 修改“SQL语法检查”为“SQL语法验证”，支持SQL语句的静态分析和数据库语义验证\n* 迁移功能项位置，方便问题定位\n\n###### Delete\n* 删除“系统检查-查询引擎SQL测试集[过时]”功能，由“故障诊断-sql性能测试”替代。\n\n\n[帮助文档]: https://docs.geedge.net/pages/viewpage.action?pageId=19896569",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -2049,6 +2049,120 @@
 					]
 				},
 				{
+					"name": "HOS对象存储",
+					"item": [
+						{
+							"name": "hos查询所有的桶",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Token",
+										"type": "text",
+										"value": "{{hos_token}}"
+									}
+								],
+								"url": {
+									"raw": "http://{{hos_ip}}:{{hos_port}}/hos/",
+									"protocol": "http",
+									"host": [
+										"{{hos_ip}}"
+									],
+									"port": "{{hos_port}}",
+									"path": [
+										"hos",
+										""
+									],
+									"query": [
+										{
+											"key": "AccessKey",
+											"value": "default",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "获取对象列表",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Token",
+										"type": "text",
+										"value": "{{hos_token}}"
+									}
+								],
+								"url": {
+									"raw": "http://{{hos_ip}}:{{hos_port}}/hos/{bucketName}/?start-after=1618243200_1618329600",
+									"protocol": "http",
+									"host": [
+										"{{hos_ip}}"
+									],
+									"port": "{{hos_port}}",
+									"path": [
+										"hos",
+										"{bucketName}",
+										""
+									],
+									"query": [
+										{
+											"key": "AccessKey",
+											"value": "default",
+											"disabled": true
+										},
+										{
+											"key": "start-after",
+											"value": "1618243200_1618329600"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "获取对象元数据",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Token",
+										"type": "text",
+										"value": "{{hos_token}}"
+									}
+								],
+								"url": {
+									"raw": "http://{{hos_ip}}:{{hos_port}}/hos/{bucketName}/{fileName}?metadata",
+									"protocol": "http",
+									"host": [
+										"{{hos_ip}}"
+									],
+									"port": "{{hos_port}}",
+									"path": [
+										"hos",
+										"{bucketName}",
+										"{fileName}"
+									],
+									"query": [
+										{
+											"key": "metadata",
+											"value": null
+										},
+										{
+											"key": "AccessKey",
+											"value": "default",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
 					"name": "SQL查询接口",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -2221,7 +2335,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://{{qgw_ip}}:{{qgw_port}}/diagnosis/runSql?isSaved=true",
+							"raw": "http://{{qgw_ip}}:{{qgw_port}}/diagnosis/runSql",
 							"protocol": "http",
 							"host": [
 								"{{qgw_ip}}"
@@ -2230,12 +2344,6 @@
 							"path": [
 								"diagnosis",
 								"runSql"
-							],
-							"query": [
-								{
-									"key": "isSaved",
-									"value": "true"
-								}
 							]
 						}
 					},
@@ -4625,39 +4733,6 @@
 								{
 									"key": "query",
 									"value": "SELECT DISTINCT concat(host_address,':','8123') as endpoint FROM system.clusters FORMAT JSON;"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "hos查询所有的桶",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Token",
-								"type": "text",
-								"value": "{{hos_token}}"
-							}
-						],
-						"url": {
-							"raw": "http://{{hos_ip}}:{{hos_port}}/hos/",
-							"protocol": "http",
-							"host": [
-								"{{hos_ip}}"
-							],
-							"port": "{{hos_port}}",
-							"path": [
-								"hos",
-								""
-							],
-							"query": [
-								{
-									"key": "AccessKey",
-									"value": "default",
-									"disabled": true
 								}
 							]
 						}
