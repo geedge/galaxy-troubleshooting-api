@@ -1,5 +1,15 @@
 # galaxy-troubleshooting-api
 
+## Release 21.06 (7 JUN 2021)
+
+###### New Features
+* Environments 增加环境变量domain、client_ip、server_ip、l7_protocol和PT1M_TIME
+* 常用快捷功能增加某域名下钻、某IP下钻、协议下钻和DNS分析功能
+
+###### Update 
+* 原始日志查询，基于Druid近1小时日志变化粒度从5分钟改为1分钟。包含通联、策略和代理日志。
+
+
 ## Release 21.05 (6 MAY 2021)
 
 ###### New Features
