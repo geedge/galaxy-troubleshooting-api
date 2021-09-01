@@ -8,8 +8,8 @@
 * 新增“原始日志查询-DoS事件日志-Destination IP Traffic Trend”，显示受害者IP历史流量趋势
 * 新增“基数统计-实体“流量分析
 ###### Update 
-*迁移“Dashboard查询”liveCharts接口，放到“Live Charts”目录中统一管理。
-*对DNS分析，增加一些查询样例
+* 迁移“Dashboard查询”liveCharts接口，放到“Live Charts”目录中统一管理。
+* 对DNS分析，增加一些查询样例
 
 ## Release 21.07 (5 JUL 2021)
 
