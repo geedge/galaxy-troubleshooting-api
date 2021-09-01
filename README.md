@@ -1,5 +1,16 @@
 # galaxy-troubleshooting-api
 
+## Release 21.08 (15 AUG 2021)
+###### New Features
+* 新增“Dashboard查询-DoS Threat Map”功能列表，显示DoS检测地图接口
+* 新增“原始日志查询-DoS事件日志”，显示DoS攻击检测日志
+* 新增“原始日志查询-DoS事件日志-Summary”，显示DoS攻击趋势统计
+* 新增“原始日志查询-DoS事件日志-Destination IP Traffic Trend”，显示受害者IP历史流量趋势
+* 新增“基数统计-实体“流量分析
+###### Update 
+*迁移“Dashboard查询”liveCharts接口，放到“Live Charts”目录中统一管理。
+*对DNS分析，增加一些查询样例
+
 ## Release 21.07 (5 JUL 2021)
 
 ###### New Features
