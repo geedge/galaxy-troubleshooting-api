@@ -2,7 +2,7 @@
 
 ## Release 21.09 (23 SEP 2021)
 ###### New Features
-* 新增DNS风大攻击Resolver接口
+* 新增DNS放大攻击Resolver接口
 ###### Update 
 * 删除分布式调度任务，5分钟TOPN校验，交由FLink统计
 * 原始日志表名进行重命名，相关查询接口更新
