@@ -1,5 +1,13 @@
 # galaxy-troubleshooting-api
 
+## Release 21.10 (28 OCT 2021)
+###### New Features
+* 新增HOS健康状态检测接口
+* 新增Druid任务状态检查接口
+###### Delete 
+* 删除原ClickHouse/Druid/ArangoDB 状态检查接口
+
+
 ## Release 21.09 (23 SEP 2021)
 ###### New Features
 * 新增DNS放大攻击Resolver接口
