@@ -3,7 +3,7 @@
 ## Release 21.10 (28 OCT 2021)
 ###### New Features
 * 新增HOS健康状态检测接口
-* 新增Druid任务状态检查接口
+* 新增Druid任务健康状态检查接口
 ###### Delete 
 * 删除原ClickHouse/Druid/ArangoDB 状态检查接口
 
