@@ -1,5 +1,13 @@
 # galaxy-troubleshooting-api
 
+## Release 21.11 (5 Nov 2021)
+###### New Features
+* 新增实时推荐SubscribeID与IP映射接口 
+###### Delete 
+* 删除AppID列表接口
+###### Update 
+* 修改报告查询接口(由查询mariadb方式变更为API接口)
+
 ## Release 21.10 (28 OCT 2021)
 ###### New Features
 * 新增HOS健康状态检测接口
