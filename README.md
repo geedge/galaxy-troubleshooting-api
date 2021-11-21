@@ -7,6 +7,7 @@
 * 删除AppID列表接口
 ###### Update 
 * 修改报告查询接口(由查询mariadb方式变更为API接口)
+* 修改规范“数据推荐查询”所有接口的命名
 
 ## Release 21.10 (28 OCT 2021)
 ###### New Features
