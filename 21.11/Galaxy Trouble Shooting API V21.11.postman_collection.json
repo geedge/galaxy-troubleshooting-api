@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "298eeffe-b33f-47ae-9e07-7e063fe7fb8c",
+		"_postman_id": "d41ac37e-c914-487f-9ff5-b88fea2180d2",
 		"name": "Galaxy Trouble Shooting API V21.11",
-		"description": "# galaxy-troubleshooting-api\n\n## Release 21.10 (28 OCT 2021)\n###### New Features\n* 新增HOS健康状态检测接口\n* 新增Druid任务状态检查接口\n###### Delete \n* 删除原ClickHouse/Druid/ArangoDB 状态检查接口\n\n## Release 21.09 (23 SEP 2021)\n###### New Features\n* 新增DNS放大攻击Resolver接口\n###### Update \n* 删除分布式调度任务，5分钟TOPN校验，交由FLink统计\n* 原始日志表名进行重命名，相关查询接口更新\n* 修正DNS分析的SQL数据集\n\n## Release 21.08 (15 AUG 2021)\n###### New Features\n* 新增“Dashboard查询-DoS Threat Map”功能列表，显示DoS检测地图接口\n* 新增“原始日志查询-DoS事件日志”，显示DoS攻击检测日志\n* 新增“原始日志查询-DoS事件日志-Summary”，显示DoS攻击趋势统计\n* 新增“原始日志查询-DoS事件日志-Destination IP Traffic Trend”，显示受害者IP历史流量趋势\n* 新增“基数统计-实体“流量分析\n###### Update \n* 迁移“Dashboard查询”liveCharts接口，放到“Live Charts”目录中统一管理。\n* 对DNS分析，增加一些查询样例\n\n## Release 21.07 (5 JUL 2021)\n\n###### New Features\n\n* 增加”常用快捷功能-基数统计“，用于分析日志分布情况\n* 增加”常用快捷功能-DNS放大攻击“，查询特征数据集\n* 增加”通用检查-对象存储-获取某个文件“，用于文件获取验证\n\n\n###### Update \n* 为所有接口增加Tests脚本，对接口进行批量验证测试\n* 修正部分接口查询异常\n\n\n## Release 21.06 (7 JUN 2021)\n\n###### New Features\n* Environments 增加环境变量domain、client_ip、server_ip、l7_protocol和PT1M_TIME\n* 常用快捷功能增加某域名下钻、某IP下钻、协议下钻和DNS分析功能\n\n###### Update \n* 原始日志查询，基于Druid近1小时日志变化粒度从5分钟改为1分钟。包含通联、策略和代理日志。\n\n\n## Release 21.05 (6 MAY 2021)\n\n###### New Features\n* 新增“GTP-C日志”功能，辅助故障诊断\n* 新增“事务日志”功能，辅助故障诊断\n* 新增“活跃会话日志”功能，辅助故障诊断\n* 新增“07.常用快捷功能-评估写入日志量”，查看当前系统的吞吐\n\n\n###### Update \n* 修改\"01.通用检查-数据存储检查\"，增加事务、活跃及GTP-C 检测\n\n\n## Release 21.04 (3 APR 2021)\n\n###### New Features\n* 增加“VoIP日志”功能，辅助故障诊断\n* 增加“元数据检查”分类目录\n* 增加“HOS对象存储”目录，用于定位对象存储\n\n\n###### Update \n\n* 修改“SQL语法检查”为“SQL语法验证”，支持SQL语句的静态分析和数据库语义验证\n* 迁移功能项位置，方便问题定位\n\n###### Delete\n* 删除“系统检查-查询引擎SQL测试集[过时]”功能，由“故障诊断-sql性能测试”替代。\n\n\n## Release 21.03 (2 MAR 2021)\n\n###### New Features\n\n* 增加故障诊断-元数据功能，可分析日志字段是否与schema一致\n* 增加故障诊断-sql性能测试，可对查询引擎进行功能性验证和POC性能测试 \n\n###### Update \n\n*  对查询引擎SQL测试集标记过时\n\n\n## Release 21.02 (1 FEB 2021)\n\n\n###### Update \n\n* 改善内部测试集，应对新的功能修改\n\n\n\n\n\n\n## Release 20.11.rc3 (11 DEC 2020)\n\n###### New Features\n\n* 增加常用快捷功能- 安装证书独立客户端IP数据趋势\n* 增加常用快捷功能-访问速度最慢TOP20 域名\n* 增加常用快捷功能-报告预置Metrics\n* 增加原始日志查询-安全策略-动作命中计数\n* 增加原始日志查询-代理策略-动作命中计数\n* 增加原始日志查询-通联-流量计数(now)\n\n###### Update \n\n* 改善Dashboard查询-基础统计-新建、活跃（计数）-now\n* 改善Dashboard查询-新建、活跃（趋势）\n* 目录增加编号，便于管理\n* 修改分布式调度任务-5分钟TOPN-hot表验证表名\n* 部分Action为post 改为 get，便于导出命令行\n\n\n[帮助文档]: https://docs.geedge.net/pages/viewpage.action?pageId=19896569",
-		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+		"description": "# galaxy-troubleshooting-api\n\n## Release 21.11 (5 Nov 2021)\n###### New Features\n* 新增实时推荐SubscribeID与IP映射接口 \n###### Delete \n* 删除AppID列表接口\n###### Update \n* 修改报告查询接口(由查询mariadb方式变更为API接口)\n* 修改规范“数据推荐查询”所有接口的命名\n\n## Release 21.10 (28 OCT 2021)\n###### New Features\n* 新增HOS健康状态检测接口\n* 新增Druid任务状态检查接口\n###### Delete \n* 删除原ClickHouse/Druid/ArangoDB 状态检查接口\n\n## Release 21.09 (23 SEP 2021)\n###### New Features\n* 新增DNS放大攻击Resolver接口\n###### Update \n* 删除分布式调度任务，5分钟TOPN校验，交由FLink统计\n* 原始日志表名进行重命名，相关查询接口更新\n* 修正DNS分析的SQL数据集\n\n## Release 21.08 (15 AUG 2021)\n###### New Features\n* 新增“Dashboard查询-DoS Threat Map”功能列表，显示DoS检测地图接口\n* 新增“原始日志查询-DoS事件日志”，显示DoS攻击检测日志\n* 新增“原始日志查询-DoS事件日志-Summary”，显示DoS攻击趋势统计\n* 新增“原始日志查询-DoS事件日志-Destination IP Traffic Trend”，显示受害者IP历史流量趋势\n* 新增“基数统计-实体“流量分析\n###### Update \n* 迁移“Dashboard查询”liveCharts接口，放到“Live Charts”目录中统一管理。\n* 对DNS分析，增加一些查询样例\n\n## Release 21.07 (5 JUL 2021)\n\n###### New Features\n\n* 增加”常用快捷功能-基数统计“，用于分析日志分布情况\n* 增加”常用快捷功能-DNS放大攻击“，查询特征数据集\n* 增加”通用检查-对象存储-获取某个文件“，用于文件获取验证\n\n\n###### Update \n* 为所有接口增加Tests脚本，对接口进行批量验证测试\n* 修正部分接口查询异常\n\n\n## Release 21.06 (7 JUN 2021)\n\n###### New Features\n* Environments 增加环境变量domain、client_ip、server_ip、l7_protocol和PT1M_TIME\n* 常用快捷功能增加某域名下钻、某IP下钻、协议下钻和DNS分析功能\n\n###### Update \n* 原始日志查询，基于Druid近1小时日志变化粒度从5分钟改为1分钟。包含通联、策略和代理日志。\n\n\n## Release 21.05 (6 MAY 2021)\n\n###### New Features\n* 新增“GTP-C日志”功能，辅助故障诊断\n* 新增“事务日志”功能，辅助故障诊断\n* 新增“活跃会话日志”功能，辅助故障诊断\n* 新增“07.常用快捷功能-评估写入日志量”，查看当前系统的吞吐\n\n\n###### Update \n* 修改\"01.通用检查-数据存储检查\"，增加事务、活跃及GTP-C 检测\n\n\n## Release 21.04 (3 APR 2021)\n\n###### New Features\n* 增加“VoIP日志”功能，辅助故障诊断\n* 增加“元数据检查”分类目录\n* 增加“HOS对象存储”目录，用于定位对象存储\n\n\n###### Update \n\n* 修改“SQL语法检查”为“SQL语法验证”，支持SQL语句的静态分析和数据库语义验证\n* 迁移功能项位置，方便问题定位\n\n###### Delete\n* 删除“系统检查-查询引擎SQL测试集[过时]”功能，由“故障诊断-sql性能测试”替代。\n\n\n## Release 21.03 (2 MAR 2021)\n\n###### New Features\n\n* 增加故障诊断-元数据功能，可分析日志字段是否与schema一致\n* 增加故障诊断-sql性能测试，可对查询引擎进行功能性验证和POC性能测试 \n\n###### Update \n\n*  对查询引擎SQL测试集标记过时\n\n\n## Release 21.02 (1 FEB 2021)\n\n\n###### Update \n\n* 改善内部测试集，应对新的功能修改\n\n\n\n\n\n\n## Release 20.11.rc3 (11 DEC 2020)\n\n###### New Features\n\n* 增加常用快捷功能- 安装证书独立客户端IP数据趋势\n* 增加常用快捷功能-访问速度最慢TOP20 域名\n* 增加常用快捷功能-报告预置Metrics\n* 增加原始日志查询-安全策略-动作命中计数\n* 增加原始日志查询-代理策略-动作命中计数\n* 增加原始日志查询-通联-流量计数(now)\n\n###### Update \n\n* 改善Dashboard查询-基础统计-新建、活跃（计数）-now\n* 改善Dashboard查询-新建、活跃（趋势）\n* 目录增加编号，便于管理\n* 修改分布式调度任务-5分钟TOPN-hot表验证表名\n* 部分Action为post 改为 get，便于导出命令行\n\n\n[帮助文档]: https://docs.geedge.net/pages/viewpage.action?pageId=19896569",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
@@ -81,7 +81,14 @@
 							"request": {
 								"method": "GET",
 								"header": [],
-								"url": "http://{{kafka_load_ip}}:{{kafka_monitor_port}}",
+								"url": {
+									"raw": "http://{{kafka_load_ip}}:{{kafka_monitor_port}}",
+									"protocol": "http",
+									"host": [
+										"{{kafka_load_ip}}"
+									],
+									"port": "{{kafka_monitor_port}}"
+								},
 								"description": "## Kafka Topics\n\n```\n在监控指标结果下，直接复制指标进行查找定位，仅需修改\"topic\"里内容。\n```\n\nTYPE kafka_server_BrokerTopicMetrics_FiveMinuteRate (近5分钟数据情况)\n\n- **判断Topic 写入是否有最新的数据：**\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"ProduceMessageConversionsPerSec\",topic=\"TRAFFIC-METRICS-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"ProduceMessageConversionsPerSec\",topic=\"CONNECTION-RECORD-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"ProduceMessageConversionsPerSec\",topic=\"PROXY-EVENT-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"ProduceMessageConversionsPerSec\",topic=\"SECURITY-EVENT-LOG\",}\n\n- **判断Topic 写入是否异常**\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedProduceRequestsPerSec\",topic=\"TRAFFIC-METRICS-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedProduceRequestsPerSec\",topic=\"CONNECTION-RECORD-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedProduceRequestsPerSec\",topic=\"PROXY-EVENT-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedProduceRequestsPerSec\",topic=\"SECURITY-EVENT-LOG\",}\n\n- 判断Topic 读取是否有最新的数据\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FetchMessageConversionsPerSec\",topic=\"TRAFFIC-METRICS-LOG\",}\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FetchMessageConversionsPerSec\",topic=\"CONNECTION-RECORD-LOG\",}\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FetchMessageConversionsPerSec\",topic=\"PROXY-EVENT-LOG\",}\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FetchMessageConversionsPerSec\",topic=\"SECURITY-EVENT-LOG\",}\n\n- 判断Topic 读取是否异常\n\n  - kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedFetchRequestsPerSec\",topic=\"TRAFFIC-METRICS-LOG\",}\n  - kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedFetchRequestsPerSec\",topic=\"CONNECTION-RECORD-LOG\",}\n  - kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedFetchRequestsPerSec\",topic=\"PROXY-EVENT-LOG\",}\n  - kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedFetchRequestsPerSec\",topic=\"SECURITY-EVENT-LOG\",}"
 							},
 							"response": []
@@ -151,7 +158,14 @@
 							"request": {
 								"method": "GET",
 								"header": [],
-								"url": "http://{{kafka_load_ip}}:{{kafka_monitor_port}}",
+								"url": {
+									"raw": "http://{{kafka_load_ip}}:{{kafka_monitor_port}}",
+									"protocol": "http",
+									"host": [
+										"{{kafka_load_ip}}"
+									],
+									"port": "{{kafka_monitor_port}}"
+								},
 								"description": "## Kafka Topics\n\n```\n在监控指标结果下，直接复制指标进行查找定位，仅需修改\"topic\"里内容。\n```\n\nTYPE kafka_server_BrokerTopicMetrics_FiveMinuteRate (近5分钟数据情况)\n\n- **判断Topic 写入是否有最新的数据：**\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"ProduceMessageConversionsPerSec\",topic=\"TRAFFIC-METRICS-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"ProduceMessageConversionsPerSec\",topic=\"CONNECTION-RECORD-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"ProduceMessageConversionsPerSec\",topic=\"PROXY-EVENT-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"ProduceMessageConversionsPerSec\",topic=\"SECURITY-EVENT-LOG\",}\n\n- **判断Topic 写入是否异常**\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedProduceRequestsPerSec\",topic=\"TRAFFIC-METRICS-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedProduceRequestsPerSec\",topic=\"CONNECTION-RECORD-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedProduceRequestsPerSec\",topic=\"PROXY-EVENT-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedProduceRequestsPerSec\",topic=\"SECURITY-EVENT-LOG\",}\n\n- 判断Topic 读取是否有最新的数据\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FetchMessageConversionsPerSec\",topic=\"TRAFFIC-METRICS-LOG\",}\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FetchMessageConversionsPerSec\",topic=\"CONNECTION-RECORD-LOG\",}\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FetchMessageConversionsPerSec\",topic=\"PROXY-EVENT-LOG\",}\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FetchMessageConversionsPerSec\",topic=\"SECURITY-EVENT-LOG\",}\n\n- 判断Topic 读取是否异常\n\n  - kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedFetchRequestsPerSec\",topic=\"TRAFFIC-METRICS-LOG\",}\n  - kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedFetchRequestsPerSec\",topic=\"CONNECTION-RECORD-LOG\",}\n  - kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedFetchRequestsPerSec\",topic=\"PROXY-EVENT-LOG\",}\n  - kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedFetchRequestsPerSec\",topic=\"SECURITY-EVENT-LOG\",}"
 							},
 							"response": []
@@ -223,7 +237,14 @@
 							"request": {
 								"method": "GET",
 								"header": [],
-								"url": "http://{{kafka_load_ip}}:{{kafka_monitor_port}}",
+								"url": {
+									"raw": "http://{{kafka_load_ip}}:{{kafka_monitor_port}}",
+									"protocol": "http",
+									"host": [
+										"{{kafka_load_ip}}"
+									],
+									"port": "{{kafka_monitor_port}}"
+								},
 								"description": "## Kafka Topics\n\n```\n在监控指标结果下，直接复制指标进行查找定位，仅需修改\"topic\"里内容。\n```\n\nTYPE kafka_server_BrokerTopicMetrics_FiveMinuteRate (近5分钟数据情况)\n\n- **判断Topic 写入是否有最新的数据：**\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"ProduceMessageConversionsPerSec\",topic=\"TRAFFIC-METRICS-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"ProduceMessageConversionsPerSec\",topic=\"CONNECTION-RECORD-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"ProduceMessageConversionsPerSec\",topic=\"PROXY-EVENT-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"ProduceMessageConversionsPerSec\",topic=\"SECURITY-EVENT-LOG\",}\n\n- **判断Topic 写入是否异常**\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedProduceRequestsPerSec\",topic=\"TRAFFIC-METRICS-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedProduceRequestsPerSec\",topic=\"CONNECTION-RECORD-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedProduceRequestsPerSec\",topic=\"PROXY-EVENT-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedProduceRequestsPerSec\",topic=\"SECURITY-EVENT-LOG\",}\n\n- 判断Topic 读取是否有最新的数据\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FetchMessageConversionsPerSec\",topic=\"TRAFFIC-METRICS-LOG\",}\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FetchMessageConversionsPerSec\",topic=\"CONNECTION-RECORD-LOG\",}\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FetchMessageConversionsPerSec\",topic=\"PROXY-EVENT-LOG\",}\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FetchMessageConversionsPerSec\",topic=\"SECURITY-EVENT-LOG\",}\n\n- 判断Topic 读取是否异常\n\n  - kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedFetchRequestsPerSec\",topic=\"TRAFFIC-METRICS-LOG\",}\n  - kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedFetchRequestsPerSec\",topic=\"CONNECTION-RECORD-LOG\",}\n  - kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedFetchRequestsPerSec\",topic=\"PROXY-EVENT-LOG\",}\n  - kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedFetchRequestsPerSec\",topic=\"SECURITY-EVENT-LOG\",}"
 							},
 							"response": []
@@ -295,7 +316,14 @@
 							"request": {
 								"method": "GET",
 								"header": [],
-								"url": "http://{{kafka_load_ip}}:{{kafka_monitor_port}}",
+								"url": {
+									"raw": "http://{{kafka_load_ip}}:{{kafka_monitor_port}}",
+									"protocol": "http",
+									"host": [
+										"{{kafka_load_ip}}"
+									],
+									"port": "{{kafka_monitor_port}}"
+								},
 								"description": "## Kafka Topics\n\n```\n在监控指标结果下，直接复制指标进行查找定位，仅需修改\"topic\"里内容。\n```\n\nTYPE kafka_server_BrokerTopicMetrics_FiveMinuteRate (近5分钟数据情况)\n\n- **判断Topic 写入是否有最新的数据：**\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"ProduceMessageConversionsPerSec\",topic=\"TRAFFIC-METRICS-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"ProduceMessageConversionsPerSec\",topic=\"CONNECTION-RECORD-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"ProduceMessageConversionsPerSec\",topic=\"PROXY-EVENT-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"ProduceMessageConversionsPerSec\",topic=\"SECURITY-EVENT-LOG\",}\n\n- **判断Topic 写入是否异常**\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedProduceRequestsPerSec\",topic=\"TRAFFIC-METRICS-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedProduceRequestsPerSec\",topic=\"CONNECTION-RECORD-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedProduceRequestsPerSec\",topic=\"PROXY-EVENT-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedProduceRequestsPerSec\",topic=\"SECURITY-EVENT-LOG\",}\n\n- 判断Topic 读取是否有最新的数据\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FetchMessageConversionsPerSec\",topic=\"TRAFFIC-METRICS-LOG\",}\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FetchMessageConversionsPerSec\",topic=\"CONNECTION-RECORD-LOG\",}\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FetchMessageConversionsPerSec\",topic=\"PROXY-EVENT-LOG\",}\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FetchMessageConversionsPerSec\",topic=\"SECURITY-EVENT-LOG\",}\n\n- 判断Topic 读取是否异常\n\n  - kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedFetchRequestsPerSec\",topic=\"TRAFFIC-METRICS-LOG\",}\n  - kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedFetchRequestsPerSec\",topic=\"CONNECTION-RECORD-LOG\",}\n  - kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedFetchRequestsPerSec\",topic=\"PROXY-EVENT-LOG\",}\n  - kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedFetchRequestsPerSec\",topic=\"SECURITY-EVENT-LOG\",}"
 							},
 							"response": []
@@ -367,7 +395,14 @@
 							"request": {
 								"method": "GET",
 								"header": [],
-								"url": "http://{{kafka_load_ip}}:{{kafka_monitor_port}}",
+								"url": {
+									"raw": "http://{{kafka_load_ip}}:{{kafka_monitor_port}}",
+									"protocol": "http",
+									"host": [
+										"{{kafka_load_ip}}"
+									],
+									"port": "{{kafka_monitor_port}}"
+								},
 								"description": "## Kafka Topics\n\n```\n在监控指标结果下，直接复制指标进行查找定位，仅需修改\"topic\"里内容。\n```\n\nTYPE kafka_server_BrokerTopicMetrics_FiveMinuteRate (近5分钟数据情况)\n\n- **判断Topic 写入是否有最新的数据：**\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"ProduceMessageConversionsPerSec\",topic=\"TRAFFIC-METRICS-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"ProduceMessageConversionsPerSec\",topic=\"CONNECTION-RECORD-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"ProduceMessageConversionsPerSec\",topic=\"PROXY-EVENT-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"ProduceMessageConversionsPerSec\",topic=\"SECURITY-EVENT-LOG\",}\n\n- **判断Topic 写入是否异常**\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedProduceRequestsPerSec\",topic=\"TRAFFIC-METRICS-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedProduceRequestsPerSec\",topic=\"CONNECTION-RECORD-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedProduceRequestsPerSec\",topic=\"PROXY-EVENT-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedProduceRequestsPerSec\",topic=\"SECURITY-EVENT-LOG\",}\n\n- 判断Topic 读取是否有最新的数据\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FetchMessageConversionsPerSec\",topic=\"TRAFFIC-METRICS-LOG\",}\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FetchMessageConversionsPerSec\",topic=\"CONNECTION-RECORD-LOG\",}\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FetchMessageConversionsPerSec\",topic=\"PROXY-EVENT-LOG\",}\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FetchMessageConversionsPerSec\",topic=\"SECURITY-EVENT-LOG\",}\n\n- 判断Topic 读取是否异常\n\n  - kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedFetchRequestsPerSec\",topic=\"TRAFFIC-METRICS-LOG\",}\n  - kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedFetchRequestsPerSec\",topic=\"CONNECTION-RECORD-LOG\",}\n  - kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedFetchRequestsPerSec\",topic=\"PROXY-EVENT-LOG\",}\n  - kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedFetchRequestsPerSec\",topic=\"SECURITY-EVENT-LOG\",}"
 							},
 							"response": []
@@ -438,7 +473,14 @@
 							"request": {
 								"method": "GET",
 								"header": [],
-								"url": "http://{{kafka_load_ip}}:{{kafka_monitor_port}}",
+								"url": {
+									"raw": "http://{{kafka_load_ip}}:{{kafka_monitor_port}}",
+									"protocol": "http",
+									"host": [
+										"{{kafka_load_ip}}"
+									],
+									"port": "{{kafka_monitor_port}}"
+								},
 								"description": "## Kafka Topics\n\n```\n在监控指标结果下，直接复制指标进行查找定位，仅需修改\"topic\"里内容。\n```\n\nTYPE kafka_server_BrokerTopicMetrics_FiveMinuteRate (近5分钟数据情况)\n\n- **判断Topic 写入是否有最新的数据：**\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"ProduceMessageConversionsPerSec\",topic=\"TRAFFIC-METRICS-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"ProduceMessageConversionsPerSec\",topic=\"CONNECTION-RECORD-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"ProduceMessageConversionsPerSec\",topic=\"PROXY-EVENT-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"ProduceMessageConversionsPerSec\",topic=\"SECURITY-EVENT-LOG\",}\n\n- **判断Topic 写入是否异常**\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedProduceRequestsPerSec\",topic=\"TRAFFIC-METRICS-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedProduceRequestsPerSec\",topic=\"CONNECTION-RECORD-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedProduceRequestsPerSec\",topic=\"PROXY-EVENT-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedProduceRequestsPerSec\",topic=\"SECURITY-EVENT-LOG\",}\n\n- 判断Topic 读取是否有最新的数据\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FetchMessageConversionsPerSec\",topic=\"TRAFFIC-METRICS-LOG\",}\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FetchMessageConversionsPerSec\",topic=\"CONNECTION-RECORD-LOG\",}\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FetchMessageConversionsPerSec\",topic=\"PROXY-EVENT-LOG\",}\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FetchMessageConversionsPerSec\",topic=\"SECURITY-EVENT-LOG\",}\n\n- 判断Topic 读取是否异常\n\n  - kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedFetchRequestsPerSec\",topic=\"TRAFFIC-METRICS-LOG\",}\n  - kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedFetchRequestsPerSec\",topic=\"CONNECTION-RECORD-LOG\",}\n  - kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedFetchRequestsPerSec\",topic=\"PROXY-EVENT-LOG\",}\n  - kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedFetchRequestsPerSec\",topic=\"SECURITY-EVENT-LOG\",}"
 							},
 							"response": []
@@ -510,7 +552,14 @@
 							"request": {
 								"method": "GET",
 								"header": [],
-								"url": "http://{{kafka_load_ip}}:{{kafka_monitor_port}}",
+								"url": {
+									"raw": "http://{{kafka_load_ip}}:{{kafka_monitor_port}}",
+									"protocol": "http",
+									"host": [
+										"{{kafka_load_ip}}"
+									],
+									"port": "{{kafka_monitor_port}}"
+								},
 								"description": "## Kafka Topics\n\n```\n在监控指标结果下，直接复制指标进行查找定位，仅需修改\"topic\"里内容。\n```\n\nTYPE kafka_server_BrokerTopicMetrics_FiveMinuteRate (近5分钟数据情况)\n\n- **判断Topic 写入是否有最新的数据：**\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"ProduceMessageConversionsPerSec\",topic=\"TRAFFIC-METRICS-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"ProduceMessageConversionsPerSec\",topic=\"CONNECTION-RECORD-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"ProduceMessageConversionsPerSec\",topic=\"PROXY-EVENT-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"ProduceMessageConversionsPerSec\",topic=\"SECURITY-EVENT-LOG\",}\n\n- **判断Topic 写入是否异常**\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedProduceRequestsPerSec\",topic=\"TRAFFIC-METRICS-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedProduceRequestsPerSec\",topic=\"CONNECTION-RECORD-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedProduceRequestsPerSec\",topic=\"PROXY-EVENT-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedProduceRequestsPerSec\",topic=\"SECURITY-EVENT-LOG\",}\n\n- 判断Topic 读取是否有最新的数据\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FetchMessageConversionsPerSec\",topic=\"TRAFFIC-METRICS-LOG\",}\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FetchMessageConversionsPerSec\",topic=\"CONNECTION-RECORD-LOG\",}\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FetchMessageConversionsPerSec\",topic=\"PROXY-EVENT-LOG\",}\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FetchMessageConversionsPerSec\",topic=\"SECURITY-EVENT-LOG\",}\n\n- 判断Topic 读取是否异常\n\n  - kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedFetchRequestsPerSec\",topic=\"TRAFFIC-METRICS-LOG\",}\n  - kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedFetchRequestsPerSec\",topic=\"CONNECTION-RECORD-LOG\",}\n  - kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedFetchRequestsPerSec\",topic=\"PROXY-EVENT-LOG\",}\n  - kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedFetchRequestsPerSec\",topic=\"SECURITY-EVENT-LOG\",}"
 							},
 							"response": []
@@ -582,7 +631,14 @@
 							"request": {
 								"method": "GET",
 								"header": [],
-								"url": "http://{{kafka_load_ip}}:{{kafka_monitor_port}}",
+								"url": {
+									"raw": "http://{{kafka_load_ip}}:{{kafka_monitor_port}}",
+									"protocol": "http",
+									"host": [
+										"{{kafka_load_ip}}"
+									],
+									"port": "{{kafka_monitor_port}}"
+								},
 								"description": "## Kafka Topics\n\n```\n在监控指标结果下，直接复制指标进行查找定位，仅需修改\"topic\"里内容。\n```\n\nTYPE kafka_server_BrokerTopicMetrics_FiveMinuteRate (近5分钟数据情况)\n\n- **判断Topic 写入是否有最新的数据：**\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"ProduceMessageConversionsPerSec\",topic=\"TRAFFIC-METRICS-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"ProduceMessageConversionsPerSec\",topic=\"CONNECTION-RECORD-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"ProduceMessageConversionsPerSec\",topic=\"PROXY-EVENT-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"ProduceMessageConversionsPerSec\",topic=\"SECURITY-EVENT-LOG\",}\n\n- **判断Topic 写入是否异常**\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedProduceRequestsPerSec\",topic=\"TRAFFIC-METRICS-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedProduceRequestsPerSec\",topic=\"CONNECTION-RECORD-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedProduceRequestsPerSec\",topic=\"PROXY-EVENT-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedProduceRequestsPerSec\",topic=\"SECURITY-EVENT-LOG\",}\n\n- 判断Topic 读取是否有最新的数据\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FetchMessageConversionsPerSec\",topic=\"TRAFFIC-METRICS-LOG\",}\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FetchMessageConversionsPerSec\",topic=\"CONNECTION-RECORD-LOG\",}\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FetchMessageConversionsPerSec\",topic=\"PROXY-EVENT-LOG\",}\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FetchMessageConversionsPerSec\",topic=\"SECURITY-EVENT-LOG\",}\n\n- 判断Topic 读取是否异常\n\n  - kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedFetchRequestsPerSec\",topic=\"TRAFFIC-METRICS-LOG\",}\n  - kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedFetchRequestsPerSec\",topic=\"CONNECTION-RECORD-LOG\",}\n  - kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedFetchRequestsPerSec\",topic=\"PROXY-EVENT-LOG\",}\n  - kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedFetchRequestsPerSec\",topic=\"SECURITY-EVENT-LOG\",}"
 							},
 							"response": []
@@ -654,7 +710,14 @@
 							"request": {
 								"method": "GET",
 								"header": [],
-								"url": "http://{{kafka_load_ip}}:{{kafka_monitor_port}}",
+								"url": {
+									"raw": "http://{{kafka_load_ip}}:{{kafka_monitor_port}}",
+									"protocol": "http",
+									"host": [
+										"{{kafka_load_ip}}"
+									],
+									"port": "{{kafka_monitor_port}}"
+								},
 								"description": "## Kafka Topics\n\n```\n在监控指标结果下，直接复制指标进行查找定位，仅需修改\"topic\"里内容。\n```\n\nTYPE kafka_server_BrokerTopicMetrics_FiveMinuteRate (近5分钟数据情况)\n\n- **判断Topic 写入是否有最新的数据：**\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"ProduceMessageConversionsPerSec\",topic=\"TRAFFIC-METRICS-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"ProduceMessageConversionsPerSec\",topic=\"CONNECTION-RECORD-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"ProduceMessageConversionsPerSec\",topic=\"PROXY-EVENT-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"ProduceMessageConversionsPerSec\",topic=\"SECURITY-EVENT-LOG\",}\n\n- **判断Topic 写入是否异常**\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedProduceRequestsPerSec\",topic=\"TRAFFIC-METRICS-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedProduceRequestsPerSec\",topic=\"CONNECTION-RECORD-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedProduceRequestsPerSec\",topic=\"PROXY-EVENT-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedProduceRequestsPerSec\",topic=\"SECURITY-EVENT-LOG\",}\n\n- 判断Topic 读取是否有最新的数据\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FetchMessageConversionsPerSec\",topic=\"TRAFFIC-METRICS-LOG\",}\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FetchMessageConversionsPerSec\",topic=\"CONNECTION-RECORD-LOG\",}\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FetchMessageConversionsPerSec\",topic=\"PROXY-EVENT-LOG\",}\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FetchMessageConversionsPerSec\",topic=\"SECURITY-EVENT-LOG\",}\n\n- 判断Topic 读取是否异常\n\n  - kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedFetchRequestsPerSec\",topic=\"TRAFFIC-METRICS-LOG\",}\n  - kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedFetchRequestsPerSec\",topic=\"CONNECTION-RECORD-LOG\",}\n  - kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedFetchRequestsPerSec\",topic=\"PROXY-EVENT-LOG\",}\n  - kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedFetchRequestsPerSec\",topic=\"SECURITY-EVENT-LOG\",}"
 							},
 							"response": []
@@ -726,7 +789,14 @@
 							"request": {
 								"method": "GET",
 								"header": [],
-								"url": "http://{{kafka_load_ip}}:{{kafka_monitor_port}}",
+								"url": {
+									"raw": "http://{{kafka_load_ip}}:{{kafka_monitor_port}}",
+									"protocol": "http",
+									"host": [
+										"{{kafka_load_ip}}"
+									],
+									"port": "{{kafka_monitor_port}}"
+								},
 								"description": "## Kafka Topics\n\n```\n在监控指标结果下，直接复制指标进行查找定位，仅需修改\"topic\"里内容。\n```\n\nTYPE kafka_server_BrokerTopicMetrics_FiveMinuteRate (近5分钟数据情况)\n\n- **判断Topic 写入是否有最新的数据：**\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"ProduceMessageConversionsPerSec\",topic=\"TRAFFIC-METRICS-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"ProduceMessageConversionsPerSec\",topic=\"CONNECTION-RECORD-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"ProduceMessageConversionsPerSec\",topic=\"PROXY-EVENT-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"ProduceMessageConversionsPerSec\",topic=\"SECURITY-EVENT-LOG\",}\n\n- **判断Topic 写入是否异常**\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedProduceRequestsPerSec\",topic=\"TRAFFIC-METRICS-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedProduceRequestsPerSec\",topic=\"CONNECTION-RECORD-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedProduceRequestsPerSec\",topic=\"PROXY-EVENT-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedProduceRequestsPerSec\",topic=\"SECURITY-EVENT-LOG\",}\n\n- 判断Topic 读取是否有最新的数据\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FetchMessageConversionsPerSec\",topic=\"TRAFFIC-METRICS-LOG\",}\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FetchMessageConversionsPerSec\",topic=\"CONNECTION-RECORD-LOG\",}\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FetchMessageConversionsPerSec\",topic=\"PROXY-EVENT-LOG\",}\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FetchMessageConversionsPerSec\",topic=\"SECURITY-EVENT-LOG\",}\n\n- 判断Topic 读取是否异常\n\n  - kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedFetchRequestsPerSec\",topic=\"TRAFFIC-METRICS-LOG\",}\n  - kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedFetchRequestsPerSec\",topic=\"CONNECTION-RECORD-LOG\",}\n  - kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedFetchRequestsPerSec\",topic=\"PROXY-EVENT-LOG\",}\n  - kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedFetchRequestsPerSec\",topic=\"SECURITY-EVENT-LOG\",}"
 							},
 							"response": []
@@ -798,7 +868,14 @@
 							"request": {
 								"method": "GET",
 								"header": [],
-								"url": "http://{{kafka_load_ip}}:{{kafka_monitor_port}}",
+								"url": {
+									"raw": "http://{{kafka_load_ip}}:{{kafka_monitor_port}}",
+									"protocol": "http",
+									"host": [
+										"{{kafka_load_ip}}"
+									],
+									"port": "{{kafka_monitor_port}}"
+								},
 								"description": "## Kafka Topics\n\n```\n在监控指标结果下，直接复制指标进行查找定位，仅需修改\"topic\"里内容。\n```\n\nTYPE kafka_server_BrokerTopicMetrics_FiveMinuteRate (近5分钟数据情况)\n\n- **判断Topic 写入是否有最新的数据：**\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"ProduceMessageConversionsPerSec\",topic=\"TRAFFIC-METRICS-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"ProduceMessageConversionsPerSec\",topic=\"CONNECTION-RECORD-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"ProduceMessageConversionsPerSec\",topic=\"PROXY-EVENT-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"ProduceMessageConversionsPerSec\",topic=\"SECURITY-EVENT-LOG\",}\n\n- **判断Topic 写入是否异常**\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedProduceRequestsPerSec\",topic=\"TRAFFIC-METRICS-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedProduceRequestsPerSec\",topic=\"CONNECTION-RECORD-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedProduceRequestsPerSec\",topic=\"PROXY-EVENT-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedProduceRequestsPerSec\",topic=\"SECURITY-EVENT-LOG\",}\n\n- 判断Topic 读取是否有最新的数据\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FetchMessageConversionsPerSec\",topic=\"TRAFFIC-METRICS-LOG\",}\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FetchMessageConversionsPerSec\",topic=\"CONNECTION-RECORD-LOG\",}\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FetchMessageConversionsPerSec\",topic=\"PROXY-EVENT-LOG\",}\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FetchMessageConversionsPerSec\",topic=\"SECURITY-EVENT-LOG\",}\n\n- 判断Topic 读取是否异常\n\n  - kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedFetchRequestsPerSec\",topic=\"TRAFFIC-METRICS-LOG\",}\n  - kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedFetchRequestsPerSec\",topic=\"CONNECTION-RECORD-LOG\",}\n  - kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedFetchRequestsPerSec\",topic=\"PROXY-EVENT-LOG\",}\n  - kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedFetchRequestsPerSec\",topic=\"SECURITY-EVENT-LOG\",}"
 							},
 							"response": []
@@ -870,7 +947,14 @@
 							"request": {
 								"method": "GET",
 								"header": [],
-								"url": "http://{{kafka_load_ip}}:{{kafka_monitor_port}}",
+								"url": {
+									"raw": "http://{{kafka_load_ip}}:{{kafka_monitor_port}}",
+									"protocol": "http",
+									"host": [
+										"{{kafka_load_ip}}"
+									],
+									"port": "{{kafka_monitor_port}}"
+								},
 								"description": "## Kafka Topics\n\n```\n在监控指标结果下，直接复制指标进行查找定位，仅需修改\"topic\"里内容。\n```\n\nTYPE kafka_server_BrokerTopicMetrics_FiveMinuteRate (近5分钟数据情况)\n\n- **判断Topic 写入是否有最新的数据：**\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"ProduceMessageConversionsPerSec\",topic=\"TRAFFIC-METRICS-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"ProduceMessageConversionsPerSec\",topic=\"CONNECTION-RECORD-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"ProduceMessageConversionsPerSec\",topic=\"PROXY-EVENT-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"ProduceMessageConversionsPerSec\",topic=\"SECURITY-EVENT-LOG\",}\n\n- **判断Topic 写入是否异常**\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedProduceRequestsPerSec\",topic=\"TRAFFIC-METRICS-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedProduceRequestsPerSec\",topic=\"CONNECTION-RECORD-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedProduceRequestsPerSec\",topic=\"PROXY-EVENT-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedProduceRequestsPerSec\",topic=\"SECURITY-EVENT-LOG\",}\n\n- 判断Topic 读取是否有最新的数据\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FetchMessageConversionsPerSec\",topic=\"TRAFFIC-METRICS-LOG\",}\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FetchMessageConversionsPerSec\",topic=\"CONNECTION-RECORD-LOG\",}\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FetchMessageConversionsPerSec\",topic=\"PROXY-EVENT-LOG\",}\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FetchMessageConversionsPerSec\",topic=\"SECURITY-EVENT-LOG\",}\n\n- 判断Topic 读取是否异常\n\n  - kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedFetchRequestsPerSec\",topic=\"TRAFFIC-METRICS-LOG\",}\n  - kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedFetchRequestsPerSec\",topic=\"CONNECTION-RECORD-LOG\",}\n  - kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedFetchRequestsPerSec\",topic=\"PROXY-EVENT-LOG\",}\n  - kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedFetchRequestsPerSec\",topic=\"SECURITY-EVENT-LOG\",}"
 							},
 							"response": []
@@ -950,7 +1034,14 @@
 							"request": {
 								"method": "GET",
 								"header": [],
-								"url": "http://{{kafka_merge_ip}}:{{kafka_monitor_port}}"
+								"url": {
+									"raw": "http://{{kafka_merge_ip}}:{{kafka_monitor_port}}",
+									"protocol": "http",
+									"host": [
+										"{{kafka_merge_ip}}"
+									],
+									"port": "{{kafka_monitor_port}}"
+								}
 							},
 							"response": []
 						},
@@ -1022,7 +1113,14 @@
 							"request": {
 								"method": "GET",
 								"header": [],
-								"url": "http://{{kafka_merge_ip}}:{{kafka_monitor_port}}",
+								"url": {
+									"raw": "http://{{kafka_merge_ip}}:{{kafka_monitor_port}}",
+									"protocol": "http",
+									"host": [
+										"{{kafka_merge_ip}}"
+									],
+									"port": "{{kafka_monitor_port}}"
+								},
 								"description": "## Kafka Topics\n\n```\n在监控指标结果下，直接复制指标进行查找定位，仅需修改\"topic\"里内容。\n```\n\nTYPE kafka_server_BrokerTopicMetrics_FiveMinuteRate (近5分钟数据情况)\n\n- **判断Topic 写入是否有最新的数据：**\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"ProduceMessageConversionsPerSec\",topic=\"TRAFFIC-METRICS-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"ProduceMessageConversionsPerSec\",topic=\"CONNECTION-RECORD-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"ProduceMessageConversionsPerSec\",topic=\"PROXY-EVENT-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"ProduceMessageConversionsPerSec\",topic=\"SECURITY-EVENT-LOG\",}\n\n- **判断Topic 写入是否异常**\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedProduceRequestsPerSec\",topic=\"TRAFFIC-METRICS-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedProduceRequestsPerSec\",topic=\"CONNECTION-RECORD-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedProduceRequestsPerSec\",topic=\"PROXY-EVENT-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedProduceRequestsPerSec\",topic=\"SECURITY-EVENT-LOG\",}\n\n- 判断Topic 读取是否有最新的数据\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FetchMessageConversionsPerSec\",topic=\"TRAFFIC-METRICS-LOG\",}\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FetchMessageConversionsPerSec\",topic=\"CONNECTION-RECORD-LOG\",}\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FetchMessageConversionsPerSec\",topic=\"PROXY-EVENT-LOG\",}\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FetchMessageConversionsPerSec\",topic=\"SECURITY-EVENT-LOG\",}\n\n- 判断Topic 读取是否异常\n\n  - kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedFetchRequestsPerSec\",topic=\"TRAFFIC-METRICS-LOG\",}\n  - kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedFetchRequestsPerSec\",topic=\"CONNECTION-RECORD-LOG\",}\n  - kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedFetchRequestsPerSec\",topic=\"PROXY-EVENT-LOG\",}\n  - kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedFetchRequestsPerSec\",topic=\"SECURITY-EVENT-LOG\",}"
 							},
 							"response": []
@@ -1095,7 +1193,14 @@
 							"request": {
 								"method": "GET",
 								"header": [],
-								"url": "http://{{kafka_merge_ip}}:{{kafka_monitor_port}}",
+								"url": {
+									"raw": "http://{{kafka_merge_ip}}:{{kafka_monitor_port}}",
+									"protocol": "http",
+									"host": [
+										"{{kafka_merge_ip}}"
+									],
+									"port": "{{kafka_monitor_port}}"
+								},
 								"description": "## Kafka Topics\n\n```\n在监控指标结果下，直接复制指标进行查找定位，仅需修改\"topic\"里内容。\n```\n\nTYPE kafka_server_BrokerTopicMetrics_FiveMinuteRate (近5分钟数据情况)\n\n- **判断Topic 写入是否有最新的数据：**\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"ProduceMessageConversionsPerSec\",topic=\"TRAFFIC-METRICS-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"ProduceMessageConversionsPerSec\",topic=\"CONNECTION-RECORD-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"ProduceMessageConversionsPerSec\",topic=\"PROXY-EVENT-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"ProduceMessageConversionsPerSec\",topic=\"SECURITY-EVENT-LOG\",}\n\n- **判断Topic 写入是否异常**\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedProduceRequestsPerSec\",topic=\"TRAFFIC-METRICS-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedProduceRequestsPerSec\",topic=\"CONNECTION-RECORD-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedProduceRequestsPerSec\",topic=\"PROXY-EVENT-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedProduceRequestsPerSec\",topic=\"SECURITY-EVENT-LOG\",}\n\n- 判断Topic 读取是否有最新的数据\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FetchMessageConversionsPerSec\",topic=\"TRAFFIC-METRICS-LOG\",}\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FetchMessageConversionsPerSec\",topic=\"CONNECTION-RECORD-LOG\",}\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FetchMessageConversionsPerSec\",topic=\"PROXY-EVENT-LOG\",}\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FetchMessageConversionsPerSec\",topic=\"SECURITY-EVENT-LOG\",}\n\n- 判断Topic 读取是否异常\n\n  - kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedFetchRequestsPerSec\",topic=\"TRAFFIC-METRICS-LOG\",}\n  - kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedFetchRequestsPerSec\",topic=\"CONNECTION-RECORD-LOG\",}\n  - kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedFetchRequestsPerSec\",topic=\"PROXY-EVENT-LOG\",}\n  - kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedFetchRequestsPerSec\",topic=\"SECURITY-EVENT-LOG\",}"
 							},
 							"response": []
@@ -1170,7 +1275,14 @@
 							"request": {
 								"method": "GET",
 								"header": [],
-								"url": "http://{{kafka_merge_ip}}:{{kafka_monitor_port}}"
+								"url": {
+									"raw": "http://{{kafka_merge_ip}}:{{kafka_monitor_port}}",
+									"protocol": "http",
+									"host": [
+										"{{kafka_merge_ip}}"
+									],
+									"port": "{{kafka_monitor_port}}"
+								}
 							},
 							"response": []
 						},
@@ -1244,7 +1356,14 @@
 							"request": {
 								"method": "GET",
 								"header": [],
-								"url": "http://{{kafka_merge_ip}}:{{kafka_monitor_port}}"
+								"url": {
+									"raw": "http://{{kafka_merge_ip}}:{{kafka_monitor_port}}",
+									"protocol": "http",
+									"host": [
+										"{{kafka_merge_ip}}"
+									],
+									"port": "{{kafka_monitor_port}}"
+								}
 							},
 							"response": []
 						},
@@ -1316,7 +1435,14 @@
 							"request": {
 								"method": "GET",
 								"header": [],
-								"url": "http://{{kafka_merge_ip}}:{{kafka_monitor_port}}",
+								"url": {
+									"raw": "http://{{kafka_merge_ip}}:{{kafka_monitor_port}}",
+									"protocol": "http",
+									"host": [
+										"{{kafka_merge_ip}}"
+									],
+									"port": "{{kafka_monitor_port}}"
+								},
 								"description": "## Kafka Topics\n\n```\n在监控指标结果下，直接复制指标进行查找定位，仅需修改\"topic\"里内容。\n```\n\nTYPE kafka_server_BrokerTopicMetrics_FiveMinuteRate (近5分钟数据情况)\n\n- **判断Topic 写入是否有最新的数据：**\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"ProduceMessageConversionsPerSec\",topic=\"TRAFFIC-METRICS-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"ProduceMessageConversionsPerSec\",topic=\"CONNECTION-RECORD-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"ProduceMessageConversionsPerSec\",topic=\"PROXY-EVENT-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"ProduceMessageConversionsPerSec\",topic=\"SECURITY-EVENT-LOG\",}\n\n- **判断Topic 写入是否异常**\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedProduceRequestsPerSec\",topic=\"TRAFFIC-METRICS-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedProduceRequestsPerSec\",topic=\"CONNECTION-RECORD-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedProduceRequestsPerSec\",topic=\"PROXY-EVENT-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedProduceRequestsPerSec\",topic=\"SECURITY-EVENT-LOG\",}\n\n- 判断Topic 读取是否有最新的数据\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FetchMessageConversionsPerSec\",topic=\"TRAFFIC-METRICS-LOG\",}\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FetchMessageConversionsPerSec\",topic=\"CONNECTION-RECORD-LOG\",}\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FetchMessageConversionsPerSec\",topic=\"PROXY-EVENT-LOG\",}\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FetchMessageConversionsPerSec\",topic=\"SECURITY-EVENT-LOG\",}\n\n- 判断Topic 读取是否异常\n\n  - kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedFetchRequestsPerSec\",topic=\"TRAFFIC-METRICS-LOG\",}\n  - kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedFetchRequestsPerSec\",topic=\"CONNECTION-RECORD-LOG\",}\n  - kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedFetchRequestsPerSec\",topic=\"PROXY-EVENT-LOG\",}\n  - kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedFetchRequestsPerSec\",topic=\"SECURITY-EVENT-LOG\",}"
 							},
 							"response": []
@@ -1389,7 +1515,14 @@
 							"request": {
 								"method": "GET",
 								"header": [],
-								"url": "http://{{kafka_merge_ip}}:{{kafka_monitor_port}}",
+								"url": {
+									"raw": "http://{{kafka_merge_ip}}:{{kafka_monitor_port}}",
+									"protocol": "http",
+									"host": [
+										"{{kafka_merge_ip}}"
+									],
+									"port": "{{kafka_monitor_port}}"
+								},
 								"description": "## Kafka Topics\n\n```\n在监控指标结果下，直接复制指标进行查找定位，仅需修改\"topic\"里内容。\n```\n\nTYPE kafka_server_BrokerTopicMetrics_FiveMinuteRate (近5分钟数据情况)\n\n- **判断Topic 写入是否有最新的数据：**\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"ProduceMessageConversionsPerSec\",topic=\"TRAFFIC-METRICS-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"ProduceMessageConversionsPerSec\",topic=\"CONNECTION-RECORD-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"ProduceMessageConversionsPerSec\",topic=\"PROXY-EVENT-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"ProduceMessageConversionsPerSec\",topic=\"SECURITY-EVENT-LOG\",}\n\n- **判断Topic 写入是否异常**\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedProduceRequestsPerSec\",topic=\"TRAFFIC-METRICS-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedProduceRequestsPerSec\",topic=\"CONNECTION-RECORD-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedProduceRequestsPerSec\",topic=\"PROXY-EVENT-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedProduceRequestsPerSec\",topic=\"SECURITY-EVENT-LOG\",}\n\n- 判断Topic 读取是否有最新的数据\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FetchMessageConversionsPerSec\",topic=\"TRAFFIC-METRICS-LOG\",}\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FetchMessageConversionsPerSec\",topic=\"CONNECTION-RECORD-LOG\",}\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FetchMessageConversionsPerSec\",topic=\"PROXY-EVENT-LOG\",}\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FetchMessageConversionsPerSec\",topic=\"SECURITY-EVENT-LOG\",}\n\n- 判断Topic 读取是否异常\n\n  - kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedFetchRequestsPerSec\",topic=\"TRAFFIC-METRICS-LOG\",}\n  - kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedFetchRequestsPerSec\",topic=\"CONNECTION-RECORD-LOG\",}\n  - kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedFetchRequestsPerSec\",topic=\"PROXY-EVENT-LOG\",}\n  - kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedFetchRequestsPerSec\",topic=\"SECURITY-EVENT-LOG\",}"
 							},
 							"response": []
@@ -1462,7 +1595,14 @@
 							"request": {
 								"method": "GET",
 								"header": [],
-								"url": "http://{{kafka_merge_ip}}:{{kafka_monitor_port}}",
+								"url": {
+									"raw": "http://{{kafka_merge_ip}}:{{kafka_monitor_port}}",
+									"protocol": "http",
+									"host": [
+										"{{kafka_merge_ip}}"
+									],
+									"port": "{{kafka_monitor_port}}"
+								},
 								"description": "## Kafka Topics\n\n```\n在监控指标结果下，直接复制指标进行查找定位，仅需修改\"topic\"里内容。\n```\n\nTYPE kafka_server_BrokerTopicMetrics_FiveMinuteRate (近5分钟数据情况)\n\n- **判断Topic 写入是否有最新的数据：**\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"ProduceMessageConversionsPerSec\",topic=\"TRAFFIC-METRICS-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"ProduceMessageConversionsPerSec\",topic=\"CONNECTION-RECORD-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"ProduceMessageConversionsPerSec\",topic=\"PROXY-EVENT-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"ProduceMessageConversionsPerSec\",topic=\"SECURITY-EVENT-LOG\",}\n\n- **判断Topic 写入是否异常**\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedProduceRequestsPerSec\",topic=\"TRAFFIC-METRICS-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedProduceRequestsPerSec\",topic=\"CONNECTION-RECORD-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedProduceRequestsPerSec\",topic=\"PROXY-EVENT-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedProduceRequestsPerSec\",topic=\"SECURITY-EVENT-LOG\",}\n\n- 判断Topic 读取是否有最新的数据\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FetchMessageConversionsPerSec\",topic=\"TRAFFIC-METRICS-LOG\",}\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FetchMessageConversionsPerSec\",topic=\"CONNECTION-RECORD-LOG\",}\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FetchMessageConversionsPerSec\",topic=\"PROXY-EVENT-LOG\",}\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FetchMessageConversionsPerSec\",topic=\"SECURITY-EVENT-LOG\",}\n\n- 判断Topic 读取是否异常\n\n  - kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedFetchRequestsPerSec\",topic=\"TRAFFIC-METRICS-LOG\",}\n  - kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedFetchRequestsPerSec\",topic=\"CONNECTION-RECORD-LOG\",}\n  - kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedFetchRequestsPerSec\",topic=\"PROXY-EVENT-LOG\",}\n  - kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedFetchRequestsPerSec\",topic=\"SECURITY-EVENT-LOG\",}"
 							},
 							"response": []
@@ -1535,7 +1675,14 @@
 							"request": {
 								"method": "GET",
 								"header": [],
-								"url": "http://{{kafka_merge_ip}}:{{kafka_monitor_port}}",
+								"url": {
+									"raw": "http://{{kafka_merge_ip}}:{{kafka_monitor_port}}",
+									"protocol": "http",
+									"host": [
+										"{{kafka_merge_ip}}"
+									],
+									"port": "{{kafka_monitor_port}}"
+								},
 								"description": "## Kafka Topics\n\n```\n在监控指标结果下，直接复制指标进行查找定位，仅需修改\"topic\"里内容。\n```\n\nTYPE kafka_server_BrokerTopicMetrics_FiveMinuteRate (近5分钟数据情况)\n\n- **判断Topic 写入是否有最新的数据：**\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"ProduceMessageConversionsPerSec\",topic=\"TRAFFIC-METRICS-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"ProduceMessageConversionsPerSec\",topic=\"CONNECTION-RECORD-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"ProduceMessageConversionsPerSec\",topic=\"PROXY-EVENT-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"ProduceMessageConversionsPerSec\",topic=\"SECURITY-EVENT-LOG\",}\n\n- **判断Topic 写入是否异常**\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedProduceRequestsPerSec\",topic=\"TRAFFIC-METRICS-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedProduceRequestsPerSec\",topic=\"CONNECTION-RECORD-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedProduceRequestsPerSec\",topic=\"PROXY-EVENT-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedProduceRequestsPerSec\",topic=\"SECURITY-EVENT-LOG\",}\n\n- 判断Topic 读取是否有最新的数据\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FetchMessageConversionsPerSec\",topic=\"TRAFFIC-METRICS-LOG\",}\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FetchMessageConversionsPerSec\",topic=\"CONNECTION-RECORD-LOG\",}\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FetchMessageConversionsPerSec\",topic=\"PROXY-EVENT-LOG\",}\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FetchMessageConversionsPerSec\",topic=\"SECURITY-EVENT-LOG\",}\n\n- 判断Topic 读取是否异常\n\n  - kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedFetchRequestsPerSec\",topic=\"TRAFFIC-METRICS-LOG\",}\n  - kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedFetchRequestsPerSec\",topic=\"CONNECTION-RECORD-LOG\",}\n  - kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedFetchRequestsPerSec\",topic=\"PROXY-EVENT-LOG\",}\n  - kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedFetchRequestsPerSec\",topic=\"SECURITY-EVENT-LOG\",}"
 							},
 							"response": []
@@ -1608,7 +1755,14 @@
 							"request": {
 								"method": "GET",
 								"header": [],
-								"url": "http://{{kafka_merge_ip}}:{{kafka_monitor_port}}",
+								"url": {
+									"raw": "http://{{kafka_merge_ip}}:{{kafka_monitor_port}}",
+									"protocol": "http",
+									"host": [
+										"{{kafka_merge_ip}}"
+									],
+									"port": "{{kafka_monitor_port}}"
+								},
 								"description": "## Kafka Topics\n\n```\n在监控指标结果下，直接复制指标进行查找定位，仅需修改\"topic\"里内容。\n```\n\nTYPE kafka_server_BrokerTopicMetrics_FiveMinuteRate (近5分钟数据情况)\n\n- **判断Topic 写入是否有最新的数据：**\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"ProduceMessageConversionsPerSec\",topic=\"TRAFFIC-METRICS-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"ProduceMessageConversionsPerSec\",topic=\"CONNECTION-RECORD-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"ProduceMessageConversionsPerSec\",topic=\"PROXY-EVENT-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"ProduceMessageConversionsPerSec\",topic=\"SECURITY-EVENT-LOG\",}\n\n- **判断Topic 写入是否异常**\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedProduceRequestsPerSec\",topic=\"TRAFFIC-METRICS-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedProduceRequestsPerSec\",topic=\"CONNECTION-RECORD-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedProduceRequestsPerSec\",topic=\"PROXY-EVENT-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedProduceRequestsPerSec\",topic=\"SECURITY-EVENT-LOG\",}\n\n- 判断Topic 读取是否有最新的数据\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FetchMessageConversionsPerSec\",topic=\"TRAFFIC-METRICS-LOG\",}\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FetchMessageConversionsPerSec\",topic=\"CONNECTION-RECORD-LOG\",}\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FetchMessageConversionsPerSec\",topic=\"PROXY-EVENT-LOG\",}\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FetchMessageConversionsPerSec\",topic=\"SECURITY-EVENT-LOG\",}\n\n- 判断Topic 读取是否异常\n\n  - kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedFetchRequestsPerSec\",topic=\"TRAFFIC-METRICS-LOG\",}\n  - kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedFetchRequestsPerSec\",topic=\"CONNECTION-RECORD-LOG\",}\n  - kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedFetchRequestsPerSec\",topic=\"PROXY-EVENT-LOG\",}\n  - kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedFetchRequestsPerSec\",topic=\"SECURITY-EVENT-LOG\",}"
 							},
 							"response": []
@@ -1681,7 +1835,14 @@
 							"request": {
 								"method": "GET",
 								"header": [],
-								"url": "http://{{kafka_merge_ip}}:{{kafka_monitor_port}}",
+								"url": {
+									"raw": "http://{{kafka_merge_ip}}:{{kafka_monitor_port}}",
+									"protocol": "http",
+									"host": [
+										"{{kafka_merge_ip}}"
+									],
+									"port": "{{kafka_monitor_port}}"
+								},
 								"description": "## Kafka Topics\n\n```\n在监控指标结果下，直接复制指标进行查找定位，仅需修改\"topic\"里内容。\n```\n\nTYPE kafka_server_BrokerTopicMetrics_FiveMinuteRate (近5分钟数据情况)\n\n- **判断Topic 写入是否有最新的数据：**\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"ProduceMessageConversionsPerSec\",topic=\"TRAFFIC-METRICS-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"ProduceMessageConversionsPerSec\",topic=\"CONNECTION-RECORD-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"ProduceMessageConversionsPerSec\",topic=\"PROXY-EVENT-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"ProduceMessageConversionsPerSec\",topic=\"SECURITY-EVENT-LOG\",}\n\n- **判断Topic 写入是否异常**\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedProduceRequestsPerSec\",topic=\"TRAFFIC-METRICS-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedProduceRequestsPerSec\",topic=\"CONNECTION-RECORD-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedProduceRequestsPerSec\",topic=\"PROXY-EVENT-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedProduceRequestsPerSec\",topic=\"SECURITY-EVENT-LOG\",}\n\n- 判断Topic 读取是否有最新的数据\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FetchMessageConversionsPerSec\",topic=\"TRAFFIC-METRICS-LOG\",}\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FetchMessageConversionsPerSec\",topic=\"CONNECTION-RECORD-LOG\",}\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FetchMessageConversionsPerSec\",topic=\"PROXY-EVENT-LOG\",}\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FetchMessageConversionsPerSec\",topic=\"SECURITY-EVENT-LOG\",}\n\n- 判断Topic 读取是否异常\n\n  - kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedFetchRequestsPerSec\",topic=\"TRAFFIC-METRICS-LOG\",}\n  - kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedFetchRequestsPerSec\",topic=\"CONNECTION-RECORD-LOG\",}\n  - kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedFetchRequestsPerSec\",topic=\"PROXY-EVENT-LOG\",}\n  - kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedFetchRequestsPerSec\",topic=\"SECURITY-EVENT-LOG\",}"
 							},
 							"response": []
@@ -1752,7 +1913,14 @@
 							"request": {
 								"method": "GET",
 								"header": [],
-								"url": "http://{{kafka_merge_ip}}:{{kafka_monitor_port}}",
+								"url": {
+									"raw": "http://{{kafka_merge_ip}}:{{kafka_monitor_port}}",
+									"protocol": "http",
+									"host": [
+										"{{kafka_merge_ip}}"
+									],
+									"port": "{{kafka_monitor_port}}"
+								},
 								"description": "## Kafka Topics\n\n```\n在监控指标结果下，直接复制指标进行查找定位，仅需修改\"topic\"里内容。\n```\n\nTYPE kafka_server_BrokerTopicMetrics_FiveMinuteRate (近5分钟数据情况)\n\n- **判断Topic 写入是否有最新的数据：**\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"ProduceMessageConversionsPerSec\",topic=\"TRAFFIC-METRICS-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"ProduceMessageConversionsPerSec\",topic=\"CONNECTION-RECORD-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"ProduceMessageConversionsPerSec\",topic=\"PROXY-EVENT-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"ProduceMessageConversionsPerSec\",topic=\"SECURITY-EVENT-LOG\",}\n\n- **判断Topic 写入是否异常**\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedProduceRequestsPerSec\",topic=\"TRAFFIC-METRICS-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedProduceRequestsPerSec\",topic=\"CONNECTION-RECORD-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedProduceRequestsPerSec\",topic=\"PROXY-EVENT-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedProduceRequestsPerSec\",topic=\"SECURITY-EVENT-LOG\",}\n\n- 判断Topic 读取是否有最新的数据\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FetchMessageConversionsPerSec\",topic=\"TRAFFIC-METRICS-LOG\",}\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FetchMessageConversionsPerSec\",topic=\"CONNECTION-RECORD-LOG\",}\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FetchMessageConversionsPerSec\",topic=\"PROXY-EVENT-LOG\",}\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FetchMessageConversionsPerSec\",topic=\"SECURITY-EVENT-LOG\",}\n\n- 判断Topic 读取是否异常\n\n  - kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedFetchRequestsPerSec\",topic=\"TRAFFIC-METRICS-LOG\",}\n  - kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedFetchRequestsPerSec\",topic=\"CONNECTION-RECORD-LOG\",}\n  - kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedFetchRequestsPerSec\",topic=\"PROXY-EVENT-LOG\",}\n  - kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedFetchRequestsPerSec\",topic=\"SECURITY-EVENT-LOG\",}"
 							},
 							"response": []
@@ -1823,7 +1991,14 @@
 							"request": {
 								"method": "GET",
 								"header": [],
-								"url": "http://{{kafka_merge_ip}}:{{kafka_monitor_port}}",
+								"url": {
+									"raw": "http://{{kafka_merge_ip}}:{{kafka_monitor_port}}",
+									"protocol": "http",
+									"host": [
+										"{{kafka_merge_ip}}"
+									],
+									"port": "{{kafka_monitor_port}}"
+								},
 								"description": "## Kafka Topics\n\n```\n在监控指标结果下，直接复制指标进行查找定位，仅需修改\"topic\"里内容。\n```\n\nTYPE kafka_server_BrokerTopicMetrics_FiveMinuteRate (近5分钟数据情况)\n\n- **判断Topic 写入是否有最新的数据：**\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"ProduceMessageConversionsPerSec\",topic=\"TRAFFIC-METRICS-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"ProduceMessageConversionsPerSec\",topic=\"CONNECTION-RECORD-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"ProduceMessageConversionsPerSec\",topic=\"PROXY-EVENT-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"ProduceMessageConversionsPerSec\",topic=\"SECURITY-EVENT-LOG\",}\n\n- **判断Topic 写入是否异常**\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedProduceRequestsPerSec\",topic=\"TRAFFIC-METRICS-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedProduceRequestsPerSec\",topic=\"CONNECTION-RECORD-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedProduceRequestsPerSec\",topic=\"PROXY-EVENT-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedProduceRequestsPerSec\",topic=\"SECURITY-EVENT-LOG\",}\n\n- 判断Topic 读取是否有最新的数据\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FetchMessageConversionsPerSec\",topic=\"TRAFFIC-METRICS-LOG\",}\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FetchMessageConversionsPerSec\",topic=\"CONNECTION-RECORD-LOG\",}\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FetchMessageConversionsPerSec\",topic=\"PROXY-EVENT-LOG\",}\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FetchMessageConversionsPerSec\",topic=\"SECURITY-EVENT-LOG\",}\n\n- 判断Topic 读取是否异常\n\n  - kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedFetchRequestsPerSec\",topic=\"TRAFFIC-METRICS-LOG\",}\n  - kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedFetchRequestsPerSec\",topic=\"CONNECTION-RECORD-LOG\",}\n  - kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedFetchRequestsPerSec\",topic=\"PROXY-EVENT-LOG\",}\n  - kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedFetchRequestsPerSec\",topic=\"SECURITY-EVENT-LOG\",}"
 							},
 							"response": []
@@ -1879,7 +2054,14 @@
 							"request": {
 								"method": "GET",
 								"header": [],
-								"url": "http://{{kafka_merge_ip}}:{{kafka_monitor_port}}",
+								"url": {
+									"raw": "http://{{kafka_merge_ip}}:{{kafka_monitor_port}}",
+									"protocol": "http",
+									"host": [
+										"{{kafka_merge_ip}}"
+									],
+									"port": "{{kafka_monitor_port}}"
+								},
 								"description": "## Kafka Topics\n\n```\n在监控指标结果下，直接复制指标进行查找定位，仅需修改\"topic\"里内容。\n```\n\nTYPE kafka_server_BrokerTopicMetrics_FiveMinuteRate (近5分钟数据情况)\n\n- **判断Topic 写入是否有最新的数据：**\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"ProduceMessageConversionsPerSec\",topic=\"TRAFFIC-METRICS-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"ProduceMessageConversionsPerSec\",topic=\"CONNECTION-RECORD-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"ProduceMessageConversionsPerSec\",topic=\"PROXY-EVENT-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"ProduceMessageConversionsPerSec\",topic=\"SECURITY-EVENT-LOG\",}\n\n- **判断Topic 写入是否异常**\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedProduceRequestsPerSec\",topic=\"TRAFFIC-METRICS-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedProduceRequestsPerSec\",topic=\"CONNECTION-RECORD-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedProduceRequestsPerSec\",topic=\"PROXY-EVENT-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedProduceRequestsPerSec\",topic=\"SECURITY-EVENT-LOG\",}\n\n- 判断Topic 读取是否有最新的数据\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FetchMessageConversionsPerSec\",topic=\"TRAFFIC-METRICS-LOG\",}\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FetchMessageConversionsPerSec\",topic=\"CONNECTION-RECORD-LOG\",}\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FetchMessageConversionsPerSec\",topic=\"PROXY-EVENT-LOG\",}\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FetchMessageConversionsPerSec\",topic=\"SECURITY-EVENT-LOG\",}\n\n- 判断Topic 读取是否异常\n\n  - kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedFetchRequestsPerSec\",topic=\"TRAFFIC-METRICS-LOG\",}\n  - kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedFetchRequestsPerSec\",topic=\"CONNECTION-RECORD-LOG\",}\n  - kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedFetchRequestsPerSec\",topic=\"PROXY-EVENT-LOG\",}\n  - kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedFetchRequestsPerSec\",topic=\"SECURITY-EVENT-LOG\",}"
 							},
 							"response": []
@@ -1927,7 +2109,14 @@
 							"request": {
 								"method": "GET",
 								"header": [],
-								"url": "http://{{kafka_merge_ip}}:{{kafka_monitor_port}}",
+								"url": {
+									"raw": "http://{{kafka_merge_ip}}:{{kafka_monitor_port}}",
+									"protocol": "http",
+									"host": [
+										"{{kafka_merge_ip}}"
+									],
+									"port": "{{kafka_monitor_port}}"
+								},
 								"description": "## Kafka Topics\n\n```\n在监控指标结果下，直接复制指标进行查找定位，仅需修改\"topic\"里内容。\n```\n\nTYPE kafka_server_BrokerTopicMetrics_FiveMinuteRate (近5分钟数据情况)\n\n- **判断Topic 写入是否有最新的数据：**\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"ProduceMessageConversionsPerSec\",topic=\"TRAFFIC-METRICS-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"ProduceMessageConversionsPerSec\",topic=\"CONNECTION-RECORD-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"ProduceMessageConversionsPerSec\",topic=\"PROXY-EVENT-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"ProduceMessageConversionsPerSec\",topic=\"SECURITY-EVENT-LOG\",}\n\n- **判断Topic 写入是否异常**\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedProduceRequestsPerSec\",topic=\"TRAFFIC-METRICS-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedProduceRequestsPerSec\",topic=\"CONNECTION-RECORD-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedProduceRequestsPerSec\",topic=\"PROXY-EVENT-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedProduceRequestsPerSec\",topic=\"SECURITY-EVENT-LOG\",}\n\n- 判断Topic 读取是否有最新的数据\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FetchMessageConversionsPerSec\",topic=\"TRAFFIC-METRICS-LOG\",}\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FetchMessageConversionsPerSec\",topic=\"CONNECTION-RECORD-LOG\",}\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FetchMessageConversionsPerSec\",topic=\"PROXY-EVENT-LOG\",}\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FetchMessageConversionsPerSec\",topic=\"SECURITY-EVENT-LOG\",}\n\n- 判断Topic 读取是否异常\n\n  - kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedFetchRequestsPerSec\",topic=\"TRAFFIC-METRICS-LOG\",}\n  - kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedFetchRequestsPerSec\",topic=\"CONNECTION-RECORD-LOG\",}\n  - kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedFetchRequestsPerSec\",topic=\"PROXY-EVENT-LOG\",}\n  - kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedFetchRequestsPerSec\",topic=\"SECURITY-EVENT-LOG\",}"
 							},
 							"response": []
@@ -1975,7 +2164,14 @@
 							"request": {
 								"method": "GET",
 								"header": [],
-								"url": "http://{{kafka_merge_ip}}:{{kafka_monitor_port}}",
+								"url": {
+									"raw": "http://{{kafka_merge_ip}}:{{kafka_monitor_port}}",
+									"protocol": "http",
+									"host": [
+										"{{kafka_merge_ip}}"
+									],
+									"port": "{{kafka_monitor_port}}"
+								},
 								"description": "## Kafka Topics\n\n```\n在监控指标结果下，直接复制指标进行查找定位，仅需修改\"topic\"里内容。\n```\n\nTYPE kafka_server_BrokerTopicMetrics_FiveMinuteRate (近5分钟数据情况)\n\n- **判断Topic 写入是否有最新的数据：**\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"ProduceMessageConversionsPerSec\",topic=\"TRAFFIC-METRICS-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"ProduceMessageConversionsPerSec\",topic=\"CONNECTION-RECORD-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"ProduceMessageConversionsPerSec\",topic=\"PROXY-EVENT-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"ProduceMessageConversionsPerSec\",topic=\"SECURITY-EVENT-LOG\",}\n\n- **判断Topic 写入是否异常**\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedProduceRequestsPerSec\",topic=\"TRAFFIC-METRICS-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedProduceRequestsPerSec\",topic=\"CONNECTION-RECORD-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedProduceRequestsPerSec\",topic=\"PROXY-EVENT-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedProduceRequestsPerSec\",topic=\"SECURITY-EVENT-LOG\",}\n\n- 判断Topic 读取是否有最新的数据\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FetchMessageConversionsPerSec\",topic=\"TRAFFIC-METRICS-LOG\",}\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FetchMessageConversionsPerSec\",topic=\"CONNECTION-RECORD-LOG\",}\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FetchMessageConversionsPerSec\",topic=\"PROXY-EVENT-LOG\",}\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FetchMessageConversionsPerSec\",topic=\"SECURITY-EVENT-LOG\",}\n\n- 判断Topic 读取是否异常\n\n  - kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedFetchRequestsPerSec\",topic=\"TRAFFIC-METRICS-LOG\",}\n  - kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedFetchRequestsPerSec\",topic=\"CONNECTION-RECORD-LOG\",}\n  - kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedFetchRequestsPerSec\",topic=\"PROXY-EVENT-LOG\",}\n  - kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedFetchRequestsPerSec\",topic=\"SECURITY-EVENT-LOG\",}"
 							},
 							"response": []
@@ -2023,7 +2219,14 @@
 							"request": {
 								"method": "GET",
 								"header": [],
-								"url": "http://{{kafka_merge_ip}}:{{kafka_monitor_port}}",
+								"url": {
+									"raw": "http://{{kafka_merge_ip}}:{{kafka_monitor_port}}",
+									"protocol": "http",
+									"host": [
+										"{{kafka_merge_ip}}"
+									],
+									"port": "{{kafka_monitor_port}}"
+								},
 								"description": "## Kafka Topics\n\n```\n在监控指标结果下，直接复制指标进行查找定位，仅需修改\"topic\"里内容。\n```\n\nTYPE kafka_server_BrokerTopicMetrics_FiveMinuteRate (近5分钟数据情况)\n\n- **判断Topic 写入是否有最新的数据：**\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"ProduceMessageConversionsPerSec\",topic=\"TRAFFIC-METRICS-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"ProduceMessageConversionsPerSec\",topic=\"CONNECTION-RECORD-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"ProduceMessageConversionsPerSec\",topic=\"PROXY-EVENT-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"ProduceMessageConversionsPerSec\",topic=\"SECURITY-EVENT-LOG\",}\n\n- **判断Topic 写入是否异常**\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedProduceRequestsPerSec\",topic=\"TRAFFIC-METRICS-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedProduceRequestsPerSec\",topic=\"CONNECTION-RECORD-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedProduceRequestsPerSec\",topic=\"PROXY-EVENT-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedProduceRequestsPerSec\",topic=\"SECURITY-EVENT-LOG\",}\n\n- 判断Topic 读取是否有最新的数据\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FetchMessageConversionsPerSec\",topic=\"TRAFFIC-METRICS-LOG\",}\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FetchMessageConversionsPerSec\",topic=\"CONNECTION-RECORD-LOG\",}\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FetchMessageConversionsPerSec\",topic=\"PROXY-EVENT-LOG\",}\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FetchMessageConversionsPerSec\",topic=\"SECURITY-EVENT-LOG\",}\n\n- 判断Topic 读取是否异常\n\n  - kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedFetchRequestsPerSec\",topic=\"TRAFFIC-METRICS-LOG\",}\n  - kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedFetchRequestsPerSec\",topic=\"CONNECTION-RECORD-LOG\",}\n  - kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedFetchRequestsPerSec\",topic=\"PROXY-EVENT-LOG\",}\n  - kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedFetchRequestsPerSec\",topic=\"SECURITY-EVENT-LOG\",}"
 							},
 							"response": []
@@ -2071,7 +2274,14 @@
 							"request": {
 								"method": "GET",
 								"header": [],
-								"url": "http://{{kafka_merge_ip}}:{{kafka_monitor_port}}",
+								"url": {
+									"raw": "http://{{kafka_merge_ip}}:{{kafka_monitor_port}}",
+									"protocol": "http",
+									"host": [
+										"{{kafka_merge_ip}}"
+									],
+									"port": "{{kafka_monitor_port}}"
+								},
 								"description": "## Kafka Topics\n\n```\n在监控指标结果下，直接复制指标进行查找定位，仅需修改\"topic\"里内容。\n```\n\nTYPE kafka_server_BrokerTopicMetrics_FiveMinuteRate (近5分钟数据情况)\n\n- **判断Topic 写入是否有最新的数据：**\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"ProduceMessageConversionsPerSec\",topic=\"TRAFFIC-METRICS-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"ProduceMessageConversionsPerSec\",topic=\"CONNECTION-RECORD-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"ProduceMessageConversionsPerSec\",topic=\"PROXY-EVENT-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"ProduceMessageConversionsPerSec\",topic=\"SECURITY-EVENT-LOG\",}\n\n- **判断Topic 写入是否异常**\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedProduceRequestsPerSec\",topic=\"TRAFFIC-METRICS-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedProduceRequestsPerSec\",topic=\"CONNECTION-RECORD-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedProduceRequestsPerSec\",topic=\"PROXY-EVENT-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedProduceRequestsPerSec\",topic=\"SECURITY-EVENT-LOG\",}\n\n- 判断Topic 读取是否有最新的数据\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FetchMessageConversionsPerSec\",topic=\"TRAFFIC-METRICS-LOG\",}\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FetchMessageConversionsPerSec\",topic=\"CONNECTION-RECORD-LOG\",}\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FetchMessageConversionsPerSec\",topic=\"PROXY-EVENT-LOG\",}\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FetchMessageConversionsPerSec\",topic=\"SECURITY-EVENT-LOG\",}\n\n- 判断Topic 读取是否异常\n\n  - kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedFetchRequestsPerSec\",topic=\"TRAFFIC-METRICS-LOG\",}\n  - kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedFetchRequestsPerSec\",topic=\"CONNECTION-RECORD-LOG\",}\n  - kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedFetchRequestsPerSec\",topic=\"PROXY-EVENT-LOG\",}\n  - kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedFetchRequestsPerSec\",topic=\"SECURITY-EVENT-LOG\",}"
 							},
 							"response": []
@@ -2119,7 +2329,14 @@
 							"request": {
 								"method": "GET",
 								"header": [],
-								"url": "http://{{kafka_merge_ip}}:{{kafka_monitor_port}}",
+								"url": {
+									"raw": "http://{{kafka_merge_ip}}:{{kafka_monitor_port}}",
+									"protocol": "http",
+									"host": [
+										"{{kafka_merge_ip}}"
+									],
+									"port": "{{kafka_monitor_port}}"
+								},
 								"description": "## Kafka Topics\n\n```\n在监控指标结果下，直接复制指标进行查找定位，仅需修改\"topic\"里内容。\n```\n\nTYPE kafka_server_BrokerTopicMetrics_FiveMinuteRate (近5分钟数据情况)\n\n- **判断Topic 写入是否有最新的数据：**\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"ProduceMessageConversionsPerSec\",topic=\"TRAFFIC-METRICS-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"ProduceMessageConversionsPerSec\",topic=\"CONNECTION-RECORD-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"ProduceMessageConversionsPerSec\",topic=\"PROXY-EVENT-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"ProduceMessageConversionsPerSec\",topic=\"SECURITY-EVENT-LOG\",}\n\n- **判断Topic 写入是否异常**\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedProduceRequestsPerSec\",topic=\"TRAFFIC-METRICS-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedProduceRequestsPerSec\",topic=\"CONNECTION-RECORD-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedProduceRequestsPerSec\",topic=\"PROXY-EVENT-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedProduceRequestsPerSec\",topic=\"SECURITY-EVENT-LOG\",}\n\n- 判断Topic 读取是否有最新的数据\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FetchMessageConversionsPerSec\",topic=\"TRAFFIC-METRICS-LOG\",}\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FetchMessageConversionsPerSec\",topic=\"CONNECTION-RECORD-LOG\",}\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FetchMessageConversionsPerSec\",topic=\"PROXY-EVENT-LOG\",}\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FetchMessageConversionsPerSec\",topic=\"SECURITY-EVENT-LOG\",}\n\n- 判断Topic 读取是否异常\n\n  - kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedFetchRequestsPerSec\",topic=\"TRAFFIC-METRICS-LOG\",}\n  - kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedFetchRequestsPerSec\",topic=\"CONNECTION-RECORD-LOG\",}\n  - kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedFetchRequestsPerSec\",topic=\"PROXY-EVENT-LOG\",}\n  - kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedFetchRequestsPerSec\",topic=\"SECURITY-EVENT-LOG\",}"
 							},
 							"response": []
@@ -2167,7 +2384,14 @@
 							"request": {
 								"method": "GET",
 								"header": [],
-								"url": "http://{{kafka_merge_ip}}:{{kafka_monitor_port}}",
+								"url": {
+									"raw": "http://{{kafka_merge_ip}}:{{kafka_monitor_port}}",
+									"protocol": "http",
+									"host": [
+										"{{kafka_merge_ip}}"
+									],
+									"port": "{{kafka_monitor_port}}"
+								},
 								"description": "## Kafka Topics\n\n```\n在监控指标结果下，直接复制指标进行查找定位，仅需修改\"topic\"里内容。\n```\n\nTYPE kafka_server_BrokerTopicMetrics_FiveMinuteRate (近5分钟数据情况)\n\n- **判断Topic 写入是否有最新的数据：**\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"ProduceMessageConversionsPerSec\",topic=\"TRAFFIC-METRICS-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"ProduceMessageConversionsPerSec\",topic=\"CONNECTION-RECORD-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"ProduceMessageConversionsPerSec\",topic=\"PROXY-EVENT-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"ProduceMessageConversionsPerSec\",topic=\"SECURITY-EVENT-LOG\",}\n\n- **判断Topic 写入是否异常**\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedProduceRequestsPerSec\",topic=\"TRAFFIC-METRICS-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedProduceRequestsPerSec\",topic=\"CONNECTION-RECORD-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedProduceRequestsPerSec\",topic=\"PROXY-EVENT-LOG\",}\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedProduceRequestsPerSec\",topic=\"SECURITY-EVENT-LOG\",}\n\n- 判断Topic 读取是否有最新的数据\n\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FetchMessageConversionsPerSec\",topic=\"TRAFFIC-METRICS-LOG\",}\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FetchMessageConversionsPerSec\",topic=\"CONNECTION-RECORD-LOG\",}\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FetchMessageConversionsPerSec\",topic=\"PROXY-EVENT-LOG\",}\n  * kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FetchMessageConversionsPerSec\",topic=\"SECURITY-EVENT-LOG\",}\n\n- 判断Topic 读取是否异常\n\n  - kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedFetchRequestsPerSec\",topic=\"TRAFFIC-METRICS-LOG\",}\n  - kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedFetchRequestsPerSec\",topic=\"CONNECTION-RECORD-LOG\",}\n  - kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedFetchRequestsPerSec\",topic=\"PROXY-EVENT-LOG\",}\n  - kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\"FailedFetchRequestsPerSec\",topic=\"SECURITY-EVENT-LOG\",}"
 							},
 							"response": []
@@ -2283,7 +2507,17 @@
 							"request": {
 								"method": "GET",
 								"header": [],
-								"url": "http://{{report_ip}}:{{report_port}}/monitor"
+								"url": {
+									"raw": "http://{{report_ip}}:{{report_port}}/monitor",
+									"protocol": "http",
+									"host": [
+										"{{report_ip}}"
+									],
+									"port": "{{report_port}}",
+									"path": [
+										"monitor"
+									]
+								}
 							},
 							"response": []
 						},
@@ -2419,7 +2653,21 @@
 							"request": {
 								"method": "GET",
 								"header": [],
-								"url": "http://{{qgw_ip}}:{{qgw_port}}/metadata/schema/v1/fields/session_record"
+								"url": {
+									"raw": "http://{{qgw_ip}}:{{qgw_port}}/metadata/schema/v1/fields/session_record",
+									"protocol": "http",
+									"host": [
+										"{{qgw_ip}}"
+									],
+									"port": "{{qgw_port}}",
+									"path": [
+										"metadata",
+										"schema",
+										"v1",
+										"fields",
+										"session_record"
+									]
+								}
 							},
 							"response": []
 						},
@@ -2441,7 +2689,58 @@
 							"request": {
 								"method": "GET",
 								"header": [],
-								"url": "http://{{qgw_ip}}:{{qgw_port}}/metadata/schema/v1/fields/session_record"
+								"url": {
+									"raw": "http://{{qgw_ip}}:{{qgw_port}}/metadata/schema/v1/fields/session_record",
+									"protocol": "http",
+									"host": [
+										"{{qgw_ip}}"
+									],
+									"port": "{{qgw_port}}",
+									"path": [
+										"metadata",
+										"schema",
+										"v1",
+										"fields",
+										"session_record"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Schema-过渡会话日志",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://{{qgw_ip}}:{{qgw_port}}/metadata/schema/v1/fields/interim_session_record",
+									"protocol": "http",
+									"host": [
+										"{{qgw_ip}}"
+									],
+									"port": "{{qgw_port}}",
+									"path": [
+										"metadata",
+										"schema",
+										"v1",
+										"fields",
+										"interim_session_record"
+									]
+								},
+								"description": "security_event_log"
 							},
 							"response": []
 						},
@@ -2463,30 +2762,21 @@
 							"request": {
 								"method": "GET",
 								"header": [],
-								"url": "http://{{qgw_ip}}:{{qgw_port}}/metadata/schema/v1/fields/transaction_record",
-								"description": "security_event_log"
-							},
-							"response": []
-						},
-						{
-							"name": "Schema-活跃会话日志",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"exec": [
-											"pm.test(\"Status code is 200\", function () {",
-											"    pm.response.to.have.status(200);",
-											"});"
-										],
-										"type": "text/javascript"
-									}
-								}
-							],
-							"request": {
-								"method": "GET",
-								"header": [],
-								"url": "http://{{qgw_ip}}:{{qgw_port}}/metadata/schema/v1/fields/interim_session_record",
+								"url": {
+									"raw": "http://{{qgw_ip}}:{{qgw_port}}/metadata/schema/v1/fields/transaction_record",
+									"protocol": "http",
+									"host": [
+										"{{qgw_ip}}"
+									],
+									"port": "{{qgw_port}}",
+									"path": [
+										"metadata",
+										"schema",
+										"v1",
+										"fields",
+										"transaction_record"
+									]
+								},
 								"description": "security_event_log"
 							},
 							"response": []
@@ -2509,7 +2799,21 @@
 							"request": {
 								"method": "GET",
 								"header": [],
-								"url": "http://{{qgw_ip}}:{{qgw_port}}/metadata/schema/v1/fields/security_event",
+								"url": {
+									"raw": "http://{{qgw_ip}}:{{qgw_port}}/metadata/schema/v1/fields/security_event",
+									"protocol": "http",
+									"host": [
+										"{{qgw_ip}}"
+									],
+									"port": "{{qgw_port}}",
+									"path": [
+										"metadata",
+										"schema",
+										"v1",
+										"fields",
+										"security_event"
+									]
+								},
 								"description": "security_event_log"
 							},
 							"response": []
@@ -2532,7 +2836,21 @@
 							"request": {
 								"method": "GET",
 								"header": [],
-								"url": "http://{{qgw_ip}}:{{qgw_port}}/metadata/schema/v1/fields/proxy_event",
+								"url": {
+									"raw": "http://{{qgw_ip}}:{{qgw_port}}/metadata/schema/v1/fields/proxy_event",
+									"protocol": "http",
+									"host": [
+										"{{qgw_ip}}"
+									],
+									"port": "{{qgw_port}}",
+									"path": [
+										"metadata",
+										"schema",
+										"v1",
+										"fields",
+										"proxy_event"
+									]
+								},
 								"description": "proxy_event_log"
 							},
 							"response": []
@@ -2555,7 +2873,21 @@
 							"request": {
 								"method": "GET",
 								"header": [],
-								"url": "http://{{qgw_ip}}:{{qgw_port}}/metadata/schema/v1/fields/voip_record",
+								"url": {
+									"raw": "http://{{qgw_ip}}:{{qgw_port}}/metadata/schema/v1/fields/voip_record",
+									"protocol": "http",
+									"host": [
+										"{{qgw_ip}}"
+									],
+									"port": "{{qgw_port}}",
+									"path": [
+										"metadata",
+										"schema",
+										"v1",
+										"fields",
+										"voip_record"
+									]
+								},
 								"description": "security_event_log"
 							},
 							"response": []
@@ -2578,7 +2910,21 @@
 							"request": {
 								"method": "GET",
 								"header": [],
-								"url": "http://{{qgw_ip}}:{{qgw_port}}/metadata/schema/v1/fields/dos_event",
+								"url": {
+									"raw": "http://{{qgw_ip}}:{{qgw_port}}/metadata/schema/v1/fields/dos_event",
+									"protocol": "http",
+									"host": [
+										"{{qgw_ip}}"
+									],
+									"port": "{{qgw_port}}",
+									"path": [
+										"metadata",
+										"schema",
+										"v1",
+										"fields",
+										"dos_event"
+									]
+								},
 								"description": "security_event_log"
 							},
 							"response": []
@@ -2601,7 +2947,21 @@
 							"request": {
 								"method": "GET",
 								"header": [],
-								"url": "http://{{qgw_ip}}:{{qgw_port}}/metadata/schema/v1/fields/gtpc_record",
+								"url": {
+									"raw": "http://{{qgw_ip}}:{{qgw_port}}/metadata/schema/v1/fields/gtpc_record",
+									"protocol": "http",
+									"host": [
+										"{{qgw_ip}}"
+									],
+									"port": "{{qgw_port}}",
+									"path": [
+										"metadata",
+										"schema",
+										"v1",
+										"fields",
+										"gtpc_record"
+									]
+								},
 								"description": "security_event_log"
 							},
 							"response": []
@@ -2624,7 +2984,21 @@
 							"request": {
 								"method": "GET",
 								"header": [],
-								"url": "http://{{qgw_ip}}:{{qgw_port}}/metadata/schema/v1/tables/tsg_galaxy_v3"
+								"url": {
+									"raw": "http://{{qgw_ip}}:{{qgw_port}}/metadata/schema/v1/tables/tsg_galaxy_v3",
+									"protocol": "http",
+									"host": [
+										"{{qgw_ip}}"
+									],
+									"port": "{{qgw_port}}",
+									"path": [
+										"metadata",
+										"schema",
+										"v1",
+										"tables",
+										"tsg_galaxy_v3"
+									]
+								}
 							},
 							"response": []
 						},
@@ -2646,7 +3020,21 @@
 							"request": {
 								"method": "GET",
 								"header": [],
-								"url": "http://{{qgw_ip}}:{{qgw_port}}/metadata/schema/v1/tables/druid"
+								"url": {
+									"raw": "http://{{qgw_ip}}:{{qgw_port}}/metadata/schema/v1/tables/druid",
+									"protocol": "http",
+									"host": [
+										"{{qgw_ip}}"
+									],
+									"port": "{{qgw_port}}",
+									"path": [
+										"metadata",
+										"schema",
+										"v1",
+										"tables",
+										"druid"
+									]
+								}
 							},
 							"response": []
 						}
@@ -2673,7 +3061,18 @@
 							"request": {
 								"method": "GET",
 								"header": [],
-								"url": "http://{{hos_ip}}:{{hos_port}}/admin/verification"
+								"url": {
+									"raw": "http://{{hos_ip}}:{{hos_port}}/admin/verification",
+									"protocol": "http",
+									"host": [
+										"{{hos_ip}}"
+									],
+									"port": "{{hos_port}}",
+									"path": [
+										"admin",
+										"verification"
+									]
+								}
 							},
 							"response": []
 						},
@@ -2799,7 +3198,7 @@
 									}
 								],
 								"url": {
-									"raw": "http://{{hos_ip}}:{{hos_port}}/hos/default/galaxy-hos.txt?metadata",
+									"raw": "http://{{hos_ip}}:{{hos_port}}/hos/default/galaxy-hos.txt?metadata=",
 									"protocol": "http",
 									"host": [
 										"{{hos_ip}}"
@@ -2893,7 +3292,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://{{qgw_ip}}:{{qgw_port}}/?query=select * from session_record limit 10",
+							"raw": "http://{{qgw_ip}}:{{qgw_port}}/?query=select * from session_record limit 1",
 							"protocol": "http",
 							"host": [
 								"{{qgw_ip}}"
@@ -2915,7 +3314,7 @@
 								},
 								{
 									"key": "query",
-									"value": "select * from session_record limit 10"
+									"value": "select * from session_record limit 1"
 								}
 							]
 						}
@@ -3023,7 +3422,18 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "http://{{qgw_ip}}:{{qgw_port}}/monitor/info",
+						"url": {
+							"raw": "http://{{qgw_ip}}:{{qgw_port}}/monitor/info",
+							"protocol": "http",
+							"host": [
+								"{{qgw_ip}}"
+							],
+							"port": "{{qgw_port}}",
+							"path": [
+								"monitor",
+								"info"
+							]
+						},
 						"description": "查询数据平台各个组件的版本号"
 					},
 					"response": []
@@ -3046,7 +3456,18 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "http://{{qgw_ip}}:{{qgw_port}}/monitor/health",
+						"url": {
+							"raw": "http://{{qgw_ip}}:{{qgw_port}}/monitor/health",
+							"protocol": "http",
+							"host": [
+								"{{qgw_ip}}"
+							],
+							"port": "{{qgw_port}}",
+							"path": [
+								"monitor",
+								"health"
+							]
+						},
 						"description": "查询数据引擎引用的数据库健康状态及目前的配置。"
 					},
 					"response": []
@@ -3069,7 +3490,18 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "http://{{qgw_ip}}:{{qgw_port}}/diagnosis/metadata"
+						"url": {
+							"raw": "http://{{qgw_ip}}:{{qgw_port}}/diagnosis/metadata",
+							"protocol": "http",
+							"host": [
+								"{{qgw_ip}}"
+							],
+							"port": "{{qgw_port}}",
+							"path": [
+								"diagnosis",
+								"metadata"
+							]
+						}
 					},
 					"response": []
 				},
@@ -3091,7 +3523,18 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "http://{{qgw_ip}}:{{qgw_port}}/diagnosis/runSql"
+						"url": {
+							"raw": "http://{{qgw_ip}}:{{qgw_port}}/diagnosis/runSql",
+							"protocol": "http",
+							"host": [
+								"{{qgw_ip}}"
+							],
+							"port": "{{qgw_port}}",
+							"path": [
+								"diagnosis",
+								"runSql"
+							]
+						}
 					},
 					"response": []
 				},
@@ -3113,7 +3556,19 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "http://{{qgw_ip}}:{{qgw_port}}/sys/storage/deletion"
+						"url": {
+							"raw": "http://{{qgw_ip}}:{{qgw_port}}/sys/storage/deletion",
+							"protocol": "http",
+							"host": [
+								"{{qgw_ip}}"
+							],
+							"port": "{{qgw_port}}",
+							"path": [
+								"sys",
+								"storage",
+								"deletion"
+							]
+						}
 					},
 					"response": []
 				},
@@ -3422,7 +3877,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://{{qgw_ip}}:{{qgw_port}}/?query=select\n    destination_ip, IP_TO_GEO(destination_ip) as destination_geo,\n    any(destination_country) as destination_country,\n    groupUniqArray(arrayJoin(splitByString(',',source_country_list))) as source_coutries,\n    max(bit_rate) as max_bit_rate,\n    max(packet_rate) as max_packet_rate,\n    max(session_rate) as max_session_rate,\n    min(start_time) as min_start_time,\n    max(end_time) as max_end_time,\n    (max_end_time-min_start_time) as duration,\n    groupUniqArray(attack_type) as attack_type,\n    count(*) as count\nfrom dos_event  where\n start_time >=  UNIX_TIMESTAMP('{{start_time}}')\n and start_time <UNIX_TIMESTAMP('{{end_time}}')\ngroup by destination_ip \norder by count desc limit 100",
+									"raw": "http://{{qgw_ip}}:{{qgw_port}}/?query=select\n    destination_ip, IP_TO_GEO(destination_ip) as destination_geo,\n    any(destination_country) as destination_country,\n    groupUniqArray(arrayJoin(splitByString(',',source_country_list))) as source_coutries,\n    max(bit_rate) as max_bit_rate,\n    max(packet_rate) as max_packet_rate,\n    max(session_rate) as max_session_rate,\n    min(start_time) as first_active_time,\n    max(end_time) as last_active_time,\n    (last_active_time-first_active_time) as duration,\n    groupUniqArray(attack_type) as attack_type,\n    count(*) as count\nfrom dos_event  where\n start_time >=  UNIX_TIMESTAMP('{{start_time}}')\n and start_time <UNIX_TIMESTAMP('{{end_time}}')\ngroup by destination_ip \norder by count desc limit 100",
 									"protocol": "http",
 									"host": [
 										"{{qgw_ip}}"
@@ -3434,7 +3889,7 @@
 									"query": [
 										{
 											"key": "query",
-											"value": "select\n    destination_ip, IP_TO_GEO(destination_ip) as destination_geo,\n    any(destination_country) as destination_country,\n    groupUniqArray(arrayJoin(splitByString(',',source_country_list))) as source_coutries,\n    max(bit_rate) as max_bit_rate,\n    max(packet_rate) as max_packet_rate,\n    max(session_rate) as max_session_rate,\n    min(start_time) as min_start_time,\n    max(end_time) as max_end_time,\n    (max_end_time-min_start_time) as duration,\n    groupUniqArray(attack_type) as attack_type,\n    count(*) as count\nfrom dos_event  where\n start_time >=  UNIX_TIMESTAMP('{{start_time}}')\n and start_time <UNIX_TIMESTAMP('{{end_time}}')\ngroup by destination_ip \norder by count desc limit 100"
+											"value": "select\n    destination_ip, IP_TO_GEO(destination_ip) as destination_geo,\n    any(destination_country) as destination_country,\n    groupUniqArray(arrayJoin(splitByString(',',source_country_list))) as source_coutries,\n    max(bit_rate) as max_bit_rate,\n    max(packet_rate) as max_packet_rate,\n    max(session_rate) as max_session_rate,\n    min(start_time) as first_active_time,\n    max(end_time) as last_active_time,\n    (last_active_time-first_active_time) as duration,\n    groupUniqArray(attack_type) as attack_type,\n    count(*) as count\nfrom dos_event  where\n start_time >=  UNIX_TIMESTAMP('{{start_time}}')\n and start_time <UNIX_TIMESTAMP('{{end_time}}')\ngroup by destination_ip \norder by count desc limit 100"
 										}
 									]
 								}
@@ -3512,7 +3967,7 @@
 									}
 								},
 								"url": {
-									"raw": "http://{{qgw_ip}}:{{qgw_port}}/traffic/v1/?protocol",
+									"raw": "http://{{qgw_ip}}:{{qgw_port}}/traffic/v1/?protocol=",
 									"protocol": "http",
 									"host": [
 										"{{qgw_ip}}"
@@ -3561,7 +4016,7 @@
 									}
 								},
 								"url": {
-									"raw": "http://{{qgw_ip}}:{{qgw_port}}/traffic/v1/?protocol",
+									"raw": "http://{{qgw_ip}}:{{qgw_port}}/traffic/v1/?protocol=",
 									"protocol": "http",
 									"host": [
 										"{{qgw_ip}}"
@@ -3610,7 +4065,7 @@
 									}
 								},
 								"url": {
-									"raw": "http://{{qgw_ip}}:{{qgw_port}}/traffic/v1/?protocol",
+									"raw": "http://{{qgw_ip}}:{{qgw_port}}/traffic/v1/?protocol=",
 									"protocol": "http",
 									"host": [
 										"{{qgw_ip}}"
@@ -5946,7 +6401,7 @@
 			"name": "05.数据推荐查询",
 			"item": [
 				{
-					"name": "iplearning",
+					"name": "IP Learning",
 					"event": [
 						{
 							"listen": "prerequest",
@@ -5987,7 +6442,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://{{qgw_ip}}:{{qgw_port}}/knowledge/v1/?iplearning",
+							"raw": "http://{{qgw_ip}}:{{qgw_port}}/knowledge/v1/?iplearning=",
 							"protocol": "http",
 							"host": [
 								"{{qgw_ip}}"
@@ -6009,7 +6464,7 @@
 					"response": []
 				},
 				{
-					"name": "ippool",
+					"name": "推荐IP",
 					"event": [
 						{
 							"listen": "test",
@@ -6040,7 +6495,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://{{qgw_ip}}:{{qgw_port}}/knowledge/v1/?ippool",
+							"raw": "http://{{qgw_ip}}:{{qgw_port}}/knowledge/v1/?ippool=",
 							"protocol": "http",
 							"host": [
 								"{{qgw_ip}}"
@@ -6062,7 +6517,7 @@
 					"response": []
 				},
 				{
-					"name": "subscriberidpool",
+					"name": "推荐Subscriber ID",
 					"event": [
 						{
 							"listen": "test",
@@ -6107,7 +6562,7 @@
 							"query": [
 								{
 									"key": "subscriberidpool",
-									"value": ""
+									"value": null
 								}
 							]
 						}
@@ -6115,7 +6570,7 @@
 					"response": []
 				},
 				{
-					"name": "subscriberIDFramedIP",
+					"name": "推荐Subscriber ID - IP关系",
 					"event": [
 						{
 							"listen": "prerequest",
@@ -6170,7 +6625,7 @@
 							"query": [
 								{
 									"key": "subscriberidpool",
-									"value": null
+									"value": ""
 								}
 							]
 						}
@@ -6365,7 +6820,19 @@
 										}
 									}
 								},
-								"url": "http://{{druid_ip}}:{{druid_port}}/druid/v2/sql"
+								"url": {
+									"raw": "http://{{druid_ip}}:{{druid_port}}/druid/v2/sql",
+									"protocol": "http",
+									"host": [
+										"{{druid_ip}}"
+									],
+									"port": "{{druid_port}}",
+									"path": [
+										"druid",
+										"v2",
+										"sql"
+									]
+								}
 							},
 							"response": []
 						},
@@ -6394,7 +6861,19 @@
 										}
 									}
 								},
-								"url": "http://{{druid_ip}}:{{druid_port}}/druid/v2/sql"
+								"url": {
+									"raw": "http://{{druid_ip}}:{{druid_port}}/druid/v2/sql",
+									"protocol": "http",
+									"host": [
+										"{{druid_ip}}"
+									],
+									"port": "{{druid_port}}",
+									"path": [
+										"druid",
+										"v2",
+										"sql"
+									]
+								}
 							},
 							"response": []
 						},
@@ -6423,7 +6902,19 @@
 										}
 									}
 								},
-								"url": "http://{{druid_ip}}:{{druid_port}}/druid/v2/sql"
+								"url": {
+									"raw": "http://{{druid_ip}}:{{druid_port}}/druid/v2/sql",
+									"protocol": "http",
+									"host": [
+										"{{druid_ip}}"
+									],
+									"port": "{{druid_port}}",
+									"path": [
+										"druid",
+										"v2",
+										"sql"
+									]
+								}
 							},
 							"response": []
 						},
@@ -6452,7 +6943,19 @@
 										}
 									}
 								},
-								"url": "http://{{druid_ip}}:{{druid_port}}/druid/v2/sql"
+								"url": {
+									"raw": "http://{{druid_ip}}:{{druid_port}}/druid/v2/sql",
+									"protocol": "http",
+									"host": [
+										"{{druid_ip}}"
+									],
+									"port": "{{druid_port}}",
+									"path": [
+										"druid",
+										"v2",
+										"sql"
+									]
+								}
 							},
 							"response": []
 						},
@@ -6481,7 +6984,19 @@
 										}
 									}
 								},
-								"url": "http://{{druid_ip}}:{{druid_port}}/druid/v2/sql"
+								"url": {
+									"raw": "http://{{druid_ip}}:{{druid_port}}/druid/v2/sql",
+									"protocol": "http",
+									"host": [
+										"{{druid_ip}}"
+									],
+									"port": "{{druid_port}}",
+									"path": [
+										"druid",
+										"v2",
+										"sql"
+									]
+								}
 							},
 							"response": []
 						},
@@ -6510,7 +7025,19 @@
 										}
 									}
 								},
-								"url": "http://{{druid_ip}}:{{druid_port}}/druid/v2/sql"
+								"url": {
+									"raw": "http://{{druid_ip}}:{{druid_port}}/druid/v2/sql",
+									"protocol": "http",
+									"host": [
+										"{{druid_ip}}"
+									],
+									"port": "{{druid_port}}",
+									"path": [
+										"druid",
+										"v2",
+										"sql"
+									]
+								}
 							},
 							"response": []
 						},
@@ -6539,7 +7066,19 @@
 										}
 									}
 								},
-								"url": "http://{{druid_ip}}:{{druid_port}}/druid/v2/sql"
+								"url": {
+									"raw": "http://{{druid_ip}}:{{druid_port}}/druid/v2/sql",
+									"protocol": "http",
+									"host": [
+										"{{druid_ip}}"
+									],
+									"port": "{{druid_port}}",
+									"path": [
+										"druid",
+										"v2",
+										"sql"
+									]
+								}
 							},
 							"response": []
 						},
@@ -7834,7 +8373,7 @@
 									"formdata": []
 								},
 								"url": {
-									"raw": "http://{{qgw_ip}}:{{qgw_port}}/?&query=\nselect\n\tcount(*) as sessions,\n\tsum(if(common_s2c_byte_diff / common_c2s_byte_diff <= 1, 1, 0)) as \"1 times\",\n\tsum(if(common_s2c_byte_diff / common_c2s_byte_diff > 1 and common_s2c_byte_diff / common_c2s_byte_diff <= 5, 1, 0)) as \"1-5 times\",\n\tsum(if(common_s2c_byte_diff / common_c2s_byte_diff > 5 and common_s2c_byte_diff / common_c2s_byte_diff <= 10, 1, 0)) as \"5-10 times\",\n\tsum(if(common_s2c_byte_diff / common_c2s_byte_diff > 10 and common_s2c_byte_diff / common_c2s_byte_diff <= 20, 1, 0)) as \"10-20 times\",\n\tsum(if(common_s2c_byte_diff / common_c2s_byte_diff > 20 and common_s2c_byte_diff / common_c2s_byte_diff <= 50, 1, 0)) as \"20-50 times\",\n\tsum(if(common_s2c_byte_diff / common_c2s_byte_diff > 50 and common_s2c_byte_diff / common_c2s_byte_diff <= 100, 1, 0)) as \"50-100 times\",\n\tsum(if(common_s2c_byte_diff / common_c2s_byte_diff > 100, 1, 0)) as \"100 times\"\nfrom\n\t\ttransaction_record as rc\nwhere\n    common_recv_time >= '{{start_time}}'\n    and common_recv_time < '{{end_time}}' \n\tand common_c2s_byte_diff>0\n\tand common_s2c_byte_diff>0\n\tand common_c2s_pkt_diff =1\n\tand common_s2c_pkt_diff =1\n\tand common_server_port = 53\n\tand common_schema_type = 'DNS'\n\tand common_server_ip = '60.13.251.208'\n",
+									"raw": "http://{{qgw_ip}}:{{qgw_port}}/?=&query=\nselect\n\tcount(*) as sessions,\n\tsum(if(common_s2c_byte_diff / common_c2s_byte_diff <= 1, 1, 0)) as \"1 times\",\n\tsum(if(common_s2c_byte_diff / common_c2s_byte_diff > 1 and common_s2c_byte_diff / common_c2s_byte_diff <= 5, 1, 0)) as \"1-5 times\",\n\tsum(if(common_s2c_byte_diff / common_c2s_byte_diff > 5 and common_s2c_byte_diff / common_c2s_byte_diff <= 10, 1, 0)) as \"5-10 times\",\n\tsum(if(common_s2c_byte_diff / common_c2s_byte_diff > 10 and common_s2c_byte_diff / common_c2s_byte_diff <= 20, 1, 0)) as \"10-20 times\",\n\tsum(if(common_s2c_byte_diff / common_c2s_byte_diff > 20 and common_s2c_byte_diff / common_c2s_byte_diff <= 50, 1, 0)) as \"20-50 times\",\n\tsum(if(common_s2c_byte_diff / common_c2s_byte_diff > 50 and common_s2c_byte_diff / common_c2s_byte_diff <= 100, 1, 0)) as \"50-100 times\",\n\tsum(if(common_s2c_byte_diff / common_c2s_byte_diff > 100, 1, 0)) as \"100 times\"\nfrom\n\t\ttransaction_record as rc\nwhere\n    common_recv_time >= '{{start_time}}'\n    and common_recv_time < '{{end_time}}' \n\tand common_c2s_byte_diff>0\n\tand common_s2c_byte_diff>0\n\tand common_c2s_pkt_diff =1\n\tand common_s2c_pkt_diff =1\n\tand common_server_port = 53\n\tand common_schema_type = 'DNS'\n\tand common_server_ip = '60.13.251.208'\n",
 									"protocol": "http",
 									"host": [
 										"{{qgw_ip}}"
@@ -7893,7 +8432,7 @@
 									"formdata": []
 								},
 								"url": {
-									"raw": "http://{{qgw_ip}}:{{qgw_port}}/?&query=\nselect \n\ttoDateTime(intDiv(toUInt32(toDateTime(toDateTime(common_recv_time))), 1800)* 1800) as stat_time,\n\tuniq(dns_qname) as uniq_qnames,\n\tuniq(common_client_ip) as uniq_client_ips,\n\tround(sum(common_c2s_byte_diff+common_s2c_byte_diff)*8/1800/1000/1000,2) as \"Mbps\",\n\tround(sum(common_c2s_byte_diff)*8/1800/1000/1000,2) as \"Request Mbps\",\n\tround(sum(common_s2c_byte_diff)*8/1800/1000/1000,2) as \"Response Mbps\",\n\tround(sum(common_c2s_pkt_diff+common_s2c_pkt_diff)/1800/1000,2) as \"Kpps\",\n\tround(sum(common_c2s_pkt_diff)/1800/1000,2) as \"Request Kpps\",\n\tround(sum(common_s2c_pkt_diff)/1800/1000,2) as \"Response Kpps\",\n\tround(count(*)/1800,2) as \"sessions/s\"\nfrom\n\ttransaction_record as ss\nwhere\n\tcommon_recv_time >= '{{start_time}}'\n    and common_recv_time < '{{end_time}}' \n\tand common_c2s_byte_diff>0\n\tand common_s2c_byte_diff>0\n\tand common_c2s_pkt_diff =1\n\tand common_s2c_pkt_diff =1\n\tand common_server_port = 53\n\tand common_schema_type = 'DNS'\n\tand common_server_ip = '60.13.217.234'\ngroup by stat_time \norder by stat_time asc\n",
+									"raw": "http://{{qgw_ip}}:{{qgw_port}}/?=&query=\nselect \n\ttoDateTime(intDiv(toUInt32(toDateTime(toDateTime(common_recv_time))), 1800)* 1800) as stat_time,\n\tuniq(dns_qname) as uniq_qnames,\n\tuniq(common_client_ip) as uniq_client_ips,\n\tround(sum(common_c2s_byte_diff+common_s2c_byte_diff)*8/1800/1000/1000,2) as \"Mbps\",\n\tround(sum(common_c2s_byte_diff)*8/1800/1000/1000,2) as \"Request Mbps\",\n\tround(sum(common_s2c_byte_diff)*8/1800/1000/1000,2) as \"Response Mbps\",\n\tround(sum(common_c2s_pkt_diff+common_s2c_pkt_diff)/1800/1000,2) as \"Kpps\",\n\tround(sum(common_c2s_pkt_diff)/1800/1000,2) as \"Request Kpps\",\n\tround(sum(common_s2c_pkt_diff)/1800/1000,2) as \"Response Kpps\",\n\tround(count(*)/1800,2) as \"sessions/s\"\nfrom\n\ttransaction_record as ss\nwhere\n\tcommon_recv_time >= '{{start_time}}'\n    and common_recv_time < '{{end_time}}' \n\tand common_c2s_byte_diff>0\n\tand common_s2c_byte_diff>0\n\tand common_c2s_pkt_diff =1\n\tand common_s2c_pkt_diff =1\n\tand common_server_port = 53\n\tand common_schema_type = 'DNS'\n\tand common_server_ip = '60.13.217.234'\ngroup by stat_time \norder by stat_time asc\n",
 									"protocol": "http",
 									"host": [
 										"{{qgw_ip}}"
@@ -7952,7 +8491,7 @@
 									"formdata": []
 								},
 								"url": {
-									"raw": "http://{{qgw_ip}}:{{qgw_port}}/?&query=select\n\t(CASE\n\t\tWHEN dns_rcode = 0 THEN 'No error'\n\t\tWHEN dns_rcode = 1 THEN 'Format error'\n\t\tWHEN dns_rcode = 2 THEN 'Server failure'\n\t\tWHEN dns_rcode = 3 THEN 'Name Error'\n\t\tWHEN dns_rcode = 4 THEN 'Not Implemented'\n\t\tWHEN dns_rcode = 5 THEN 'Refused'\n\t\tWHEN dns_rcode = 6 THEN 'YXDomain'\n\t\tWHEN dns_rcode = 7 THEN 'YXRRSet'\n\t\tWHEN dns_rcode = 8 THEN 'NXRRSet'\n\t\tWHEN dns_rcode = 9 THEN 'NotAuth'\n\t\tWHEN dns_rcode = 10 THEN 'NotZone'\n\t\tELSE 'Other' END) as \"Response Code\",\n\tdns_rcode,\n\tcount(1) as requests,\n\tsum(common_c2s_byte_diff) as total_request_bytes,\n\tsum(common_s2c_byte_diff) as total_response_bytes,\n\tsum(common_c2s_pkt_diff) as total_request_packets,\n\tsum(common_s2c_pkt_diff) as total_response_packets,\n\tmax(common_c2s_byte_diff) as max_request_bytes,\n\tmax(common_s2c_byte_diff) as max_response_bytes,\n\tavg(common_c2s_byte_diff) as avg_request_bytes,\n\tavg(common_s2c_byte_diff) as avg_response_bytes,\n\tmedian(common_c2s_byte_diff) as median_request_bytes,\n\tmedian(common_s2c_byte_diff) as median_response_bytes\nfrom\n\ttransaction_record\nwhere\n\tcommon_recv_time >= '{{start_time}}'\n    and common_recv_time < '{{end_time}}' \n\tand common_schema_type = 'DNS' \n\tand common_server_ip = '60.13.217.234'\ngroup by\n\tdns_rcode\norder by\n\trequests desc\n",
+									"raw": "http://{{qgw_ip}}:{{qgw_port}}/?=&query=select\n\t(CASE\n\t\tWHEN dns_rcode = 0 THEN 'No error'\n\t\tWHEN dns_rcode = 1 THEN 'Format error'\n\t\tWHEN dns_rcode = 2 THEN 'Server failure'\n\t\tWHEN dns_rcode = 3 THEN 'Name Error'\n\t\tWHEN dns_rcode = 4 THEN 'Not Implemented'\n\t\tWHEN dns_rcode = 5 THEN 'Refused'\n\t\tWHEN dns_rcode = 6 THEN 'YXDomain'\n\t\tWHEN dns_rcode = 7 THEN 'YXRRSet'\n\t\tWHEN dns_rcode = 8 THEN 'NXRRSet'\n\t\tWHEN dns_rcode = 9 THEN 'NotAuth'\n\t\tWHEN dns_rcode = 10 THEN 'NotZone'\n\t\tELSE 'Other' END) as \"Response Code\",\n\tdns_rcode,\n\tcount(1) as requests,\n\tsum(common_c2s_byte_diff) as total_request_bytes,\n\tsum(common_s2c_byte_diff) as total_response_bytes,\n\tsum(common_c2s_pkt_diff) as total_request_packets,\n\tsum(common_s2c_pkt_diff) as total_response_packets,\n\tmax(common_c2s_byte_diff) as max_request_bytes,\n\tmax(common_s2c_byte_diff) as max_response_bytes,\n\tavg(common_c2s_byte_diff) as avg_request_bytes,\n\tavg(common_s2c_byte_diff) as avg_response_bytes,\n\tmedian(common_c2s_byte_diff) as median_request_bytes,\n\tmedian(common_s2c_byte_diff) as median_response_bytes\nfrom\n\ttransaction_record\nwhere\n\tcommon_recv_time >= '{{start_time}}'\n    and common_recv_time < '{{end_time}}' \n\tand common_schema_type = 'DNS' \n\tand common_server_ip = '60.13.217.234'\ngroup by\n\tdns_rcode\norder by\n\trequests desc\n",
 									"protocol": "http",
 									"host": [
 										"{{qgw_ip}}"
@@ -8011,7 +8550,7 @@
 									"formdata": []
 								},
 								"url": {
-									"raw": "http://{{qgw_ip}}:{{qgw_port}}/?&query=select\n\tdns_qname,\n\tcount(1) as requests,\n\tsum(common_c2s_byte_diff) as total_request_bytes,\n\tsum(common_s2c_byte_diff) as total_response_bytes,\n\tsum(common_c2s_pkt_diff) as total_request_packets,\n\tsum(common_s2c_pkt_diff) as total_response_packets,\n\tmax(common_c2s_byte_diff) as max_request_bytes,\n\tmax(common_s2c_byte_diff) as max_response_bytes,\n\tavg(common_c2s_byte_diff) as avg_request_bytes,\n\tavg(common_s2c_byte_diff) as avg_response_bytes,\n\tmedian(common_c2s_byte_diff) as median_request_bytes,\n\tmedian(common_s2c_byte_diff) as median_response_bytes\nfrom\n\ttransaction_record\nwhere\n\tcommon_recv_time >= '{{start_time}}'\n    and common_recv_time < '{{end_time}}' \n\tand common_schema_type = 'DNS'\n\tand common_server_ip = '117.145.34.90'\ngroup by\n\tdns_qname\norder by\n\trequests desc\nlimit 50",
+									"raw": "http://{{qgw_ip}}:{{qgw_port}}/?=&query=select\n\tdns_qname,\n\tcount(1) as requests,\n\tsum(common_c2s_byte_diff) as total_request_bytes,\n\tsum(common_s2c_byte_diff) as total_response_bytes,\n\tsum(common_c2s_pkt_diff) as total_request_packets,\n\tsum(common_s2c_pkt_diff) as total_response_packets,\n\tmax(common_c2s_byte_diff) as max_request_bytes,\n\tmax(common_s2c_byte_diff) as max_response_bytes,\n\tavg(common_c2s_byte_diff) as avg_request_bytes,\n\tavg(common_s2c_byte_diff) as avg_response_bytes,\n\tmedian(common_c2s_byte_diff) as median_request_bytes,\n\tmedian(common_s2c_byte_diff) as median_response_bytes\nfrom\n\ttransaction_record\nwhere\n\tcommon_recv_time >= '{{start_time}}'\n    and common_recv_time < '{{end_time}}' \n\tand common_schema_type = 'DNS'\n\tand common_server_ip = '117.145.34.90'\ngroup by\n\tdns_qname\norder by\n\trequests desc\nlimit 50",
 									"protocol": "http",
 									"host": [
 										"{{qgw_ip}}"
@@ -8070,7 +8609,7 @@
 									"formdata": []
 								},
 								"url": {
-									"raw": "http://{{qgw_ip}}:{{qgw_port}}/?&query=select\n(CASE\nWHEN dns_qtype = 1 THEN 'A'\nWHEN dns_qtype = 2 THEN 'NS'\nWHEN dns_qtype = 3 THEN 'MD'\nWHEN dns_qtype = 4 THEN 'MF'\nWHEN dns_qtype = 5 THEN 'CNAME'\nWHEN dns_qtype = 6 THEN 'SOA'\nWHEN dns_qtype = 7 THEN 'MB'\nWHEN dns_qtype = 8 THEN 'MG'\nWHEN dns_qtype = 9 THEN 'MR'\nWHEN dns_qtype = 10 THEN 'NULL'\nWHEN dns_qtype = 11 THEN 'WKS'\nWHEN dns_qtype = 12 THEN 'PTR'\nWHEN dns_qtype = 13 THEN 'HINFO'\nWHEN dns_qtype = 15 THEN 'MX'\nWHEN dns_qtype = 16 THEN 'TXT'\nWHEN dns_qtype = 25 THEN 'KEY'\nWHEN dns_qtype = 28 THEN 'AAAA'\nWHEN dns_qtype = 33 THEN 'SRV'\nWHEN dns_qtype = 35 THEN 'NAPTR'\nWHEN dns_qtype = 38 THEN 'A6'\nWHEN dns_qtype = 39 THEN 'DNAME'\nWHEN dns_qtype = 43 THEN 'DS'\nWHEN dns_qtype = 46 THEN 'RRSIG'\nWHEN dns_qtype = 48 THEN 'DNSKEY'\nWHEN dns_qtype = 49 THEN 'DHCID'\nWHEN dns_qtype = 99 THEN 'SPF'\nWHEN dns_qtype = 255 THEN '*. A'\nWHEN dns_qtype = 256 THEN 'URI' ELSE 'Other' END) as \"Query Type\",\ndns_qtype,\ncount(1) as requests,\nsum(common_c2s_byte_diff) as total_request_bytes,\nsum(common_s2c_byte_diff) as total_response_bytes,\nsum(common_c2s_pkt_diff) as total_request_packets,\nsum(common_s2c_pkt_diff) as total_response_packets,\nmax(common_c2s_byte_diff) as max_request_bytes,\nmax(common_s2c_byte_diff) as max_response_bytes,\navg(common_c2s_byte_diff) as avg_request_bytes,\navg(common_s2c_byte_diff) as avg_response_bytes,\nmedian(common_c2s_byte_diff) as median_request_bytes,\nmedian(common_s2c_byte_diff) as median_response_bytes\nfrom transaction_record where\ncommon_recv_time >= '{{start_time}}'\n    and common_recv_time < '{{end_time}}' \nand common_schema_type = 'DNS'\nand common_server_ip = '117.145.34.90'\ngroup by dns_qtype\norder by requests desc",
+									"raw": "http://{{qgw_ip}}:{{qgw_port}}/?=&query=select\n(CASE\nWHEN dns_qtype = 1 THEN 'A'\nWHEN dns_qtype = 2 THEN 'NS'\nWHEN dns_qtype = 3 THEN 'MD'\nWHEN dns_qtype = 4 THEN 'MF'\nWHEN dns_qtype = 5 THEN 'CNAME'\nWHEN dns_qtype = 6 THEN 'SOA'\nWHEN dns_qtype = 7 THEN 'MB'\nWHEN dns_qtype = 8 THEN 'MG'\nWHEN dns_qtype = 9 THEN 'MR'\nWHEN dns_qtype = 10 THEN 'NULL'\nWHEN dns_qtype = 11 THEN 'WKS'\nWHEN dns_qtype = 12 THEN 'PTR'\nWHEN dns_qtype = 13 THEN 'HINFO'\nWHEN dns_qtype = 15 THEN 'MX'\nWHEN dns_qtype = 16 THEN 'TXT'\nWHEN dns_qtype = 25 THEN 'KEY'\nWHEN dns_qtype = 28 THEN 'AAAA'\nWHEN dns_qtype = 33 THEN 'SRV'\nWHEN dns_qtype = 35 THEN 'NAPTR'\nWHEN dns_qtype = 38 THEN 'A6'\nWHEN dns_qtype = 39 THEN 'DNAME'\nWHEN dns_qtype = 43 THEN 'DS'\nWHEN dns_qtype = 46 THEN 'RRSIG'\nWHEN dns_qtype = 48 THEN 'DNSKEY'\nWHEN dns_qtype = 49 THEN 'DHCID'\nWHEN dns_qtype = 99 THEN 'SPF'\nWHEN dns_qtype = 255 THEN '*. A'\nWHEN dns_qtype = 256 THEN 'URI' ELSE 'Other' END) as \"Query Type\",\ndns_qtype,\ncount(1) as requests,\nsum(common_c2s_byte_diff) as total_request_bytes,\nsum(common_s2c_byte_diff) as total_response_bytes,\nsum(common_c2s_pkt_diff) as total_request_packets,\nsum(common_s2c_pkt_diff) as total_response_packets,\nmax(common_c2s_byte_diff) as max_request_bytes,\nmax(common_s2c_byte_diff) as max_response_bytes,\navg(common_c2s_byte_diff) as avg_request_bytes,\navg(common_s2c_byte_diff) as avg_response_bytes,\nmedian(common_c2s_byte_diff) as median_request_bytes,\nmedian(common_s2c_byte_diff) as median_response_bytes\nfrom transaction_record where\ncommon_recv_time >= '{{start_time}}'\n    and common_recv_time < '{{end_time}}' \nand common_schema_type = 'DNS'\nand common_server_ip = '117.145.34.90'\ngroup by dns_qtype\norder by requests desc",
 									"protocol": "http",
 									"host": [
 										"{{qgw_ip}}"
@@ -8184,7 +8723,7 @@
 									"formdata": []
 								},
 								"url": {
-									"raw": "http://{{qgw_ip}}:{{qgw_port}}/?&query=SELECT\n\tcount(1) as requests,\n\tsum(common_c2s_byte_diff) as total_request_bytes,\n\tsum(common_s2c_byte_diff) as total_response_bytes,\n\tsum(common_c2s_pkt_diff) as total_request_packets,\n\tsum(common_s2c_pkt_diff) as total_response_packets,\n\tmax(common_c2s_byte_diff) as max_request_bytes,\n\tmax(common_s2c_byte_diff) as max_response_bytes,\n\tavg(common_c2s_byte_diff) as avg_request_bytes,\n\tavg(common_s2c_byte_diff) as avg_response_bytes,\n\tmedian(common_c2s_byte_diff) as median_request_bytes,\n\tmedian(common_s2c_byte_diff) as median_response_bytes,\n\tcommon_server_ip,\n\tgroupUniqArray(common_server_port) as ports,\n\tany(common_server_location) as server_location\nfrom\n\ttransaction_record\nwhere\n\tcommon_recv_time >= '{{start_time}}'\n    and common_recv_time < '{{end_time}}' \n    and common_client_ip = '123.101.255.253' \n\tand common_schema_type = 'DNS'\ngroup by\n\tcommon_server_ip\norder by\n\trequests desc",
+									"raw": "http://{{qgw_ip}}:{{qgw_port}}/?=&query=SELECT\n\tcount(1) as requests,\n\tsum(common_c2s_byte_diff) as total_request_bytes,\n\tsum(common_s2c_byte_diff) as total_response_bytes,\n\tsum(common_c2s_pkt_diff) as total_request_packets,\n\tsum(common_s2c_pkt_diff) as total_response_packets,\n\tmax(common_c2s_byte_diff) as max_request_bytes,\n\tmax(common_s2c_byte_diff) as max_response_bytes,\n\tavg(common_c2s_byte_diff) as avg_request_bytes,\n\tavg(common_s2c_byte_diff) as avg_response_bytes,\n\tmedian(common_c2s_byte_diff) as median_request_bytes,\n\tmedian(common_s2c_byte_diff) as median_response_bytes,\n\tcommon_server_ip,\n\tgroupUniqArray(common_server_port) as ports,\n\tany(common_server_location) as server_location\nfrom\n\ttransaction_record\nwhere\n\tcommon_recv_time >= '{{start_time}}'\n    and common_recv_time < '{{end_time}}' \n    and common_client_ip = '123.101.255.253' \n\tand common_schema_type = 'DNS'\ngroup by\n\tcommon_server_ip\norder by\n\trequests desc",
 									"protocol": "http",
 									"host": [
 										"{{qgw_ip}}"
@@ -8243,7 +8782,7 @@
 									"formdata": []
 								},
 								"url": {
-									"raw": "http://{{qgw_ip}}:{{qgw_port}}/?&query=\nselect\n\tcount(*) as ips,\n\tsum(if(byte_ratio <= 1, 1, 0)) as \"1 times\",\n\tsum(if(byte_ratio > 1 and byte_ratio <= 5, 1, 0)) as \"1-5 times\",\n\tsum(if(byte_ratio > 5 and byte_ratio <= 10, 1, 0)) as \"5-10 times\",\n\tsum(if(byte_ratio > 10 and byte_ratio <= 20, 1, 0)) as \"10-20 times\",\n\tsum(if(byte_ratio > 20 and byte_ratio <= 50, 1, 0)) as \"20-50 times\",\n\tsum(if(byte_ratio > 50 and byte_ratio <= 100, 1, 0)) as \"50-100 times\",\n\tsum(if(byte_ratio > 100, 1, 0)) as \"100 times\"\nfrom\n\t(\n\tSELECT\n\t\tcommon_server_ip,\n\t\tmedian(common_s2c_byte_diff / common_c2s_byte_diff) as byte_ratio,\n\t\tcount(*) as sessions\n\tfrom\n\t\ttransaction_record\n\twhere\n\t\tcommon_recv_time >= '{{start_time}}'\n\t\tand common_recv_time < '{{end_time}}'\n\t\tand common_c2s_byte_diff>0\n\t\tand common_s2c_byte_diff>0\n\t\tand common_c2s_pkt_diff =1\n\t\tand common_s2c_pkt_diff =1\n\t\tand common_server_port = 53\n\t\tand common_schema_type = 'DNS'\n\tgroup by\n\t\tcommon_server_ip\n)",
+									"raw": "http://{{qgw_ip}}:{{qgw_port}}/?=&query=\nselect\n\tcount(*) as ips,\n\tsum(if(byte_ratio <= 1, 1, 0)) as \"1 times\",\n\tsum(if(byte_ratio > 1 and byte_ratio <= 5, 1, 0)) as \"1-5 times\",\n\tsum(if(byte_ratio > 5 and byte_ratio <= 10, 1, 0)) as \"5-10 times\",\n\tsum(if(byte_ratio > 10 and byte_ratio <= 20, 1, 0)) as \"10-20 times\",\n\tsum(if(byte_ratio > 20 and byte_ratio <= 50, 1, 0)) as \"20-50 times\",\n\tsum(if(byte_ratio > 50 and byte_ratio <= 100, 1, 0)) as \"50-100 times\",\n\tsum(if(byte_ratio > 100, 1, 0)) as \"100 times\"\nfrom\n\t(\n\tSELECT\n\t\tcommon_server_ip,\n\t\tmedian(common_s2c_byte_diff / common_c2s_byte_diff) as byte_ratio,\n\t\tcount(*) as sessions\n\tfrom\n\t\ttransaction_record\n\twhere\n\t\tcommon_recv_time >= '{{start_time}}'\n\t\tand common_recv_time < '{{end_time}}'\n\t\tand common_c2s_byte_diff>0\n\t\tand common_s2c_byte_diff>0\n\t\tand common_c2s_pkt_diff =1\n\t\tand common_s2c_pkt_diff =1\n\t\tand common_server_port = 53\n\t\tand common_schema_type = 'DNS'\n\tgroup by\n\t\tcommon_server_ip\n)",
 									"protocol": "http",
 									"host": [
 										"{{qgw_ip}}"
@@ -8302,7 +8841,7 @@
 									"formdata": []
 								},
 								"url": {
-									"raw": "http://{{qgw_ip}}:{{qgw_port}}/?&query=SELECT\n\tarrayElement(splitByString(',',common_server_location),length(splitByString(',',common_server_location))) as server_location,\n\tcount(*) as ips\nfrom\n\t(\n\tSELECT\n\t\tcommon_server_ip,\n\t\tany(common_server_location) as common_server_location,\n\t\tmedian(common_s2c_byte_diff / common_c2s_byte_diff) as byte_ratio,\n\t\tcount(*) as sessions\n\tfrom\n\t\ttransaction_record\n\twhere\n\t\tcommon_recv_time >= '{{start_time}}'\n\t\tand common_recv_time < '{{end_time}}'\n\t\tand common_c2s_byte_diff>0\n\t\tand common_s2c_byte_diff>0\n\t\tand common_c2s_pkt_diff =1\n\t\tand common_s2c_pkt_diff =1\n\t\tand common_server_port = 53\n\t\tand common_schema_type = 'DNS'\n\tgroup by\n\t\tcommon_server_ip\n\thaving\n\t\tbyte_ratio > 20\n)\ngroup by\n\tserver_location\norder by\n\tips desc",
+									"raw": "http://{{qgw_ip}}:{{qgw_port}}/?=&query=SELECT\n\tarrayElement(splitByString(',',common_server_location),length(splitByString(',',common_server_location))) as server_location,\n\tcount(*) as ips\nfrom\n\t(\n\tSELECT\n\t\tcommon_server_ip,\n\t\tany(common_server_location) as common_server_location,\n\t\tmedian(common_s2c_byte_diff / common_c2s_byte_diff) as byte_ratio,\n\t\tcount(*) as sessions\n\tfrom\n\t\ttransaction_record\n\twhere\n\t\tcommon_recv_time >= '{{start_time}}'\n\t\tand common_recv_time < '{{end_time}}'\n\t\tand common_c2s_byte_diff>0\n\t\tand common_s2c_byte_diff>0\n\t\tand common_c2s_pkt_diff =1\n\t\tand common_s2c_pkt_diff =1\n\t\tand common_server_port = 53\n\t\tand common_schema_type = 'DNS'\n\tgroup by\n\t\tcommon_server_ip\n\thaving\n\t\tbyte_ratio > 20\n)\ngroup by\n\tserver_location\norder by\n\tips desc",
 									"protocol": "http",
 									"host": [
 										"{{qgw_ip}}"
@@ -8481,7 +9020,7 @@
 									"formdata": []
 								},
 								"url": {
-									"raw": "http://{{qgw_ip}}:{{qgw_port}}/?query=select\n\tround(tcp_logs / total_logs, 2) as \"TCP Percentage\",\n\tround(udp_logs / total_logs, 2) as \"UDP Percentage\",\n\tround(base_tcp_logs / tcp_logs, 2) as \"Base TCP Percentage\",\n\tround(base_udp_logs / udp_logs, 2) as \"Base UDP Percentage\",\n\tround(egress_logs / total_logs, 2) as \"Egress Percentage\",\n\tround(ingress_logs / total_logs, 2) as \"Ingress Percentage\",\n\ttcp_logs as \"TCP Logs\",\n\tudp_logs as \"UDP Logs\",\n\tegress_logs as \"Egress Logs\",\n\tingress_logs as \"Ingress Logs\",\n\ttotal_logs as \"Total Logs\"\nfrom\n\t(select\n\t\tsum(if(common_l4_protocol in('IPv4_TCP', 'IPv6_TCP'), 1, 0)) as tcp_logs,\n\t\tsum(if(common_l4_protocol in('IPv4_UDP', 'IPv6_UDP'), 1, 0)) as udp_logs,\n\t\tsum(If(common_l4_protocol in ('IPv4_TCP', 'IPv6_TCP') and common_schema_type='BASE', 1, 0)) as base_tcp_logs,\n\t\tsum(if(common_l4_protocol in('IPv4_UDP', 'IPv6_UDP') and common_schema_type='BASE', 1, 0)) as base_udp_logs,\n\t\tsum(if(common_direction = 69, 1, 0)) as egress_logs,\n\t\tsum(if(common_direction = 73, 1, 0)) as ingress_logs,\n\t\tcount(*) as total_logs\n\tfrom\n\t\tsession_record as sub_connection where common_recv_time >='{{start_time}}' and common_recv_time < '{{end_time}}' \n\t)",
+									"raw": "http://{{qgw_ip}}:{{qgw_port}}/?query=select\n\tround(tcp_logs / logs, 2) as \"TCP Percentage\",\n\tround(udp_logs / logs, 2) as \"UDP Percentage\",\n\tround(egress_bytes / bytes, 2) as \"Egress Percentage\",\n\tround(ingress_bytes / bytes, 2) as \"Ingress Percentage\",\n\ttcp_logs as \"TCP Logs\",\n\tudp_logs as \"UDP Logs\",\n\tlogs as \"Logs\",\n\tegress_bytes as \"Egress Bytes\",\n\tingress_bytes as \"Ingress Bytes\",\n\tbytes as \"Bytes\"\nfrom\n\t(select\n\t\tsum(if(common_l4_protocol in('IPv4_TCP', 'IPv6_TCP'), 1, 0)) as tcp_logs,\n\t\tsum(if(common_l4_protocol in('IPv4_UDP', 'IPv6_UDP'), 1, 0)) as udp_logs,\n\t    sum(if(common_direction = 69, common_c2s_byte_num, common_s2c_byte_num)) as egress_bytes,\n\t    sum(if(common_direction = 73, common_c2s_byte_num, common_s2c_byte_num)) as ingress_bytes,\n\t\tcount(*) as logs,\n\t\tsum(common_c2s_byte_num + common_s2c_byte_num) as bytes\n\tfrom\n\t\tsession_record as sub_connection where common_recv_time >='{{start_time}}' and common_recv_time < '{{end_time}}' \n\t)",
 									"protocol": "http",
 									"host": [
 										"{{qgw_ip}}"
@@ -8503,7 +9042,7 @@
 										},
 										{
 											"key": "query",
-											"value": "select\n\tround(tcp_logs / total_logs, 2) as \"TCP Percentage\",\n\tround(udp_logs / total_logs, 2) as \"UDP Percentage\",\n\tround(base_tcp_logs / tcp_logs, 2) as \"Base TCP Percentage\",\n\tround(base_udp_logs / udp_logs, 2) as \"Base UDP Percentage\",\n\tround(egress_logs / total_logs, 2) as \"Egress Percentage\",\n\tround(ingress_logs / total_logs, 2) as \"Ingress Percentage\",\n\ttcp_logs as \"TCP Logs\",\n\tudp_logs as \"UDP Logs\",\n\tegress_logs as \"Egress Logs\",\n\tingress_logs as \"Ingress Logs\",\n\ttotal_logs as \"Total Logs\"\nfrom\n\t(select\n\t\tsum(if(common_l4_protocol in('IPv4_TCP', 'IPv6_TCP'), 1, 0)) as tcp_logs,\n\t\tsum(if(common_l4_protocol in('IPv4_UDP', 'IPv6_UDP'), 1, 0)) as udp_logs,\n\t\tsum(If(common_l4_protocol in ('IPv4_TCP', 'IPv6_TCP') and common_schema_type='BASE', 1, 0)) as base_tcp_logs,\n\t\tsum(if(common_l4_protocol in('IPv4_UDP', 'IPv6_UDP') and common_schema_type='BASE', 1, 0)) as base_udp_logs,\n\t\tsum(if(common_direction = 69, 1, 0)) as egress_logs,\n\t\tsum(if(common_direction = 73, 1, 0)) as ingress_logs,\n\t\tcount(*) as total_logs\n\tfrom\n\t\tsession_record as sub_connection where common_recv_time >='{{start_time}}' and common_recv_time < '{{end_time}}' \n\t)"
+											"value": "select\n\tround(tcp_logs / logs, 2) as \"TCP Percentage\",\n\tround(udp_logs / logs, 2) as \"UDP Percentage\",\n\tround(egress_bytes / bytes, 2) as \"Egress Percentage\",\n\tround(ingress_bytes / bytes, 2) as \"Ingress Percentage\",\n\ttcp_logs as \"TCP Logs\",\n\tudp_logs as \"UDP Logs\",\n\tlogs as \"Logs\",\n\tegress_bytes as \"Egress Bytes\",\n\tingress_bytes as \"Ingress Bytes\",\n\tbytes as \"Bytes\"\nfrom\n\t(select\n\t\tsum(if(common_l4_protocol in('IPv4_TCP', 'IPv6_TCP'), 1, 0)) as tcp_logs,\n\t\tsum(if(common_l4_protocol in('IPv4_UDP', 'IPv6_UDP'), 1, 0)) as udp_logs,\n\t    sum(if(common_direction = 69, common_c2s_byte_num, common_s2c_byte_num)) as egress_bytes,\n\t    sum(if(common_direction = 73, common_c2s_byte_num, common_s2c_byte_num)) as ingress_bytes,\n\t\tcount(*) as logs,\n\t\tsum(common_c2s_byte_num + common_s2c_byte_num) as bytes\n\tfrom\n\t\tsession_record as sub_connection where common_recv_time >='{{start_time}}' and common_recv_time < '{{end_time}}' \n\t)"
 										}
 									]
 								}
@@ -10473,7 +11012,14 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "http://{{kafka_load_ip}}:{{kafka_monitor_port}}",
+						"url": {
+							"raw": "http://{{kafka_load_ip}}:{{kafka_monitor_port}}",
+							"protocol": "http",
+							"host": [
+								"{{kafka_load_ip}}"
+							],
+							"port": "{{kafka_monitor_port}}"
+						},
 						"description": "## Kafka Topics\n\n```\n在监控指标结果下，直接复制指标进行查找定位，仅需修改\"topic\"里内容。\n```\n\n- kafka_server_BrokerTopicMetrics_MeanRate\n  - Topic 消息传输速率均值，可定位当前Topic平均处理多少消息\n  - 每秒接收消息：kafka_server_BrokerTopicMetrics_MeanRate{name=\\\"MessagesInPerSec\\\",topic=\\\"CONNECTION-RECORD-LOG\\\",}\n  - 每秒失败的请求数量：kafka_server_BrokerTopicMetrics_MeanRate{name=\\\"FailedFetchRequestsPerSec\\\",topic=\\\"CONNECTION-RECORD-LOG\\\",}\n  - 每秒失败的生产数量：kafka_server_BrokerTopicMetrics_MeanRate{name=\\\"FailedProduceRequestsPerSec\\\",topic=\\\"CONNECTION-RECORD-LOG\\\",}\n- kafka_server_BrokerTopicMetrics_OneMinuteRate\n  - Topic 1分钟内传输消息速率，可定位最近1分钟有无数据\n  - 每秒接收消息：kafka_server_BrokerTopicMetrics_OneMinuteRate{name=\\\"MessagesInPerSec\\\",topic=\\\"CONNECTION-RECORD-LOG\\\",}\n  - 每秒失败的请求数量：kafka_server_BrokerTopicMetrics_OneMinuteRate{name=\\\"FailedFetchRequestsPerSec\\\",topic=\\\"CONNECTION-RECORD-LOG\\\",}\n  - 每秒失败的生产数量：kafka_server_BrokerTopicMetrics_OneMinuteRate{name=\\\"FailedProduceRequestsPerSec\\\",topic=\\\"CONNECTION-RECORD-LOG\\\",}\n- kafka_server_BrokerTopicMetrics_FiveMinuteRate\n  - Topic 5分钟内传输消息速率，可定位最近5分钟有无数据\n  - 每秒接收消息：kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\\\"MessagesInPerSec\\\",topic=\\\"CONNECTION-RECORD-LOG\\\",}\n  - 每秒失败的请求数量：kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\\\"FailedFetchRequestsPerSec\\\",topic=\\\"CONNECTION-RECORD-LOG\\\",}\n  - 每秒失败的生产数量：kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\\\"FailedProduceRequestsPerSec\\\",topic=\\\"CONNECTION-RECORD-LOG\\\",}\n- kafka_server_BrokerTopicMetrics_FifteenMinuteRate\n  - Topic 15分钟内传输消息速率，可定位最近15分钟有无数据\n  - 每秒接收消息：kafka_server_BrokerTopicMetrics_FifteenMinuteRate{name=\\\"MessagesInPerSec\\\",topic=\\\"CONNECTION-RECORD-LOG\\\",}\n  - 每秒失败的请求数量：kafka_server_BrokerTopicMetrics_FifteenMinuteRate{name=\\\"FailedFetchRequestsPerSec\\\",topic=\\\"CONNECTION-RECORD-LOG\\\",}\n  - 每秒失败的生产数量：kafka_server_BrokerTopicMetrics_FifteenMinuteRate{name=\\\"FailedProduceRequestsPerSec\\\",topic=\\\"CONNECTION-RECORD-LOG\\\",}"
 					},
 					"response": []
