@@ -1,5 +1,15 @@
 # galaxy-troubleshooting-api
 
+## Release 21.12 (1 Dec 2021)
+###### New Features
+
+*   新增数据推荐查询-实时查询任务
+*   新增数据推荐查询-推荐Subscriber ID 到IP关系
+*   新增数据推荐查询-推荐APP活跃客户端IP
+*   新增数据推荐查询-推荐TopN Server IP
+*   新增数据推荐查询-推荐TopN SNI
+
+
 ## Release 21.11 (5 Nov 2021)
 ###### New Features
 * 新增实时推荐SubscribeID与IP映射接口 
