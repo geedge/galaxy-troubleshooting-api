@@ -2,7 +2,7 @@
 	"info": {
 		"_postman_id": "d41ac37e-c914-487f-9ff5-b88fea2180d2",
 		"name": "Galaxy Trouble Shooting API V21.12",
-		"description": "# galaxy-troubleshooting-api\n\n## Release 21.12 (1 Dec 2021)'\n\n###### New Features\n\n*   新增数据推荐查询-实时查询任务\n*   新增数据推荐查询-推荐Subscriber ID 到IP关系\n*   新增数据推荐查询-推荐APP活跃客户端IP\n*   新增数据推荐查询-推荐TopN Server IP\n*   新增数据推荐查询-推荐TopN SNI\n    \n\n## Release 21.11 (5 Nov 2021)\n\n###### New Features\n\n*   Delete\n*   Update\n*   修改报告查询接口(由查询mariadb方式变更为API接口)\n*   修改规范“数据推荐查询”所有接口的命名\n    \n\n## Release 21.10 (28 OCT 2021)\n\n###### New Features\n\n*   新增HOS健康状态检测接口\n*   Delete\n*   删除原ClickHouse/Druid/ArangoDB 状态检查接口\n    \n\n## Release 21.09 (23 SEP 2021)\n\n###### New Features\n\n*   Update\n*   删除分布式调度任务，5分钟TOPN校验，交由FLink统计\n*   原始日志表名进行重命名，相关查询接口更新\n*   修正DNS分析的SQL数据集\n    \n\n## Release 21.08 (15 AUG 2021)\n\n###### New Features\n\n*   新增“Dashboard查询-DoS Threat Map”功能列表，显示DoS检测地图接口\n*   新增“原始日志查询-DoS事件日志”，显示DoS攻击检测日志\n*   新增“原始日志查询-DoS事件日志-Summary”，显示DoS攻击趋势统计\n*   新增“原始日志查询-DoS事件日志-Destination IP Traffic Trend”，显示受害者IP历史流量趋势\n*   Update\n*   迁移“Dashboard查询”liveCharts接口，放到“Live Charts”目录中统一管理。\n*   对DNS分析，增加一些查询样例\n    \n\n## Release 21.07 (5 JUL 2021)\n\n###### New Features\n\n*   增加”常用快捷功能-基数统计“，用于分析日志分布情况\n*   增加”常用快捷功能-DNS放大攻击“，查询特征数据集\n*   增加”通用检查-对象存储-获取某个文件“，用于文件获取验证\n    \n\n###### Update\n\n*   为所有接口增加Tests脚本，对接口进行批量验证测试\n*   修正部分接口查询异常\n    \n\n## Release 21.06 (7 JUN 2021)\n\n###### New Features\n\n*   Environments 增加环境变量domain、client\\_ip、server\\_ip、l7\\_protocol和PT1M\\_TIME\n*   常用快捷功能增加某域名下钻、某IP下钻、协议下钻和DNS分析功能\n    \n\n###### Update\n\n*   原始日志查询，基于Druid近1小时日志变化粒度从5分钟改为1分钟。包含通联、策略和代理日志。\n    \n\n## Release 21.05 (6 MAY 2021)\n\n###### New Features\n\n*   新增“GTP-C日志”功能，辅助故障诊断\n*   新增“事务日志”功能，辅助故障诊断\n*   新增“活跃会话日志”功能，辅助故障诊断\n*   新增“07.常用快捷功能-评估写入日志量”，查看当前系统的吞吐\n    \n\n###### Update\n\n*   修改\"01.通用检查-数据存储检查\"，增加事务、活跃及GTP-C 检测\n    \n\n## Release 21.04 (3 APR 2021)\n\n###### New Features\n\n*   增加“VoIP日志”功能，辅助故障诊断\n*   增加“元数据检查”分类目录\n*   增加“HOS对象存储”目录，用于定位对象存储\n    \n\n###### Update\n\n*   修改“SQL语法检查”为“SQL语法验证”，支持SQL语句的静态分析和数据库语义验证\n*   迁移功能项位置，方便问题定位\n    \n\n###### Delete\n\n*   删除“系统检查-查询引擎SQL测试集\\[过时\\]”功能，由“故障诊断-sql性能测试”替代。\n    \n\n## Release 21.03 (2 MAR 2021)\n\n###### New Features\n\n*   增加故障诊断-元数据功能，可分析日志字段是否与schema一致\n*   增加故障诊断-sql性能测试，可对查询引擎进行功能性验证和POC性能测试\n    \n\n###### Update\n\n*   对查询引擎SQL测试集标记过时\n    \n\n## Release 21.02 (1 FEB 2021)\n\n###### Update\n\n*   改善内部测试集，应对新的功能修改\n    \n\n## Release 20.11.rc3 (11 DEC 2020)\n\n###### New Features\n\n*   增加常用快捷功能- 安装证书独立客户端IP数据趋势\n*   增加常用快捷功能-访问速度最慢TOP20 域名\n*   增加常用快捷功能-报告预置Metrics\n*   增加原始日志查询-安全策略-动作命中计数\n*   增加原始日志查询-代理策略-动作命中计数\n*   增加原始日志查询-通联-流量计数(now)\n    \n\n###### Update\n\n*   改善Dashboard查询-基础统计-新建、活跃（计数）-now\n*   改善Dashboard查询-新建、活跃（趋势）\n*   目录增加编号，便于管理\n*   修改分布式调度任务-5分钟TOPN-hot表验证表名\n*   部分Action为post 改为 get，便于导出命令行",
+		"description": "# galaxy-troubleshooting-api\n\n## Release 21.12 (1 Dec 2021)\n\n###### New Features\n\n*   新增数据推荐查询-实时查询任务\n*   新增数据推荐查询-推荐Subscriber ID 到IP关系\n*   新增数据推荐查询-推荐APP活跃客户端IP\n*   新增数据推荐查询-推荐TopN Server IP\n*   新增数据推荐查询-推荐TopN SNI\n*   新增常用快捷功能-查询网关，增加优化查询测试集\n    *   Top 查询优化\n    *   Calcite 缓存查询\n    *   自定义时间函数补全功能\n\n###### Update\n\n*   Dashboard 查询，代理策略命中动作增加Edit Element 统计\n    \n\n## Release 21.11 (5 Nov 2021)\n\n###### New Features\n\n*   Delete\n*   Update\n*   修改报告查询接口(由查询mariadb方式变更为API接口)\n*   修改规范“数据推荐查询”所有接口的命名\n    \n\n## Release 21.10 (28 OCT 2021)\n\n###### New Features\n\n*   新增HOS健康状态检测接口\n*   Delete\n*   删除原ClickHouse/Druid/ArangoDB 状态检查接口\n    \n\n## Release 21.09 (23 SEP 2021)\n\n###### New Features\n\n*   Update\n*   删除分布式调度任务，5分钟TOPN校验，交由FLink统计\n*   原始日志表名进行重命名，相关查询接口更新\n*   修正DNS分析的SQL数据集\n    \n\n## Release 21.08 (15 AUG 2021)\n\n###### New Features\n\n*   新增“Dashboard查询-DoS Threat Map”功能列表，显示DoS检测地图接口\n*   新增“原始日志查询-DoS事件日志”，显示DoS攻击检测日志\n*   新增“原始日志查询-DoS事件日志-Summary”，显示DoS攻击趋势统计\n*   新增“原始日志查询-DoS事件日志-Destination IP Traffic Trend”，显示受害者IP历史流量趋势\n*   Update\n*   迁移“Dashboard查询”liveCharts接口，放到“Live Charts”目录中统一管理。\n*   对DNS分析，增加一些查询样例\n    \n\n## Release 21.07 (5 JUL 2021)\n\n###### New Features\n\n*   增加”常用快捷功能-基数统计“，用于分析日志分布情况\n*   增加”常用快捷功能-DNS放大攻击“，查询特征数据集\n*   增加”通用检查-对象存储-获取某个文件“，用于文件获取验证\n    \n\n###### Update\n\n*   为所有接口增加Tests脚本，对接口进行批量验证测试\n*   修正部分接口查询异常\n    \n\n## Release 21.06 (7 JUN 2021)\n\n###### New Features\n\n*   Environments 增加环境变量domain、client_ip、server_ip、l7_protocol和PT1M_TIME\n*   常用快捷功能增加某域名下钻、某IP下钻、协议下钻和DNS分析功能\n    \n\n###### Update\n\n*   原始日志查询，基于Druid近1小时日志变化粒度从5分钟改为1分钟。包含通联、策略和代理日志。\n    \n\n## Release 21.05 (6 MAY 2021)\n\n###### New Features\n\n*   新增“GTP-C日志”功能，辅助故障诊断\n*   新增“事务日志”功能，辅助故障诊断\n*   新增“活跃会话日志”功能，辅助故障诊断\n*   新增“07.常用快捷功能-评估写入日志量”，查看当前系统的吞吐\n    \n\n###### Update\n\n*   修改\"01.通用检查-数据存储检查\"，增加事务、活跃及GTP-C 检测\n    \n\n## Release 21.04 (3 APR 2021)\n\n###### New Features\n\n*   增加“VoIP日志”功能，辅助故障诊断\n*   增加“元数据检查”分类目录\n*   增加“HOS对象存储”目录，用于定位对象存储\n    \n\n###### Update\n\n*   修改“SQL语法检查”为“SQL语法验证”，支持SQL语句的静态分析和数据库语义验证\n*   迁移功能项位置，方便问题定位\n    \n\n###### Delete\n\n*   删除“系统检查-查询引擎SQL测试集\\[过时\\]”功能，由“故障诊断-sql性能测试”替代。\n    \n\n## Release 21.03 (2 MAR 2021)\n\n###### New Features\n\n*   增加故障诊断-元数据功能，可分析日志字段是否与schema一致\n*   增加故障诊断-sql性能测试，可对查询引擎进行功能性验证和POC性能测试\n    \n\n###### Update\n\n*   对查询引擎SQL测试集标记过时\n    \n\n## Release 21.02 (1 FEB 2021)\n\n###### Update\n\n*   改善内部测试集，应对新的功能修改\n    \n\n## Release 20.11.rc3 (11 DEC 2020)\n\n###### New Features\n\n*   增加常用快捷功能- 安装证书独立客户端IP数据趋势\n*   增加常用快捷功能-访问速度最慢TOP20 域名\n*   增加常用快捷功能-报告预置Metrics\n*   增加原始日志查询-安全策略-动作命中计数\n*   增加原始日志查询-代理策略-动作命中计数\n*   增加原始日志查询-通联-流量计数(now)\n    \n\n###### Update\n\n*   改善Dashboard查询-基础统计-新建、活跃（计数）-now\n*   改善Dashboard查询-新建、活跃（趋势）\n*   目录增加编号，便于管理\n*   修改分布式调度任务-5分钟TOPN-hot表验证表名\n*   部分Action为post 改为 get，便于导出命令行",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -2552,7 +2552,7 @@
 									}
 								],
 								"url": {
-									"raw": "http://{{bifang_ip}}:{{bifang_port}}/v1/report/offlinejob/result?jobId=1",
+									"raw": "http://{{bifang_ip}}:{{bifang_port}}/v1/report/offlinejob/result?jobId=7561",
 									"protocol": "http",
 									"host": [
 										"{{bifang_ip}}"
@@ -2577,7 +2577,7 @@
 										},
 										{
 											"key": "jobId",
-											"value": "1"
+											"value": "7561"
 										}
 									]
 								},
@@ -3340,7 +3340,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://{{qgw_ip}}:{{qgw_port}}?option=syntax-validation&query=select * from session_record limit 1",
+							"raw": "http://{{qgw_ip}}:{{qgw_port}}?option=syntax-validation&query=SELECT\n\tsum(\"Sessions\") AS \"Sessions\",\n\tsum(\"Client IP\") AS \"Client IP\",\n\tsum(\"Server IP\") AS \"Server IP\"\nFROM\n\t(\n\tSELECT\n\t\tssl_sni AS \"SSL.SNI\",\n\t\tcount(common_client_ip) AS \"Client IP\",\n\t\tcount(common_server_ip) AS \"Server IP\",\n\t\tcount(common_sessions) AS \"Sessions\"\n\tFROM\n\t\t(\n\t\tSELECT\n\t\t\t*\n\t\tFROM\n\t\t\ttsg_galaxy_v3.security_event\n\t\tLIMIT 100) AS security_event\n\tWHERE\n\t\t1 = 1\n\t\tAND ((common_policy_id = 121040))\n\t\tOR 1 = 1\n\tGROUP BY\n\t\t\"SSL.SNI\")\nORDER BY\n\t\"Sessions\" DESC,\n\t\"Client IP\" DESC,\n\t\"Server IP\" DESC\nLIMIT 50 ",
 							"protocol": "http",
 							"host": [
 								"{{qgw_ip}}"
@@ -3353,7 +3353,7 @@
 								},
 								{
 									"key": "query",
-									"value": "select * from session_record limit 1"
+									"value": "SELECT\n\tsum(\"Sessions\") AS \"Sessions\",\n\tsum(\"Client IP\") AS \"Client IP\",\n\tsum(\"Server IP\") AS \"Server IP\"\nFROM\n\t(\n\tSELECT\n\t\tssl_sni AS \"SSL.SNI\",\n\t\tcount(common_client_ip) AS \"Client IP\",\n\t\tcount(common_server_ip) AS \"Server IP\",\n\t\tcount(common_sessions) AS \"Sessions\"\n\tFROM\n\t\t(\n\t\tSELECT\n\t\t\t*\n\t\tFROM\n\t\t\ttsg_galaxy_v3.security_event\n\t\tLIMIT 100) AS security_event\n\tWHERE\n\t\t1 = 1\n\t\tAND ((common_policy_id = 121040))\n\t\tOR 1 = 1\n\tGROUP BY\n\t\t\"SSL.SNI\")\nORDER BY\n\t\"Sessions\" DESC,\n\t\"Client IP\" DESC,\n\t\"Server IP\" DESC\nLIMIT 50 "
 								}
 							]
 						}
@@ -3663,7 +3663,7 @@
 			]
 		},
 		{
-			"name": "03.Dashboard查询",
+			"name": "03.Dashboard",
 			"item": [
 				{
 					"name": "DoS Threat Map",
@@ -3937,7 +3937,7 @@
 					]
 				},
 				{
-					"name": "Live Charts",
+					"name": "Live Traffic Chart",
 					"item": [
 						{
 							"name": "liveChart-网络流量统计概览",
@@ -4057,7 +4057,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"clientId\":null,\n    \"query\":{\n        \"queryType\":\"protocolDataRateSummary\",\n        \"dataSource\":\"traffic_protocol_stat_log\",\n        \"parameters\":{\n            \"granularity\":\"PT30S\",\n            \"match\":[\n                {\n                    \"type\":\"prefix\",\n                    \"fieldKey\":\"protocol_id\",\n                    \"fieldValues\":[\n                        \"Protocols/ETHERNET,*\"\n                    ]\n                }\n            ],\n            \"intervals\":[\n                \"{{start_time}}/{{end_time}}\"\n            ]\n        }\n    }\n}",
+									"raw": "{\n    \"clientId\":null,\n    \"query\":{\n        \"queryType\":\"protocolDataRateSummary\",\n        \"dataSource\":\"traffic_protocol_stat_log\",\n        \"parameters\":{\n            \"granularity\":\"PT5m\",\n            \"match\":[\n                {\n                    \"type\":\"prefix\",\n                    \"fieldKey\":\"protocol_id\",\n                    \"fieldValues\":[\n                        \"Protocols/ETHERNET,*\"\n                    ]\n                }\n            ],\n            \"intervals\":[\n                \"{{start_time}}/{{end_time}}\"\n            ]\n        }\n    }\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -5134,7 +5134,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://{{qgw_ip}}:{{qgw_port}}/?query=select 'Allow' as action, sum(intcp_allow_num) as sessions from traffic_metrics_log  where __time >= '{{start_time}}' and __time < '{{end_time}}'  union all select 'Monitor' as action, sum(intcp_mon_num) as sessions from traffic_metrics_log  where __time >= '{{start_time}}' and __time < '{{end_time}}'  union all select 'Deny' as action, sum(intcp_deny_num) as sessions from traffic_metrics_log  where __time >= '{{start_time}}' and __time < '{{end_time}}'  union all select 'Redirect' as action, sum(intcp_rdirt_num) as sessions from traffic_metrics_log  where __time >= '{{start_time}}' and __time < '{{end_time}}'  union all select 'Replace' as action, sum(intcp_repl_num) as sessions from traffic_metrics_log  where __time >= '{{start_time}}' and __time < '{{end_time}}'  union all select 'Hijack' as action, sum(intcp_hijk_num) as sessions from traffic_metrics_log  where __time >= '{{start_time}}' and __time < '{{end_time}}'  union all select 'Insert' as action, sum(intcp_ins_num) as sessions from traffic_metrics_log  where __time >= '{{start_time}}' and __time < '{{end_time}}'",
+							"raw": "http://{{qgw_ip}}:{{qgw_port}}/?query=select 'Allow' as action, sum(intcp_allow_num) as sessions from traffic_metrics_log  where __time >= '{{start_time}}' and __time < '{{end_time}}'  union all select 'Monitor' as action, sum(intcp_mon_num) as sessions from traffic_metrics_log  where __time >= '{{start_time}}' and __time < '{{end_time}}'  union all select 'Deny' as action, sum(intcp_deny_num) as sessions from traffic_metrics_log  where __time >= '{{start_time}}' and __time < '{{end_time}}'  union all select 'Redirect' as action, sum(intcp_rdirt_num) as sessions from traffic_metrics_log  where __time >= '{{start_time}}' and __time < '{{end_time}}'  union all select 'Replace' as action, sum(intcp_repl_num) as sessions from traffic_metrics_log  where __time >= '{{start_time}}' and __time < '{{end_time}}'  union all select 'Hijack' as action, sum(intcp_hijk_num) as sessions from traffic_metrics_log  where __time >= '{{start_time}}' and __time < '{{end_time}}'  union all select 'Insert' as action, sum(intcp_ins_num) as sessions from traffic_metrics_log  where __time >= '{{start_time}}' and __time < '{{end_time}}'  union all select 'Edit Element' as action, sum(intcp_edit_elem_num) as sessions from traffic_metrics_log  where __time >= '{{start_time}}' and __time < '{{end_time}}'",
 							"protocol": "http",
 							"host": [
 								"{{qgw_ip}}"
@@ -5146,7 +5146,7 @@
 							"query": [
 								{
 									"key": "query",
-									"value": "select 'Allow' as action, sum(intcp_allow_num) as sessions from traffic_metrics_log  where __time >= '{{start_time}}' and __time < '{{end_time}}'  union all select 'Monitor' as action, sum(intcp_mon_num) as sessions from traffic_metrics_log  where __time >= '{{start_time}}' and __time < '{{end_time}}'  union all select 'Deny' as action, sum(intcp_deny_num) as sessions from traffic_metrics_log  where __time >= '{{start_time}}' and __time < '{{end_time}}'  union all select 'Redirect' as action, sum(intcp_rdirt_num) as sessions from traffic_metrics_log  where __time >= '{{start_time}}' and __time < '{{end_time}}'  union all select 'Replace' as action, sum(intcp_repl_num) as sessions from traffic_metrics_log  where __time >= '{{start_time}}' and __time < '{{end_time}}'  union all select 'Hijack' as action, sum(intcp_hijk_num) as sessions from traffic_metrics_log  where __time >= '{{start_time}}' and __time < '{{end_time}}'  union all select 'Insert' as action, sum(intcp_ins_num) as sessions from traffic_metrics_log  where __time >= '{{start_time}}' and __time < '{{end_time}}'"
+									"value": "select 'Allow' as action, sum(intcp_allow_num) as sessions from traffic_metrics_log  where __time >= '{{start_time}}' and __time < '{{end_time}}'  union all select 'Monitor' as action, sum(intcp_mon_num) as sessions from traffic_metrics_log  where __time >= '{{start_time}}' and __time < '{{end_time}}'  union all select 'Deny' as action, sum(intcp_deny_num) as sessions from traffic_metrics_log  where __time >= '{{start_time}}' and __time < '{{end_time}}'  union all select 'Redirect' as action, sum(intcp_rdirt_num) as sessions from traffic_metrics_log  where __time >= '{{start_time}}' and __time < '{{end_time}}'  union all select 'Replace' as action, sum(intcp_repl_num) as sessions from traffic_metrics_log  where __time >= '{{start_time}}' and __time < '{{end_time}}'  union all select 'Hijack' as action, sum(intcp_hijk_num) as sessions from traffic_metrics_log  where __time >= '{{start_time}}' and __time < '{{end_time}}'  union all select 'Insert' as action, sum(intcp_ins_num) as sessions from traffic_metrics_log  where __time >= '{{start_time}}' and __time < '{{end_time}}'  union all select 'Edit Element' as action, sum(intcp_edit_elem_num) as sessions from traffic_metrics_log  where __time >= '{{start_time}}' and __time < '{{end_time}}'"
 								}
 							]
 						}
@@ -5172,7 +5172,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://{{qgw_ip}}:{{qgw_port}}/?query=select FROM_UNIXTIME(TIME_FLOOR_WITH_FILL(UNIX_TIMESTAMP(__time),'PT300S','zero')) as statisticTime, sum(intcp_allow_num) as intercept_allow_conn_num, sum(intcp_mon_num) as intercept_monitor_conn_num, sum(intcp_deny_num) as intercept_deny_conn_num, sum(intcp_rdirt_num) as intercept_redirect_conn_num, sum(intcp_repl_num) as intercept_replace_conn_num, sum(intcp_hijk_num) as intercept_hijack_conn_num, sum(intcp_ins_num) as intercept_insert_conn_num  from traffic_metrics_log  where __time >= '{{start_time}}' and __time < '{{end_time}}' group by FROM_UNIXTIME(TIME_FLOOR_WITH_FILL(UNIX_TIMESTAMP(__time),'PT300S','zero')) limit 50000",
+							"raw": "http://{{qgw_ip}}:{{qgw_port}}/?query=select FROM_UNIXTIME(TIME_FLOOR_WITH_FILL(UNIX_TIMESTAMP(__time),'PT300S','zero')) as statisticTime, sum(intcp_allow_num) as intercept_allow_conn_num, sum(intcp_mon_num) as intercept_monitor_conn_num, sum(intcp_deny_num) as intercept_deny_conn_num, sum(intcp_rdirt_num) as intercept_redirect_conn_num, sum(intcp_repl_num) as intercept_replace_conn_num, sum(intcp_hijk_num) as intercept_hijack_conn_num, sum(intcp_ins_num) as intercept_insert_conn_num, sum(intcp_edit_elem_num) as intercept_edit_element_num  from traffic_metrics_log  where __time >= '{{start_time}}' and __time < '{{end_time}}' group by FROM_UNIXTIME(TIME_FLOOR_WITH_FILL(UNIX_TIMESTAMP(__time),'PT300S','zero')) limit 50000",
 							"protocol": "http",
 							"host": [
 								"{{qgw_ip}}"
@@ -5184,7 +5184,7 @@
 							"query": [
 								{
 									"key": "query",
-									"value": "select FROM_UNIXTIME(TIME_FLOOR_WITH_FILL(UNIX_TIMESTAMP(__time),'PT300S','zero')) as statisticTime, sum(intcp_allow_num) as intercept_allow_conn_num, sum(intcp_mon_num) as intercept_monitor_conn_num, sum(intcp_deny_num) as intercept_deny_conn_num, sum(intcp_rdirt_num) as intercept_redirect_conn_num, sum(intcp_repl_num) as intercept_replace_conn_num, sum(intcp_hijk_num) as intercept_hijack_conn_num, sum(intcp_ins_num) as intercept_insert_conn_num  from traffic_metrics_log  where __time >= '{{start_time}}' and __time < '{{end_time}}' group by FROM_UNIXTIME(TIME_FLOOR_WITH_FILL(UNIX_TIMESTAMP(__time),'PT300S','zero')) limit 50000"
+									"value": "select FROM_UNIXTIME(TIME_FLOOR_WITH_FILL(UNIX_TIMESTAMP(__time),'PT300S','zero')) as statisticTime, sum(intcp_allow_num) as intercept_allow_conn_num, sum(intcp_mon_num) as intercept_monitor_conn_num, sum(intcp_deny_num) as intercept_deny_conn_num, sum(intcp_rdirt_num) as intercept_redirect_conn_num, sum(intcp_repl_num) as intercept_replace_conn_num, sum(intcp_hijk_num) as intercept_hijack_conn_num, sum(intcp_ins_num) as intercept_insert_conn_num, sum(intcp_edit_elem_num) as intercept_edit_element_num  from traffic_metrics_log  where __time >= '{{start_time}}' and __time < '{{end_time}}' group by FROM_UNIXTIME(TIME_FLOOR_WITH_FILL(UNIX_TIMESTAMP(__time),'PT300S','zero')) limit 50000"
 								}
 							]
 						}
@@ -5519,7 +5519,7 @@
 			]
 		},
 		{
-			"name": "04.原始日志查询",
+			"name": "04.日志",
 			"item": [
 				{
 					"name": "通联日志",
@@ -6436,7 +6436,7 @@
 			]
 		},
 		{
-			"name": "05.数据推荐查询",
+			"name": "05.数据推荐",
 			"item": [
 				{
 					"name": "实时查询任务",
@@ -6475,7 +6475,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"query.type\": \"field_discovery\",\r\n  \"query.data_source\": \"session_record\",\r\n  \"query.sample_ratio\": \"1\",\r\n  \"custom.field_discovery.fields\": [\r\n    \"common_log_id\",\r\n    \"common_action\",\r\n    \"common_app_label\"\r\n  ]\r\n}",
+									"raw": "{\r\n  \"query.type\": \"field_discovery\",\r\n  \"query.data_source\": \"session_record\",\r\n  \"query.sample_ratio\": \"1\",\r\n  \"custom.field_discovery.fields\": [\r\n    \"common_log_id\",\r\n    \"common_action\",\r\n    \"common_app_label\",\r\n    \"common_client_ip\",\r\n    \"common_server_ip\",\r\n    \"common_client_port\",\r\n    \"common_server_port\",\r\n    \"common_internal_ip\",\r\n    \"common_external_ip\",\r\n    \"common_schema_type\",\r\n    \"http_url\",\r\n    \"http_domain\"\r\n\r\n  ],\r\n  \"custom.field_discovery.filter\": \"common_recv_time >=toDateTime('2021-12-01 00:00:00') and common_recv_time <=toDateTime('2021-12-10 01:10:00') \"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -6531,18 +6531,17 @@
 									}
 								],
 								"url": {
-									"raw": "http://{{qgw_ip}}:{{qgw_port}}//admin/query/jobs/6875efaa071f90326e80eb72ae8d6db1/field_discovery",
+									"raw": "http://{{qgw_ip}}:{{qgw_port}}/admin/query/jobs/be4b24697ba890161f8beeeb485f48c8/field_discovery",
 									"protocol": "http",
 									"host": [
 										"{{qgw_ip}}"
 									],
 									"port": "{{qgw_port}}",
 									"path": [
-										"",
 										"admin",
 										"query",
 										"jobs",
-										"6875efaa071f90326e80eb72ae8d6db1",
+										"be4b24697ba890161f8beeeb485f48c8",
 										"field_discovery"
 									]
 								}
@@ -6808,7 +6807,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"clientId\": null,\r\n  \"query\": {\r\n    \"dataEngine\": \"BusinessEngine\",\r\n    \"dataSource\": \"session_record\",\r\n    \"parameters\": {\r\n      \"match\": [\r\n        {\r\n          \"type\": \"exactly\",\r\n          \"fieldKey\": \"common_app_label\",\r\n          \"fieldValues\": [\r\n            \"wechat\"\r\n          ]\r\n        }\r\n      ],\r\n      \"intervals\": [\r\n        \"2021-11-23 00:00:00/2022-11-24 00:00:00\"\r\n      ]\r\n    }\r\n  }\r\n}",
+							"raw": "{\r\n  \"clientId\": null,\r\n  \"query\": {\r\n    \"dataEngine\": \"BusinessEngine\",\r\n    \"dataSource\": \"session_record\",\r\n     \"limit\":\"10\",\r\n    \"parameters\": {\r\n      \"match\": [\r\n        {\r\n          \"type\": \"exactly\",\r\n          \"fieldKey\": \"common_app_label\",\r\n          \"fieldValues\": [\r\n            \"wechat\"\r\n          ]\r\n        }\r\n      ],\r\n      \"intervals\": [\r\n        \"2021-11-23 00:00:00/2022-11-24 00:00:00\"\r\n      ]\r\n    }\r\n  }\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -10843,6 +10842,914 @@
 					]
 				},
 				{
+					"name": "查询网关",
+					"item": [
+						{
+							"name": "Top查询优化",
+							"item": [
+								{
+									"name": "可优化-标准Group By",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 200\", function () {",
+													"    pm.response.to.have.status(200);",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://{{qgw_ip}}:{{qgw_port}}/?query=SELECT common_server_ip ,count(*) AS count, median(common_c2s_byte_num) as median_byte_num,min(common_c2s_byte_num) as min_byte_num,sum(common_c2s_byte_num+common_s2c_byte_num) as bytes FROM tsg_galaxy_v3.session_record AS session_record WHERE common_recv_time >='{{start_time}}' and common_recv_time < '{{end_time}}'  GROUP BY common_server_ip ORDER BY count DESC LIMIT 100",
+											"protocol": "http",
+											"host": [
+												"{{qgw_ip}}"
+											],
+											"port": "{{qgw_port}}",
+											"path": [
+												""
+											],
+											"query": [
+												{
+													"key": "query",
+													"value": "SELECT common_server_ip ,count(*) AS count, median(common_c2s_byte_num) as median_byte_num,min(common_c2s_byte_num) as min_byte_num,sum(common_c2s_byte_num+common_s2c_byte_num) as bytes FROM tsg_galaxy_v3.session_record AS session_record WHERE common_recv_time >='{{start_time}}' and common_recv_time < '{{end_time}}'  GROUP BY common_server_ip ORDER BY count DESC LIMIT 100"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "可优化-子查询",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 200\", function () {",
+													"    pm.response.to.have.status(200);",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://{{qgw_ip}}:{{qgw_port}}/?query=select\n\tcommon_server_ip ,\n\tcount,\n\tnum\nfrom\n\t(\n\tSELECT\n\t\tcommon_server_ip ,\n\t\tcount(*) AS count,\n\t\tmedian(common_c2s_byte_num) as num\n\tFROM\n\t\ttsg_galaxy_v3.session_record AS session_record\n\tWHERE\n\t\tcommon_recv_time >= '{{start_time}}'\n\t\tand common_recv_time < '{{end_time}}'\n\tGROUP BY\n\t\tcommon_server_ip\n\tORDER BY\n\t\tcount DESC\n\tLIMIT 100) \n\torder by num desc \n",
+											"protocol": "http",
+											"host": [
+												"{{qgw_ip}}"
+											],
+											"port": "{{qgw_port}}",
+											"path": [
+												""
+											],
+											"query": [
+												{
+													"key": "query",
+													"value": "select\n\tcommon_server_ip ,\n\tcount,\n\tnum\nfrom\n\t(\n\tSELECT\n\t\tcommon_server_ip ,\n\t\tcount(*) AS count,\n\t\tmedian(common_c2s_byte_num) as num\n\tFROM\n\t\ttsg_galaxy_v3.session_record AS session_record\n\tWHERE\n\t\tcommon_recv_time >= '{{start_time}}'\n\t\tand common_recv_time < '{{end_time}}'\n\tGROUP BY\n\t\tcommon_server_ip\n\tORDER BY\n\t\tcount DESC\n\tLIMIT 100) \n\torder by num desc \n"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "可优化-聚合函数无别名",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 200\", function () {",
+													"    pm.response.to.have.status(200);",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://{{qgw_ip}}:{{qgw_port}}/?query=SELECT common_server_ip ,count(*) as count, median(common_c2s_byte_num)  FROM session_record  WHERE common_recv_time >='{{start_time}}' and common_recv_time < '{{end_time}}'  GROUP BY common_server_ip ORDER BY count DESC LIMIT 100",
+											"protocol": "http",
+											"host": [
+												"{{qgw_ip}}"
+											],
+											"port": "{{qgw_port}}",
+											"path": [
+												""
+											],
+											"query": [
+												{
+													"key": "query",
+													"value": "SELECT common_server_ip ,count(*) as count, median(common_c2s_byte_num)  FROM session_record  WHERE common_recv_time >='{{start_time}}' and common_recv_time < '{{end_time}}'  GROUP BY common_server_ip ORDER BY count DESC LIMIT 100"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "未优化-子查询无order by",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 200\", function () {",
+													"    pm.response.to.have.status(200);",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://{{qgw_ip}}:{{qgw_port}}/?query=select\n\tcommon_server_ip ,\n\tcount,\n\tnum\nfrom\n\t(\n\tSELECT\n\t\tcommon_server_ip ,\n\t\tcount(*) AS count,\n\t\tmedian(common_c2s_byte_num) as num\n\tFROM\n\t\ttsg_galaxy_v3.session_record AS session_record\n\tWHERE\n\t\tcommon_recv_time >= '{{start_time}}'\n\t\tand common_recv_time < '{{end_time}}'\n\tGROUP BY\n\t\tcommon_server_ip) \n\torder by num desc limit 100\n",
+											"protocol": "http",
+											"host": [
+												"{{qgw_ip}}"
+											],
+											"port": "{{qgw_port}}",
+											"path": [
+												""
+											],
+											"query": [
+												{
+													"key": "query",
+													"value": "select\n\tcommon_server_ip ,\n\tcount,\n\tnum\nfrom\n\t(\n\tSELECT\n\t\tcommon_server_ip ,\n\t\tcount(*) AS count,\n\t\tmedian(common_c2s_byte_num) as num\n\tFROM\n\t\ttsg_galaxy_v3.session_record AS session_record\n\tWHERE\n\t\tcommon_recv_time >= '{{start_time}}'\n\t\tand common_recv_time < '{{end_time}}'\n\tGROUP BY\n\t\tcommon_server_ip) \n\torder by num desc limit 100\n"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "未优化-order by聚合函数",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 200\", function () {",
+													"    pm.response.to.have.status(200);",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://{{qgw_ip}}:{{qgw_port}}/?query=SELECT common_server_ip ,count(*) AS count, median(common_c2s_byte_num) as num FROM tsg_galaxy_v3.session_record AS session_record WHERE common_recv_time >='{{start_time}}' and common_recv_time < '{{end_time}}'  GROUP BY common_server_ip ORDER BY sum(common_sessions) DESC LIMIT 100",
+											"protocol": "http",
+											"host": [
+												"{{qgw_ip}}"
+											],
+											"port": "{{qgw_port}}",
+											"path": [
+												""
+											],
+											"query": [
+												{
+													"key": "query",
+													"value": "SELECT common_server_ip ,count(*) AS count, median(common_c2s_byte_num) as num FROM tsg_galaxy_v3.session_record AS session_record WHERE common_recv_time >='{{start_time}}' and common_recv_time < '{{end_time}}'  GROUP BY common_server_ip ORDER BY sum(common_sessions) DESC LIMIT 100"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "未优化-不支持的函数",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 200\", function () {",
+													"    pm.response.to.have.status(200);",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://{{qgw_ip}}:{{qgw_port}}/?query=SELECT common_server_ip ,count(*) AS count, uniq(common_client_ip) as client_ips FROM tsg_galaxy_v3.session_record AS session_record WHERE common_recv_time >='{{start_time}}' and common_recv_time < '{{end_time}}'  GROUP BY common_server_ip ORDER BY count DESC LIMIT 100",
+											"protocol": "http",
+											"host": [
+												"{{qgw_ip}}"
+											],
+											"port": "{{qgw_port}}",
+											"path": [
+												""
+											],
+											"query": [
+												{
+													"key": "query",
+													"value": "SELECT common_server_ip ,count(*) AS count, uniq(common_client_ip) as client_ips FROM tsg_galaxy_v3.session_record AS session_record WHERE common_recv_time >='{{start_time}}' and common_recv_time < '{{end_time}}'  GROUP BY common_server_ip ORDER BY count DESC LIMIT 100"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "未优化-无order By",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 200\", function () {",
+													"    pm.response.to.have.status(200);",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://{{qgw_ip}}:{{qgw_port}}/?query=SELECT common_server_ip ,count(*) AS count, median(common_c2s_byte_num) as num FROM tsg_galaxy_v3.session_record AS session_record WHERE common_recv_time >='{{start_time}}' and common_recv_time < '{{end_time}}'  GROUP BY common_server_ip  LIMIT 100",
+											"protocol": "http",
+											"host": [
+												"{{qgw_ip}}"
+											],
+											"port": "{{qgw_port}}",
+											"path": [
+												""
+											],
+											"query": [
+												{
+													"key": "query",
+													"value": "SELECT common_server_ip ,count(*) AS count, median(common_c2s_byte_num) as num FROM tsg_galaxy_v3.session_record AS session_record WHERE common_recv_time >='{{start_time}}' and common_recv_time < '{{end_time}}'  GROUP BY common_server_ip  LIMIT 100"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "二次查询-calcite缓存查询",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://{{qgw_ip}}:{{qgw_port}}/?query=select * from (select FROM_UNIXTIME(TIME_FLOOR_WITH_FILL(common_recv_time,'PT1h','zero')) as stat_time from session_record where common_recv_time >='{{start_time}}' and common_recv_time < '{{end_time}}' group by stat_time limit 10000) limit 10",
+									"protocol": "http",
+									"host": [
+										"{{qgw_ip}}"
+									],
+									"port": "{{qgw_port}}",
+									"path": [
+										""
+									],
+									"query": [
+										{
+											"key": "query",
+											"value": "select * from (select FROM_UNIXTIME(TIME_FLOOR_WITH_FILL(common_recv_time,'PT1h','zero')) as stat_time from session_record where common_recv_time >='{{start_time}}' and common_recv_time < '{{end_time}}' group by stat_time limit 10000) limit 10"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "自定义函数-时间粒度补全",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://{{qgw_ip}}:{{qgw_port}}/?query=select FROM_UNIXTIME(TIME_FLOOR_WITH_FILL(common_recv_time,'PT6S','zero')) as stat_time from session_record where common_recv_time >='{{start_time}}' and common_recv_time < '{{end_time}}' group by stat_time limit 10000",
+									"protocol": "http",
+									"host": [
+										"{{qgw_ip}}"
+									],
+									"port": "{{qgw_port}}",
+									"path": [
+										""
+									],
+									"query": [
+										{
+											"key": "query",
+											"value": "select FROM_UNIXTIME(TIME_FLOOR_WITH_FILL(common_recv_time,'PT6S','zero')) as stat_time from session_record where common_recv_time >='{{start_time}}' and common_recv_time < '{{end_time}}' group by stat_time limit 10000"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "自定义函数-IP映射",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://{{qgw_ip}}:{{qgw_port}}/?query=select  IP_TO_GEO(common_server_ip) as geo,IP_TO_COUNTRY(common_server_ip) as country, IP_TO_CITY(common_server_ip) as city from session_record limit 10",
+									"protocol": "http",
+									"host": [
+										"{{qgw_ip}}"
+									],
+									"port": "{{qgw_port}}",
+									"path": [
+										""
+									],
+									"query": [
+										{
+											"key": "query",
+											"value": "select  IP_TO_GEO(common_server_ip) as geo,IP_TO_COUNTRY(common_server_ip) as country, IP_TO_CITY(common_server_ip) as city from session_record limit 10"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "系统报告",
+					"item": [
+						{
+							"name": "系统报告-预置Metrics",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://{{qgw_ip}}:{{qgw_port}}?query=select\n\t\tsum(total_hit_sessions) as total_hit_sessions,\n\t\tsum(total_bytes_transferred) as total_bytes_transferred,\n\t\tsum(total_packets_transferred) as total_packets_transferred,\n\t\tsum(total_new_sessions) as total_new_sessions ,\n\t\tsum(total_close_sessions) as total_close_sessions,\n\t\tsum(average_new_sessions_per_second) as average_new_sessions_per_second ,\n\t\tsum(average_bytes_per_second) as average_bytes_per_second ,\n\t\tsum(average_packets_per_second) as average_packets_per_second ,\n\t\tCOUNT(DISTINCT(device_id)) as device_num,\n\t\tsum(live_sessions) as average_live_sessions\n\tfrom\n\t\t(\n\t\tselect\n\t\t\tdevice_id, \n\t\t\tsum(total_hit_sessions) as  total_hit_sessions,\n\t\t\tsum(total_bytes_transferred) as total_bytes_transferred,\n\t\t\tsum(total_packets_transferred) as total_packets_transferred,\n\t\t\tsum(total_new_sessions) as total_new_sessions,\n\t\t  sum(total_close_sessions) as total_close_sessions,\n\t\t  avg(total_new_sessions)/ 5 as average_new_sessions_per_second,\n\t\t  avg(total_bytes_transferred)* 8 / 5 as average_bytes_per_second,\n\t\t  avg(total_packets_transferred)/ 5 as average_packets_per_second,\n\t\t\tavg(live_sessions) as live_sessions\n\t\tfrom (select   __time as stat_time, device_id, \n\t\t\tsum(intercept_conn_num + monitor_conn_num + deny_conn_num + allow_conn_num) as  total_hit_sessions,\n\t\t\tsum(total_in_bytes + total_out_bytes) as total_bytes_transferred,\n\t\t\tsum(total_in_packets + total_out_packets) as total_packets_transferred,\n\t\t\tsum(new_conn_num) as total_new_sessions,\n\t\t  sum(close_conn_num) as total_close_sessions,\n\t\t  max(established_conn_num) as live_sessions\n      from  traffic_metrics_log \n      where\n\t\t__time >= '{{start_time}}'\n\t\tand __time <'{{end_time}}'\n\t\t  group by\n\t\t  __time,\tdevice_id\n\t\t  )\n\t\n\t\tgroup by\n\t\t  device_id)",
+									"protocol": "http",
+									"host": [
+										"{{qgw_ip}}"
+									],
+									"port": "{{qgw_port}}",
+									"query": [
+										{
+											"key": "query",
+											"value": "select\n\t\tsum(total_hit_sessions) as total_hit_sessions,\n\t\tsum(total_bytes_transferred) as total_bytes_transferred,\n\t\tsum(total_packets_transferred) as total_packets_transferred,\n\t\tsum(total_new_sessions) as total_new_sessions ,\n\t\tsum(total_close_sessions) as total_close_sessions,\n\t\tsum(average_new_sessions_per_second) as average_new_sessions_per_second ,\n\t\tsum(average_bytes_per_second) as average_bytes_per_second ,\n\t\tsum(average_packets_per_second) as average_packets_per_second ,\n\t\tCOUNT(DISTINCT(device_id)) as device_num,\n\t\tsum(live_sessions) as average_live_sessions\n\tfrom\n\t\t(\n\t\tselect\n\t\t\tdevice_id, \n\t\t\tsum(total_hit_sessions) as  total_hit_sessions,\n\t\t\tsum(total_bytes_transferred) as total_bytes_transferred,\n\t\t\tsum(total_packets_transferred) as total_packets_transferred,\n\t\t\tsum(total_new_sessions) as total_new_sessions,\n\t\t  sum(total_close_sessions) as total_close_sessions,\n\t\t  avg(total_new_sessions)/ 5 as average_new_sessions_per_second,\n\t\t  avg(total_bytes_transferred)* 8 / 5 as average_bytes_per_second,\n\t\t  avg(total_packets_transferred)/ 5 as average_packets_per_second,\n\t\t\tavg(live_sessions) as live_sessions\n\t\tfrom (select   __time as stat_time, device_id, \n\t\t\tsum(intercept_conn_num + monitor_conn_num + deny_conn_num + allow_conn_num) as  total_hit_sessions,\n\t\t\tsum(total_in_bytes + total_out_bytes) as total_bytes_transferred,\n\t\t\tsum(total_in_packets + total_out_packets) as total_packets_transferred,\n\t\t\tsum(new_conn_num) as total_new_sessions,\n\t\t  sum(close_conn_num) as total_close_sessions,\n\t\t  max(established_conn_num) as live_sessions\n      from  traffic_metrics_log \n      where\n\t\t__time >= '{{start_time}}'\n\t\tand __time <'{{end_time}}'\n\t\t  group by\n\t\t  __time,\tdevice_id\n\t\t  )\n\t\n\t\tgroup by\n\t\t  device_id)"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "系统报告-Bandwidth Trend",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://{{qgw_ip}}:{{qgw_port}}?query=select * from (\n    select FROM_UNIXTIME(TIME_FLOOR_WITH_FILL(UNIX_TIMESTAMP(__time),'PT30S','zero')) as stat_time,'Ingress' as type, sum(total_in_bytes) as bytes\n        from traffic_metrics_log where __time >= '{{start_time}}'\n\t\tand __time <'{{end_time}}' group by FROM_UNIXTIME(TIME_FLOOR_WITH_FILL(UNIX_TIMESTAMP(__time),'PT30S','zero')), 'Ingress'\nunion all\n    select FROM_UNIXTIME(TIME_FLOOR_WITH_FILL(UNIX_TIMESTAMP(__time),\n\t'PT30S',\n\t'zero')) as stat_time,'Egress' as type,sum(total_out_bytes) as bytes\n        from traffic_metrics_log where __time >= '{{start_time}}'\n\t\tand __time <'{{end_time}}' group by  FROM_UNIXTIME(TIME_FLOOR_WITH_FILL(UNIX_TIMESTAMP(__time),'PT30S','zero')),'Egress'  ) order by stat_time asc",
+									"protocol": "http",
+									"host": [
+										"{{qgw_ip}}"
+									],
+									"port": "{{qgw_port}}",
+									"query": [
+										{
+											"key": "query",
+											"value": "select * from (\n    select FROM_UNIXTIME(TIME_FLOOR_WITH_FILL(UNIX_TIMESTAMP(__time),'PT30S','zero')) as stat_time,'Ingress' as type, sum(total_in_bytes) as bytes\n        from traffic_metrics_log where __time >= '{{start_time}}'\n\t\tand __time <'{{end_time}}' group by FROM_UNIXTIME(TIME_FLOOR_WITH_FILL(UNIX_TIMESTAMP(__time),'PT30S','zero')), 'Ingress'\nunion all\n    select FROM_UNIXTIME(TIME_FLOOR_WITH_FILL(UNIX_TIMESTAMP(__time),\n\t'PT30S',\n\t'zero')) as stat_time,'Egress' as type,sum(total_out_bytes) as bytes\n        from traffic_metrics_log where __time >= '{{start_time}}'\n\t\tand __time <'{{end_time}}' group by  FROM_UNIXTIME(TIME_FLOOR_WITH_FILL(UNIX_TIMESTAMP(__time),'PT30S','zero')),'Egress'  ) order by stat_time asc"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "系统报告-Sessions Trend",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://{{qgw_ip}}:{{qgw_port}}?query=select\n\tFROM_UNIXTIME(TIME_FLOOR_WITH_FILL(UNIX_TIMESTAMP(__time),'PT30S','zero')) as stat_time,\n\t'New Sessions' as type,\n\tsum(new_conn_num) as sessions\nfrom\n\ttraffic_metrics_log\nwhere\n__time >= '{{start_time}}'\nand __time <'{{end_time}}' \ngroup by  FROM_UNIXTIME(TIME_FLOOR_WITH_FILL(UNIX_TIMESTAMP(__time),'PT30S','zero')), 'New Sessions' order by stat_time asc",
+									"protocol": "http",
+									"host": [
+										"{{qgw_ip}}"
+									],
+									"port": "{{qgw_port}}",
+									"query": [
+										{
+											"key": "query",
+											"value": "select\n\tFROM_UNIXTIME(TIME_FLOOR_WITH_FILL(UNIX_TIMESTAMP(__time),'PT30S','zero')) as stat_time,\n\t'New Sessions' as type,\n\tsum(new_conn_num) as sessions\nfrom\n\ttraffic_metrics_log\nwhere\n__time >= '{{start_time}}'\nand __time <'{{end_time}}' \ngroup by  FROM_UNIXTIME(TIME_FLOOR_WITH_FILL(UNIX_TIMESTAMP(__time),'PT30S','zero')), 'New Sessions' order by stat_time asc"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "系统报告-预置Metrics-排除0",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://{{qgw_ip}}:{{qgw_port}}?query=select\n\tsum(total_hit_sessions) as total_hit_sessions,\n\tsum(total_bytes_transferred) as total_bytes_transferred,\n\tsum(total_packets_transferred) as total_packets_transferred,\n\tsum(total_new_sessions) as total_new_sessions ,\n\tsum(total_close_sessions) as total_close_sessions,\n\tsum(average_new_sessions_per_second) as average_new_sessions_per_second ,\n\tsum(average_bytes_per_second) as average_bytes_per_second ,\n\tsum(average_packets_per_second) as average_packets_per_second ,\n\tCOUNT(DISTINCT(device_id)) as device_num,\n\tsum(live_sessions) as average_live_sessions\nfrom\n\t(\n\tselect\n\t\tdevice_id,\n\t\tsum(intercept_conn_num + monitor_conn_num + deny_conn_num + allow_conn_num) as total_hit_sessions,\n\t\tsum(total_in_bytes + total_out_bytes) as total_bytes_transferred,\n\t\tsum(total_in_packets + total_out_packets) as total_packets_transferred,\n\t\tsum(new_conn_num) as total_new_sessions,\n\t\tsum(close_conn_num)  as total_close_sessions,\n\t\tavg(nullif(new_conn_num,0))/ 5 as average_new_sessions_per_second,\n\t\tavg(nullif(total_in_bytes + total_out_bytes,0))* 8 / 5 as average_bytes_per_second,\n\t\tavg(nullif(total_in_packets + total_out_packets,0))/ 5 as average_packets_per_second,\n\t\tavg(nullif(established_conn_num,0)) as live_sessions\n\tfrom\n\t\ttraffic_metrics_log\n\twhere\n\t\t__time >= '{{start_time}}'\n\t\tand __time <'{{end_time}}'\n\tgroup by\n\t\tdevice_id)",
+									"protocol": "http",
+									"host": [
+										"{{qgw_ip}}"
+									],
+									"port": "{{qgw_port}}",
+									"query": [
+										{
+											"key": "query",
+											"value": "select\n\tsum(total_hit_sessions) as total_hit_sessions,\n\tsum(total_bytes_transferred) as total_bytes_transferred,\n\tsum(total_packets_transferred) as total_packets_transferred,\n\tsum(total_new_sessions) as total_new_sessions ,\n\tsum(total_close_sessions) as total_close_sessions,\n\tsum(average_new_sessions_per_second) as average_new_sessions_per_second ,\n\tsum(average_bytes_per_second) as average_bytes_per_second ,\n\tsum(average_packets_per_second) as average_packets_per_second ,\n\tCOUNT(DISTINCT(device_id)) as device_num,\n\tsum(live_sessions) as average_live_sessions\nfrom\n\t(\n\tselect\n\t\tdevice_id,\n\t\tsum(intercept_conn_num + monitor_conn_num + deny_conn_num + allow_conn_num) as total_hit_sessions,\n\t\tsum(total_in_bytes + total_out_bytes) as total_bytes_transferred,\n\t\tsum(total_in_packets + total_out_packets) as total_packets_transferred,\n\t\tsum(new_conn_num) as total_new_sessions,\n\t\tsum(close_conn_num)  as total_close_sessions,\n\t\tavg(nullif(new_conn_num,0))/ 5 as average_new_sessions_per_second,\n\t\tavg(nullif(total_in_bytes + total_out_bytes,0))* 8 / 5 as average_bytes_per_second,\n\t\tavg(nullif(total_in_packets + total_out_packets,0))/ 5 as average_packets_per_second,\n\t\tavg(nullif(established_conn_num,0)) as live_sessions\n\tfrom\n\t\ttraffic_metrics_log\n\twhere\n\t\t__time >= '{{start_time}}'\n\t\tand __time <'{{end_time}}'\n\tgroup by\n\t\tdevice_id)"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "评估单向流",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://{{qgw_ip}}:{{qgw_port}}?query=select  {{Last 5 Minutes Start}} as start_time, {{now}} as end_time, sum(common_sessions) as sessions,\n    sum(if(common_stream_dir <> 3, common_sessions, 0)) as one_side_sessions,\n    round(one_side_sessions/sessions, 2) as one_side_percent\nfrom\n\tsession_record crl \nwhere\n\tcommon_recv_time >= UNIX_TIMESTAMP({{Last 5 Minutes Start}})\n\tand common_recv_time < UNIX_TIMESTAMP({{now}})\n",
+									"protocol": "http",
+									"host": [
+										"{{qgw_ip}}"
+									],
+									"port": "{{qgw_port}}",
+									"query": [
+										{
+											"key": "query",
+											"value": "select  {{Last 5 Minutes Start}} as start_time, {{now}} as end_time, sum(common_sessions) as sessions,\n    sum(if(common_stream_dir <> 3, common_sessions, 0)) as one_side_sessions,\n    round(one_side_sessions/sessions, 2) as one_side_percent\nfrom\n\tsession_record crl \nwhere\n\tcommon_recv_time >= UNIX_TIMESTAMP({{Last 5 Minutes Start}})\n\tand common_recv_time < UNIX_TIMESTAMP({{now}})\n"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "通联带宽趋势分析",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://{{qgw_ip}}:{{qgw_port}}/?query=select\n\t{{PT30S_RECV_TIME}} as stat_time,\n\tround(sum(common_c2s_byte_num)*8/30/1000/1000,2) as Bytes_Sent_Mbps,\n\tround(sum(common_s2c_byte_num)*8/30/1000/1000,2) as Bytes_Received_Mbps,\n\tround(sum(common_c2s_byte_num + common_s2c_byte_num)*8/30/1000/1000,2) as Mbps,\n\tround(sum(common_c2s_pkt_num + common_s2c_pkt_num)/30/1000,2) as Kpps,\n\tround(sum(common_sessions)/30/1000,2) as \"Ksessions/s\"\nfrom\n\tsession_record\nwhere\n\tcommon_recv_time >= '{{start_time}}'\n\tand common_recv_time<'{{end_time}}'\ngroup by\n\tstat_time\norder by\n\tstat_time asc",
+									"protocol": "http",
+									"host": [
+										"{{qgw_ip}}"
+									],
+									"port": "{{qgw_port}}",
+									"path": [
+										""
+									],
+									"query": [
+										{
+											"key": "query",
+											"value": "select\n\t{{PT30S_RECV_TIME}} as stat_time,\n\tround(sum(common_c2s_byte_num)*8/30/1000/1000,2) as Bytes_Sent_Mbps,\n\tround(sum(common_s2c_byte_num)*8/30/1000/1000,2) as Bytes_Received_Mbps,\n\tround(sum(common_c2s_byte_num + common_s2c_byte_num)*8/30/1000/1000,2) as Mbps,\n\tround(sum(common_c2s_pkt_num + common_s2c_pkt_num)/30/1000,2) as Kpps,\n\tround(sum(common_sessions)/30/1000,2) as \"Ksessions/s\"\nfrom\n\tsession_record\nwhere\n\tcommon_recv_time >= '{{start_time}}'\n\tand common_recv_time<'{{end_time}}'\ngroup by\n\tstat_time\norder by\n\tstat_time asc"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "安装证书的独立客户端ip数量趋势",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"tests[\"Successful POST request\"] = responseCode.code === 200 || responseCode.code === 201;"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://{{qgw_ip}}:{{qgw_port}}?query=select\n\tstat_time,\n\tuniq(common_client_ip) as client_ips\nfrom\n\t(\n\tselect\n\t\ttoDateTime(intDiv(toUInt32(toDateTime(toDateTime(common_recv_time))), 3600)* 3600) as stat_time, \n\t\tcommon_client_ip, \n\t\tcount(*) as hits\n\tfrom\n\t\tsecurity_event\n\twhere common_recv_time  >='{{start_time}}' and common_recv_time < '{{end_time}}' and\n\t\tcommon_action = 2\n\t\tand ssl_pinningst = 0\n\tgroup by\n\t\tstat_time, common_client_ip\n\thaving\n\t\thits > 10 )\ngroup by\n\tstat_time\norder by\n\tstat_time",
+									"protocol": "http",
+									"host": [
+										"{{qgw_ip}}"
+									],
+									"port": "{{qgw_port}}",
+									"query": [
+										{
+											"key": "query",
+											"value": "select\n\tstat_time,\n\tuniq(common_client_ip) as client_ips\nfrom\n\t(\n\tselect\n\t\ttoDateTime(intDiv(toUInt32(toDateTime(toDateTime(common_recv_time))), 3600)* 3600) as stat_time, \n\t\tcommon_client_ip, \n\t\tcount(*) as hits\n\tfrom\n\t\tsecurity_event\n\twhere common_recv_time  >='{{start_time}}' and common_recv_time < '{{end_time}}' and\n\t\tcommon_action = 2\n\t\tand ssl_pinningst = 0\n\tgroup by\n\t\tstat_time, common_client_ip\n\thaving\n\t\thits > 10 )\ngroup by\n\tstat_time\norder by\n\tstat_time"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "访问速度最慢的TOP20 域名",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://{{qgw_ip}}:{{qgw_port}}?query=select\n\thttp_domain as domain,\n\tround(avg(common_establish_latency_ms),0) avg_establish_latency\nfrom\n\tsession_record\nwhere \n\tcommon_recv_time >= '{{start_time}}'\n\tand common_recv_time < '{{end_time}}' \n\tand notEmpty(http_domain)\ngroup by\n\thttp_domain\norder by\n\tavg_establish_latency desc\nlimit 20",
+									"protocol": "http",
+									"host": [
+										"{{qgw_ip}}"
+									],
+									"port": "{{qgw_port}}",
+									"query": [
+										{
+											"key": "query",
+											"value": "select\n\thttp_domain as domain,\n\tround(avg(common_establish_latency_ms),0) avg_establish_latency\nfrom\n\tsession_record\nwhere \n\tcommon_recv_time >= '{{start_time}}'\n\tand common_recv_time < '{{end_time}}' \n\tand notEmpty(http_domain)\ngroup by\n\thttp_domain\norder by\n\tavg_establish_latency desc\nlimit 20"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "功能验证",
+					"item": [
+						{
+							"name": "Traffic Summary",
+							"item": [
+								{
+									"name": "Druid  All Traffic",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 200\", function () {",
+													"    pm.response.to.have.status(200);",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://{{qgw_ip}}:{{qgw_port}}/?query=SELECT SUM(c2s_pkt_num) as c2s_pkt_num,SUM(s2c_pkt_num) as s2c_pkt_num,SUM(c2s_byte_num) as c2s_byte_num,SUM(s2c_byte_num) as s2c_byte_num,SUM(sessions) as sessions FROM traffic_summary_log WHERE __time >= '{{start_time}}' and __time < '{{end_time}}' ",
+											"protocol": "http",
+											"host": [
+												"{{qgw_ip}}"
+											],
+											"port": "{{qgw_port}}",
+											"path": [
+												""
+											],
+											"query": [
+												{
+													"key": "query",
+													"value": "SELECT SUM(c2s_pkt_num) as c2s_pkt_num,SUM(s2c_pkt_num) as s2c_pkt_num,SUM(c2s_byte_num) as c2s_byte_num,SUM(s2c_byte_num) as s2c_byte_num,SUM(sessions) as sessions FROM traffic_summary_log WHERE __time >= '{{start_time}}' and __time < '{{end_time}}' "
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "ClickHouse All Traffic",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 200\", function () {",
+													"    pm.response.to.have.status(200);",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://{{qgw_ip}}:{{qgw_port}}/?query=SELECT SUM(common_c2s_pkt_num) as c2s_pkt_num,SUM(common_s2c_pkt_num) as s2c_pkt_num,SUM(common_c2s_byte_num) as c2s_byte_num,SUM(common_s2c_byte_num) as s2c_byte_num,SUM(common_sessions) as sessions FROM session_record sr WHERE  common_recv_time  >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <  UNIX_TIMESTAMP('{{end_time}}')",
+											"protocol": "http",
+											"host": [
+												"{{qgw_ip}}"
+											],
+											"port": "{{qgw_port}}",
+											"path": [
+												""
+											],
+											"query": [
+												{
+													"key": "query",
+													"value": "SELECT SUM(common_c2s_pkt_num) as c2s_pkt_num,SUM(common_s2c_pkt_num) as s2c_pkt_num,SUM(common_c2s_byte_num) as c2s_byte_num,SUM(common_s2c_byte_num) as s2c_byte_num,SUM(common_sessions) as sessions FROM session_record sr WHERE  common_recv_time  >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <  UNIX_TIMESTAMP('{{end_time}}')"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Druid  Uncategorized Traffic",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 200\", function () {",
+													"    pm.response.to.have.status(200);",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://{{qgw_ip}}:{{qgw_port}}/?query=SELECT SUM(uncategorized_bytes)/1024/1024 as uncategorized_bytes_mb   FROM traffic_summary_log WHERE __time >= '{{start_time}}' and __time < '{{end_time}}' ",
+											"protocol": "http",
+											"host": [
+												"{{qgw_ip}}"
+											],
+											"port": "{{qgw_port}}",
+											"path": [
+												""
+											],
+											"query": [
+												{
+													"key": "query",
+													"value": "SELECT SUM(uncategorized_bytes)/1024/1024 as uncategorized_bytes_mb   FROM traffic_summary_log WHERE __time >= '{{start_time}}' and __time < '{{end_time}}' "
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "ClickHouse Uncategorized Traffic",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 200\", function () {",
+													"    pm.response.to.have.status(200);",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://{{qgw_ip}}:{{qgw_port}}/?query=SELECT SUM(common_c2s_byte_num+common_s2c_byte_num)/1024/1024 as uncategorized_bytes_mb FROM session_record sr WHERE  common_recv_time  >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <  UNIX_TIMESTAMP('{{end_time}}') AND common_l7_protocol = 'UNCATEGORIZED'",
+											"protocol": "http",
+											"host": [
+												"{{qgw_ip}}"
+											],
+											"port": "{{qgw_port}}",
+											"path": [
+												""
+											],
+											"query": [
+												{
+													"key": "query",
+													"value": "SELECT SUM(common_c2s_byte_num+common_s2c_byte_num)/1024/1024 as uncategorized_bytes_mb FROM session_record sr WHERE  common_recv_time  >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <  UNIX_TIMESTAMP('{{end_time}}') AND common_l7_protocol = 'UNCATEGORIZED'"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "评估日志重复ID",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://{{qgw_ip}}:{{qgw_port}}?query=select 'Session Records' as type, count(*) as num from (select common_log_id,count(*)  as num from session_record where common_recv_time  >='{{start_time}}' and common_recv_time < '{{end_time}}' group  by common_log_id having num >1) union all select 'Security Events' as type, count(*) as num from (select common_log_id,count(*)  as num from security_event where common_recv_time  >='{{start_time}}' and common_recv_time < '{{end_time}}' group  by common_log_id having num >1) union all select 'Proxy Events' as type, count(*) as num from (select common_log_id,count(*)  as num from proxy_event where common_recv_time  >='{{start_time}}' and common_recv_time < '{{end_time}}' group  by common_log_id having num >1)",
+									"protocol": "http",
+									"host": [
+										"{{qgw_ip}}"
+									],
+									"port": "{{qgw_port}}",
+									"query": [
+										{
+											"key": "query",
+											"value": "select 'Session Records' as type, count(*) as num from (select common_log_id,count(*)  as num from session_record where common_recv_time  >='{{start_time}}' and common_recv_time < '{{end_time}}' group  by common_log_id having num >1) union all select 'Security Events' as type, count(*) as num from (select common_log_id,count(*)  as num from security_event where common_recv_time  >='{{start_time}}' and common_recv_time < '{{end_time}}' group  by common_log_id having num >1) union all select 'Proxy Events' as type, count(*) as num from (select common_log_id,count(*)  as num from proxy_event where common_recv_time  >='{{start_time}}' and common_recv_time < '{{end_time}}' group  by common_log_id having num >1)"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "通联索引表正确性验证",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://{{qgw_ip}}:{{qgw_port}}?query= select 'Total' as type, count(*) as logs from session_record where\n\tcommon_recv_time >= UNIX_TIMESTAMP({{Last 24 Hour Start}})\n\tand common_recv_time < UNIX_TIMESTAMP({{now}})\nunion all \nselect 'Client IP' as type, count(*) as logs from session_record_common_client_ip where\n\tcommon_recv_time >= UNIX_TIMESTAMP({{Last 24 Hour Start}})\n\tand common_recv_time < UNIX_TIMESTAMP({{now}})\nunion all\nselect 'Server IP' as type, count(*) as logs from session_record_common_server_ip where\n\tcommon_recv_time >= UNIX_TIMESTAMP({{Last 24 Hour Start}})\n\tand common_recv_time < UNIX_TIMESTAMP({{now}})\nunion all\nselect 'Domain' as type, count(*) as logs from session_record_http_domain where\n\tcommon_recv_time >= UNIX_TIMESTAMP({{Last 24 Hour Start}})\n\tand common_recv_time < UNIX_TIMESTAMP({{now}})\n",
+									"protocol": "http",
+									"host": [
+										"{{qgw_ip}}"
+									],
+									"port": "{{qgw_port}}",
+									"query": [
+										{
+											"key": "query",
+											"value": " select 'Total' as type, count(*) as logs from session_record where\n\tcommon_recv_time >= UNIX_TIMESTAMP({{Last 24 Hour Start}})\n\tand common_recv_time < UNIX_TIMESTAMP({{now}})\nunion all \nselect 'Client IP' as type, count(*) as logs from session_record_common_client_ip where\n\tcommon_recv_time >= UNIX_TIMESTAMP({{Last 24 Hour Start}})\n\tand common_recv_time < UNIX_TIMESTAMP({{now}})\nunion all\nselect 'Server IP' as type, count(*) as logs from session_record_common_server_ip where\n\tcommon_recv_time >= UNIX_TIMESTAMP({{Last 24 Hour Start}})\n\tand common_recv_time < UNIX_TIMESTAMP({{now}})\nunion all\nselect 'Domain' as type, count(*) as logs from session_record_http_domain where\n\tcommon_recv_time >= UNIX_TIMESTAMP({{Last 24 Hour Start}})\n\tand common_recv_time < UNIX_TIMESTAMP({{now}})\n"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
 					"name": "UDP Flood Detecton",
 					"event": [
 						{
@@ -10913,44 +11820,6 @@
 					"response": []
 				},
 				{
-					"name": "通联带宽趋势分析",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"pm.test(\"Status code is 200\", function () {",
-									"    pm.response.to.have.status(200);",
-									"});"
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://{{qgw_ip}}:{{qgw_port}}/?query=select\n\t{{PT30S_RECV_TIME}} as stat_time,\n\tround(sum(common_c2s_byte_num)*8/30/1000/1000,2) as out_Mbps,\n\tround(sum(common_s2c_byte_num)*8/30/1000/1000,2) as in_Mbps,\n\tround(sum(common_c2s_byte_num + common_s2c_byte_num)*8/30/1000/1000,2) as Mbps,\n\tround(sum(common_c2s_pkt_num + common_s2c_pkt_num)/30/1000,2) as Kpps,\n\tround(sum(common_sessions)/30/1000,2) as \"Ksessions/s\"\nfrom\n\tsession_record\nwhere\n\tcommon_recv_time >= '{{start_time}}'\n\tand common_recv_time<'{{end_time}}'\ngroup by\n\tstat_time\norder by\n\tstat_time asc",
-							"protocol": "http",
-							"host": [
-								"{{qgw_ip}}"
-							],
-							"port": "{{qgw_port}}",
-							"path": [
-								""
-							],
-							"query": [
-								{
-									"key": "query",
-									"value": "select\n\t{{PT30S_RECV_TIME}} as stat_time,\n\tround(sum(common_c2s_byte_num)*8/30/1000/1000,2) as out_Mbps,\n\tround(sum(common_s2c_byte_num)*8/30/1000/1000,2) as in_Mbps,\n\tround(sum(common_c2s_byte_num + common_s2c_byte_num)*8/30/1000/1000,2) as Mbps,\n\tround(sum(common_c2s_pkt_num + common_s2c_pkt_num)/30/1000,2) as Kpps,\n\tround(sum(common_sessions)/30/1000,2) as \"Ksessions/s\"\nfrom\n\tsession_record\nwhere\n\tcommon_recv_time >= '{{start_time}}'\n\tand common_recv_time<'{{end_time}}'\ngroup by\n\tstat_time\norder by\n\tstat_time asc"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
 					"name": "评估写入日志量",
 					"event": [
 						{
@@ -10979,111 +11848,6 @@
 								{
 									"key": "query",
 									"value": "select  'connection_record' as type, round(count(*)/300,0) as \"logs/sec\"\nfrom\n\tsession_record crl \nwhere\n\tcommon_recv_time >= UNIX_TIMESTAMP({{Last 5 Minutes Start}})\n\tand common_recv_time < UNIX_TIMESTAMP({{now}}) union all select  'live_session_record' as type, round(count(*)/300,0) as \"logs/sec\"\nfrom\n\tinterim_session_record crl \nwhere\n\tcommon_recv_time >= UNIX_TIMESTAMP({{Last 5 Minutes Start}})\n\tand common_recv_time < UNIX_TIMESTAMP({{now}}) union all select  'transaction_record' as type, round(count(*)/300,0) as \"logs/sec\"\nfrom\n\ttransaction_record crl \nwhere\n\tcommon_recv_time >= UNIX_TIMESTAMP({{Last 5 Minutes Start}})\n\tand common_recv_time < UNIX_TIMESTAMP({{now}}) union all select  'security_event' as type, round(count(*)/300,0) as \"logs/sec\"\nfrom\n\tsecurity_event crl \nwhere\n\tcommon_recv_time >= UNIX_TIMESTAMP({{Last 5 Minutes Start}})\n\tand common_recv_time < UNIX_TIMESTAMP({{now}})\nunion all select  'proxy_event' as type, round(count(*)/300,0) as \"logs/sec\"\nfrom\n\tproxy_event crl \nwhere\n\tcommon_recv_time >= UNIX_TIMESTAMP({{Last 5 Minutes Start}})\n\tand common_recv_time < UNIX_TIMESTAMP({{now}})\n union all select  'radius_record' as type, round(count(*)/300,0) as \"logs/sec\"\nfrom\n\tradius_record crl \nwhere\n\tcommon_recv_time >= UNIX_TIMESTAMP({{Last 5 Minutes Start}})\n\tand common_recv_time < UNIX_TIMESTAMP({{now}}) union all select  'gtpc_record' as type, round(count(*)/300,0) as \"logs/sec\"\nfrom\n\tgtpc_record crl \nwhere\n\tcommon_recv_time >= UNIX_TIMESTAMP({{Last 5 Minutes Start}})\n\tand common_recv_time < UNIX_TIMESTAMP({{now}})"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "评估单向流",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"pm.test(\"Status code is 200\", function () {",
-									"    pm.response.to.have.status(200);",
-									"});"
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://{{qgw_ip}}:{{qgw_port}}?query=select  {{Last 5 Minutes Start}} as start_time, {{now}} as end_time, sum(common_sessions) as sessions,\n    sum(if(common_stream_dir <> 3, common_sessions, 0)) as one_side_sessions,\n    round(one_side_sessions/sessions, 2) as one_side_percent\nfrom\n\tsession_record crl \nwhere\n\tcommon_recv_time >= UNIX_TIMESTAMP({{Last 5 Minutes Start}})\n\tand common_recv_time < UNIX_TIMESTAMP({{now}})\n",
-							"protocol": "http",
-							"host": [
-								"{{qgw_ip}}"
-							],
-							"port": "{{qgw_port}}",
-							"query": [
-								{
-									"key": "query",
-									"value": "select  {{Last 5 Minutes Start}} as start_time, {{now}} as end_time, sum(common_sessions) as sessions,\n    sum(if(common_stream_dir <> 3, common_sessions, 0)) as one_side_sessions,\n    round(one_side_sessions/sessions, 2) as one_side_percent\nfrom\n\tsession_record crl \nwhere\n\tcommon_recv_time >= UNIX_TIMESTAMP({{Last 5 Minutes Start}})\n\tand common_recv_time < UNIX_TIMESTAMP({{now}})\n"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "系统报告-预置Metrics",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"pm.test(\"Status code is 200\", function () {",
-									"    pm.response.to.have.status(200);",
-									"});"
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://{{qgw_ip}}:{{qgw_port}}?query=select\n\t\tsum(total_hit_sessions) as total_hit_sessions,\n\t\tsum(total_bytes_transferred) as total_bytes_transferred,\n\t\tsum(total_packets_transferred) as total_packets_transferred,\n\t\tsum(total_new_sessions) as total_new_sessions ,\n\t\tsum(total_close_sessions) as total_close_sessions,\n\t\tsum(average_new_sessions_per_second) as average_new_sessions_per_second ,\n\t\tsum(average_bytes_per_second) as average_bytes_per_second ,\n\t\tsum(average_packets_per_second) as average_packets_per_second ,\n\t\tCOUNT(DISTINCT(device_id)) as device_num,\n\t\tsum(live_sessions) as average_live_sessions\n\tfrom\n\t\t(\n\t\tselect\n\t\t\tdevice_id, \n\t\t\tsum(total_hit_sessions) as  total_hit_sessions,\n\t\t\tsum(total_bytes_transferred) as total_bytes_transferred,\n\t\t\tsum(total_packets_transferred) as total_packets_transferred,\n\t\t\tsum(total_new_sessions) as total_new_sessions,\n\t\t  sum(total_close_sessions) as total_close_sessions,\n\t\t  avg(total_new_sessions)/ 5 as average_new_sessions_per_second,\n\t\t  avg(total_bytes_transferred)* 8 / 5 as average_bytes_per_second,\n\t\t  avg(total_packets_transferred)/ 5 as average_packets_per_second,\n\t\t\tavg(live_sessions) as live_sessions\n\t\tfrom (select   __time as stat_time, device_id, \n\t\t\tsum(intercept_conn_num + monitor_conn_num + deny_conn_num + allow_conn_num) as  total_hit_sessions,\n\t\t\tsum(total_in_bytes + total_out_bytes) as total_bytes_transferred,\n\t\t\tsum(total_in_packets + total_out_packets) as total_packets_transferred,\n\t\t\tsum(new_conn_num) as total_new_sessions,\n\t\t  sum(close_conn_num) as total_close_sessions,\n\t\t  max(established_conn_num) as live_sessions\n      from  traffic_metrics_log \n      where\n\t\t__time >= '{{start_time}}'\n\t\tand __time <'{{end_time}}'\n\t\t  group by\n\t\t  __time,\tdevice_id\n\t\t  )\n\t\n\t\tgroup by\n\t\t  device_id)",
-							"protocol": "http",
-							"host": [
-								"{{qgw_ip}}"
-							],
-							"port": "{{qgw_port}}",
-							"query": [
-								{
-									"key": "query",
-									"value": "select\n\t\tsum(total_hit_sessions) as total_hit_sessions,\n\t\tsum(total_bytes_transferred) as total_bytes_transferred,\n\t\tsum(total_packets_transferred) as total_packets_transferred,\n\t\tsum(total_new_sessions) as total_new_sessions ,\n\t\tsum(total_close_sessions) as total_close_sessions,\n\t\tsum(average_new_sessions_per_second) as average_new_sessions_per_second ,\n\t\tsum(average_bytes_per_second) as average_bytes_per_second ,\n\t\tsum(average_packets_per_second) as average_packets_per_second ,\n\t\tCOUNT(DISTINCT(device_id)) as device_num,\n\t\tsum(live_sessions) as average_live_sessions\n\tfrom\n\t\t(\n\t\tselect\n\t\t\tdevice_id, \n\t\t\tsum(total_hit_sessions) as  total_hit_sessions,\n\t\t\tsum(total_bytes_transferred) as total_bytes_transferred,\n\t\t\tsum(total_packets_transferred) as total_packets_transferred,\n\t\t\tsum(total_new_sessions) as total_new_sessions,\n\t\t  sum(total_close_sessions) as total_close_sessions,\n\t\t  avg(total_new_sessions)/ 5 as average_new_sessions_per_second,\n\t\t  avg(total_bytes_transferred)* 8 / 5 as average_bytes_per_second,\n\t\t  avg(total_packets_transferred)/ 5 as average_packets_per_second,\n\t\t\tavg(live_sessions) as live_sessions\n\t\tfrom (select   __time as stat_time, device_id, \n\t\t\tsum(intercept_conn_num + monitor_conn_num + deny_conn_num + allow_conn_num) as  total_hit_sessions,\n\t\t\tsum(total_in_bytes + total_out_bytes) as total_bytes_transferred,\n\t\t\tsum(total_in_packets + total_out_packets) as total_packets_transferred,\n\t\t\tsum(new_conn_num) as total_new_sessions,\n\t\t  sum(close_conn_num) as total_close_sessions,\n\t\t  max(established_conn_num) as live_sessions\n      from  traffic_metrics_log \n      where\n\t\t__time >= '{{start_time}}'\n\t\tand __time <'{{end_time}}'\n\t\t  group by\n\t\t  __time,\tdevice_id\n\t\t  )\n\t\n\t\tgroup by\n\t\t  device_id)"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "系统报告-预置Metrics-排除0",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"pm.test(\"Status code is 200\", function () {",
-									"    pm.response.to.have.status(200);",
-									"});"
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://{{qgw_ip}}:{{qgw_port}}?query=select\n\tsum(total_hit_sessions) as total_hit_sessions,\n\tsum(total_bytes_transferred) as total_bytes_transferred,\n\tsum(total_packets_transferred) as total_packets_transferred,\n\tsum(total_new_sessions) as total_new_sessions ,\n\tsum(total_close_sessions) as total_close_sessions,\n\tsum(average_new_sessions_per_second) as average_new_sessions_per_second ,\n\tsum(average_bytes_per_second) as average_bytes_per_second ,\n\tsum(average_packets_per_second) as average_packets_per_second ,\n\tCOUNT(DISTINCT(device_id)) as device_num,\n\tsum(live_sessions) as average_live_sessions\nfrom\n\t(\n\tselect\n\t\tdevice_id,\n\t\tsum(intercept_conn_num + monitor_conn_num + deny_conn_num + allow_conn_num) as total_hit_sessions,\n\t\tsum(total_in_bytes + total_out_bytes) as total_bytes_transferred,\n\t\tsum(total_in_packets + total_out_packets) as total_packets_transferred,\n\t\tsum(new_conn_num) as total_new_sessions,\n\t\tsum(close_conn_num)  as total_close_sessions,\n\t\tavg(nullif(new_conn_num,0))/ 5 as average_new_sessions_per_second,\n\t\tavg(nullif(total_in_bytes + total_out_bytes,0))* 8 / 5 as average_bytes_per_second,\n\t\tavg(nullif(total_in_packets + total_out_packets,0))/ 5 as average_packets_per_second,\n\t\tavg(nullif(established_conn_num,0)) as live_sessions\n\tfrom\n\t\ttraffic_metrics_log\n\twhere\n\t\t__time >= '{{start_time}}'\n\t\tand __time <'{{end_time}}'\n\tgroup by\n\t\tdevice_id)",
-							"protocol": "http",
-							"host": [
-								"{{qgw_ip}}"
-							],
-							"port": "{{qgw_port}}",
-							"query": [
-								{
-									"key": "query",
-									"value": "select\n\tsum(total_hit_sessions) as total_hit_sessions,\n\tsum(total_bytes_transferred) as total_bytes_transferred,\n\tsum(total_packets_transferred) as total_packets_transferred,\n\tsum(total_new_sessions) as total_new_sessions ,\n\tsum(total_close_sessions) as total_close_sessions,\n\tsum(average_new_sessions_per_second) as average_new_sessions_per_second ,\n\tsum(average_bytes_per_second) as average_bytes_per_second ,\n\tsum(average_packets_per_second) as average_packets_per_second ,\n\tCOUNT(DISTINCT(device_id)) as device_num,\n\tsum(live_sessions) as average_live_sessions\nfrom\n\t(\n\tselect\n\t\tdevice_id,\n\t\tsum(intercept_conn_num + monitor_conn_num + deny_conn_num + allow_conn_num) as total_hit_sessions,\n\t\tsum(total_in_bytes + total_out_bytes) as total_bytes_transferred,\n\t\tsum(total_in_packets + total_out_packets) as total_packets_transferred,\n\t\tsum(new_conn_num) as total_new_sessions,\n\t\tsum(close_conn_num)  as total_close_sessions,\n\t\tavg(nullif(new_conn_num,0))/ 5 as average_new_sessions_per_second,\n\t\tavg(nullif(total_in_bytes + total_out_bytes,0))* 8 / 5 as average_bytes_per_second,\n\t\tavg(nullif(total_in_packets + total_out_packets,0))/ 5 as average_packets_per_second,\n\t\tavg(nullif(established_conn_num,0)) as live_sessions\n\tfrom\n\t\ttraffic_metrics_log\n\twhere\n\t\t__time >= '{{start_time}}'\n\t\tand __time <'{{end_time}}'\n\tgroup by\n\t\tdevice_id)"
 								}
 							]
 						}
@@ -11126,188 +11890,6 @@
 					"response": []
 				},
 				{
-					"name": "安装证书的独立客户端ip数量趋势",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"tests[\"Successful POST request\"] = responseCode.code === 200 || responseCode.code === 201;"
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://{{qgw_ip}}:{{qgw_port}}?query=select\n\tstat_time,\n\tuniq(common_client_ip) as client_ips\nfrom\n\t(\n\tselect\n\t\ttoDateTime(intDiv(toUInt32(toDateTime(toDateTime(common_recv_time))), 3600)* 3600) as stat_time, \n\t\tcommon_client_ip, \n\t\tcount(*) as hits\n\tfrom\n\t\tsecurity_event\n\twhere common_recv_time  >='{{start_time}}' and common_recv_time < '{{end_time}}' and\n\t\tcommon_action = 2\n\t\tand ssl_pinningst = 0\n\tgroup by\n\t\tstat_time, common_client_ip\n\thaving\n\t\thits > 10 )\ngroup by\n\tstat_time\norder by\n\tstat_time",
-							"protocol": "http",
-							"host": [
-								"{{qgw_ip}}"
-							],
-							"port": "{{qgw_port}}",
-							"query": [
-								{
-									"key": "query",
-									"value": "select\n\tstat_time,\n\tuniq(common_client_ip) as client_ips\nfrom\n\t(\n\tselect\n\t\ttoDateTime(intDiv(toUInt32(toDateTime(toDateTime(common_recv_time))), 3600)* 3600) as stat_time, \n\t\tcommon_client_ip, \n\t\tcount(*) as hits\n\tfrom\n\t\tsecurity_event\n\twhere common_recv_time  >='{{start_time}}' and common_recv_time < '{{end_time}}' and\n\t\tcommon_action = 2\n\t\tand ssl_pinningst = 0\n\tgroup by\n\t\tstat_time, common_client_ip\n\thaving\n\t\thits > 10 )\ngroup by\n\tstat_time\norder by\n\tstat_time"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "访问速度最慢的TOP20 域名",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"pm.test(\"Status code is 200\", function () {",
-									"    pm.response.to.have.status(200);",
-									"});"
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://{{qgw_ip}}:{{qgw_port}}?query=select\n\thttp_domain as domain,\n\tround(avg(common_establish_latency_ms),0) avg_establish_latency\nfrom\n\tsession_record\nwhere \n\tcommon_recv_time >= '{{start_time}}'\n\tand common_recv_time < '{{end_time}}' \n\tand notEmpty(http_domain)\ngroup by\n\thttp_domain\norder by\n\tavg_establish_latency desc\nlimit 20",
-							"protocol": "http",
-							"host": [
-								"{{qgw_ip}}"
-							],
-							"port": "{{qgw_port}}",
-							"query": [
-								{
-									"key": "query",
-									"value": "select\n\thttp_domain as domain,\n\tround(avg(common_establish_latency_ms),0) avg_establish_latency\nfrom\n\tsession_record\nwhere \n\tcommon_recv_time >= '{{start_time}}'\n\tand common_recv_time < '{{end_time}}' \n\tand notEmpty(http_domain)\ngroup by\n\thttp_domain\norder by\n\tavg_establish_latency desc\nlimit 20"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "二次查询-calcite缓存查询",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"pm.test(\"Status code is 200\", function () {",
-									"    pm.response.to.have.status(200);",
-									"});"
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://{{qgw_ip}}:{{qgw_port}}/?query=select * from (select FROM_UNIXTIME(TIME_FLOOR_WITH_FILL(common_recv_time,'PT1h','zero')) as stat_time from session_record where common_recv_time >='{{start_time}}' and common_recv_time < '{{end_time}}' group by stat_time limit 10000) limit 10",
-							"protocol": "http",
-							"host": [
-								"{{qgw_ip}}"
-							],
-							"port": "{{qgw_port}}",
-							"path": [
-								""
-							],
-							"query": [
-								{
-									"key": "query",
-									"value": "select * from (select FROM_UNIXTIME(TIME_FLOOR_WITH_FILL(common_recv_time,'PT1h','zero')) as stat_time from session_record where common_recv_time >='{{start_time}}' and common_recv_time < '{{end_time}}' group by stat_time limit 10000) limit 10"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "自定义函数-IP映射",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"pm.test(\"Status code is 200\", function () {",
-									"    pm.response.to.have.status(200);",
-									"});"
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://{{qgw_ip}}:{{qgw_port}}/?query=select  IP_TO_GEO(common_server_ip) as geo,IP_TO_COUNTRY(common_server_ip) as country, IP_TO_CITY(common_server_ip) as city from session_record limit 10",
-							"protocol": "http",
-							"host": [
-								"{{qgw_ip}}"
-							],
-							"port": "{{qgw_port}}",
-							"path": [
-								""
-							],
-							"query": [
-								{
-									"key": "query",
-									"value": "select  IP_TO_GEO(common_server_ip) as geo,IP_TO_COUNTRY(common_server_ip) as country, IP_TO_CITY(common_server_ip) as city from session_record limit 10"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "自定义函数-时间粒度补全",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"pm.test(\"Status code is 200\", function () {",
-									"    pm.response.to.have.status(200);",
-									"});"
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://{{qgw_ip}}:{{qgw_port}}/?query=select FROM_UNIXTIME(TIME_FLOOR_WITH_FILL(common_recv_time,'PT6S','zero')) as stat_time from session_record where common_recv_time >='{{start_time}}' and common_recv_time < '{{end_time}}' group by stat_time limit 10000",
-							"protocol": "http",
-							"host": [
-								"{{qgw_ip}}"
-							],
-							"port": "{{qgw_port}}",
-							"path": [
-								""
-							],
-							"query": [
-								{
-									"key": "query",
-									"value": "select FROM_UNIXTIME(TIME_FLOOR_WITH_FILL(common_recv_time,'PT6S','zero')) as stat_time from session_record where common_recv_time >='{{start_time}}' and common_recv_time < '{{end_time}}' group by stat_time limit 10000"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
 					"name": "Kafka Topic 监控指标",
 					"event": [
 						{
@@ -11334,76 +11916,6 @@
 							"port": "{{kafka_monitor_port}}"
 						},
 						"description": "## Kafka Topics\n\n```\n在监控指标结果下，直接复制指标进行查找定位，仅需修改\"topic\"里内容。\n```\n\n- kafka_server_BrokerTopicMetrics_MeanRate\n  - Topic 消息传输速率均值，可定位当前Topic平均处理多少消息\n  - 每秒接收消息：kafka_server_BrokerTopicMetrics_MeanRate{name=\\\"MessagesInPerSec\\\",topic=\\\"CONNECTION-RECORD-LOG\\\",}\n  - 每秒失败的请求数量：kafka_server_BrokerTopicMetrics_MeanRate{name=\\\"FailedFetchRequestsPerSec\\\",topic=\\\"CONNECTION-RECORD-LOG\\\",}\n  - 每秒失败的生产数量：kafka_server_BrokerTopicMetrics_MeanRate{name=\\\"FailedProduceRequestsPerSec\\\",topic=\\\"CONNECTION-RECORD-LOG\\\",}\n- kafka_server_BrokerTopicMetrics_OneMinuteRate\n  - Topic 1分钟内传输消息速率，可定位最近1分钟有无数据\n  - 每秒接收消息：kafka_server_BrokerTopicMetrics_OneMinuteRate{name=\\\"MessagesInPerSec\\\",topic=\\\"CONNECTION-RECORD-LOG\\\",}\n  - 每秒失败的请求数量：kafka_server_BrokerTopicMetrics_OneMinuteRate{name=\\\"FailedFetchRequestsPerSec\\\",topic=\\\"CONNECTION-RECORD-LOG\\\",}\n  - 每秒失败的生产数量：kafka_server_BrokerTopicMetrics_OneMinuteRate{name=\\\"FailedProduceRequestsPerSec\\\",topic=\\\"CONNECTION-RECORD-LOG\\\",}\n- kafka_server_BrokerTopicMetrics_FiveMinuteRate\n  - Topic 5分钟内传输消息速率，可定位最近5分钟有无数据\n  - 每秒接收消息：kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\\\"MessagesInPerSec\\\",topic=\\\"CONNECTION-RECORD-LOG\\\",}\n  - 每秒失败的请求数量：kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\\\"FailedFetchRequestsPerSec\\\",topic=\\\"CONNECTION-RECORD-LOG\\\",}\n  - 每秒失败的生产数量：kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\\\"FailedProduceRequestsPerSec\\\",topic=\\\"CONNECTION-RECORD-LOG\\\",}\n- kafka_server_BrokerTopicMetrics_FifteenMinuteRate\n  - Topic 15分钟内传输消息速率，可定位最近15分钟有无数据\n  - 每秒接收消息：kafka_server_BrokerTopicMetrics_FifteenMinuteRate{name=\\\"MessagesInPerSec\\\",topic=\\\"CONNECTION-RECORD-LOG\\\",}\n  - 每秒失败的请求数量：kafka_server_BrokerTopicMetrics_FifteenMinuteRate{name=\\\"FailedFetchRequestsPerSec\\\",topic=\\\"CONNECTION-RECORD-LOG\\\",}\n  - 每秒失败的生产数量：kafka_server_BrokerTopicMetrics_FifteenMinuteRate{name=\\\"FailedProduceRequestsPerSec\\\",topic=\\\"CONNECTION-RECORD-LOG\\\",}"
-					},
-					"response": []
-				},
-				{
-					"name": "评估日志重复ID",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"pm.test(\"Status code is 200\", function () {",
-									"    pm.response.to.have.status(200);",
-									"});"
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://{{qgw_ip}}:{{qgw_port}}?query=select 'Session Records' as type, count(*) as num from (select common_log_id,count(*)  as num from session_record where common_recv_time  >='{{start_time}}' and common_recv_time < '{{end_time}}' group  by common_log_id having num >1) union all select 'Security Events' as type, count(*) as num from (select common_log_id,count(*)  as num from security_event where common_recv_time  >='{{start_time}}' and common_recv_time < '{{end_time}}' group  by common_log_id having num >1) union all select 'Proxy Events' as type, count(*) as num from (select common_log_id,count(*)  as num from proxy_event where common_recv_time  >='{{start_time}}' and common_recv_time < '{{end_time}}' group  by common_log_id having num >1)",
-							"protocol": "http",
-							"host": [
-								"{{qgw_ip}}"
-							],
-							"port": "{{qgw_port}}",
-							"query": [
-								{
-									"key": "query",
-									"value": "select 'Session Records' as type, count(*) as num from (select common_log_id,count(*)  as num from session_record where common_recv_time  >='{{start_time}}' and common_recv_time < '{{end_time}}' group  by common_log_id having num >1) union all select 'Security Events' as type, count(*) as num from (select common_log_id,count(*)  as num from security_event where common_recv_time  >='{{start_time}}' and common_recv_time < '{{end_time}}' group  by common_log_id having num >1) union all select 'Proxy Events' as type, count(*) as num from (select common_log_id,count(*)  as num from proxy_event where common_recv_time  >='{{start_time}}' and common_recv_time < '{{end_time}}' group  by common_log_id having num >1)"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "通联索引表正确性验证",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"pm.test(\"Status code is 200\", function () {",
-									"    pm.response.to.have.status(200);",
-									"});"
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://{{qgw_ip}}:{{qgw_port}}?query= select 'Total' as type, count(*) as logs from session_record where\n\tcommon_recv_time >= UNIX_TIMESTAMP({{Last 24 Hour Start}})\n\tand common_recv_time < UNIX_TIMESTAMP({{now}})\nunion all \nselect 'Client IP' as type, count(*) as logs from session_record_common_client_ip where\n\tcommon_recv_time >= UNIX_TIMESTAMP({{Last 24 Hour Start}})\n\tand common_recv_time < UNIX_TIMESTAMP({{now}})\nunion all\nselect 'Server IP' as type, count(*) as logs from session_record_common_server_ip where\n\tcommon_recv_time >= UNIX_TIMESTAMP({{Last 24 Hour Start}})\n\tand common_recv_time < UNIX_TIMESTAMP({{now}})\nunion all\nselect 'Domain' as type, count(*) as logs from session_record_http_domain where\n\tcommon_recv_time >= UNIX_TIMESTAMP({{Last 24 Hour Start}})\n\tand common_recv_time < UNIX_TIMESTAMP({{now}})\n",
-							"protocol": "http",
-							"host": [
-								"{{qgw_ip}}"
-							],
-							"port": "{{qgw_port}}",
-							"query": [
-								{
-									"key": "query",
-									"value": " select 'Total' as type, count(*) as logs from session_record where\n\tcommon_recv_time >= UNIX_TIMESTAMP({{Last 24 Hour Start}})\n\tand common_recv_time < UNIX_TIMESTAMP({{now}})\nunion all \nselect 'Client IP' as type, count(*) as logs from session_record_common_client_ip where\n\tcommon_recv_time >= UNIX_TIMESTAMP({{Last 24 Hour Start}})\n\tand common_recv_time < UNIX_TIMESTAMP({{now}})\nunion all\nselect 'Server IP' as type, count(*) as logs from session_record_common_server_ip where\n\tcommon_recv_time >= UNIX_TIMESTAMP({{Last 24 Hour Start}})\n\tand common_recv_time < UNIX_TIMESTAMP({{now}})\nunion all\nselect 'Domain' as type, count(*) as logs from session_record_http_domain where\n\tcommon_recv_time >= UNIX_TIMESTAMP({{Last 24 Hour Start}})\n\tand common_recv_time < UNIX_TIMESTAMP({{now}})\n"
-								}
-							]
-						}
 					},
 					"response": []
 				}
