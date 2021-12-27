@@ -8,7 +8,10 @@
 *   新增数据推荐查询-推荐APP活跃客户端IP
 *   新增数据推荐查询-推荐TopN Server IP
 *   新增数据推荐查询-推荐TopN SNI
-
+*   新增常用快捷功能-查询网关，增加优化查询测试集
+    *   Top 查询优化
+    *   Calcite 缓存查询
+    *   自定义时间函数补全功能
 
 ## Release 21.11 (5 Nov 2021)
 ###### New Features
