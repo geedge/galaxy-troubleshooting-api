@@ -1,5 +1,17 @@
 # galaxy-troubleshooting-api
 
+## Release 22.01 (27 JAN 2022)
+
+###### New Features
+
+*   检查数据流-TopN计算 增加Application接口验证
+    
+
+###### Update
+
+*   重新梳理分类，删除无用接口
+*   重新排列分类，将系统自检放到首位
+
 ## Release 21.12 (1 Dec 2021)
 ###### New Features
 
