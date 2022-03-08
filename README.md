@@ -1,5 +1,19 @@
 # galaxy-troubleshooting-api
 
+
+## Release 22.02 (8 MAR 2022)
+
+###### New Features
+
+*  检查数据流-元数据检查 增加schema评价文件事件日志
+    
+
+###### Update
+
+*   重新梳理分类，删除无用接口
+*   重新排列分类，将系统自检放到首位
+
+
 ## Release 22.01 (27 JAN 2022)
 
 ###### New Features
