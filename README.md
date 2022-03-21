@@ -1,5 +1,19 @@
 # galaxy-troubleshooting-api
 
+基于Postman rest API对Galaxy进行功能，系统集成和生产环境性能测试。
+
+## Release 22.03 (21 MAR 2022)
+
+###### New Features
+* 增加数据预处理检查，为每类日志增加多个测试用例，区分功能或无数据问题
+
+###### Update
+* 其它-评估日志预处理，增加ETL处理时延和写入Kafka时延指标
+* 检查日志模块对会话，安全和代理事件日志基于具体字段查询
+
+###### Delete
+* 删除检查数据流，关于Topic的测试用例
+
 
 ## Release 22.02 (8 MAR 2022)
 
