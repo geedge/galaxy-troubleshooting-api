@@ -6,7 +6,7 @@
 ###### New Features
 
 ###### Update
-* 预处理检查，是否有数据验证改为console打印日志信息
+* 预处理检查，是否有数据验证，改为console后台打印日志
 * Dashboards Top部分功能增加device_group, data_center维度校验
 
 ## Release 22.03 (21 MAR 2022)
