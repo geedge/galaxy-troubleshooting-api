@@ -2,7 +2,7 @@
 	"info": {
 		"_postman_id": "868bc69c-c241-4552-859c-24b9f0ad19b4",
 		"name": "Galaxy Trouble Shooting API V22.04",
-		"description": "# galaxy-troubleshooting-api\n\n基于Postman Rest API对Galaxy系统进行模块测试，版本发布前全流程验证和生产环境组件健康度检查。\n## Release 22.04 (11 APR 2022)\n\n###### New Features\n\n###### Update\n* 预处理检查是否为数据断言，由error改为console 打印日志信息\n* Dashboards Top部分功能增加device_group, data_center维度校验\n\n\n## Release 22.03 (8 APR 2022)\n\n###### New Features\n* 增加数据预处理检查，为每类日志增加多个测试用例，区分功能或无数据问题\n###### Update\n* 其它-评估日志预处理，增加ETL处理时延和写入Kafka时延指标\n* 检查日志模块对会话，安全和代理事件日志基于具体字段查询\n\n###### Delete\n* 删除检查数据流，关于Topic的测试用例\n\n## Release 22.02 (8 MAR 2022)\n\n###### New Features\n\n*  检查数据流-元数据检查 增加schema评价文件事件日志\n    \n \n\n## Release 22.01 (27 JAN 2022)\n\n###### New Features\n\n*   检查数据流-TopN计算 增加Application接口验证\n    \n\n###### Update\n\n*   重新梳理分类，删除无用接口\n*   重新排列分类，将系统自检放到首位\n    \n\n## Release 21.12 (1 Dec 2021)\n\n###### New Features\n\n*   新增数据推荐查询-实时查询任务\n*   新增数据推荐查询-推荐Subscriber ID 到IP关系\n*   新增数据推荐查询-推荐APP活跃客户端IP\n*   新增数据推荐查询-推荐TopN Server IP\n*   新增数据推荐查询-推荐TopN SNI\n*   新增常用快捷功能-查询网关，增加优化查询测试集\n    *   Top 查询优化\n    *   Calcite 缓存查询\n    *   自定义时间函数补全功能\n\n###### Update\n\n*   Dashboard 查询，代理策略命中动作增加Edit Element 统计\n    \n\n## Release 21.11 (5 Nov 2021)\n\n###### New Features\n\n*   Delete\n*   Update\n*   修改报告查询接口(由查询mariadb方式变更为API接口)\n*   修改规范“数据推荐查询”所有接口的命名\n    \n\n## Release 21.10 (28 OCT 2021)\n\n###### New Features\n\n*   新增HOS健康状态检测接口\n*   Delete\n*   删除原ClickHouse/Druid/ArangoDB 状态检查接口\n    \n\n## Release 21.09 (23 SEP 2021)\n\n###### New Features\n\n*   Update\n*   删除分布式调度任务，5分钟TOPN校验，交由FLink统计\n*   原始日志表名进行重命名，相关查询接口更新\n*   修正DNS分析的SQL数据集\n    \n\n## Release 21.08 (15 AUG 2021)\n\n###### New Features\n\n*   新增“Dashboard查询-DoS Threat Map”功能列表，显示DoS检测地图接口\n*   新增“原始日志查询-DoS事件日志”，显示DoS攻击检测日志\n*   新增“原始日志查询-DoS事件日志-Summary”，显示DoS攻击趋势统计\n*   新增“原始日志查询-DoS事件日志-Destination IP Traffic Trend”，显示受害者IP历史流量趋势\n*   Update\n*   迁移“Dashboard查询”liveCharts接口，放到“Live Charts”目录中统一管理。\n*   对DNS分析，增加一些查询样例\n    \n\n## Release 21.07 (5 JUL 2021)\n\n###### New Features\n\n*   增加”常用快捷功能-基数统计“，用于分析日志分布情况\n*   增加”常用快捷功能-DNS放大攻击“，查询特征数据集\n*   增加”通用检查-对象存储-获取某个文件“，用于文件获取验证\n    \n\n###### Update\n\n*   为所有接口增加Tests脚本，对接口进行批量验证测试\n*   修正部分接口查询异常\n    \n\n## Release 21.06 (7 JUN 2021)\n\n###### New Features\n\n*   Environments 增加环境变量domain、client_ip、server_ip、l7_protocol和PT1M_TIME\n*   常用快捷功能增加某域名下钻、某IP下钻、协议下钻和DNS分析功能\n    \n\n###### Update\n\n*   原始日志查询，基于Druid近1小时日志变化粒度从5分钟改为1分钟。包含通联、策略和代理日志。\n    \n\n## Release 21.05 (6 MAY 2021)\n\n###### New Features\n\n*   新增“GTP-C日志”功能，辅助故障诊断\n*   新增“事务日志”功能，辅助故障诊断\n*   新增“活跃会话日志”功能，辅助故障诊断\n*   新增“07.常用快捷功能-评估写入日志量”，查看当前系统的吞吐\n    \n\n###### Update\n\n*   修改\"01.通用检查-数据存储检查\"，增加事务、活跃及GTP-C 检测\n    \n\n## Release 21.04 (3 APR 2021)\n\n###### New Features\n\n*   增加“VoIP日志”功能，辅助故障诊断\n*   增加“元数据检查”分类目录\n*   增加“HOS对象存储”目录，用于定位对象存储\n    \n\n###### Update\n\n*   修改“SQL语法检查”为“SQL语法验证”，支持SQL语句的静态分析和数据库语义验证\n*   迁移功能项位置，方便问题定位\n    \n\n###### Delete\n\n*   删除“系统检查-查询引擎SQL测试集\\[过时\\]”功能，由“故障诊断-sql性能测试”替代。\n    \n\n## Release 21.03 (2 MAR 2021)\n\n###### New Features\n\n*   增加故障诊断-元数据功能，可分析日志字段是否与schema一致\n*   增加故障诊断-sql性能测试，可对查询引擎进行功能性验证和POC性能测试\n    \n\n###### Update\n\n*   对查询引擎SQL测试集标记过时\n    \n\n## Release 21.02 (1 FEB 2021)\n\n###### Update\n\n*   改善内部测试集，应对新的功能修改\n    \n\n## Release 20.11.rc3 (11 DEC 2020)\n\n###### New Features\n\n*   增加常用快捷功能- 安装证书独立客户端IP数据趋势\n*   增加常用快捷功能-访问速度最慢TOP20 域名\n*   增加常用快捷功能-报告预置Metrics\n*   增加原始日志查询-安全策略-动作命中计数\n*   增加原始日志查询-代理策略-动作命中计数\n*   增加原始日志查询-通联-流量计数(now)\n    \n\n###### Update\n\n*   改善Dashboard查询-基础统计-新建、活跃（计数）-now\n*   改善Dashboard查询-新建、活跃（趋势）\n*   目录增加编号，便于管理\n*   修改分布式调度任务-5分钟TOPN-hot表验证表名\n*   部分Action为post 改为 get，便于导出命令行",
+		"description": "# galaxy-troubleshooting-api\n\n基于Postman Rest API对Galaxy系统进行模块测试，版本发布前全流程验证和生产环境组件健康度检查。\n## Release 22.04 (11 APR 2022)\n\n###### New Features\n\n###### Update\n* 预处理检查-是否有数据验证，改为通过console后台打印日志\n* Dashboards Top部分功能增加device_group, data_center维度校验\n\n\n## Release 22.03 (8 APR 2022)\n\n###### New Features\n* 增加数据预处理检查，为每类日志增加多个测试用例，区分功能或无数据问题\n###### Update\n* 其它-评估日志预处理，增加ETL处理时延和写入Kafka时延指标\n* 检查日志模块对会话，安全和代理事件日志基于具体字段查询\n\n###### Delete\n* 删除检查数据流，关于Topic的测试用例\n\n## Release 22.02 (8 MAR 2022)\n\n###### New Features\n\n*  检查数据流-元数据检查 增加schema评价文件事件日志\n    \n \n\n## Release 22.01 (27 JAN 2022)\n\n###### New Features\n\n*   检查数据流-TopN计算 增加Application接口验证\n    \n\n###### Update\n\n*   重新梳理分类，删除无用接口\n*   重新排列分类，将系统自检放到首位\n    \n\n## Release 21.12 (1 Dec 2021)\n\n###### New Features\n\n*   新增数据推荐查询-实时查询任务\n*   新增数据推荐查询-推荐Subscriber ID 到IP关系\n*   新增数据推荐查询-推荐APP活跃客户端IP\n*   新增数据推荐查询-推荐TopN Server IP\n*   新增数据推荐查询-推荐TopN SNI\n*   新增常用快捷功能-查询网关，增加优化查询测试集\n    *   Top 查询优化\n    *   Calcite 缓存查询\n    *   自定义时间函数补全功能\n\n###### Update\n\n*   Dashboard 查询，代理策略命中动作增加Edit Element 统计\n    \n\n## Release 21.11 (5 Nov 2021)\n\n###### New Features\n\n*   Delete\n*   Update\n*   修改报告查询接口(由查询mariadb方式变更为API接口)\n*   修改规范“数据推荐查询”所有接口的命名\n    \n\n## Release 21.10 (28 OCT 2021)\n\n###### New Features\n\n*   新增HOS健康状态检测接口\n*   Delete\n*   删除原ClickHouse/Druid/ArangoDB 状态检查接口\n    \n\n## Release 21.09 (23 SEP 2021)\n\n###### New Features\n\n*   Update\n*   删除分布式调度任务，5分钟TOPN校验，交由FLink统计\n*   原始日志表名进行重命名，相关查询接口更新\n*   修正DNS分析的SQL数据集\n    \n\n## Release 21.08 (15 AUG 2021)\n\n###### New Features\n\n*   新增“Dashboard查询-DoS Threat Map”功能列表，显示DoS检测地图接口\n*   新增“原始日志查询-DoS事件日志”，显示DoS攻击检测日志\n*   新增“原始日志查询-DoS事件日志-Summary”，显示DoS攻击趋势统计\n*   新增“原始日志查询-DoS事件日志-Destination IP Traffic Trend”，显示受害者IP历史流量趋势\n*   Update\n*   迁移“Dashboard查询”liveCharts接口，放到“Live Charts”目录中统一管理。\n*   对DNS分析，增加一些查询样例\n    \n\n## Release 21.07 (5 JUL 2021)\n\n###### New Features\n\n*   增加”常用快捷功能-基数统计“，用于分析日志分布情况\n*   增加”常用快捷功能-DNS放大攻击“，查询特征数据集\n*   增加”通用检查-对象存储-获取某个文件“，用于文件获取验证\n    \n\n###### Update\n\n*   为所有接口增加Tests脚本，对接口进行批量验证测试\n*   修正部分接口查询异常\n    \n\n## Release 21.06 (7 JUN 2021)\n\n###### New Features\n\n*   Environments 增加环境变量domain、client_ip、server_ip、l7_protocol和PT1M_TIME\n*   常用快捷功能增加某域名下钻、某IP下钻、协议下钻和DNS分析功能\n    \n\n###### Update\n\n*   原始日志查询，基于Druid近1小时日志变化粒度从5分钟改为1分钟。包含通联、策略和代理日志。\n    \n\n## Release 21.05 (6 MAY 2021)\n\n###### New Features\n\n*   新增“GTP-C日志”功能，辅助故障诊断\n*   新增“事务日志”功能，辅助故障诊断\n*   新增“活跃会话日志”功能，辅助故障诊断\n*   新增“07.常用快捷功能-评估写入日志量”，查看当前系统的吞吐\n    \n\n###### Update\n\n*   修改\"01.通用检查-数据存储检查\"，增加事务、活跃及GTP-C 检测\n    \n\n## Release 21.04 (3 APR 2021)\n\n###### New Features\n\n*   增加“VoIP日志”功能，辅助故障诊断\n*   增加“元数据检查”分类目录\n*   增加“HOS对象存储”目录，用于定位对象存储\n    \n\n###### Update\n\n*   修改“SQL语法检查”为“SQL语法验证”，支持SQL语句的静态分析和数据库语义验证\n*   迁移功能项位置，方便问题定位\n    \n\n###### Delete\n\n*   删除“系统检查-查询引擎SQL测试集\\[过时\\]”功能，由“故障诊断-sql性能测试”替代。\n    \n\n## Release 21.03 (2 MAR 2021)\n\n###### New Features\n\n*   增加故障诊断-元数据功能，可分析日志字段是否与schema一致\n*   增加故障诊断-sql性能测试，可对查询引擎进行功能性验证和POC性能测试\n    \n\n###### Update\n\n*   对查询引擎SQL测试集标记过时\n    \n\n## Release 21.02 (1 FEB 2021)\n\n###### Update\n\n*   改善内部测试集，应对新的功能修改\n    \n\n## Release 20.11.rc3 (11 DEC 2020)\n\n###### New Features\n\n*   增加常用快捷功能- 安装证书独立客户端IP数据趋势\n*   增加常用快捷功能-访问速度最慢TOP20 域名\n*   增加常用快捷功能-报告预置Metrics\n*   增加原始日志查询-安全策略-动作命中计数\n*   增加原始日志查询-代理策略-动作命中计数\n*   增加原始日志查询-通联-流量计数(now)\n    \n\n###### Update\n\n*   改善Dashboard查询-基础统计-新建、活跃（计数）-now\n*   改善Dashboard查询-新建、活跃（趋势）\n*   目录增加编号，便于管理\n*   修改分布式调度任务-5分钟TOPN-hot表验证表名\n*   部分Action为post 改为 get，便于导出命令行",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -129,7 +129,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://{{qgw_ip}}:{{qgw_port}}/diagnosis/runSql",
+							"raw": "http://{{qgw_ip}}:{{qgw_port}}/diagnosis/runSql?option=validation",
 							"protocol": "http",
 							"host": [
 								"{{qgw_ip}}"
@@ -138,6 +138,12 @@
 							"path": [
 								"diagnosis",
 								"runSql"
+							],
+							"query": [
+								{
+									"key": "option",
+									"value": "validation"
+								}
 							]
 						}
 					},
@@ -1406,8 +1412,8 @@
 									"listen": "test",
 									"script": {
 										"exec": [
-											"pm.test(\"Status code is 200.\", function () {",
-											"    pm.response.to.have.status(200);",
+											"pm.test(\"Successful request.\", function () {",
+											"   pm.expect(pm.response.code).to.be.oneOf([200,201]);",
 											"});",
 											"",
 											"pm.test(\"Checking pre-aggregation status.\", function () {",
@@ -1416,7 +1422,7 @@
 											"         if (v.match(\"kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\\\"MessagesInPerSec\\\",topic=\\\"TOP-CLIENT-IP\\\",}\")) {",
 											"            console.log(v);",
 											"            if(v.split(' ')[1]<0.0001) { ",
-											"                pm.response.to.be.status(204);",
+											"                console.warn(\"Top Client IPs no data.\"); ",
 											"            }",
 											"        }",
 											"        if (v.match(\"kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\\\"FailedFetchRequestsPerSec\\\",topic=\\\"TOP-CLIENT-IP\\\",}\")) {",
@@ -1466,8 +1472,8 @@
 									"listen": "test",
 									"script": {
 										"exec": [
-											"pm.test(\"Status code is 200.\", function () {",
-											"    pm.response.to.have.status(200);",
+											"pm.test(\"Successful request.\", function () {",
+											"   pm.expect(pm.response.code).to.be.oneOf([200,201]);",
 											"});",
 											"",
 											"pm.test(\"Checking pre-aggregation status.\", function () {",
@@ -1476,7 +1482,7 @@
 											"         if (v.match(\"kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\\\"MessagesInPerSec\\\",topic=\\\"TOP-SERVER-IP\\\",}\")) {",
 											"            console.log(v);",
 											"            if(v.split(' ')[1]<0.0001) { ",
-											"                pm.response.to.be.status(204);",
+											"                console.warn(\"Top Server IPs no data.\"); ",
 											"            }",
 											"        }",
 											"        if (v.match(\"kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\\\"FailedFetchRequestsPerSec\\\",topic=\\\"TOP-SERVER-IP\\\",}\")) {",
@@ -1526,8 +1532,8 @@
 									"listen": "test",
 									"script": {
 										"exec": [
-											"pm.test(\"Status code is 200.\", function () {",
-											"    pm.response.to.have.status(200);",
+											"pm.test(\"Successful request.\", function () {",
+											"   pm.expect(pm.response.code).to.be.oneOf([200,201]);",
 											"});",
 											"",
 											"pm.test(\"Checking pre-aggregation status.\", function () {",
@@ -1536,7 +1542,7 @@
 											"         if (v.match(\"kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\\\"MessagesInPerSec\\\",topic=\\\"TOP-INTERNAL-HOST\\\",}\")) {",
 											"            console.log(v);",
 											"            if(v.split(' ')[1]<0.0001) { ",
-											"                pm.response.to.be.status(204);",
+											"                console.warn(\"Top Internal IPs no data.\"); ",
 											"            }",
 											"        }",
 											"        if (v.match(\"kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\\\"FailedFetchRequestsPerSec\\\",topic=\\\"TOP-INTERNAL-HOST\\\",}\")) {",
@@ -1586,8 +1592,8 @@
 									"listen": "test",
 									"script": {
 										"exec": [
-											"pm.test(\"Status code is 200.\", function () {",
-											"    pm.response.to.have.status(200);",
+											"pm.test(\"Successful request.\", function () {",
+											"   pm.expect(pm.response.code).to.be.oneOf([200,201]);",
 											"});",
 											"",
 											"pm.test(\"Checking pre-aggregation status.\", function () {",
@@ -1596,7 +1602,7 @@
 											"         if (v.match(\"kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\\\"MessagesInPerSec\\\",topic=\\\"TOP-EXTERNAL-HOST\\\",}\")) {",
 											"            console.log(v);",
 											"            if(v.split(' ')[1]<0.0001) { ",
-											"                pm.response.to.be.status(204);",
+											"                console.warn(\"Top External IPs no data.\"); ",
 											"            }",
 											"        }",
 											"        if (v.match(\"kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\\\"FailedFetchRequestsPerSec\\\",topic=\\\"TOP-EXTERNAL-HOST\\\",}\")) {",
@@ -1646,8 +1652,8 @@
 									"listen": "test",
 									"script": {
 										"exec": [
-											"pm.test(\"Status code is 200.\", function () {",
-											"    pm.response.to.have.status(200);",
+											"pm.test(\"Successful request.\", function () {",
+											"   pm.expect(pm.response.code).to.be.oneOf([200,201]);",
 											"});",
 											"",
 											"pm.test(\"Checking pre-aggregation status.\", function () {",
@@ -1656,7 +1662,7 @@
 											"         if (v.match(\"kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\\\"MessagesInPerSec\\\",topic=\\\"TOP-WEBSITE-DOMAIN\\\",}\")) {",
 											"            console.log(v);",
 											"            if(v.split(' ')[1]<0.0001) { ",
-											"                pm.response.to.be.status(204);",
+											"               console.warn(\"Top Website Domains no data.\"); ",
 											"            }",
 											"        }",
 											"        if (v.match(\"kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\\\"FailedFetchRequestsPerSec\\\",topic=\\\"TOP-WEBSITE-DOMAIN\\\",}\")) {",
@@ -1706,8 +1712,8 @@
 									"listen": "test",
 									"script": {
 										"exec": [
-											"pm.test(\"Status code is 200.\", function () {",
-											"    pm.response.to.have.status(200);",
+											"pm.test(\"Successful request.\", function () {",
+											"   pm.expect(pm.response.code).to.be.oneOf([200,201]);",
 											"});",
 											"",
 											"pm.test(\"Checking pre-aggregation status.\", function () {",
@@ -1716,7 +1722,7 @@
 											"         if (v.match(\"kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\\\"MessagesInPerSec\\\",topic=\\\"TOP-USER\\\",}\")) {",
 											"            console.log(v);",
 											"            if(v.split(' ')[1]<0.0001) { ",
-											"                pm.response.to.be.status(204);",
+											"                console.warn(\"Top Subscriber IDs no data.\"); ",
 											"            }",
 											"        }",
 											"        if (v.match(\"kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\\\"FailedFetchRequestsPerSec\\\",topic=\\\"TOP-USER\\\",}\")) {",
@@ -1765,8 +1771,8 @@
 									"listen": "test",
 									"script": {
 										"exec": [
-											"pm.test(\"Status code is 200.\", function () {",
-											"    pm.response.to.have.status(200);",
+											"pm.test(\"Successful request.\", function () {",
+											"   pm.expect(pm.response.code).to.be.oneOf([200,201]);",
 											"});",
 											"",
 											"pm.test(\"Checking pre-aggregation status.\", function () {",
@@ -1775,7 +1781,7 @@
 											"         if (v.match(\"kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\\\"MessagesInPerSec\\\",topic=\\\"TOP-URLS\\\",}\")) {",
 											"            console.log(v);",
 											"            if(v.split(' ')[1]<0.000001) { ",
-											"                pm.response.to.be.status(204);",
+											"                console.warn(\"Top URLs no data.\"); ",
 											"            }",
 											"        }",
 											"        if (v.match(\"kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\\\"FailedFetchRequestsPerSec\\\",topic=\\\"TOP-URLS\\\",}\")) {",
@@ -1824,8 +1830,8 @@
 									"listen": "test",
 									"script": {
 										"exec": [
-											"pm.test(\"Status code is 200.\", function () {",
-											"    pm.response.to.have.status(200);",
+											"pm.test(\"Successful request.\", function () {",
+											"   pm.expect(pm.response.code).to.be.oneOf([200,201]);",
 											"});",
 											"",
 											"pm.test(\"Checking pre-aggregation status.\", function () {",
@@ -1834,7 +1840,7 @@
 											"         if (v.match(\"kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\\\"MessagesInPerSec\\\",topic=\\\"TRAFFIC-APP-STAT\\\",}\")) {",
 											"            console.log(v);",
 											"            if(v.split(' ')[1]<0.0001) { ",
-											"                pm.response.to.be.status(204);",
+											"                console.warn(\"Top Applications no data.\"); ",
 											"            }",
 											"        }",
 											"        if (v.match(\"kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\\\"FailedFetchRequestsPerSec\\\",topic=\\\"TRAFFIC-APP-STAT\\\",}\")) {",
@@ -1881,8 +1887,8 @@
 									"listen": "test",
 									"script": {
 										"exec": [
-											"pm.test(\"Status code is 200.\", function () {",
-											"    pm.response.to.have.status(200);",
+											"pm.test(\"Successful request.\", function () {",
+											"   pm.expect(pm.response.code).to.be.oneOf([200,201]);",
 											"});",
 											"",
 											"pm.test(\"Checking pre-aggregation status.\", function () {",
@@ -1891,7 +1897,7 @@
 											"         if (v.match(\"kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\\\"MessagesInPerSec\\\",topic=\\\"TRAFFIC-PROTOCOL-STAT-LOG\\\",}\")) {",
 											"            console.log(v);",
 											"            if(v.split(' ')[1]<0.0001) { ",
-											"                pm.response.to.be.status(204);",
+											"                console.warn(\"Top Session Record Metrci - Protcols no data.\"); ",
 											"            }",
 											"        }",
 											"        if (v.match(\"kafka_server_BrokerTopicMetrics_FiveMinuteRate{name=\\\"FailedFetchRequestsPerSec\\\",topic=\\\"TRAFFIC-PROTOCOL-STAT-LOG\\\",}\")) {",
