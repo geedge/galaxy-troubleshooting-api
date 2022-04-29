@@ -1,7 +1,15 @@
 # galaxy-troubleshooting-api
 
 基于Postman Rest API对Galaxy系统进行模块测试，版本发布前全流程验证和生产环境组件健康度检查。
-## Release 22.04 (11 APR 2022)
+
+## Release 22.05 (29 APR 2022)
+
+###### New Features
+
+###### Update
+* 检查日志-会话日志/安全事件日志增加RDP类型校验
+
+## Release 22.04 (29 APR 2022)
 
 ###### New Features
 
