@@ -2,6 +2,16 @@
 
 基于Postman Rest API对Galaxy系统进行模块测试，版本发布前全流程验证和生产环境组件健康度检查。
 
+## Release 22.06 (30 JUE 2022)
+
+###### New Features
+
+* 检查数据流-增加存储配额一致性检查
+
+###### Update
+
+* 系统报告检查-增加与CM默认VSYSID=1参数
+
 ## Release 22.05 (29 APR 2022)
 
 ###### New Features
