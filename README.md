@@ -2,6 +2,12 @@
 
 基于Postman Rest API对Galaxy系统进行模块测试，版本发布前全流程验证和生产环境组件健康度检查。
 
+## Release 22.07 (30 JUL 2022)
+
+###### New Features
+* 增加检查数据推荐-Top Server IP流量概况评估
+* 增加检查数据推荐-Top SNI 流量概况评估
+
 ## Release 22.06 (30 JUE 2022)
 
 ###### New Features
