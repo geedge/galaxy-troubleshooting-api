@@ -2,6 +2,23 @@
 
 基于Postman Rest API对Galaxy系统进行模块测试，版本发布前全流程验证和生产环境组件健康度检查。
 
+## Release 22.08 (5 AUG 2022)
+
+###### New Features
+* 其它-查询网关-Live Charts 总带宽流量校验
+* 增加检查数据流-SQL执行计划
+* 增加检查数据流-SQL查看表结构
+* 增加检查数据推荐-推荐IMSI到TEID关系
+* 增加检查数据推荐-推荐IMEI到TEID关系
+* 增加检查数据推荐-推荐Phone Number到TEID关系
+* 增加检查数据推荐-推荐apn到TEID关系
+* 增加检查数据推荐-实时查询任务-提交查询任务(实时统计)
+* 增加检查数据推荐-实时查询任务-获取任务结果(实时统计)
+###### Update
+* 更新安全和代理事件日志默认增加namespace_id查询条件
+
+
+
 ## Release 22.07 (30 JUL 2022)
 
 ###### New Features
