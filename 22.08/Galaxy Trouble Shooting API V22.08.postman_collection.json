@@ -2,7 +2,7 @@
 	"info": {
 		"_postman_id": "868bc69c-c241-4552-859c-24b9f0ad19b4",
 		"name": "Galaxy Trouble Shooting API V22.08",
-		"description": "# galaxy-troubleshooting-api\n\n基于Postman Rest API对Galaxy系统进行模块测试，版本发布前全流程验证和生产环境组件健康度检查。\n## Release 22.08 (30 JUL 2022)\n\n###### New Features\n* 其它-查询网关-Live Charts 总带宽流量校验\n* 增加检查数据流-SQL执行计划\n* 增加检查数据流-SQL查看表结构\n* 增加检查数据推荐-推荐IMSI到TEID关系\n* 增加检查数据推荐-推荐IMEI到TEID关系\n* 增加检查数据推荐-推荐Phone Number到TEID关系\n* 增加检查数据推荐-推荐apn到TEID关系\n* 增加检查数据推荐-实时查询任务-提交查询任务(实时统计)\n* 增加检查数据推荐-实时查询任务-获取任务结果(实时统计)\n###### Update\n* 修改安全和代理事件日志默认增加namespace_id查询条件\n\n## Release 22.07 (30 JUL 2022)\n\n###### New Features\n* 增加检查数据推荐-Top Server IP流量概况评估\n* 增加检查数据推荐-Top SNI 流量概况评估\n###### Update\n\n\n## Release 22.06 (30 JUE 2022)\n\n###### New Features\n* 检查数据流-增加存储配额一致性检查\n###### Update\n* 系统报告检查-增加与CM默认VSYSID=1参数\n\n\n## Release 22.05 (31 MAY 2022)\n\n###### New Features\n\n###### Update\n* 检查日志-会话日志/安全事件日志增加RDP类型校验\n\n\n## Release 22.04 (29 APR 2022)\n\n###### New Features\n\n###### Update\n* 预处理检查-是否有数据验证，改为通过console后台打印日志\n* Dashboards Top部分功能增加device_group, data_center维度校验\n\n\n## Release 22.03 (8 APR 2022)\n\n###### New Features\n* 增加数据预处理检查，为每类日志增加多个测试用例，区分功能或无数据问题\n###### Update\n* 其它-评估日志预处理，增加ETL处理时延和写入Kafka时延指标\n* 检查日志模块对会话，安全和代理事件日志基于具体字段查询\n\n###### Delete\n* 删除检查数据流，关于Topic的测试用例\n\n## Release 22.02 (8 MAR 2022)\n\n###### New Features\n\n*  检查数据流-元数据检查 增加schema评价文件事件日志\n    \n \n\n## Release 22.01 (27 JAN 2022)\n\n###### New Features\n\n*   检查数据流-TopN计算 增加Application接口验证\n    \n\n###### Update\n\n*   重新梳理分类，删除无用接口\n*   重新排列分类，将系统自检放到首位\n    \n\n## Release 21.12 (1 Dec 2021)\n\n###### New Features\n\n*   新增数据推荐查询-实时查询任务\n*   新增数据推荐查询-推荐Subscriber ID 到IP关系\n*   新增数据推荐查询-推荐APP活跃客户端IP\n*   新增数据推荐查询-推荐TopN Server IP\n*   新增数据推荐查询-推荐TopN SNI\n*   新增常用快捷功能-查询网关，增加优化查询测试集\n    *   Top 查询优化\n    *   Calcite 缓存查询\n    *   自定义时间函数补全功能\n\n###### Update\n\n*   Dashboard 查询，代理策略命中动作增加Edit Element 统计\n    \n\n## Release 21.11 (5 Nov 2021)\n\n###### New Features\n\n*   Delete\n*   Update\n*   修改报告查询接口(由查询mariadb方式变更为API接口)\n*   修改规范“数据推荐查询”所有接口的命名\n    \n\n## Release 21.10 (28 OCT 2021)\n\n###### New Features\n\n*   新增HOS健康状态检测接口\n*   Delete\n*   删除原ClickHouse/Druid/ArangoDB 状态检查接口\n    \n\n## Release 21.09 (23 SEP 2021)\n\n###### New Features\n\n*   Update\n*   删除分布式调度任务，5分钟TOPN校验，交由FLink统计\n*   原始日志表名进行重命名，相关查询接口更新\n*   修正DNS分析的SQL数据集\n    \n\n## Release 21.08 (15 AUG 2021)\n\n###### New Features\n\n*   新增“Dashboard查询-DoS Threat Map”功能列表，显示DoS检测地图接口\n*   新增“原始日志查询-DoS事件日志”，显示DoS攻击检测日志\n*   新增“原始日志查询-DoS事件日志-Summary”，显示DoS攻击趋势统计\n*   新增“原始日志查询-DoS事件日志-Destination IP Traffic Trend”，显示受害者IP历史流量趋势\n*   Update\n*   迁移“Dashboard查询”liveCharts接口，放到“Live Charts”目录中统一管理。\n*   对DNS分析，增加一些查询样例\n    \n\n## Release 21.07 (5 JUL 2021)\n\n###### New Features\n\n*   增加”常用快捷功能-基数统计“，用于分析日志分布情况\n*   增加”常用快捷功能-DNS放大攻击“，查询特征数据集\n*   增加”通用检查-对象存储-获取某个文件“，用于文件获取验证\n    \n\n###### Update\n\n*   为所有接口增加Tests脚本，对接口进行批量验证测试\n*   修正部分接口查询异常\n    \n\n## Release 21.06 (7 JUN 2021)\n\n###### New Features\n\n*   Environments 增加环境变量domain、client_ip、server_ip、l7_protocol和PT1M_TIME\n*   常用快捷功能增加某域名下钻、某IP下钻、协议下钻和DNS分析功能\n    \n\n###### Update\n\n*   原始日志查询，基于Druid近1小时日志变化粒度从5分钟改为1分钟。包含通联、策略和代理日志。\n    \n\n## Release 21.05 (6 MAY 2021)\n\n###### New Features\n\n*   新增“GTP-C日志”功能，辅助故障诊断\n*   新增“事务日志”功能，辅助故障诊断\n*   新增“活跃会话日志”功能，辅助故障诊断\n*   新增“07.常用快捷功能-评估写入日志量”，查看当前系统的吞吐\n    \n\n###### Update\n\n*   修改\"01.通用检查-数据存储检查\"，增加事务、活跃及GTP-C 检测\n    \n\n## Release 21.04 (3 APR 2021)\n\n###### New Features\n\n*   增加“VoIP日志”功能，辅助故障诊断\n*   增加“元数据检查”分类目录\n*   增加“HOS对象存储”目录，用于定位对象存储\n    \n\n###### Update\n\n*   修改“SQL语法检查”为“SQL语法验证”，支持SQL语句的静态分析和数据库语义验证\n*   迁移功能项位置，方便问题定位\n    \n\n###### Delete\n\n*   删除“系统检查-查询引擎SQL测试集\\[过时\\]”功能，由“故障诊断-sql性能测试”替代。\n    \n\n## Release 21.03 (2 MAR 2021)\n\n###### New Features\n\n*   增加故障诊断-元数据功能，可分析日志字段是否与schema一致\n*   增加故障诊断-sql性能测试，可对查询引擎进行功能性验证和POC性能测试\n    \n\n###### Update\n\n*   对查询引擎SQL测试集标记过时\n    \n\n## Release 21.02 (1 FEB 2021)\n\n###### Update\n\n*   改善内部测试集，应对新的功能修改\n    \n\n## Release 20.11.rc3 (11 DEC 2020)\n\n###### New Features\n\n*   增加常用快捷功能- 安装证书独立客户端IP数据趋势\n*   增加常用快捷功能-访问速度最慢TOP20 域名\n*   增加常用快捷功能-报告预置Metrics\n*   增加原始日志查询-安全策略-动作命中计数\n*   增加原始日志查询-代理策略-动作命中计数\n*   增加原始日志查询-通联-流量计数(now)\n    \n\n###### Update\n\n*   改善Dashboard查询-基础统计-新建、活跃（计数）-now\n*   改善Dashboard查询-新建、活跃（趋势）\n*   目录增加编号，便于管理\n*   修改分布式调度任务-5分钟TOPN-hot表验证表名\n*   部分Action为post 改为 get，便于导出命令行",
+		"description": "# galaxy-troubleshooting-api\n\n基于Postman Rest API对Galaxy系统进行模块测试，版本发布前全流程验证和生产环境组件健康度检查。\n## Release 22.08 (5 AUG 2022)\n\n###### New Features\n* 其它-查询网关-Live Charts 总带宽流量校验\n* 增加检查数据流-SQL执行计划\n* 增加检查数据流-SQL查看表结构\n* 增加检查数据推荐-推荐IMSI到TEID关系\n* 增加检查数据推荐-推荐IMEI到TEID关系\n* 增加检查数据推荐-推荐Phone Number到TEID关系\n* 增加检查数据推荐-推荐apn到TEID关系\n* 增加检查数据推荐-实时查询任务-提交查询任务(实时统计)\n* 增加检查数据推荐-实时查询任务-获取任务结果(实时统计)\n* 增加检查数据推荐-知识库列表\n* 增加预处理检查-检测预处理延迟\n* 增加预处理检查-已关闭会话日志延迟分布\n###### Update\n\n\n## Release 22.07 (30 JUL 2022)\n\n###### New Features\n* 增加检查数据推荐-Top Server IP流量概况评估\n* 增加检查数据推荐-Top SNI 流量概况评估\n###### Update\n\n\n## Release 22.06 (30 JUE 2022)\n\n###### New Features\n* 检查数据流-增加存储配额一致性检查\n###### Update\n* 系统报告检查-增加与CM默认VSYSID=1参数\n\n\n## Release 22.05 (31 MAY 2022)\n\n###### New Features\n\n###### Update\n* 检查日志-会话日志/安全事件日志增加RDP类型校验\n\n\n## Release 22.04 (29 APR 2022)\n\n###### New Features\n\n###### Update\n* 预处理检查-是否有数据验证，改为通过console后台打印日志\n* Dashboards Top部分功能增加device_group, data_center维度校验\n\n\n## Release 22.03 (8 APR 2022)\n\n###### New Features\n* 增加数据预处理检查，为每类日志增加多个测试用例，区分功能或无数据问题\n###### Update\n* 其它-评估日志预处理，增加ETL处理时延和写入Kafka时延指标\n* 检查日志模块对会话，安全和代理事件日志基于具体字段查询\n\n###### Delete\n* 删除检查数据流，关于Topic的测试用例\n\n## Release 22.02 (8 MAR 2022)\n\n###### New Features\n\n*  检查数据流-元数据检查 增加schema评价文件事件日志\n    \n \n\n## Release 22.01 (27 JAN 2022)\n\n###### New Features\n\n*   检查数据流-TopN计算 增加Application接口验证\n    \n\n###### Update\n\n*   重新梳理分类，删除无用接口\n*   重新排列分类，将系统自检放到首位\n    \n\n## Release 21.12 (1 Dec 2021)\n\n###### New Features\n\n*   新增数据推荐查询-实时查询任务\n*   新增数据推荐查询-推荐Subscriber ID 到IP关系\n*   新增数据推荐查询-推荐APP活跃客户端IP\n*   新增数据推荐查询-推荐TopN Server IP\n*   新增数据推荐查询-推荐TopN SNI\n*   新增常用快捷功能-查询网关，增加优化查询测试集\n    *   Top 查询优化\n    *   Calcite 缓存查询\n    *   自定义时间函数补全功能\n\n###### Update\n\n*   Dashboard 查询，代理策略命中动作增加Edit Element 统计\n    \n\n## Release 21.11 (5 Nov 2021)\n\n###### New Features\n\n*   Delete\n*   Update\n*   修改报告查询接口(由查询mariadb方式变更为API接口)\n*   修改规范“数据推荐查询”所有接口的命名\n    \n\n## Release 21.10 (28 OCT 2021)\n\n###### New Features\n\n*   新增HOS健康状态检测接口\n*   Delete\n*   删除原ClickHouse/Druid/ArangoDB 状态检查接口\n    \n\n## Release 21.09 (23 SEP 2021)\n\n###### New Features\n\n*   Update\n*   删除分布式调度任务，5分钟TOPN校验，交由FLink统计\n*   原始日志表名进行重命名，相关查询接口更新\n*   修正DNS分析的SQL数据集\n    \n\n## Release 21.08 (15 AUG 2021)\n\n###### New Features\n\n*   新增“Dashboard查询-DoS Threat Map”功能列表，显示DoS检测地图接口\n*   新增“原始日志查询-DoS事件日志”，显示DoS攻击检测日志\n*   新增“原始日志查询-DoS事件日志-Summary”，显示DoS攻击趋势统计\n*   新增“原始日志查询-DoS事件日志-Destination IP Traffic Trend”，显示受害者IP历史流量趋势\n*   Update\n*   迁移“Dashboard查询”liveCharts接口，放到“Live Charts”目录中统一管理。\n*   对DNS分析，增加一些查询样例\n    \n\n## Release 21.07 (5 JUL 2021)\n\n###### New Features\n\n*   增加”常用快捷功能-基数统计“，用于分析日志分布情况\n*   增加”常用快捷功能-DNS放大攻击“，查询特征数据集\n*   增加”通用检查-对象存储-获取某个文件“，用于文件获取验证\n    \n\n###### Update\n\n*   为所有接口增加Tests脚本，对接口进行批量验证测试\n*   修正部分接口查询异常\n    \n\n## Release 21.06 (7 JUN 2021)\n\n###### New Features\n\n*   Environments 增加环境变量domain、client_ip、server_ip、l7_protocol和PT1M_TIME\n*   常用快捷功能增加某域名下钻、某IP下钻、协议下钻和DNS分析功能\n    \n\n###### Update\n\n*   原始日志查询，基于Druid近1小时日志变化粒度从5分钟改为1分钟。包含通联、策略和代理日志。\n    \n\n## Release 21.05 (6 MAY 2021)\n\n###### New Features\n\n*   新增“GTP-C日志”功能，辅助故障诊断\n*   新增“事务日志”功能，辅助故障诊断\n*   新增“活跃会话日志”功能，辅助故障诊断\n*   新增“07.常用快捷功能-评估写入日志量”，查看当前系统的吞吐\n    \n\n###### Update\n\n*   修改\"01.通用检查-数据存储检查\"，增加事务、活跃及GTP-C 检测\n    \n\n## Release 21.04 (3 APR 2021)\n\n###### New Features\n\n*   增加“VoIP日志”功能，辅助故障诊断\n*   增加“元数据检查”分类目录\n*   增加“HOS对象存储”目录，用于定位对象存储\n    \n\n###### Update\n\n*   修改“SQL语法检查”为“SQL语法验证”，支持SQL语句的静态分析和数据库语义验证\n*   迁移功能项位置，方便问题定位\n    \n\n###### Delete\n\n*   删除“系统检查-查询引擎SQL测试集\\[过时\\]”功能，由“故障诊断-sql性能测试”替代。\n    \n\n## Release 21.03 (2 MAR 2021)\n\n###### New Features\n\n*   增加故障诊断-元数据功能，可分析日志字段是否与schema一致\n*   增加故障诊断-sql性能测试，可对查询引擎进行功能性验证和POC性能测试\n    \n\n###### Update\n\n*   对查询引擎SQL测试集标记过时\n    \n\n## Release 21.02 (1 FEB 2021)\n\n###### Update\n\n*   改善内部测试集，应对新的功能修改\n    \n\n## Release 20.11.rc3 (11 DEC 2020)\n\n###### New Features\n\n*   增加常用快捷功能- 安装证书独立客户端IP数据趋势\n*   增加常用快捷功能-访问速度最慢TOP20 域名\n*   增加常用快捷功能-报告预置Metrics\n*   增加原始日志查询-安全策略-动作命中计数\n*   增加原始日志查询-代理策略-动作命中计数\n*   增加原始日志查询-通联-流量计数(now)\n    \n\n###### Update\n\n*   改善Dashboard查询-基础统计-新建、活跃（计数）-now\n*   改善Dashboard查询-新建、活跃（趋势）\n*   目录增加编号，便于管理\n*   修改分布式调度任务-5分钟TOPN-hot表验证表名\n*   部分Action为post 改为 get，便于导出命令行",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -1397,6 +1397,79 @@
 									]
 								},
 								"description": "验证原始日志是否有最新的数据"
+							},
+							"response": []
+						},
+						{
+							"name": "检测预处理延迟",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://{{qgw_ip}}:{{qgw_port}}?query=select  'Session Record' as type, round(count(*)/300,0) as \"logs/sec\", round(avg(common_processing_time-common_ingestion_time),2) as \"avg_etl_latency(s)\", round(avg(common_ingestion_time-common_end_time),2) as \"avg_ingestion_latency(s)\"\nfrom\n\tsession_record crl \nwhere\n\tcommon_recv_time >= UNIX_TIMESTAMP({{Last 5 Minutes Start}})\n\tand common_recv_time < UNIX_TIMESTAMP({{now}}) union all select  'Interim Session Record' as type, round(count(*)/300,0) as \"logs/sec\", round(avg(common_processing_time-common_ingestion_time),2) as \"avg_etl_latency(s)\", round(avg(common_ingestion_time-common_end_time),2) as \"avg_ingestion_latency(s)\"\nfrom\n\tinterim_session_record crl \nwhere\n\tcommon_recv_time >= UNIX_TIMESTAMP({{Last 5 Minutes Start}})\n\tand common_recv_time < UNIX_TIMESTAMP({{now}}) union all select  'Transaction Record' as type, round(count(*)/300,0) as \"logs/sec\", round(avg(common_processing_time-common_ingestion_time),2) as \"etl_latency(s)\" , round(avg(common_ingestion_time-common_end_time),2) as \"avg_ingestion_latency(s)\"\n\tfrom transaction_record crl \nwhere\n\tcommon_recv_time >= UNIX_TIMESTAMP({{Last 5 Minutes Start}})\n\tand common_recv_time < UNIX_TIMESTAMP({{now}}) union all select  'Security Event' as type, round(count(*)/300,0) as \"logs/sec\", round(avg(common_processing_time-common_ingestion_time),2) as \"avg_etl_latency(s)\", round(avg(common_ingestion_time-common_end_time),2) as \"avg_ingestion_latency(s)\"\nfrom\n\tsecurity_event crl \nwhere\n\tcommon_recv_time >= UNIX_TIMESTAMP({{Last 5 Minutes Start}})\n\tand common_recv_time < UNIX_TIMESTAMP({{now}})\nunion all select  'Proxy Event' as type, round(count(*)/300,0) as \"logs/sec\", round(avg(common_processing_time-common_ingestion_time),2) as \"avg_etl_latency(s)\", round(avg(common_ingestion_time-common_end_time),2) as \"avg_ingestion_latency(s)\"\nfrom\n\tproxy_event crl \nwhere\n\tcommon_recv_time >= UNIX_TIMESTAMP({{Last 5 Minutes Start}})\n\tand common_recv_time < UNIX_TIMESTAMP({{now}})\n union all select  'Radius Record' as type, round(count(*)/300,0) as \"logs/sec\", round(avg(common_processing_time-common_ingestion_time),2) as \"avg_etl_latency(s)\", round(avg(common_ingestion_time-common_end_time),2) as \"avg_ingestion_latency(s)\"\nfrom\n\tradius_record crl \nwhere\n\tcommon_recv_time >= UNIX_TIMESTAMP({{Last 5 Minutes Start}})\n\tand common_recv_time < UNIX_TIMESTAMP({{now}}) union all select  'gtpc_record' as type, round(count(*)/300,0) as \"logs/sec\",round(avg(common_processing_time-common_ingestion_time),2) as \"avg_etl_latency(s)\", round(avg(common_processing_time-common_ingestion_time),2) as \"avg_etl_latency(s)\"\nfrom\n\tgtpc_record crl \nwhere\n\tcommon_recv_time >= UNIX_TIMESTAMP({{Last 5 Minutes Start}})\n\tand common_recv_time < UNIX_TIMESTAMP({{now}})",
+									"protocol": "http",
+									"host": [
+										"{{qgw_ip}}"
+									],
+									"port": "{{qgw_port}}",
+									"query": [
+										{
+											"key": "query",
+											"value": "select  'Session Record' as type, round(count(*)/300,0) as \"logs/sec\", round(avg(common_processing_time-common_ingestion_time),2) as \"avg_etl_latency(s)\", round(avg(common_ingestion_time-common_end_time),2) as \"avg_ingestion_latency(s)\"\nfrom\n\tsession_record crl \nwhere\n\tcommon_recv_time >= UNIX_TIMESTAMP({{Last 5 Minutes Start}})\n\tand common_recv_time < UNIX_TIMESTAMP({{now}}) union all select  'Interim Session Record' as type, round(count(*)/300,0) as \"logs/sec\", round(avg(common_processing_time-common_ingestion_time),2) as \"avg_etl_latency(s)\", round(avg(common_ingestion_time-common_end_time),2) as \"avg_ingestion_latency(s)\"\nfrom\n\tinterim_session_record crl \nwhere\n\tcommon_recv_time >= UNIX_TIMESTAMP({{Last 5 Minutes Start}})\n\tand common_recv_time < UNIX_TIMESTAMP({{now}}) union all select  'Transaction Record' as type, round(count(*)/300,0) as \"logs/sec\", round(avg(common_processing_time-common_ingestion_time),2) as \"etl_latency(s)\" , round(avg(common_ingestion_time-common_end_time),2) as \"avg_ingestion_latency(s)\"\n\tfrom transaction_record crl \nwhere\n\tcommon_recv_time >= UNIX_TIMESTAMP({{Last 5 Minutes Start}})\n\tand common_recv_time < UNIX_TIMESTAMP({{now}}) union all select  'Security Event' as type, round(count(*)/300,0) as \"logs/sec\", round(avg(common_processing_time-common_ingestion_time),2) as \"avg_etl_latency(s)\", round(avg(common_ingestion_time-common_end_time),2) as \"avg_ingestion_latency(s)\"\nfrom\n\tsecurity_event crl \nwhere\n\tcommon_recv_time >= UNIX_TIMESTAMP({{Last 5 Minutes Start}})\n\tand common_recv_time < UNIX_TIMESTAMP({{now}})\nunion all select  'Proxy Event' as type, round(count(*)/300,0) as \"logs/sec\", round(avg(common_processing_time-common_ingestion_time),2) as \"avg_etl_latency(s)\", round(avg(common_ingestion_time-common_end_time),2) as \"avg_ingestion_latency(s)\"\nfrom\n\tproxy_event crl \nwhere\n\tcommon_recv_time >= UNIX_TIMESTAMP({{Last 5 Minutes Start}})\n\tand common_recv_time < UNIX_TIMESTAMP({{now}})\n union all select  'Radius Record' as type, round(count(*)/300,0) as \"logs/sec\", round(avg(common_processing_time-common_ingestion_time),2) as \"avg_etl_latency(s)\", round(avg(common_ingestion_time-common_end_time),2) as \"avg_ingestion_latency(s)\"\nfrom\n\tradius_record crl \nwhere\n\tcommon_recv_time >= UNIX_TIMESTAMP({{Last 5 Minutes Start}})\n\tand common_recv_time < UNIX_TIMESTAMP({{now}}) union all select  'gtpc_record' as type, round(count(*)/300,0) as \"logs/sec\",round(avg(common_processing_time-common_ingestion_time),2) as \"avg_etl_latency(s)\", round(avg(common_processing_time-common_ingestion_time),2) as \"avg_etl_latency(s)\"\nfrom\n\tgtpc_record crl \nwhere\n\tcommon_recv_time >= UNIX_TIMESTAMP({{Last 5 Minutes Start}})\n\tand common_recv_time < UNIX_TIMESTAMP({{now}})"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "已关闭会话日志延迟分布",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://{{qgw_ip}}:{{qgw_port}}/?query=select\n\tmin(duration) MIN,\n\tmedian(duration) as MEDIAN,\n\tround(avg(duration),2) as AVG,\n\tround(QUANTILE(duration,0.8),2) as P80,\n\tround(QUANTILE(duration,0.95),2) as P95,\n\tround(QUANTILE(duration,0.99),2) as P99,\n\tmax(duration) as MAX\nfrom\n\t(\n\tselect\n\t\t(common_processing_time-common_recv_time) as duration\n\tFROM\n\t\tsession_record\n\tWHERE\n\t\tcommon_recv_time >= UNIX_TIMESTAMP(now())-86400\n\t\tand common_recv_time<UNIX_TIMESTAMP(now()) )",
+									"protocol": "http",
+									"host": [
+										"{{qgw_ip}}"
+									],
+									"port": "{{qgw_port}}",
+									"path": [
+										""
+									],
+									"query": [
+										{
+											"key": "query",
+											"value": "select\n\tmin(duration) MIN,\n\tmedian(duration) as MEDIAN,\n\tround(avg(duration),2) as AVG,\n\tround(QUANTILE(duration,0.8),2) as P80,\n\tround(QUANTILE(duration,0.95),2) as P95,\n\tround(QUANTILE(duration,0.99),2) as P99,\n\tmax(duration) as MAX\nfrom\n\t(\n\tselect\n\t\t(common_processing_time-common_recv_time) as duration\n\tFROM\n\t\tsession_record\n\tWHERE\n\t\tcommon_recv_time >= UNIX_TIMESTAMP(now())-86400\n\t\tand common_recv_time<UNIX_TIMESTAMP(now()) )"
+										}
+									]
+								}
 							},
 							"response": []
 						}
@@ -3365,7 +3438,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://{{qgw_ip}}:{{qgw_port}}?query=explain select http_domain,count(*) as sessions from session_record  where  common_recv_time  >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <  UNIX_TIMESTAMP('{{end_time}}') group by http_domain order by sessions desc limit 10",
+							"raw": "http://{{qgw_ip}}:{{qgw_port}}?query=explain select\n\tmin(duration) min,\n\tmedian(duration) as median,avg(duration) as avg, round(QUANTILE(duration,0.8),2) as p80,\n\tround(QUANTILE(duration,0.95),2) as p95,\n\tround(QUANTILE(duration,0.99),2) as p99,\n    max(duration) as max\n\t\nfrom\n\t(\n\tselect\n\t\t(common_processing_time-common_recv_time) as duration\n\tFROM\n\t\tsession_record\n\tWHERE\n\t\tcommon_recv_time >= UNIX_TIMESTAMP(now())-86400 and common_recv_time<UNIX_TIMESTAMP(now()) )",
 							"protocol": "http",
 							"host": [
 								"{{qgw_ip}}"
@@ -3374,10 +3447,11 @@
 							"query": [
 								{
 									"key": "query",
-									"value": "explain select http_domain,count(*) as sessions from session_record  where  common_recv_time  >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <  UNIX_TIMESTAMP('{{end_time}}') group by http_domain order by sessions desc limit 10"
+									"value": "explain select\n\tmin(duration) min,\n\tmedian(duration) as median,avg(duration) as avg, round(QUANTILE(duration,0.8),2) as p80,\n\tround(QUANTILE(duration,0.95),2) as p95,\n\tround(QUANTILE(duration,0.99),2) as p99,\n    max(duration) as max\n\t\nfrom\n\t(\n\tselect\n\t\t(common_processing_time-common_recv_time) as duration\n\tFROM\n\t\tsession_record\n\tWHERE\n\t\tcommon_recv_time >= UNIX_TIMESTAMP(now())-86400 and common_recv_time<UNIX_TIMESTAMP(now()) )"
 								}
 							]
-						}
+						},
+						"description": "执行计划返回结果进行Base64转码：\n* OriginalSQL ： 输入的原始SQL\n* transformedSQL： 查询网关优化后SQL\n可通过：echo \"YWJjCg==\" | base64 -D 解码"
 					},
 					"response": []
 				},
@@ -5630,7 +5704,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://{{qgw_ip}}:{{qgw_port}}/?query=select   toDateTime(common_recv_time) AS common_recv_time, common_log_id, common_namespace_id, common_policy_id, common_subscriber_id, common_imei, common_imsi, common_phone_number, common_client_ip, common_internal_ip, common_client_port, common_l4_protocol, common_address_type, common_server_ip, common_server_port, common_external_ip, common_action, common_direction, common_sled_ip, common_client_location, common_client_asn, common_server_location, common_server_asn, common_sessions, common_c2s_pkt_num, common_s2c_pkt_num, common_c2s_byte_num, common_s2c_byte_num, common_schema_type, common_device_id, common_device_group, common_app_behavior, common_app_label, common_tunnels, common_protocol_label, common_userdefine_app_name, common_l7_protocol, common_service_category, toDateTime(common_start_time) AS common_start_time, toDateTime(common_end_time) AS common_end_time, common_establish_latency_ms, common_con_duration_ms, common_stream_dir, common_stream_error, common_stream_trace_id, common_packet_capture_file, common_tcp_client_isn, common_tcp_server_isn, toDateTime(common_processing_time) AS common_processing_time, toDateTime(common_ingestion_time) AS common_ingestion_time, common_mirrored_pkts, common_mirrored_bytes, http_url, http_host, http_domain, http_request_line, http_response_line, http_request_content_length, http_request_content_type, http_response_content_length, http_response_content_type, http_request_body, http_response_body, http_cookie, http_referer, http_user_agent, http_set_cookie, http_version, http_response_latency_ms, http_action_file_size, http_session_duration_ms, mail_protocol_type, mail_account, mail_from_cmd, mail_to_cmd, mail_from, mail_to, mail_cc, mail_bcc, mail_subject, mail_attachment_name, dns_message_id, dns_qr, dns_opcode, dns_aa, dns_tc, dns_rd, dns_ra, dns_rcode, dns_qdcount, dns_ancount, dns_nscount, dns_arcount, dns_qname, dns_qtype, dns_qclass, dns_sub, ssl_sni, ssl_san, ssl_cn, ssl_pinningst, ssl_intercept_state, ssl_passthrough_reason, ssl_server_side_latency, ssl_client_side_latency, ssl_server_side_version, ssl_client_side_version, ssl_cert_verify, ssl_error, ssl_con_latency_ms, ssl_ja3_hash, ssl_cert_issuer, ssl_cert_subject, quic_version, quic_sni, quic_user_agent, ftp_account, ftp_url, ftp_content, ftp_link_type, app_extra_info, sip_call_id, sip_originator_description, sip_responder_description, sip_user_agent, sip_server, sip_originator_sdp_connect_ip, sip_originator_sdp_media_port, sip_originator_sdp_media_type, sip_originator_sdp_content, sip_responder_sdp_connect_ip, sip_responder_sdp_media_port, sip_responder_sdp_media_type, sip_responder_sdp_content, sip_duration_s, sip_bye, rtp_payload_type_c2s, rtp_payload_type_s2c, rtp_pcap_path, ssh_version, ssh_auth_success, ssh_client_version, ssh_server_version, ssh_cipher_alg, ssh_mac_alg, ssh_compression_alg, ssh_kex_alg, ssh_host_key_alg, ssh_host_key, ssh_hassh, stratum_cryptocurrency, stratum_mining_pools, stratum_mining_program, rdp_cookie,rdp_security_protocol,rdp_client_channels,rdp_keyboard_layout,rdp_client_version,rdp_client_name,rdp_client_product_id,rdp_desktop_width,rdp_desktop_height,rdp_requested_color_depth,rdp_certificate_type,rdp_certificate_count,rdp_certificate_permanent,rdp_encryption_level,rdp_encryption_method from security_event where  common_recv_time  >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <  UNIX_TIMESTAMP('{{end_time}}') and common_namespace_id in(0,1)    order by  common_recv_time desc  limit 0 , 20",
+							"raw": "http://{{qgw_ip}}:{{qgw_port}}/?query=select   toDateTime(common_recv_time) AS common_recv_time, common_log_id,  common_policy_id, common_subscriber_id, common_imei, common_imsi, common_phone_number, common_client_ip, common_internal_ip, common_client_port, common_l4_protocol, common_address_type, common_server_ip, common_server_port, common_external_ip, common_action, common_direction, common_sled_ip, common_client_location, common_client_asn, common_server_location, common_server_asn, common_sessions, common_c2s_pkt_num, common_s2c_pkt_num, common_c2s_byte_num, common_s2c_byte_num, common_schema_type, common_device_id, common_device_group, common_app_behavior, common_app_label, common_tunnels, common_protocol_label, common_userdefine_app_name, common_l7_protocol, common_service_category, toDateTime(common_start_time) AS common_start_time, toDateTime(common_end_time) AS common_end_time, common_establish_latency_ms, common_con_duration_ms, common_stream_dir, common_stream_error, common_stream_trace_id, common_packet_capture_file, common_tcp_client_isn, common_tcp_server_isn, toDateTime(common_processing_time) AS common_processing_time, toDateTime(common_ingestion_time) AS common_ingestion_time, common_mirrored_pkts, common_mirrored_bytes, http_url, http_host, http_domain, http_request_line, http_response_line, http_request_content_length, http_request_content_type, http_response_content_length, http_response_content_type, http_request_body, http_response_body, http_cookie, http_referer, http_user_agent, http_set_cookie, http_version, http_response_latency_ms, http_action_file_size, http_session_duration_ms, mail_protocol_type, mail_account, mail_from_cmd, mail_to_cmd, mail_from, mail_to, mail_cc, mail_bcc, mail_subject, mail_attachment_name, dns_message_id, dns_qr, dns_opcode, dns_aa, dns_tc, dns_rd, dns_ra, dns_rcode, dns_qdcount, dns_ancount, dns_nscount, dns_arcount, dns_qname, dns_qtype, dns_qclass, dns_sub, ssl_sni, ssl_san, ssl_cn, ssl_pinningst, ssl_intercept_state, ssl_passthrough_reason, ssl_server_side_latency, ssl_client_side_latency, ssl_server_side_version, ssl_client_side_version, ssl_cert_verify, ssl_error, ssl_con_latency_ms, ssl_ja3_hash, ssl_cert_issuer, ssl_cert_subject, quic_version, quic_sni, quic_user_agent, ftp_account, ftp_url, ftp_content, ftp_link_type, app_extra_info, sip_call_id, sip_originator_description, sip_responder_description, sip_user_agent, sip_server, sip_originator_sdp_connect_ip, sip_originator_sdp_media_port, sip_originator_sdp_media_type, sip_originator_sdp_content, sip_responder_sdp_connect_ip, sip_responder_sdp_media_port, sip_responder_sdp_media_type, sip_responder_sdp_content, sip_duration_s, sip_bye, rtp_payload_type_c2s, rtp_payload_type_s2c, rtp_pcap_path, ssh_version, ssh_auth_success, ssh_client_version, ssh_server_version, ssh_cipher_alg, ssh_mac_alg, ssh_compression_alg, ssh_kex_alg, ssh_host_key_alg, ssh_host_key, ssh_hassh, stratum_cryptocurrency, stratum_mining_pools, stratum_mining_program, rdp_cookie,rdp_security_protocol,rdp_client_channels,rdp_keyboard_layout,rdp_client_version,rdp_client_name,rdp_client_product_id,rdp_desktop_width,rdp_desktop_height,rdp_requested_color_depth,rdp_certificate_type,rdp_certificate_count,rdp_certificate_permanent,rdp_encryption_level,rdp_encryption_method from security_event where  common_recv_time  >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <  UNIX_TIMESTAMP('{{end_time}}')     order by  common_recv_time desc  limit 0 , 20",
 							"protocol": "http",
 							"host": [
 								"{{qgw_ip}}"
@@ -5642,7 +5716,7 @@
 							"query": [
 								{
 									"key": "query",
-									"value": "select   toDateTime(common_recv_time) AS common_recv_time, common_log_id, common_namespace_id, common_policy_id, common_subscriber_id, common_imei, common_imsi, common_phone_number, common_client_ip, common_internal_ip, common_client_port, common_l4_protocol, common_address_type, common_server_ip, common_server_port, common_external_ip, common_action, common_direction, common_sled_ip, common_client_location, common_client_asn, common_server_location, common_server_asn, common_sessions, common_c2s_pkt_num, common_s2c_pkt_num, common_c2s_byte_num, common_s2c_byte_num, common_schema_type, common_device_id, common_device_group, common_app_behavior, common_app_label, common_tunnels, common_protocol_label, common_userdefine_app_name, common_l7_protocol, common_service_category, toDateTime(common_start_time) AS common_start_time, toDateTime(common_end_time) AS common_end_time, common_establish_latency_ms, common_con_duration_ms, common_stream_dir, common_stream_error, common_stream_trace_id, common_packet_capture_file, common_tcp_client_isn, common_tcp_server_isn, toDateTime(common_processing_time) AS common_processing_time, toDateTime(common_ingestion_time) AS common_ingestion_time, common_mirrored_pkts, common_mirrored_bytes, http_url, http_host, http_domain, http_request_line, http_response_line, http_request_content_length, http_request_content_type, http_response_content_length, http_response_content_type, http_request_body, http_response_body, http_cookie, http_referer, http_user_agent, http_set_cookie, http_version, http_response_latency_ms, http_action_file_size, http_session_duration_ms, mail_protocol_type, mail_account, mail_from_cmd, mail_to_cmd, mail_from, mail_to, mail_cc, mail_bcc, mail_subject, mail_attachment_name, dns_message_id, dns_qr, dns_opcode, dns_aa, dns_tc, dns_rd, dns_ra, dns_rcode, dns_qdcount, dns_ancount, dns_nscount, dns_arcount, dns_qname, dns_qtype, dns_qclass, dns_sub, ssl_sni, ssl_san, ssl_cn, ssl_pinningst, ssl_intercept_state, ssl_passthrough_reason, ssl_server_side_latency, ssl_client_side_latency, ssl_server_side_version, ssl_client_side_version, ssl_cert_verify, ssl_error, ssl_con_latency_ms, ssl_ja3_hash, ssl_cert_issuer, ssl_cert_subject, quic_version, quic_sni, quic_user_agent, ftp_account, ftp_url, ftp_content, ftp_link_type, app_extra_info, sip_call_id, sip_originator_description, sip_responder_description, sip_user_agent, sip_server, sip_originator_sdp_connect_ip, sip_originator_sdp_media_port, sip_originator_sdp_media_type, sip_originator_sdp_content, sip_responder_sdp_connect_ip, sip_responder_sdp_media_port, sip_responder_sdp_media_type, sip_responder_sdp_content, sip_duration_s, sip_bye, rtp_payload_type_c2s, rtp_payload_type_s2c, rtp_pcap_path, ssh_version, ssh_auth_success, ssh_client_version, ssh_server_version, ssh_cipher_alg, ssh_mac_alg, ssh_compression_alg, ssh_kex_alg, ssh_host_key_alg, ssh_host_key, ssh_hassh, stratum_cryptocurrency, stratum_mining_pools, stratum_mining_program, rdp_cookie,rdp_security_protocol,rdp_client_channels,rdp_keyboard_layout,rdp_client_version,rdp_client_name,rdp_client_product_id,rdp_desktop_width,rdp_desktop_height,rdp_requested_color_depth,rdp_certificate_type,rdp_certificate_count,rdp_certificate_permanent,rdp_encryption_level,rdp_encryption_method from security_event where  common_recv_time  >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <  UNIX_TIMESTAMP('{{end_time}}') and common_namespace_id in(0,1)    order by  common_recv_time desc  limit 0 , 20"
+									"value": "select   toDateTime(common_recv_time) AS common_recv_time, common_log_id,  common_policy_id, common_subscriber_id, common_imei, common_imsi, common_phone_number, common_client_ip, common_internal_ip, common_client_port, common_l4_protocol, common_address_type, common_server_ip, common_server_port, common_external_ip, common_action, common_direction, common_sled_ip, common_client_location, common_client_asn, common_server_location, common_server_asn, common_sessions, common_c2s_pkt_num, common_s2c_pkt_num, common_c2s_byte_num, common_s2c_byte_num, common_schema_type, common_device_id, common_device_group, common_app_behavior, common_app_label, common_tunnels, common_protocol_label, common_userdefine_app_name, common_l7_protocol, common_service_category, toDateTime(common_start_time) AS common_start_time, toDateTime(common_end_time) AS common_end_time, common_establish_latency_ms, common_con_duration_ms, common_stream_dir, common_stream_error, common_stream_trace_id, common_packet_capture_file, common_tcp_client_isn, common_tcp_server_isn, toDateTime(common_processing_time) AS common_processing_time, toDateTime(common_ingestion_time) AS common_ingestion_time, common_mirrored_pkts, common_mirrored_bytes, http_url, http_host, http_domain, http_request_line, http_response_line, http_request_content_length, http_request_content_type, http_response_content_length, http_response_content_type, http_request_body, http_response_body, http_cookie, http_referer, http_user_agent, http_set_cookie, http_version, http_response_latency_ms, http_action_file_size, http_session_duration_ms, mail_protocol_type, mail_account, mail_from_cmd, mail_to_cmd, mail_from, mail_to, mail_cc, mail_bcc, mail_subject, mail_attachment_name, dns_message_id, dns_qr, dns_opcode, dns_aa, dns_tc, dns_rd, dns_ra, dns_rcode, dns_qdcount, dns_ancount, dns_nscount, dns_arcount, dns_qname, dns_qtype, dns_qclass, dns_sub, ssl_sni, ssl_san, ssl_cn, ssl_pinningst, ssl_intercept_state, ssl_passthrough_reason, ssl_server_side_latency, ssl_client_side_latency, ssl_server_side_version, ssl_client_side_version, ssl_cert_verify, ssl_error, ssl_con_latency_ms, ssl_ja3_hash, ssl_cert_issuer, ssl_cert_subject, quic_version, quic_sni, quic_user_agent, ftp_account, ftp_url, ftp_content, ftp_link_type, app_extra_info, sip_call_id, sip_originator_description, sip_responder_description, sip_user_agent, sip_server, sip_originator_sdp_connect_ip, sip_originator_sdp_media_port, sip_originator_sdp_media_type, sip_originator_sdp_content, sip_responder_sdp_connect_ip, sip_responder_sdp_media_port, sip_responder_sdp_media_type, sip_responder_sdp_content, sip_duration_s, sip_bye, rtp_payload_type_c2s, rtp_payload_type_s2c, rtp_pcap_path, ssh_version, ssh_auth_success, ssh_client_version, ssh_server_version, ssh_cipher_alg, ssh_mac_alg, ssh_compression_alg, ssh_kex_alg, ssh_host_key_alg, ssh_host_key, ssh_hassh, stratum_cryptocurrency, stratum_mining_pools, stratum_mining_program, rdp_cookie,rdp_security_protocol,rdp_client_channels,rdp_keyboard_layout,rdp_client_version,rdp_client_name,rdp_client_product_id,rdp_desktop_width,rdp_desktop_height,rdp_requested_color_depth,rdp_certificate_type,rdp_certificate_count,rdp_certificate_permanent,rdp_encryption_level,rdp_encryption_method from security_event where  common_recv_time  >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <  UNIX_TIMESTAMP('{{end_time}}')     order by  common_recv_time desc  limit 0 , 20"
 								}
 							]
 						}
@@ -5706,7 +5780,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://{{qgw_ip}}:{{qgw_port}}/?query=select\n    {{PT5M_RECV_TIME}} as stat_time,\n    (CASE\n        WHEN common_action = 1 THEN 'Monitor'\n        WHEN common_action = 2 THEN 'Intercept'\n        WHEN common_action = 16 THEN 'Deny'\n        WHEN common_action = 48 THEN 'Manipulation'\n        WHEN common_action = 128 THEN 'Allow'\n        ELSE 'None'\n    END) as type,\n    count(*) as events\nfrom\n    security_event where common_recv_time >  {{Last 1 Hour Start}} and common_namespace_id in(0,1) \ngroup by\n    stat_time,\n    common_action order by stat_time asc",
+							"raw": "http://{{qgw_ip}}:{{qgw_port}}/?query=select\n    {{PT5M_RECV_TIME}} as stat_time,\n    (CASE\n        WHEN common_action = 1 THEN 'Monitor'\n        WHEN common_action = 2 THEN 'Intercept'\n        WHEN common_action = 16 THEN 'Deny'\n        WHEN common_action = 48 THEN 'Manipulation'\n        WHEN common_action = 128 THEN 'Allow'\n        ELSE 'None'\n    END) as type,\n    count(*) as events\nfrom\n    security_event where common_recv_time >  {{Last 1 Hour Start}}  \ngroup by\n    stat_time,\n    common_action order by stat_time asc",
 							"protocol": "http",
 							"host": [
 								"{{qgw_ip}}"
@@ -5718,7 +5792,7 @@
 							"query": [
 								{
 									"key": "query",
-									"value": "select\n    {{PT5M_RECV_TIME}} as stat_time,\n    (CASE\n        WHEN common_action = 1 THEN 'Monitor'\n        WHEN common_action = 2 THEN 'Intercept'\n        WHEN common_action = 16 THEN 'Deny'\n        WHEN common_action = 48 THEN 'Manipulation'\n        WHEN common_action = 128 THEN 'Allow'\n        ELSE 'None'\n    END) as type,\n    count(*) as events\nfrom\n    security_event where common_recv_time >  {{Last 1 Hour Start}} and common_namespace_id in(0,1) \ngroup by\n    stat_time,\n    common_action order by stat_time asc"
+									"value": "select\n    {{PT5M_RECV_TIME}} as stat_time,\n    (CASE\n        WHEN common_action = 1 THEN 'Monitor'\n        WHEN common_action = 2 THEN 'Intercept'\n        WHEN common_action = 16 THEN 'Deny'\n        WHEN common_action = 48 THEN 'Manipulation'\n        WHEN common_action = 128 THEN 'Allow'\n        ELSE 'None'\n    END) as type,\n    count(*) as events\nfrom\n    security_event where common_recv_time >  {{Last 1 Hour Start}}  \ngroup by\n    stat_time,\n    common_action order by stat_time asc"
 								}
 							]
 						}
@@ -5744,7 +5818,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://{{qgw_ip}}:{{qgw_port}}/?query=select   count(*) as events from security_event where common_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}') and common_namespace_id in(0,1) ",
+							"raw": "http://{{qgw_ip}}:{{qgw_port}}/?query=select   count(*) as events from security_event where common_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}')  ",
 							"protocol": "http",
 							"host": [
 								"{{qgw_ip}}"
@@ -5756,7 +5830,7 @@
 							"query": [
 								{
 									"key": "query",
-									"value": "select   count(*) as events from security_event where common_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}') and common_namespace_id in(0,1) "
+									"value": "select   count(*) as events from security_event where common_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}')  "
 								}
 							]
 						}
@@ -5782,7 +5856,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://{{qgw_ip}}:{{qgw_port}}/?query=select   (CASE WHEN common_action=1 THEN 'Monitor' WHEN common_action=2 THEN 'Intercept' WHEN common_action=16 THEN 'Deny' WHEN common_action=48 THEN 'Manipulation' WHEN common_action=128 THEN 'Allow' ELSE 'None' END) as action,\n    count(*) as hits,\n    sum(common_c2s_byte_num ) as bytes_sent,\n    sum(common_s2c_byte_num ) as bytes_received,\n    sum(common_c2s_byte_num+common_s2c_byte_num ) as bytes,sum(common_c2s_pkt_num ) as packets_sent,\n    sum(common_s2c_pkt_num ) as packets_received,\n    sum(common_c2s_pkt_num+common_s2c_pkt_num ) as packets from security_event where common_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}')  and common_namespace_id in(0,1) group by common_action",
+							"raw": "http://{{qgw_ip}}:{{qgw_port}}/?query=select   (CASE WHEN common_action=1 THEN 'Monitor' WHEN common_action=2 THEN 'Intercept' WHEN common_action=16 THEN 'Deny' WHEN common_action=48 THEN 'Manipulation' WHEN common_action=128 THEN 'Allow' ELSE 'None' END) as action,\n    count(*) as hits,\n    sum(common_c2s_byte_num ) as bytes_sent,\n    sum(common_s2c_byte_num ) as bytes_received,\n    sum(common_c2s_byte_num+common_s2c_byte_num ) as bytes,sum(common_c2s_pkt_num ) as packets_sent,\n    sum(common_s2c_pkt_num ) as packets_received,\n    sum(common_c2s_pkt_num+common_s2c_pkt_num ) as packets from security_event where common_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}')  group by common_action",
 							"protocol": "http",
 							"host": [
 								"{{qgw_ip}}"
@@ -5794,7 +5868,7 @@
 							"query": [
 								{
 									"key": "query",
-									"value": "select   (CASE WHEN common_action=1 THEN 'Monitor' WHEN common_action=2 THEN 'Intercept' WHEN common_action=16 THEN 'Deny' WHEN common_action=48 THEN 'Manipulation' WHEN common_action=128 THEN 'Allow' ELSE 'None' END) as action,\n    count(*) as hits,\n    sum(common_c2s_byte_num ) as bytes_sent,\n    sum(common_s2c_byte_num ) as bytes_received,\n    sum(common_c2s_byte_num+common_s2c_byte_num ) as bytes,sum(common_c2s_pkt_num ) as packets_sent,\n    sum(common_s2c_pkt_num ) as packets_received,\n    sum(common_c2s_pkt_num+common_s2c_pkt_num ) as packets from security_event where common_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}')  and common_namespace_id in(0,1) group by common_action"
+									"value": "select   (CASE WHEN common_action=1 THEN 'Monitor' WHEN common_action=2 THEN 'Intercept' WHEN common_action=16 THEN 'Deny' WHEN common_action=48 THEN 'Manipulation' WHEN common_action=128 THEN 'Allow' ELSE 'None' END) as action,\n    count(*) as hits,\n    sum(common_c2s_byte_num ) as bytes_sent,\n    sum(common_s2c_byte_num ) as bytes_received,\n    sum(common_c2s_byte_num+common_s2c_byte_num ) as bytes,sum(common_c2s_pkt_num ) as packets_sent,\n    sum(common_s2c_pkt_num ) as packets_received,\n    sum(common_c2s_pkt_num+common_s2c_pkt_num ) as packets from security_event where common_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}')  group by common_action"
 								}
 							]
 						}
@@ -5820,7 +5894,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://{{qgw_ip}}:{{qgw_port}}/?query=select FROM_UNIXTIME(common_recv_time) as common_recv_time, FROM_UNIXTIME(common_start_time) as common_start_time, FROM_UNIXTIME(common_end_time) as common_end_time,*  from proxy_event where  common_recv_time  >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <  UNIX_TIMESTAMP('{{end_time}}') and common_namespace_id in(0,1)    order by  common_recv_time desc  limit 0 , 20",
+							"raw": "http://{{qgw_ip}}:{{qgw_port}}/?query=select FROM_UNIXTIME(common_recv_time) as common_recv_time, FROM_UNIXTIME(common_start_time) as common_start_time, FROM_UNIXTIME(common_end_time) as common_end_time,*  from proxy_event where  common_recv_time  >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <  UNIX_TIMESTAMP('{{end_time}}')     order by  common_recv_time desc  limit 0 , 20",
 							"protocol": "http",
 							"host": [
 								"{{qgw_ip}}"
@@ -5832,7 +5906,7 @@
 							"query": [
 								{
 									"key": "query",
-									"value": "select FROM_UNIXTIME(common_recv_time) as common_recv_time, FROM_UNIXTIME(common_start_time) as common_start_time, FROM_UNIXTIME(common_end_time) as common_end_time,*  from proxy_event where  common_recv_time  >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <  UNIX_TIMESTAMP('{{end_time}}') and common_namespace_id in(0,1)    order by  common_recv_time desc  limit 0 , 20"
+									"value": "select FROM_UNIXTIME(common_recv_time) as common_recv_time, FROM_UNIXTIME(common_start_time) as common_start_time, FROM_UNIXTIME(common_end_time) as common_end_time,*  from proxy_event where  common_recv_time  >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <  UNIX_TIMESTAMP('{{end_time}}')     order by  common_recv_time desc  limit 0 , 20"
 								}
 							]
 						}
@@ -5858,7 +5932,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://{{qgw_ip}}:{{qgw_port}}/?query= select common_sub_action , count(*) as hits from proxy_event where  common_recv_time  >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <  UNIX_TIMESTAMP('{{end_time}}') and common_namespace_id in(0,1)   group by common_sub_action",
+							"raw": "http://{{qgw_ip}}:{{qgw_port}}/?query= select common_sub_action , count(*) as hits from proxy_event where  common_recv_time  >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <  UNIX_TIMESTAMP('{{end_time}}')  group by common_sub_action",
 							"protocol": "http",
 							"host": [
 								"{{qgw_ip}}"
@@ -5870,7 +5944,7 @@
 							"query": [
 								{
 									"key": "query",
-									"value": " select common_sub_action , count(*) as hits from proxy_event where  common_recv_time  >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <  UNIX_TIMESTAMP('{{end_time}}') and common_namespace_id in(0,1)   group by common_sub_action"
+									"value": " select common_sub_action , count(*) as hits from proxy_event where  common_recv_time  >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <  UNIX_TIMESTAMP('{{end_time}}')  group by common_sub_action"
 								}
 							]
 						}
@@ -5934,7 +6008,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://{{qgw_ip}}:{{qgw_port}}/?query=select\n   {{PT5M_RECV_TIME}} as stat_time,\n   common_sub_action as type,\n   count(*) as events\nfrom\n   proxy_event where  common_recv_time >  {{Last 1 Hour Start}} and common_namespace_id in(0,1) \ngroup by\n  stat_time,\n  common_sub_action  order by stat_time asc",
+							"raw": "http://{{qgw_ip}}:{{qgw_port}}/?query=select\n   {{PT5M_RECV_TIME}} as stat_time,\n   common_sub_action as type,\n   count(*) as events\nfrom\n   proxy_event where  common_recv_time >  {{Last 1 Hour Start}} \ngroup by\n  stat_time,\n  common_sub_action  order by stat_time asc",
 							"protocol": "http",
 							"host": [
 								"{{qgw_ip}}"
@@ -5946,7 +6020,7 @@
 							"query": [
 								{
 									"key": "query",
-									"value": "select\n   {{PT5M_RECV_TIME}} as stat_time,\n   common_sub_action as type,\n   count(*) as events\nfrom\n   proxy_event where  common_recv_time >  {{Last 1 Hour Start}} and common_namespace_id in(0,1) \ngroup by\n  stat_time,\n  common_sub_action  order by stat_time asc"
+									"value": "select\n   {{PT5M_RECV_TIME}} as stat_time,\n   common_sub_action as type,\n   count(*) as events\nfrom\n   proxy_event where  common_recv_time >  {{Last 1 Hour Start}} \ngroup by\n  stat_time,\n  common_sub_action  order by stat_time asc"
 								}
 							]
 						}
@@ -5972,7 +6046,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://{{qgw_ip}}:{{qgw_port}}/?query=select   count(*) as events from proxy_event where common_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}') and common_namespace_id in(0,1) ",
+							"raw": "http://{{qgw_ip}}:{{qgw_port}}/?query=select   count(*) as events from proxy_event where common_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}') ",
 							"protocol": "http",
 							"host": [
 								"{{qgw_ip}}"
@@ -5984,7 +6058,7 @@
 							"query": [
 								{
 									"key": "query",
-									"value": "select   count(*) as events from proxy_event where common_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}') and common_namespace_id in(0,1) "
+									"value": "select   count(*) as events from proxy_event where common_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}') "
 								}
 							]
 						}
@@ -7211,6 +7285,39 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "知识库列表",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{qgw_ip}}:{{qgw_port}}/knowledge_base/v1",
+							"protocol": "http",
+							"host": [
+								"{{qgw_ip}}"
+							],
+							"port": "{{qgw_port}}",
+							"path": [
+								"knowledge_base",
+								"v1"
+							]
+						}
+					},
+					"response": []
 				}
 			],
 			"event": [
@@ -7491,41 +7598,6 @@
 										{
 											"key": "query",
 											"value": " select 'Total' as type, count(*) as logs from session_record where\n\tcommon_recv_time >= UNIX_TIMESTAMP({{Last 24 Hour Start}})\n\tand common_recv_time < UNIX_TIMESTAMP({{now}})\nunion all \nselect 'Client IP' as type, count(*) as logs from session_record_common_client_ip where\n\tcommon_recv_time >= UNIX_TIMESTAMP({{Last 24 Hour Start}})\n\tand common_recv_time < UNIX_TIMESTAMP({{now}})\nunion all\nselect 'Server IP' as type, count(*) as logs from session_record_common_server_ip where\n\tcommon_recv_time >= UNIX_TIMESTAMP({{Last 24 Hour Start}})\n\tand common_recv_time < UNIX_TIMESTAMP({{now}})\nunion all\nselect 'Domain' as type, count(*) as logs from session_record_http_domain where\n\tcommon_recv_time >= UNIX_TIMESTAMP({{Last 24 Hour Start}})\n\tand common_recv_time < UNIX_TIMESTAMP({{now}})\n"
-										}
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "评估日志预处理",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"exec": [
-											"pm.test(\"Status code is 200\", function () {",
-											"    pm.response.to.have.status(200);",
-											"});"
-										],
-										"type": "text/javascript"
-									}
-								}
-							],
-							"request": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "http://{{qgw_ip}}:{{qgw_port}}?query=select  'session_record' as type, round(count(*)/300,0) as \"logs/sec\", round(avg(common_processing_time-common_ingestion_time),2) as \"avg_etl_latency(s)\", round(avg(common_ingestion_time-common_end_time),2) as \"avg_ingestion_latency(s)\"\nfrom\n\tsession_record crl \nwhere\n\tcommon_recv_time >= UNIX_TIMESTAMP({{Last 5 Minutes Start}})\n\tand common_recv_time < UNIX_TIMESTAMP({{now}}) union all select  'live_session_record' as type, round(count(*)/300,0) as \"logs/sec\", round(avg(common_processing_time-common_ingestion_time),2) as \"avg_etl_latency(s)\", round(avg(common_ingestion_time-common_end_time),2) as \"avg_ingestion_latency(s)\"\nfrom\n\tinterim_session_record crl \nwhere\n\tcommon_recv_time >= UNIX_TIMESTAMP({{Last 5 Minutes Start}})\n\tand common_recv_time < UNIX_TIMESTAMP({{now}}) union all select  'transaction_record' as type, round(count(*)/300,0) as \"logs/sec\", round(avg(common_processing_time-common_ingestion_time),2) as \"etl_latency(s)\" , round(avg(common_ingestion_time-common_end_time),2) as \"avg_ingestion_latency(s)\"\n\tfrom transaction_record crl \nwhere\n\tcommon_recv_time >= UNIX_TIMESTAMP({{Last 5 Minutes Start}})\n\tand common_recv_time < UNIX_TIMESTAMP({{now}}) union all select  'security_event' as type, round(count(*)/300,0) as \"logs/sec\", round(avg(common_processing_time-common_ingestion_time),2) as \"avg_etl_latency(s)\", round(avg(common_ingestion_time-common_end_time),2) as \"avg_ingestion_latency(s)\"\nfrom\n\tsecurity_event crl \nwhere\n\tcommon_recv_time >= UNIX_TIMESTAMP({{Last 5 Minutes Start}})\n\tand common_recv_time < UNIX_TIMESTAMP({{now}})\nunion all select  'proxy_event' as type, round(count(*)/300,0) as \"logs/sec\", round(avg(common_processing_time-common_ingestion_time),2) as \"avg_etl_latency(s)\", round(avg(common_ingestion_time-common_end_time),2) as \"avg_ingestion_latency(s)\"\nfrom\n\tproxy_event crl \nwhere\n\tcommon_recv_time >= UNIX_TIMESTAMP({{Last 5 Minutes Start}})\n\tand common_recv_time < UNIX_TIMESTAMP({{now}})\n union all select  'radius_record' as type, round(count(*)/300,0) as \"logs/sec\", round(avg(common_processing_time-common_ingestion_time),2) as \"avg_etl_latency(s)\", round(avg(common_ingestion_time-common_end_time),2) as \"avg_ingestion_latency(s)\"\nfrom\n\tradius_record crl \nwhere\n\tcommon_recv_time >= UNIX_TIMESTAMP({{Last 5 Minutes Start}})\n\tand common_recv_time < UNIX_TIMESTAMP({{now}}) union all select  'gtpc_record' as type, round(count(*)/300,0) as \"logs/sec\",round(avg(common_processing_time-common_ingestion_time),2) as \"avg_etl_latency(s)\", round(avg(common_processing_time-common_ingestion_time),2) as \"avg_etl_latency(s)\"\nfrom\n\tgtpc_record crl \nwhere\n\tcommon_recv_time >= UNIX_TIMESTAMP({{Last 5 Minutes Start}})\n\tand common_recv_time < UNIX_TIMESTAMP({{now}})",
-									"protocol": "http",
-									"host": [
-										"{{qgw_ip}}"
-									],
-									"port": "{{qgw_port}}",
-									"query": [
-										{
-											"key": "query",
-											"value": "select  'session_record' as type, round(count(*)/300,0) as \"logs/sec\", round(avg(common_processing_time-common_ingestion_time),2) as \"avg_etl_latency(s)\", round(avg(common_ingestion_time-common_end_time),2) as \"avg_ingestion_latency(s)\"\nfrom\n\tsession_record crl \nwhere\n\tcommon_recv_time >= UNIX_TIMESTAMP({{Last 5 Minutes Start}})\n\tand common_recv_time < UNIX_TIMESTAMP({{now}}) union all select  'live_session_record' as type, round(count(*)/300,0) as \"logs/sec\", round(avg(common_processing_time-common_ingestion_time),2) as \"avg_etl_latency(s)\", round(avg(common_ingestion_time-common_end_time),2) as \"avg_ingestion_latency(s)\"\nfrom\n\tinterim_session_record crl \nwhere\n\tcommon_recv_time >= UNIX_TIMESTAMP({{Last 5 Minutes Start}})\n\tand common_recv_time < UNIX_TIMESTAMP({{now}}) union all select  'transaction_record' as type, round(count(*)/300,0) as \"logs/sec\", round(avg(common_processing_time-common_ingestion_time),2) as \"etl_latency(s)\" , round(avg(common_ingestion_time-common_end_time),2) as \"avg_ingestion_latency(s)\"\n\tfrom transaction_record crl \nwhere\n\tcommon_recv_time >= UNIX_TIMESTAMP({{Last 5 Minutes Start}})\n\tand common_recv_time < UNIX_TIMESTAMP({{now}}) union all select  'security_event' as type, round(count(*)/300,0) as \"logs/sec\", round(avg(common_processing_time-common_ingestion_time),2) as \"avg_etl_latency(s)\", round(avg(common_ingestion_time-common_end_time),2) as \"avg_ingestion_latency(s)\"\nfrom\n\tsecurity_event crl \nwhere\n\tcommon_recv_time >= UNIX_TIMESTAMP({{Last 5 Minutes Start}})\n\tand common_recv_time < UNIX_TIMESTAMP({{now}})\nunion all select  'proxy_event' as type, round(count(*)/300,0) as \"logs/sec\", round(avg(common_processing_time-common_ingestion_time),2) as \"avg_etl_latency(s)\", round(avg(common_ingestion_time-common_end_time),2) as \"avg_ingestion_latency(s)\"\nfrom\n\tproxy_event crl \nwhere\n\tcommon_recv_time >= UNIX_TIMESTAMP({{Last 5 Minutes Start}})\n\tand common_recv_time < UNIX_TIMESTAMP({{now}})\n union all select  'radius_record' as type, round(count(*)/300,0) as \"logs/sec\", round(avg(common_processing_time-common_ingestion_time),2) as \"avg_etl_latency(s)\", round(avg(common_ingestion_time-common_end_time),2) as \"avg_ingestion_latency(s)\"\nfrom\n\tradius_record crl \nwhere\n\tcommon_recv_time >= UNIX_TIMESTAMP({{Last 5 Minutes Start}})\n\tand common_recv_time < UNIX_TIMESTAMP({{now}}) union all select  'gtpc_record' as type, round(count(*)/300,0) as \"logs/sec\",round(avg(common_processing_time-common_ingestion_time),2) as \"avg_etl_latency(s)\", round(avg(common_processing_time-common_ingestion_time),2) as \"avg_etl_latency(s)\"\nfrom\n\tgtpc_record crl \nwhere\n\tcommon_recv_time >= UNIX_TIMESTAMP({{Last 5 Minutes Start}})\n\tand common_recv_time < UNIX_TIMESTAMP({{now}})"
 										}
 									]
 								}
@@ -8007,7 +8079,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://{{qgw_ip}}:{{qgw_port}}/?query=SELECT sum(c2s_byte_num + s2c_byte_num ) *1.0 / 1024 / 1024 / 1024 as total_bytes_gb,sum(sessions) as sessions\nFROM traffic_protocol_stat_log\nWHERE  __time >= FROM_UNIXTIME(UNIX_TIMESTAMP(now())-86400) and protocol_id = 'ETHERNET'\nUNION ALL \nSELECT  sum(c2s_byte_num + s2c_byte_num ) *1.0 / 1024/ 1024/ 1024 as total_bytes_gb, sum(sessions) as sessions\nFROM traffic_summary_log\nWHERE   __time >= FROM_UNIXTIME(UNIX_TIMESTAMP(now())-86400)",
+									"raw": "http://{{qgw_ip}}:{{qgw_port}}/?query=SELECT sum(c2s_byte_num + s2c_byte_num ) *1.0 / 1024 / 1024 / 1024 as total_bytes_gb,sum(sessions) as sessions, 'Protocol Stat' as type\nFROM traffic_protocol_stat_log\nWHERE  __time >= FROM_UNIXTIME(UNIX_TIMESTAMP(now())-86400) and protocol_id = 'ETHERNET'\nUNION ALL \nSELECT  sum(c2s_byte_num + s2c_byte_num ) *1.0 / 1024/ 1024/ 1024 as total_bytes_gb, sum(sessions) as sessions, 'Traffic Summary' as type\nFROM traffic_summary_log\nWHERE   __time >= FROM_UNIXTIME(UNIX_TIMESTAMP(now())-86400)",
 									"protocol": "http",
 									"host": [
 										"{{qgw_ip}}"
@@ -8019,7 +8091,7 @@
 									"query": [
 										{
 											"key": "query",
-											"value": "SELECT sum(c2s_byte_num + s2c_byte_num ) *1.0 / 1024 / 1024 / 1024 as total_bytes_gb,sum(sessions) as sessions\nFROM traffic_protocol_stat_log\nWHERE  __time >= FROM_UNIXTIME(UNIX_TIMESTAMP(now())-86400) and protocol_id = 'ETHERNET'\nUNION ALL \nSELECT  sum(c2s_byte_num + s2c_byte_num ) *1.0 / 1024/ 1024/ 1024 as total_bytes_gb, sum(sessions) as sessions\nFROM traffic_summary_log\nWHERE   __time >= FROM_UNIXTIME(UNIX_TIMESTAMP(now())-86400)"
+											"value": "SELECT sum(c2s_byte_num + s2c_byte_num ) *1.0 / 1024 / 1024 / 1024 as total_bytes_gb,sum(sessions) as sessions, 'Protocol Stat' as type\nFROM traffic_protocol_stat_log\nWHERE  __time >= FROM_UNIXTIME(UNIX_TIMESTAMP(now())-86400) and protocol_id = 'ETHERNET'\nUNION ALL \nSELECT  sum(c2s_byte_num + s2c_byte_num ) *1.0 / 1024/ 1024/ 1024 as total_bytes_gb, sum(sessions) as sessions, 'Traffic Summary' as type\nFROM traffic_summary_log\nWHERE   __time >= FROM_UNIXTIME(UNIX_TIMESTAMP(now())-86400)"
 										}
 									]
 								}
@@ -12266,6 +12338,41 @@
 										{
 											"key": "query",
 											"value": "select\n\thttp_domain as domain,\n\tround(avg(common_establish_latency_ms),0) avg_establish_latency\nfrom\n\tsession_record\nwhere \n\tcommon_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}')\n\tand notEmpty(http_domain)\ngroup by\n\thttp_domain\norder by\n\tavg_establish_latency desc\nlimit 20"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "每个设备组日志存储情况",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://{{qgw_ip}}:{{qgw_port}}?query= select common_device_group,max(session_rate) as max_session_rate,avg(session_rate) as avg_session_rate,min(session_rate) as min_session_rate from (select \n\t{{PT5M_RECV_TIME}} as stat_time,common_device_group,\n\tsum(common_sessions)/300 as session_rate\nfrom\n\tsession_record  sr\nwhere\n  common_recv_time >= UNIX_TIMESTAMP(now())-86400\n  and common_recv_time<UNIX_TIMESTAMP(now())\ngroup by\n\tstat_time, common_device_group) group by common_device_group",
+									"protocol": "http",
+									"host": [
+										"{{qgw_ip}}"
+									],
+									"port": "{{qgw_port}}",
+									"query": [
+										{
+											"key": "query",
+											"value": " select common_device_group,max(session_rate) as max_session_rate,avg(session_rate) as avg_session_rate,min(session_rate) as min_session_rate from (select \n\t{{PT5M_RECV_TIME}} as stat_time,common_device_group,\n\tsum(common_sessions)/300 as session_rate\nfrom\n\tsession_record  sr\nwhere\n  common_recv_time >= UNIX_TIMESTAMP(now())-86400\n  and common_recv_time<UNIX_TIMESTAMP(now())\ngroup by\n\tstat_time, common_device_group) group by common_device_group"
 										}
 									]
 								}
