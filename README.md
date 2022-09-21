@@ -2,7 +2,14 @@
 
 基于Postman Rest API对Galaxy系统进行模块测试，版本发布前全流程验证和生产环境组件健康度检查。
 
-## Release 22.08 (5 AUG 2022)
+
+## Release 22.09 (5 SEP 2022)
+
+###### Update
+* 会话与安全事件日志增加common_tunnel_endpoint_a_desc, common_tunnel_endpoint_b_desc,dtls_sni 列
+
+
+## Release 22.08 (31 AUG 2022)
 
 ###### New Features
 * 其它-查询网关-Live Charts 总带宽流量校验
