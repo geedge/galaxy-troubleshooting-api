@@ -2,8 +2,13 @@
 
 基于Postman Rest API对Galaxy系统进行模块测试，版本发布前全流程验证和生产环境组件健康度检查。
 
+## Release 22.10 (30 OCT 2022)
+###### New Features
+* 06其它-功能验证-Traffic Summary增加Throughput接口 
+###### Update
+* 更新原有查询，将VSYS ID作为默认查询条件
 
-## Release 22.09 (5 SEP 2022)
+## Release 22.09 (30 SEP 2022)
 
 ###### Update
 * 会话与安全事件日志增加common_tunnel_endpoint_a_desc, common_tunnel_endpoint_b_desc,dtls_sni 列
