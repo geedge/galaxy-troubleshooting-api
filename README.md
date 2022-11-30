@@ -2,6 +2,10 @@
 
 基于Postman Rest API对Galaxy系统进行模块测试，版本发布前全流程验证和生产环境组件健康度检查。
 
+## Release 22.11 (30 NOV 2022)
+###### Update
+* 会话与安全事件日志增加ssl_ja3s_hash列
+
 ## Release 22.10 (30 OCT 2022)
 ###### New Features
 * 06其它-功能验证-Traffic Summary增加Throughput接口 
