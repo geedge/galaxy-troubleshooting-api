@@ -1,6 +1,11 @@
 # galaxy-troubleshooting-api
 
-基于Postman Rest API对Galaxy系统进行模块测试，版本发布前全流程验证和生产环境组件健康度检查。
+使用Postman组件，基于Rest API接口对TSG OLAP 进行功能验证。包括组件健康检查，功能集成测试及故障诊断。
+
+## Release 23.01 (31 JAN 2023)
+###### Update
+* 会话与安全事件日志增加列common_server_fqdn
+* 会话与安全事件日志增加列common_app_full_path
 
 ## Release 22.12 (30 DEC 2022)
 ###### New Features
