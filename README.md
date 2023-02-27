@@ -1,6 +1,17 @@
+
 # galaxy-troubleshooting-api
 
 使用Postman组件，基于Rest API接口对TSG OLAP 进行功能验证。包括组件健康检查，功能集成测试及故障诊断。
+
+## Release 23.02 (28 FEB 2023)
+
+###### New Features
+* 增加Traffic Shaping 相关统计接口
+
+###### Update
+* 会话日志增加列common_shaping_rule_ids
+* 会话与安全事件日志增加列common_server_domain
+* 会话与安全事件日志增加列common_flags_identify_info
 
 ## Release 23.01 (31 JAN 2023)
 ###### Update
