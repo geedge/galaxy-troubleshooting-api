@@ -1,7 +1,20 @@
-
 # galaxy-troubleshooting-api
 
 使用Postman组件，基于Rest API接口对TSG OLAP 进行功能验证。包括组件健康检查，功能集成测试及故障诊断。
+
+## Release 23.03 (31 MAR 2023)
+
+###### New Features
+* 目录整体重构，重新梳理功能，便于Newman CLI运行
+* ClickHouse目录下增加慢查询故障诊断语句
+* 参数与API接口统一改为英文，避免中文编码执行异常
+* 加密环境变量密码、token等敏感信息
+* 定义全局动态变量：时间范围、随机IP、随机域名等
+
+###### Update
+
+* Flags 添加C2S与S2C标志位标签
+
 
 ## Release 23.02 (28 FEB 2023)
 
