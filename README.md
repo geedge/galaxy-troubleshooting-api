@@ -2,6 +2,17 @@
 
 使用Postman组件，基于Rest API接口对TSG OLAP 进行功能验证。包括组件健康检查，功能集成测试及故障诊断。
 
+## Release 23.05 (28 MAY 2023)
+###### New Features
+* 增加Service chaining统计接口
+* QGW增加嵌套子查询接口，用于验证高级搜素
+
+###### Update
+* Main Dashboard统计接口重构，更改统计源
+* Live Traffic Chart 接口重构，更改统计源
+* 原代理日志拆分为Intercept和Manipulation
+* 相关Metrics的Schema更改为重构后的数据源
+
 ## Release 23.04 (28 APR 2023)
 ###### New Features
 * 增加数据写入延迟接口Session Insert Latency Distribution
