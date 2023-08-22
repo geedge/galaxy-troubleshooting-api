@@ -2,6 +2,16 @@
 
 使用Postman组件，基于Rest API接口对TSG OLAP 进行功能验证。包括组件健康检查，功能集成测试及故障诊断。
 
+## Release 23.08 (21 AUG 2023)
+
+###### New Features
+* Metrics增加Statistics Policy 相关接口
+* Metrics增加Statistics Object 相关接口
+* Metrics增加Statistics rule 命中计数接口
+
+###### Update
+* 会话日志查询，增加重命名字段common_out_link_id、common_in_link_id 
+
 ## Release 23.07 (21 JUL 2023)
 ###### Update
 * 修复Network Throughput Active Sessions计算错误，不除时间粒度
