@@ -7,7 +7,7 @@
 ###### Update
 * metrics 修改表名由statistics_object改为object_statistics
 * Flags统计增加Bidirectional标识
-* Closed Session Records 增加http_status_code
+* Closed Session Records 增加http_status_code, ssl_esni_flag, ssl_ech_flag
 * 删除Kafka Topics 目录
 
 ## Release 23.08 (21 AUG 2023)
