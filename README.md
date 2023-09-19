@@ -2,6 +2,14 @@
 
 使用Postman组件，基于Rest API接口对TSG OLAP 进行功能验证。包括组件健康检查，功能集成测试及故障诊断。
 
+## Release 23.09 (30 SEP 2023)
+
+###### Update
+* metrics 修改表名由statistics_object改为object_statistics
+* Flags统计增加Bidirectional标识
+* Closed Session Records 增加http_status_code
+* 删除Kafka Topics 目录
+
 ## Release 23.08 (21 AUG 2023)
 
 ###### New Features
