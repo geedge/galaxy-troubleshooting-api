@@ -2,6 +2,12 @@
 
 使用Postman组件，基于Rest API接口对TSG OLAP 进行功能验证。包括组件健康检查，功能集成测试及故障诊断。
 
+## Release 23.10 (30 OCT 2023)
+
+###### Update
+* 会话日志增加毫米级时间戳字段common_start_timestamp_ms, common_end_timestamp_ms 
+* 会话日志增加操作系统指纹common_client_os_name,common_server_os_name
+
 ## Release 23.09 (30 SEP 2023)
 
 ###### Update
