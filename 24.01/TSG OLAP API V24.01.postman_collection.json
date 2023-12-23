@@ -2,7 +2,7 @@
 	"info": {
 		"_postman_id": "4a92abcb-8edf-485a-9067-69ef14ec0741",
 		"name": "TSG OLAP API V24.01",
-		"description": "# galaxy-troubleshooting-api\n\n使用Postman组件，基于Rest API接口对TSG OLAP 进行功能验证。包括组件健康检查，功能集成测试及故障诊断。\n\n## Release 24.01 (31 JAN 2024)\n\n###### New Features\n\n- 依据OLAP API 组织接口\n    \n- 接口进行重构，不再兼容23.10及之前版本\n    \n\n## Release 23.10 (30 OCT 2023)\n\n###### Update\n\n- 会话日志增加毫米级时间戳字段common_start_timestamp_ms, common_end_timestamp_ms\n- 会话日志增加操作系统指纹common_client_os_name,common_server_os_name\n    \n\n## Release 23.09 (30 SEP 2023)\n\n###### Update\n\n- metrics 修改表名由statistics_object改为object_statistics\n- Flags统计增加Bidirectional标识\n- Closed Session Records 增加http_status_code, ssl_esni_flag, ssl_ech_flag\n- 删除Kafka Topics 目录\n    \n\n## Release 23.08 (21 AUG 2023)\n\n###### New Features\n\n- Metrics增加Statistics Policy 相关接口\n- Metrics增加Statistics Object 相关接口\n- Metrics增加Statistics rule 命中计数接口\n    \n\n###### Update\n\n- 会话日志查询，增加重命名字段common_out_link_id、common_in_link_id\n    \n\n## Release 23.07 (21 JUL 2023)\n\n###### Update\n\n- 修复Network Throughput Active Sessions计算错误，不除时间粒度\n    \n\n## Release 23.06 (21 JUN 2023)\n\n###### Update\n\n- 优化Limit返回值\n    \n\n## Release 23.05 (28 MAY 2023)\n\n###### New Features\n\n- 增加Service chaining统计接口\n- QGW增加嵌套子查询接口，用于验证高级搜索\n    \n\n###### Update\n\n- Main Dashboard统计接口重构，更改统计源\n- Live Traffic Chart 接口重构，更改统计源\n- 原代理日志拆分为Intercept和Manipulation\n- 相关Metrics的Schema更改为重构后的数据源\n    \n\n## Release 23.04 (28 APR 2023)\n\n###### New Features\n\n- 增加数据写入延迟接口Session Insert Latency Distribution\n- 增加数据写入Kafka延迟接口 Session Ingestion Latency Distribution\n    \n\n###### Update\n\n- 重构 Security Policy Hits Metrics 统计\n- 重构 Traffic Shaping Metrics 统计\n    \n\n## Release 23.03 (28 MAR 2023)\n\n###### New Features\n\n- 目录整体重构，重新梳理功能，便于Newman CLI运行\n- ClickHouse目录下增加慢查询故障诊断语句\n- 参数与API接口统一改为英文，避免中文编码执行异常\n- 加密环境变量密码、token等敏感信息\n- 定义全局动态变量：时间范围、随机IP、随机域名等\n    \n\n###### Update\n\n- Flags 添加C2S与S2C标志位标签\n    \n\n## Release 23.02 (28 FEB 2023)\n\n###### New Features\n\n- 增加Traffic Shaping 相关统计接口\n    \n\n###### Update\n\n- 会话日志增加列common_shaping_rule_ids\n- 会话与安全事件日志增加列common_server_domain\n- 会话与安全事件日志增加列common_flags_identify_info\n    \n\n## Release 23.01 (31 JAN 2023)\n\n###### Update\n\n- 会话与安全事件日志增加列common_server_fqdn\n- 会话与安全事件日志增加列common_app_full_path\n    \n\n## Release 22.12 (30 DEC 2022)\n\n###### New Features\n\n- 新增Dashboards-增加App推荐\n- 新增系统报告-会话日志Flags统计\n- 新增系统报告-会话日志Flags占比\n    \n\n###### Update\n\n- 会话与安全事件日志增加common_flags列\n- 自定义IP映射-增加对ASN函数\n    \n\n## Release 22.1 (30 NOV 2022)\n\n###### New Features\n\n###### Update\n\n- 会话与安全事件日志增加ssl_ja3s_hash列\n    \n\n## Release 22.10 (30 OCT 2022)\n\n###### New Features\n\n- 06其它-功能验证-Traffic Summary增加Throughput接口\n    \n    ###### Update\n    \n- 更新原有查询，将VSYS ID作为默认查询条件\n    \n\n## Release 22.09 (30 SEP 2022)\n\n###### Update\n\n- 会话与安全事件日志增加common_tunnel_endpoint_a_desc, common_tunnel_endpoint_b_desc,dtls_sni 列\n    \n\n## Release 22.08 (31 AUG 2022)\n\n###### New Features\n\n- 其它-查询网关-Live Charts 总带宽流量校验\n- 增加检查数据流-SQL执行计划\n- 增加检查数据流-SQL查看表结构\n- 增加检查数据推荐-推荐IMSI到TEID关系\n- 增加检查数据推荐-推荐IMEI到TEID关系\n- 增加检查数据推荐-推荐Phone Number到TEID关系\n- 增加检查数据推荐-推荐apn到TEID关系\n- 增加检查数据推荐-实时查询任务-提交查询任务(实时统计)\n- 增加检查数据推荐-实时查询任务-获取任务结果(实时统计)\n- 增加检查数据推荐-知识库列表\n- 增加预处理检查-检测预处理延迟\n- 增加预处理检查-已关闭会话日志延迟分布\n    \n    ###### Update\n    \n\n## Release 22.07 (30 JUL 2022)\n\n###### New Features\n\n- 增加检查数据推荐-Top Server IP流量概况评估\n- 增加检查数据推荐-Top SNI 流量概况评估\n    \n    ###### Update\n    \n\n## Release 22.06 (30 JUE 2022)\n\n###### New Features\n\n- 检查数据流-增加存储配额一致性检查\n    \n    ###### Update\n    \n- 系统报告检查-增加与CM默认VSYSID=1参数\n    \n\n## Release 22.05 (31 MAY 2022)\n\n###### New Features\n\n###### Update\n\n- 检查日志-会话日志/安全事件日志增加RDP类型校验\n    \n\n## Release 22.04 (29 APR 2022)\n\n###### New Features\n\n###### Update\n\n- 预处理检查-是否有数据验证，改为通过console后台打印日志\n- Dashboards Top部分功能增加device_group, data_center维度校验\n    \n\n## Release 22.03 (8 APR 2022)\n\n###### New Features\n\n- 增加数据预处理检查，为每类日志增加多个测试用例，区分功能或无数据问题\n    \n    ###### Update\n    \n- 其它-评估日志预处理，增加ETL处理时延和写入Kafka时延指标\n- 检查日志模块对会话，安全和代理事件日志基于具体字段查询\n    \n\n###### Delete\n\n- 删除检查数据流，关于Topic的测试用例\n    \n\n## Release 22.02 (8 MAR 2022)\n\n###### New Features\n\n- 检查数据流-元数据检查 增加schema评价文件事件日志\n    \n\n## Release 22.01 (27 JAN 2022)\n\n###### New Features\n\n- 检查数据流-TopN计算 增加Application接口验证\n    \n\n###### Update\n\n- 重新梳理分类，删除无用接口\n- 重新排列分类，将系统自检放到首位\n    \n\n## Release 21.12 (1 Dec 2021)\n\n###### New Features\n\n- 新增数据推荐查询-实时查询任务\n- 新增数据推荐查询-推荐Subscriber ID 到IP关系\n- 新增数据推荐查询-推荐APP活跃客户端IP\n- 新增数据推荐查询-推荐TopN Server IP\n- 新增数据推荐查询-推荐TopN SNI\n- 新增常用快捷功能-查询网关，增加优化查询测试集\n    - Top 查询优化\n    - Calcite 缓存查询\n    - 自定义时间函数补全功能\n\n###### Update\n\n- Dashboard 查询，代理策略命中动作增加Edit Element 统计\n    \n\n## Release 21.11 (5 Nov 2021)\n\n###### New Features\n\n- Delete\n- Update\n- 修改报告查询接口(由查询mariadb方式变更为API接口)\n- 修改规范“数据推荐查询”所有接口的命名\n    \n\n## Release 21.10 (28 OCT 2021)\n\n###### New Features\n\n- 新增HOS健康状态检测接口\n- Delete\n- 删除原ClickHouse/Druid/ArangoDB 状态检查接口\n    \n\n## Release 21.09 (23 SEP 2021)\n\n###### New Features\n\n- Update\n- 删除分布式调度任务，5分钟TOPN校验，交由FLink统计\n- 原始日志表名进行重命名，相关查询接口更新\n- 修正DNS分析的SQL数据集\n    \n\n## Release 21.08 (15 AUG 2021)\n\n###### New Features\n\n- 新增“Dashboard查询-DoS Threat Map”功能列表，显示DoS检测地图接口\n- 新增“原始日志查询-DoS事件日志”，显示DoS攻击检测日志\n- 新增“原始日志查询-DoS事件日志-Summary”，显示DoS攻击趋势统计\n- 新增“原始日志查询-DoS事件日志-Destination IP Traffic Trend”，显示受害者IP历史流量趋势\n- Update\n- 迁移“Dashboard查询”liveCharts接口，放到“Live Charts”目录中统一管理。\n- 对DNS分析，增加一些查询样例\n    \n\n## Release 21.07 (5 JUL 2021)\n\n###### New Features\n\n- 增加”常用快捷功能-基数统计“，用于分析日志分布情况\n- 增加”常用快捷功能-DNS放大攻击“，查询特征数据集\n- 增加”通用检查-对象存储-获取某个文件“，用于文件获取验证\n    \n\n###### Update\n\n- 为所有接口增加Tests脚本，对接口进行批量验证测试\n- 修正部分接口查询异常\n    \n\n## Release 21.06 (7 JUN 2021)\n\n###### New Features\n\n- Environments 增加环境变量domain、client_ip、server_ip、l7_protocol和PT1M_TIME\n- 常用快捷功能增加某域名下钻、某IP下钻、协议下钻和DNS分析功能\n    \n\n###### Update\n\n- 原始日志查询，基于Druid近1小时日志变化粒度从5分钟改为1分钟。包含通联、策略和代理日志。\n    \n\n## Release 21.05 (6 MAY 2021)\n\n###### New Features\n\n- 新增“GTP-C日志”功能，辅助故障诊断\n- 新增“事务日志”功能，辅助故障诊断\n- 新增“活跃会话日志”功能，辅助故障诊断\n- 新增“07.常用快捷功能-评估写入日志量”，查看当前系统的吞吐\n    \n\n###### Update\n\n- 修改\"01.通用检查-数据存储检查\"，增加事务、活跃及GTP-C 检测\n    \n\n## Release 21.04 (3 APR 2021)\n\n###### New Features\n\n- 增加“VoIP日志”功能，辅助故障诊断\n- 增加“元数据检查”分类目录\n- 增加“HOS对象存储”目录，用于定位对象存储\n    \n\n###### Update\n\n- 修改“SQL语法检查”为“SQL语法验证”，支持SQL语句的静态分析和数据库语义验证\n- 迁移功能项位置，方便问题定位\n    \n\n###### Delete\n\n- 删除“系统检查-查询引擎SQL测试集\\[过时\\]”功能，由“故障诊断-sql性能测试”替代。\n    \n\n## Release 21.03 (2 MAR 2021)\n\n###### New Features\n\n- 增加故障诊断-元数据功能，可分析日志字段是否与schema一致\n- 增加故障诊断-sql性能测试，可对查询引擎进行功能性验证和POC性能测试\n    \n\n###### Update\n\n- 对查询引擎SQL测试集标记过时\n    \n\n## Release 21.02 (1 FEB 2021)\n\n###### Update\n\n- 改善内部测试集，应对新的功能修改\n    \n\n## Release 20.11.rc3 (11 DEC 2020)\n\n###### New Features\n\n- 增加常用快捷功能- 安装证书独立客户端IP数据趋势\n- 增加常用快捷功能-访问速度最慢TOP20 域名\n- 增加常用快捷功能-报告预置Metrics\n- 增加原始日志查询-安全策略-动作命中计数\n- 增加原始日志查询-代理策略-动作命中计数\n- 增加原始日志查询-通联-流量计数(now)\n    \n\n###### Update\n\n- 改善Dashboard查询-基础统计-新建、活跃（计数）-now\n- 改善Dashboard查询-新建、活跃（趋势）\n- 目录增加编号，便于管理\n- 修改分布式调度任务-5分钟TOPN-hot表验证表名\n- 部分Action为post 改为 get，便于导出命令行",
+		"description": "# galaxy-troubleshooting-api\n\n使用Postman组件，基于Rest API接口对TSG OLAP 进行功能验证。包括组件健康检查，功能集成测试及故障诊断。\n\n## Release 24.01 (31 JAN 2024)\n\n###### New Features\n\n- 依据OLAP API 组织接口\n- 接口进行重构，不再兼容23.10及之前版本\n    \n\n## Release 23.10 (30 OCT 2023)\n\n###### Update\n\n- 会话日志增加毫米级时间戳字段common_start_timestamp_ms, common_end_timestamp_ms\n- 会话日志增加操作系统指纹common_client_os_name,common_server_os_name\n    \n\n## Release 23.09 (30 SEP 2023)\n\n###### Update\n\n- metrics 修改表名由statistics_object改为object_statistics\n- Flags统计增加Bidirectional标识\n- Closed Session Records 增加http_status_code, ssl_esni_flag, ssl_ech_flag\n- 删除Kafka Topics 目录\n    \n\n## Release 23.08 (21 AUG 2023)\n\n###### New Features\n\n- Metrics增加Statistics Policy 相关接口\n- Metrics增加Statistics Object 相关接口\n- Metrics增加Statistics rule 命中计数接口\n    \n\n###### Update\n\n- 会话日志查询，增加重命名字段common_out_link_id、common_in_link_id\n    \n\n## Release 23.07 (21 JUL 2023)\n\n###### Update\n\n- 修复Network Throughput Active Sessions计算错误，不除时间粒度\n    \n\n## Release 23.06 (21 JUN 2023)\n\n###### Update\n\n- 优化Limit返回值\n    \n\n## Release 23.05 (28 MAY 2023)\n\n###### New Features\n\n- 增加Service chaining统计接口\n- QGW增加嵌套子查询接口，用于验证高级搜索\n    \n\n###### Update\n\n- Main Dashboard统计接口重构，更改统计源\n- Live Traffic Chart 接口重构，更改统计源\n- 原代理日志拆分为Intercept和Manipulation\n- 相关Metrics的Schema更改为重构后的数据源\n    \n\n## Release 23.04 (28 APR 2023)\n\n###### New Features\n\n- 增加数据写入延迟接口Session Insert Latency Distribution\n- 增加数据写入Kafka延迟接口 Session Ingestion Latency Distribution\n    \n\n###### Update\n\n- 重构 Security Policy Hits Metrics 统计\n- 重构 Traffic Shaping Metrics 统计\n    \n\n## Release 23.03 (28 MAR 2023)\n\n###### New Features\n\n- 目录整体重构，重新梳理功能，便于Newman CLI运行\n- ClickHouse目录下增加慢查询故障诊断语句\n- 参数与API接口统一改为英文，避免中文编码执行异常\n- 加密环境变量密码、token等敏感信息\n- 定义全局动态变量：时间范围、随机IP、随机域名等\n    \n\n###### Update\n\n- Flags 添加C2S与S2C标志位标签\n    \n\n## Release 23.02 (28 FEB 2023)\n\n###### New Features\n\n- 增加Traffic Shaping 相关统计接口\n    \n\n###### Update\n\n- 会话日志增加列common_shaping_rule_ids\n- 会话与安全事件日志增加列common_server_domain\n- 会话与安全事件日志增加列common_flags_identify_info\n    \n\n## Release 23.01 (31 JAN 2023)\n\n###### Update\n\n- 会话与安全事件日志增加列common_server_fqdn\n- 会话与安全事件日志增加列common_app_full_path\n    \n\n## Release 22.12 (30 DEC 2022)\n\n###### New Features\n\n- 新增Dashboards-增加App推荐\n- 新增系统报告-会话日志Flags统计\n- 新增系统报告-会话日志Flags占比\n    \n\n###### Update\n\n- 会话与安全事件日志增加common_flags列\n- 自定义IP映射-增加对ASN函数\n    \n\n## Release 22.1 (30 NOV 2022)\n\n###### New Features\n\n###### Update\n\n- 会话与安全事件日志增加ssl_ja3s_hash列\n    \n\n## Release 22.10 (30 OCT 2022)\n\n###### New Features\n\n- 06其它-功能验证-Traffic Summary增加Throughput接口\n    \n    ###### Update\n    \n- 更新原有查询，将VSYS ID作为默认查询条件\n    \n\n## Release 22.09 (30 SEP 2022)\n\n###### Update\n\n- 会话与安全事件日志增加common_tunnel_endpoint_a_desc, common_tunnel_endpoint_b_desc,dtls_sni 列\n    \n\n## Release 22.08 (31 AUG 2022)\n\n###### New Features\n\n- 其它-查询网关-Live Charts 总带宽流量校验\n- 增加检查数据流-SQL执行计划\n- 增加检查数据流-SQL查看表结构\n- 增加检查数据推荐-推荐IMSI到TEID关系\n- 增加检查数据推荐-推荐IMEI到TEID关系\n- 增加检查数据推荐-推荐Phone Number到TEID关系\n- 增加检查数据推荐-推荐apn到TEID关系\n- 增加检查数据推荐-实时查询任务-提交查询任务(实时统计)\n- 增加检查数据推荐-实时查询任务-获取任务结果(实时统计)\n- 增加检查数据推荐-知识库列表\n- 增加预处理检查-检测预处理延迟\n- 增加预处理检查-已关闭会话日志延迟分布\n    \n    ###### Update\n    \n\n## Release 22.07 (30 JUL 2022)\n\n###### New Features\n\n- 增加检查数据推荐-Top Server IP流量概况评估\n- 增加检查数据推荐-Top SNI 流量概况评估\n    \n    ###### Update\n    \n\n## Release 22.06 (30 JUE 2022)\n\n###### New Features\n\n- 检查数据流-增加存储配额一致性检查\n    \n    ###### Update\n    \n- 系统报告检查-增加与CM默认VSYSID=1参数\n    \n\n## Release 22.05 (31 MAY 2022)\n\n###### New Features\n\n###### Update\n\n- 检查日志-会话日志/安全事件日志增加RDP类型校验\n    \n\n## Release 22.04 (29 APR 2022)\n\n###### New Features\n\n###### Update\n\n- 预处理检查-是否有数据验证，改为通过console后台打印日志\n- Dashboards Top部分功能增加device_group, data_center维度校验\n    \n\n## Release 22.03 (8 APR 2022)\n\n###### New Features\n\n- 增加数据预处理检查，为每类日志增加多个测试用例，区分功能或无数据问题\n    \n    ###### Update\n    \n- 其它-评估日志预处理，增加ETL处理时延和写入Kafka时延指标\n- 检查日志模块对会话，安全和代理事件日志基于具体字段查询\n    \n\n###### Delete\n\n- 删除检查数据流，关于Topic的测试用例\n    \n\n## Release 22.02 (8 MAR 2022)\n\n###### New Features\n\n- 检查数据流-元数据检查 增加schema评价文件事件日志\n    \n\n## Release 22.01 (27 JAN 2022)\n\n###### New Features\n\n- 检查数据流-TopN计算 增加Application接口验证\n    \n\n###### Update\n\n- 重新梳理分类，删除无用接口\n- 重新排列分类，将系统自检放到首位\n    \n\n## Release 21.12 (1 Dec 2021)\n\n###### New Features\n\n- 新增数据推荐查询-实时查询任务\n- 新增数据推荐查询-推荐Subscriber ID 到IP关系\n- 新增数据推荐查询-推荐APP活跃客户端IP\n- 新增数据推荐查询-推荐TopN Server IP\n- 新增数据推荐查询-推荐TopN SNI\n- 新增常用快捷功能-查询网关，增加优化查询测试集\n    - Top 查询优化\n    - Calcite 缓存查询\n    - 自定义时间函数补全功能\n\n###### Update\n\n- Dashboard 查询，代理策略命中动作增加Edit Element 统计\n    \n\n## Release 21.11 (5 Nov 2021)\n\n###### New Features\n\n- Delete\n- Update\n- 修改报告查询接口(由查询mariadb方式变更为API接口)\n- 修改规范“数据推荐查询”所有接口的命名\n    \n\n## Release 21.10 (28 OCT 2021)\n\n###### New Features\n\n- 新增HOS健康状态检测接口\n- Delete\n- 删除原ClickHouse/Druid/ArangoDB 状态检查接口\n    \n\n## Release 21.09 (23 SEP 2021)\n\n###### New Features\n\n- Update\n- 删除分布式调度任务，5分钟TOPN校验，交由FLink统计\n- 原始日志表名进行重命名，相关查询接口更新\n- 修正DNS分析的SQL数据集\n    \n\n## Release 21.08 (15 AUG 2021)\n\n###### New Features\n\n- 新增“Dashboard查询-DoS Threat Map”功能列表，显示DoS检测地图接口\n- 新增“原始日志查询-DoS事件日志”，显示DoS攻击检测日志\n- 新增“原始日志查询-DoS事件日志-Summary”，显示DoS攻击趋势统计\n- 新增“原始日志查询-DoS事件日志-Destination IP Traffic Trend”，显示受害者IP历史流量趋势\n- Update\n- 迁移“Dashboard查询”liveCharts接口，放到“Live Charts”目录中统一管理。\n- 对DNS分析，增加一些查询样例\n    \n\n## Release 21.07 (5 JUL 2021)\n\n###### New Features\n\n- 增加”常用快捷功能-基数统计“，用于分析日志分布情况\n- 增加”常用快捷功能-DNS放大攻击“，查询特征数据集\n- 增加”通用检查-对象存储-获取某个文件“，用于文件获取验证\n    \n\n###### Update\n\n- 为所有接口增加Tests脚本，对接口进行批量验证测试\n- 修正部分接口查询异常\n    \n\n## Release 21.06 (7 JUN 2021)\n\n###### New Features\n\n- Environments 增加环境变量domain、client_ip、server_ip、l7_protocol和PT1M_TIME\n- 常用快捷功能增加某域名下钻、某IP下钻、协议下钻和DNS分析功能\n    \n\n###### Update\n\n- 原始日志查询，基于Druid近1小时日志变化粒度从5分钟改为1分钟。包含通联、策略和代理日志。\n    \n\n## Release 21.05 (6 MAY 2021)\n\n###### New Features\n\n- 新增“GTP-C日志”功能，辅助故障诊断\n- 新增“事务日志”功能，辅助故障诊断\n- 新增“活跃会话日志”功能，辅助故障诊断\n- 新增“07.常用快捷功能-评估写入日志量”，查看当前系统的吞吐\n    \n\n###### Update\n\n- 修改\"01.通用检查-数据存储检查\"，增加事务、活跃及GTP-C 检测\n    \n\n## Release 21.04 (3 APR 2021)\n\n###### New Features\n\n- 增加“VoIP日志”功能，辅助故障诊断\n- 增加“元数据检查”分类目录\n- 增加“HOS对象存储”目录，用于定位对象存储\n    \n\n###### Update\n\n- 修改“SQL语法检查”为“SQL语法验证”，支持SQL语句的静态分析和数据库语义验证\n- 迁移功能项位置，方便问题定位\n    \n\n###### Delete\n\n- 删除“系统检查-查询引擎SQL测试集\\[过时\\]”功能，由“故障诊断-sql性能测试”替代。\n    \n\n## Release 21.03 (2 MAR 2021)\n\n###### New Features\n\n- 增加故障诊断-元数据功能，可分析日志字段是否与schema一致\n- 增加故障诊断-sql性能测试，可对查询引擎进行功能性验证和POC性能测试\n    \n\n###### Update\n\n- 对查询引擎SQL测试集标记过时\n    \n\n## Release 21.02 (1 FEB 2021)\n\n###### Update\n\n- 改善内部测试集，应对新的功能修改\n    \n\n## Release 20.11.rc3 (11 DEC 2020)\n\n###### New Features\n\n- 增加常用快捷功能- 安装证书独立客户端IP数据趋势\n- 增加常用快捷功能-访问速度最慢TOP20 域名\n- 增加常用快捷功能-报告预置Metrics\n- 增加原始日志查询-安全策略-动作命中计数\n- 增加原始日志查询-代理策略-动作命中计数\n- 增加原始日志查询-通联-流量计数(now)\n    \n\n###### Update\n\n- 改善Dashboard查询-基础统计-新建、活跃（计数）-now\n- 改善Dashboard查询-新建、活跃（趋势）\n- 目录增加编号，便于管理\n- 修改分布式调度任务-5分钟TOPN-hot表验证表名\n- 部分Action为post 改为 get，便于导出命令行",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "8105037"
 	},
@@ -827,1599 +827,6 @@
 										{
 											"key": "query",
 											"value": " select 'Total' as type, count(*) as logs from session_record where\n\tcommon_recv_time >= UNIX_TIMESTAMP({{Last 24 Hour Start}})\n\tand common_recv_time < UNIX_TIMESTAMP({{now}})\nunion all \nselect 'Client IP' as type, count(*) as logs from session_record_common_client_ip where\n\tcommon_recv_time >= UNIX_TIMESTAMP({{Last 24 Hour Start}})\n\tand common_recv_time < UNIX_TIMESTAMP({{now}})\nunion all\nselect 'Server IP' as type, count(*) as logs from session_record_common_server_ip where\n\tcommon_recv_time >= UNIX_TIMESTAMP({{Last 24 Hour Start}})\n\tand common_recv_time < UNIX_TIMESTAMP({{now}})\nunion all\nselect 'Domain' as type, count(*) as logs from session_record_common_server_domain where\n\tcommon_recv_time >= UNIX_TIMESTAMP({{Last 24 Hour Start}})\n\tand common_recv_time < UNIX_TIMESTAMP({{now}})\n"
-										}
-									]
-								}
-							},
-							"response": []
-						}
-					]
-				},
-				{
-					"name": "Cardinality Estimation",
-					"item": [
-						{
-							"name": "Total",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"exec": [
-											"pm.test(\"Status code is 200\", function () {",
-											"    pm.response.to.have.status(200);",
-											"});"
-										],
-										"type": "text/javascript"
-									}
-								}
-							],
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"method": "GET",
-								"header": [],
-								"body": {
-									"mode": "formdata",
-									"formdata": []
-								},
-								"url": {
-									"raw": "http://{{qgw_ip}}:{{qgw_port}}/?query=select\n\tround(tcp_logs / logs, 2) as \"TCP Percentage\",\n\tround(udp_logs / logs, 2) as \"UDP Percentage\",\n\tround(egress_bytes / bytes, 2) as \"Egress Percentage\",\n\tround(ingress_bytes / bytes, 2) as \"Ingress Percentage\",\n\ttcp_logs as \"TCP Logs\",\n\tudp_logs as \"UDP Logs\",\n\tlogs as \"Logs\",\n\tegress_bytes as \"Egress Bytes\",\n\tingress_bytes as \"Ingress Bytes\",\n\tbytes as \"Bytes\"\nfrom\n\t(select\n\tsum(if(common_l4_protocol in('IPv4_TCP', 'IPv6_TCP'), 1, 0)) as tcp_logs,\n\tsum(if(common_l4_protocol in('IPv4_UDP', 'IPv6_UDP'), 1, 0)) as udp_logs,\n\tsum(if(common_direction = 69, common_c2s_byte_num, common_s2c_byte_num)) as egress_bytes,\n\tsum(if(common_direction = 73, common_c2s_byte_num, common_s2c_byte_num)) as ingress_bytes,\n\tcount(*) as logs,\n\tsum(common_c2s_byte_num + common_s2c_byte_num) as bytes\n\tfrom\n\t\tsession_record as sub_connection where common_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}')\n\t)",
-									"protocol": "http",
-									"host": [
-										"{{qgw_ip}}"
-									],
-									"port": "{{qgw_port}}",
-									"path": [
-										""
-									],
-									"query": [
-										{
-											"key": "option",
-											"value": "long-term",
-											"disabled": true
-										},
-										{
-											"key": "resultId",
-											"value": "129494",
-											"disabled": true
-										},
-										{
-											"key": "query",
-											"value": "select\n\tround(tcp_logs / logs, 2) as \"TCP Percentage\",\n\tround(udp_logs / logs, 2) as \"UDP Percentage\",\n\tround(egress_bytes / bytes, 2) as \"Egress Percentage\",\n\tround(ingress_bytes / bytes, 2) as \"Ingress Percentage\",\n\ttcp_logs as \"TCP Logs\",\n\tudp_logs as \"UDP Logs\",\n\tlogs as \"Logs\",\n\tegress_bytes as \"Egress Bytes\",\n\tingress_bytes as \"Ingress Bytes\",\n\tbytes as \"Bytes\"\nfrom\n\t(select\n\tsum(if(common_l4_protocol in('IPv4_TCP', 'IPv6_TCP'), 1, 0)) as tcp_logs,\n\tsum(if(common_l4_protocol in('IPv4_UDP', 'IPv6_UDP'), 1, 0)) as udp_logs,\n\tsum(if(common_direction = 69, common_c2s_byte_num, common_s2c_byte_num)) as egress_bytes,\n\tsum(if(common_direction = 73, common_c2s_byte_num, common_s2c_byte_num)) as ingress_bytes,\n\tcount(*) as logs,\n\tsum(common_c2s_byte_num + common_s2c_byte_num) as bytes\n\tfrom\n\t\tsession_record as sub_connection where common_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}')\n\t)"
-										}
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Log Type",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"exec": [
-											"pm.test(\"Status code is 200\", function () {",
-											"    pm.response.to.have.status(200);",
-											"});"
-										],
-										"type": "text/javascript"
-									}
-								}
-							],
-							"request": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "http://{{qgw_ip}}:{{qgw_port}}/?query=select\n\tround(base_logs / total_logs, 2) as \"BASE Percentage\",\n\tround(http_logs / total_logs, 2) as \"HTTP Percentage\",\n\tround(ssl_logs / total_logs, 2) as \"SSL Percentage\",\n\tround(dns_logs / total_logs, 2) as \"DNS Percentage\",\n\tround(mail_logs / total_logs, 2) as \"MAIL Percentage\",\n\tround(rtp_logs / total_logs, 2) as \"RTP Percentage\",\n\tround(sip_logs / total_logs, 2) as \"SIP Percentage\",\n\tround(ftp_logs / total_logs, 2) as \"FTP Percentage\",\n\tbase_logs as \"BASE Logs\",\n\thttp_logs as \"HTTP Logs\",\n\tssl_logs as \"SSL Logs\",\n\tdns_logs as \"DNS Logs\",\n\tmail_logs as \"MAIL Logs\",\n\trtp_logs as \"RTP Logs\",\n\tsip_logs as \"SIP Logs\",\n\tftp_logs as \"FTP Logs\",\n\ttotal_logs as \"Total Logs\"\nfrom\n\t(\n\tselect\n\t\tsum(if(common_schema_type='BASE', 1, 0)) as base_logs,\n\t\tsum(if(common_schema_type='HTTP', 1, 0)) as http_logs,\n\t\tsum(if(common_schema_type='SSL', 1, 0)) as ssl_logs,\n\t\tsum(if(common_schema_type='DNS', 1, 0)) as dns_logs,\n\t\tsum(if(common_schema_type='MAIL', 1, 0)) as mail_logs,\n\t\tsum(if(common_schema_type='RTP', 1, 0)) as rtp_logs,\n\t\tsum(if(common_schema_type='SIP', 1, 0)) as sip_logs,\n\t\tsum(if(common_schema_type='FTP', 1, 0)) as ftp_logs,\n\t\tcount(*) as total_logs\n\tfrom\n\t\tsession_record as sub_connection where common_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}')\n\t\t)\n\t\t",
-									"protocol": "http",
-									"host": [
-										"{{qgw_ip}}"
-									],
-									"port": "{{qgw_port}}",
-									"path": [
-										""
-									],
-									"query": [
-										{
-											"key": "option",
-											"value": "long-term",
-											"disabled": true
-										},
-										{
-											"key": "resultId",
-											"value": "129494",
-											"disabled": true
-										},
-										{
-											"key": "query",
-											"value": "select\n\tround(base_logs / total_logs, 2) as \"BASE Percentage\",\n\tround(http_logs / total_logs, 2) as \"HTTP Percentage\",\n\tround(ssl_logs / total_logs, 2) as \"SSL Percentage\",\n\tround(dns_logs / total_logs, 2) as \"DNS Percentage\",\n\tround(mail_logs / total_logs, 2) as \"MAIL Percentage\",\n\tround(rtp_logs / total_logs, 2) as \"RTP Percentage\",\n\tround(sip_logs / total_logs, 2) as \"SIP Percentage\",\n\tround(ftp_logs / total_logs, 2) as \"FTP Percentage\",\n\tbase_logs as \"BASE Logs\",\n\thttp_logs as \"HTTP Logs\",\n\tssl_logs as \"SSL Logs\",\n\tdns_logs as \"DNS Logs\",\n\tmail_logs as \"MAIL Logs\",\n\trtp_logs as \"RTP Logs\",\n\tsip_logs as \"SIP Logs\",\n\tftp_logs as \"FTP Logs\",\n\ttotal_logs as \"Total Logs\"\nfrom\n\t(\n\tselect\n\t\tsum(if(common_schema_type='BASE', 1, 0)) as base_logs,\n\t\tsum(if(common_schema_type='HTTP', 1, 0)) as http_logs,\n\t\tsum(if(common_schema_type='SSL', 1, 0)) as ssl_logs,\n\t\tsum(if(common_schema_type='DNS', 1, 0)) as dns_logs,\n\t\tsum(if(common_schema_type='MAIL', 1, 0)) as mail_logs,\n\t\tsum(if(common_schema_type='RTP', 1, 0)) as rtp_logs,\n\t\tsum(if(common_schema_type='SIP', 1, 0)) as sip_logs,\n\t\tsum(if(common_schema_type='FTP', 1, 0)) as ftp_logs,\n\t\tcount(*) as total_logs\n\tfrom\n\t\tsession_record as sub_connection where common_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}')\n\t\t)\n\t\t"
-										}
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Entities",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"exec": [
-											"pm.test(\"Status code is 200\", function () {",
-											"    pm.response.to.have.status(200);",
-											"});"
-										],
-										"type": "text/javascript"
-									}
-								}
-							],
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"method": "GET",
-								"header": [],
-								"body": {
-									"mode": "formdata",
-									"formdata": []
-								},
-								"url": {
-									"raw": "http://{{qgw_ip}}:{{qgw_port}}/?query=select\n\tuniq(common_client_ip) as \"Client IPs\",\n\tuniq(common_server_ip) as \"Server IPs\",\n\tuniq(common_internal_ip) as \"Internal IPs\",\n\tuniq(common_external_ip) as \"External IPs\",\n\tuniq(http_domain) as \"Domains\",\n\tuniq(http_host) as \"Hosts\",\n\tuniq(ssl_sni) as \"SNIs\"\nfrom\n\tsession_record  where common_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}')",
-									"protocol": "http",
-									"host": [
-										"{{qgw_ip}}"
-									],
-									"port": "{{qgw_port}}",
-									"path": [
-										""
-									],
-									"query": [
-										{
-											"key": "option",
-											"value": "long-term",
-											"disabled": true
-										},
-										{
-											"key": "resultId",
-											"value": "129494",
-											"disabled": true
-										},
-										{
-											"key": "query",
-											"value": "select\n\tuniq(common_client_ip) as \"Client IPs\",\n\tuniq(common_server_ip) as \"Server IPs\",\n\tuniq(common_internal_ip) as \"Internal IPs\",\n\tuniq(common_external_ip) as \"External IPs\",\n\tuniq(http_domain) as \"Domains\",\n\tuniq(http_host) as \"Hosts\",\n\tuniq(ssl_sni) as \"SNIs\"\nfrom\n\tsession_record  where common_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}')"
-										}
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Entities of TCP",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"exec": [
-											"pm.test(\"Status code is 200\", function () {",
-											"    pm.response.to.have.status(200);",
-											"});"
-										],
-										"type": "text/javascript"
-									}
-								}
-							],
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"method": "GET",
-								"header": [],
-								"body": {
-									"mode": "formdata",
-									"formdata": []
-								},
-								"url": {
-									"raw": "http://{{qgw_ip}}:{{qgw_port}}/?query=select\n\tuniq(common_client_ip) as \"Client IPs\",\n\tuniq(common_server_ip) as \"Server IPs\",\n\tuniq(common_internal_ip) as \"Internal IPs\",\n\tuniq(common_external_ip) as \"External IPs\",\n\tuniq(http_domain) as \"Domains\",\n\tuniq(http_host) as \"Hosts\",\n\tuniq(ssl_sni) as \"SNIs\"\nfrom\n\tsession_record  where common_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}') and common_l4_protocol in('IPv4_TCP', 'IPv6_TCP')",
-									"protocol": "http",
-									"host": [
-										"{{qgw_ip}}"
-									],
-									"port": "{{qgw_port}}",
-									"path": [
-										""
-									],
-									"query": [
-										{
-											"key": "option",
-											"value": "long-term",
-											"disabled": true
-										},
-										{
-											"key": "resultId",
-											"value": "129494",
-											"disabled": true
-										},
-										{
-											"key": "query",
-											"value": "select\n\tuniq(common_client_ip) as \"Client IPs\",\n\tuniq(common_server_ip) as \"Server IPs\",\n\tuniq(common_internal_ip) as \"Internal IPs\",\n\tuniq(common_external_ip) as \"External IPs\",\n\tuniq(http_domain) as \"Domains\",\n\tuniq(http_host) as \"Hosts\",\n\tuniq(ssl_sni) as \"SNIs\"\nfrom\n\tsession_record  where common_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}') and common_l4_protocol in('IPv4_TCP', 'IPv6_TCP')"
-										}
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Entities of UDP",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"exec": [
-											"pm.test(\"Status code is 200\", function () {",
-											"    pm.response.to.have.status(200);",
-											"});"
-										],
-										"type": "text/javascript"
-									}
-								}
-							],
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"method": "GET",
-								"header": [],
-								"body": {
-									"mode": "formdata",
-									"formdata": []
-								},
-								"url": {
-									"raw": "http://{{qgw_ip}}:{{qgw_port}}/?query=select\n\tuniq(common_client_ip) as \"Client IPs\",\n\tuniq(common_server_ip) as \"Server IPs\",\n\tuniq(common_internal_ip) as \"Internal IPs\",\n\tuniq(common_external_ip) as \"External IPs\",\n\tuniq(http_domain) as \"Domains\",\n\tuniq(http_host) as \"Hosts\",\n\tuniq(ssl_sni) as \"SNIs\"\nfrom\n\tsession_record  where common_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}') and common_l4_protocol in('IPv4_UDP', 'IPv6_UDP')",
-									"protocol": "http",
-									"host": [
-										"{{qgw_ip}}"
-									],
-									"port": "{{qgw_port}}",
-									"path": [
-										""
-									],
-									"query": [
-										{
-											"key": "option",
-											"value": "long-term",
-											"disabled": true
-										},
-										{
-											"key": "resultId",
-											"value": "129494",
-											"disabled": true
-										},
-										{
-											"key": "query",
-											"value": "select\n\tuniq(common_client_ip) as \"Client IPs\",\n\tuniq(common_server_ip) as \"Server IPs\",\n\tuniq(common_internal_ip) as \"Internal IPs\",\n\tuniq(common_external_ip) as \"External IPs\",\n\tuniq(http_domain) as \"Domains\",\n\tuniq(http_host) as \"Hosts\",\n\tuniq(ssl_sni) as \"SNIs\"\nfrom\n\tsession_record  where common_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}') and common_l4_protocol in('IPv4_UDP', 'IPv6_UDP')"
-										}
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Sources",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"exec": [
-											"pm.test(\"Status code is 200\", function () {",
-											"    pm.response.to.have.status(200);",
-											"});"
-										],
-										"type": "text/javascript"
-									}
-								}
-							],
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"method": "GET",
-								"header": [],
-								"body": {
-									"mode": "formdata",
-									"formdata": []
-								},
-								"url": {
-									"raw": "http://{{qgw_ip}}:{{qgw_port}}/?query=select\n\tuniq(common_client_ip, common_server_ip) as \"Client to Server Hits\",\n\tuniq(common_internal_ip, common_external_ip) as \"Internal to External Hits\",\n\tuniq(common_client_ip, http_domain) as \"Client to Domain Hits\", uniq(common_internal_ip, http_domain) as \"Internal to Domain Hits\"\nfrom\n\tsession_record  where common_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}')",
-									"protocol": "http",
-									"host": [
-										"{{qgw_ip}}"
-									],
-									"port": "{{qgw_port}}",
-									"path": [
-										""
-									],
-									"query": [
-										{
-											"key": "option",
-											"value": "long-term",
-											"disabled": true
-										},
-										{
-											"key": "resultId",
-											"value": "129494",
-											"disabled": true
-										},
-										{
-											"key": "query",
-											"value": "select\n\tuniq(common_client_ip, common_server_ip) as \"Client to Server Hits\",\n\tuniq(common_internal_ip, common_external_ip) as \"Internal to External Hits\",\n\tuniq(common_client_ip, http_domain) as \"Client to Domain Hits\", uniq(common_internal_ip, http_domain) as \"Internal to Domain Hits\"\nfrom\n\tsession_record  where common_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}')"
-										}
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Sources of TCP",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"exec": [
-											"pm.test(\"Status code is 200\", function () {",
-											"    pm.response.to.have.status(200);",
-											"});"
-										],
-										"type": "text/javascript"
-									}
-								}
-							],
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"method": "GET",
-								"header": [],
-								"body": {
-									"mode": "formdata",
-									"formdata": []
-								},
-								"url": {
-									"raw": "http://{{qgw_ip}}:{{qgw_port}}/?query=select\n\tuniq(common_client_ip, common_server_ip) as \"Client to Server IPs\",\n\tuniq(common_internal_ip, common_external_ip) as \"Internal to External IPs\",\n\tuniq(common_client_ip, http_domain) as \"Client to Domain Hits\", uniq(common_internal_ip, http_domain) as \"Internal to Domain Hits\"\n\t\nfrom\n\tsession_record  where common_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}')and common_l4_protocol in('IPv4_TCP', 'IPv6_TCP')",
-									"protocol": "http",
-									"host": [
-										"{{qgw_ip}}"
-									],
-									"port": "{{qgw_port}}",
-									"path": [
-										""
-									],
-									"query": [
-										{
-											"key": "option",
-											"value": "long-term",
-											"disabled": true
-										},
-										{
-											"key": "resultId",
-											"value": "129494",
-											"disabled": true
-										},
-										{
-											"key": "query",
-											"value": "select\n\tuniq(common_client_ip, common_server_ip) as \"Client to Server IPs\",\n\tuniq(common_internal_ip, common_external_ip) as \"Internal to External IPs\",\n\tuniq(common_client_ip, http_domain) as \"Client to Domain Hits\", uniq(common_internal_ip, http_domain) as \"Internal to Domain Hits\"\n\t\nfrom\n\tsession_record  where common_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}')and common_l4_protocol in('IPv4_TCP', 'IPv6_TCP')"
-										}
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Sources of UDP",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"exec": [
-											"pm.test(\"Status code is 200\", function () {",
-											"    pm.response.to.have.status(200);",
-											"});"
-										],
-										"type": "text/javascript"
-									}
-								}
-							],
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"method": "GET",
-								"header": [],
-								"body": {
-									"mode": "formdata",
-									"formdata": []
-								},
-								"url": {
-									"raw": "http://{{qgw_ip}}:{{qgw_port}}/?query=select\n\tuniq(common_client_ip, common_server_ip) as \"Client to Server IPs\",\n\tuniq(common_internal_ip, common_external_ip) as \"Internal to External IPs\",\n\tuniq(common_client_ip, http_domain) as \"Client to Domain Hits\", uniq(common_internal_ip, http_domain) as \"Internal to Domain Hits\"\t\nfrom session_record  where common_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}') and common_l4_protocol in('IPv4_UDP', 'IPv6_UDP')",
-									"protocol": "http",
-									"host": [
-										"{{qgw_ip}}"
-									],
-									"port": "{{qgw_port}}",
-									"path": [
-										""
-									],
-									"query": [
-										{
-											"key": "option",
-											"value": "long-term",
-											"disabled": true
-										},
-										{
-											"key": "resultId",
-											"value": "129494",
-											"disabled": true
-										},
-										{
-											"key": "query",
-											"value": "select\n\tuniq(common_client_ip, common_server_ip) as \"Client to Server IPs\",\n\tuniq(common_internal_ip, common_external_ip) as \"Internal to External IPs\",\n\tuniq(common_client_ip, http_domain) as \"Client to Domain Hits\", uniq(common_internal_ip, http_domain) as \"Internal to Domain Hits\"\t\nfrom session_record  where common_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}') and common_l4_protocol in('IPv4_UDP', 'IPv6_UDP')"
-										}
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Destinations",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"exec": [
-											"pm.test(\"Status code is 200\", function () {",
-											"    pm.response.to.have.status(200);",
-											"});"
-										],
-										"type": "text/javascript"
-									}
-								}
-							],
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"method": "GET",
-								"header": [],
-								"body": {
-									"mode": "formdata",
-									"formdata": []
-								},
-								"url": {
-									"raw": "http://{{qgw_ip}}:{{qgw_port}}/?query=select\n\tuniq(common_server_ip, http_domain) as \"Server to Domain Hits\",\n\tuniq(common_external_ip, http_domain) as \"External to Domain Hits\"\nfrom\n\tsession_record  where common_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}')",
-									"protocol": "http",
-									"host": [
-										"{{qgw_ip}}"
-									],
-									"port": "{{qgw_port}}",
-									"path": [
-										""
-									],
-									"query": [
-										{
-											"key": "option",
-											"value": "long-term",
-											"disabled": true
-										},
-										{
-											"key": "resultId",
-											"value": "129494",
-											"disabled": true
-										},
-										{
-											"key": "query",
-											"value": "select\n\tuniq(common_server_ip, http_domain) as \"Server to Domain Hits\",\n\tuniq(common_external_ip, http_domain) as \"External to Domain Hits\"\nfrom\n\tsession_record  where common_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}')"
-										}
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Destinations of TCP",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"exec": [
-											"pm.test(\"Status code is 200\", function () {",
-											"    pm.response.to.have.status(200);",
-											"});"
-										],
-										"type": "text/javascript"
-									}
-								}
-							],
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"method": "GET",
-								"header": [],
-								"body": {
-									"mode": "formdata",
-									"formdata": []
-								},
-								"url": {
-									"raw": "http://{{qgw_ip}}:{{qgw_port}}/?query=select\n\tuniq(common_server_ip, http_domain) as \"Server to Domain Hits\",\n\tuniq(common_external_ip, http_domain) as \"External to Domain Hits\"\nfrom\n\tsession_record  where common_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}') and common_l4_protocol in('IPv4_TCP', 'IPv6_TCP')",
-									"protocol": "http",
-									"host": [
-										"{{qgw_ip}}"
-									],
-									"port": "{{qgw_port}}",
-									"path": [
-										""
-									],
-									"query": [
-										{
-											"key": "option",
-											"value": "long-term",
-											"disabled": true
-										},
-										{
-											"key": "resultId",
-											"value": "129494",
-											"disabled": true
-										},
-										{
-											"key": "query",
-											"value": "select\n\tuniq(common_server_ip, http_domain) as \"Server to Domain Hits\",\n\tuniq(common_external_ip, http_domain) as \"External to Domain Hits\"\nfrom\n\tsession_record  where common_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}') and common_l4_protocol in('IPv4_TCP', 'IPv6_TCP')"
-										}
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Destinations of UDP",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"exec": [
-											"pm.test(\"Status code is 200\", function () {",
-											"    pm.response.to.have.status(200);",
-											"});"
-										],
-										"type": "text/javascript"
-									}
-								}
-							],
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"method": "GET",
-								"header": [],
-								"body": {
-									"mode": "formdata",
-									"formdata": []
-								},
-								"url": {
-									"raw": "http://{{qgw_ip}}:{{qgw_port}}/?query=select\n\tuniq(common_server_ip, http_domain) as \"Server to Domain Hits\",\n\tuniq(common_external_ip, http_domain) as \"External to Domain Hits\"\nfrom\n\tsession_record  where common_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}') and common_l4_protocol in('IPv4_UDP', 'IPv6_UDP')",
-									"protocol": "http",
-									"host": [
-										"{{qgw_ip}}"
-									],
-									"port": "{{qgw_port}}",
-									"path": [
-										""
-									],
-									"query": [
-										{
-											"key": "option",
-											"value": "long-term",
-											"disabled": true
-										},
-										{
-											"key": "resultId",
-											"value": "129494",
-											"disabled": true
-										},
-										{
-											"key": "query",
-											"value": "select\n\tuniq(common_server_ip, http_domain) as \"Server to Domain Hits\",\n\tuniq(common_external_ip, http_domain) as \"External to Domain Hits\"\nfrom\n\tsession_record  where common_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}') and common_l4_protocol in('IPv4_UDP', 'IPv6_UDP')"
-										}
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Destinations of DNS",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"exec": [
-											"pm.test(\"Status code is 200\", function () {",
-											"    pm.response.to.have.status(200);",
-											"});"
-										],
-										"type": "text/javascript"
-									}
-								}
-							],
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"method": "GET",
-								"header": [],
-								"body": {
-									"mode": "formdata",
-									"formdata": []
-								},
-								"url": {
-									"raw": "http://{{qgw_ip}}:{{qgw_port}}/?query=select\n\tuniq(common_server_ip) as  \"Server IPs\"\nfrom\n\tsession_record  where common_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}') and common_server_port=53",
-									"protocol": "http",
-									"host": [
-										"{{qgw_ip}}"
-									],
-									"port": "{{qgw_port}}",
-									"path": [
-										""
-									],
-									"query": [
-										{
-											"key": "option",
-											"value": "long-term",
-											"disabled": true
-										},
-										{
-											"key": "resultId",
-											"value": "129494",
-											"disabled": true
-										},
-										{
-											"key": "query",
-											"value": "select\n\tuniq(common_server_ip) as  \"Server IPs\"\nfrom\n\tsession_record  where common_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}') and common_server_port=53"
-										}
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Bytes Distribution of TCP",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"exec": [
-											"pm.test(\"Status code is 200\", function () {",
-											"    pm.response.to.have.status(200);",
-											"});"
-										],
-										"type": "text/javascript"
-									}
-								}
-							],
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"method": "GET",
-								"header": [],
-								"body": {
-									"mode": "formdata",
-									"formdata": []
-								},
-								"url": {
-									"raw": "http://{{qgw_ip}}:{{qgw_port}}/?query=select\n    round(QUANTILE(bytes,0.9999),2) as p9999, \n\t round(QUANTILE(bytes,0.999),2) as p999,\n\tround(QUANTILE(bytes,0.996),2) as p996,\n\tround(QUANTILE(bytes,0.995),2) as p995,\n\tround(QUANTILE(bytes,0.99),2) as p99,\n\tround(QUANTILE(bytes,0.98),2) as p98,\n\tround(QUANTILE(bytes,0.96),2) as p96,\n\tround(QUANTILE(bytes,0.95),2) as p95,\n\tround(QUANTILE(bytes,0.92),2) as p92,\n\tround(QUANTILE(bytes,0.90),2) as p90,\n\tround(QUANTILE(bytes,0.89),2) as p89,\n\tround(QUANTILE(bytes,0.88),2) as p88,\n\tround(median(bytes),2) as p50\nfrom\n\t(\n\tselect\n\t\tcommon_server_ip,\n\t\tsum(common_c2s_byte_num+common_s2c_byte_num) as bytes\n\tfrom\n\t\tsession_record\n\twhere\n\t\tcommon_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}')\n\t\tAND (common_l4_protocol IN ('IPv4_TCP', 'IPv6_TCP'))\n\tgroup by\n\t\tcommon_server_ip \n)\n",
-									"protocol": "http",
-									"host": [
-										"{{qgw_ip}}"
-									],
-									"port": "{{qgw_port}}",
-									"path": [
-										""
-									],
-									"query": [
-										{
-											"key": "option",
-											"value": "long-term",
-											"disabled": true
-										},
-										{
-											"key": "resultId",
-											"value": "129494",
-											"disabled": true
-										},
-										{
-											"key": "query",
-											"value": "select\n    round(QUANTILE(bytes,0.9999),2) as p9999, \n\t round(QUANTILE(bytes,0.999),2) as p999,\n\tround(QUANTILE(bytes,0.996),2) as p996,\n\tround(QUANTILE(bytes,0.995),2) as p995,\n\tround(QUANTILE(bytes,0.99),2) as p99,\n\tround(QUANTILE(bytes,0.98),2) as p98,\n\tround(QUANTILE(bytes,0.96),2) as p96,\n\tround(QUANTILE(bytes,0.95),2) as p95,\n\tround(QUANTILE(bytes,0.92),2) as p92,\n\tround(QUANTILE(bytes,0.90),2) as p90,\n\tround(QUANTILE(bytes,0.89),2) as p89,\n\tround(QUANTILE(bytes,0.88),2) as p88,\n\tround(median(bytes),2) as p50\nfrom\n\t(\n\tselect\n\t\tcommon_server_ip,\n\t\tsum(common_c2s_byte_num+common_s2c_byte_num) as bytes\n\tfrom\n\t\tsession_record\n\twhere\n\t\tcommon_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}')\n\t\tAND (common_l4_protocol IN ('IPv4_TCP', 'IPv6_TCP'))\n\tgroup by\n\t\tcommon_server_ip \n)\n"
-										}
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Bytes Distribution of UDP",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"exec": [
-											"pm.test(\"Status code is 200\", function () {",
-											"    pm.response.to.have.status(200);",
-											"});"
-										],
-										"type": "text/javascript"
-									}
-								}
-							],
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"method": "GET",
-								"header": [],
-								"body": {
-									"mode": "formdata",
-									"formdata": []
-								},
-								"url": {
-									"raw": "http://{{qgw_ip}}:{{qgw_port}}/?query=select\n    round(QUANTILE(bytes,0.9999),2) as p9999, \n\t round(QUANTILE(bytes,0.999),2) as p999,\n\tround(QUANTILE(bytes,0.996),2) as p996,\n\tround(QUANTILE(bytes,0.995),2) as p995,\n\tround(QUANTILE(bytes,0.99),2) as p99,\n\tround(QUANTILE(bytes,0.98),2) as p98,\n\tround(QUANTILE(bytes,0.96),2) as p96,\n\tround(QUANTILE(bytes,0.95),2) as p95,\n\tround(QUANTILE(bytes,0.92),2) as p92,\n\tround(QUANTILE(bytes,0.90),2) as p90,\n\tround(QUANTILE(bytes,0.89),2) as p89,\n\tround(QUANTILE(bytes,0.88),2) as p88,\n\tround(median(bytes),2) as p50\nfrom\n\t(\n\tselect\n\t\tcommon_server_ip,\n\t\tsum(common_c2s_byte_num+common_s2c_byte_num) as bytes\n\tfrom\n\t\tsession_record\n\twhere\n\t\tcommon_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}')\n\t    and common_l4_protocol in ('IPv4_UDP', 'IPv6_UDP')\n\t\tand common_server_port in (53,443)\n\tgroup by\n\t\tcommon_server_ip \n)\n",
-									"protocol": "http",
-									"host": [
-										"{{qgw_ip}}"
-									],
-									"port": "{{qgw_port}}",
-									"path": [
-										""
-									],
-									"query": [
-										{
-											"key": "option",
-											"value": "long-term",
-											"disabled": true
-										},
-										{
-											"key": "resultId",
-											"value": "129494",
-											"disabled": true
-										},
-										{
-											"key": "query",
-											"value": "select\n    round(QUANTILE(bytes,0.9999),2) as p9999, \n\t round(QUANTILE(bytes,0.999),2) as p999,\n\tround(QUANTILE(bytes,0.996),2) as p996,\n\tround(QUANTILE(bytes,0.995),2) as p995,\n\tround(QUANTILE(bytes,0.99),2) as p99,\n\tround(QUANTILE(bytes,0.98),2) as p98,\n\tround(QUANTILE(bytes,0.96),2) as p96,\n\tround(QUANTILE(bytes,0.95),2) as p95,\n\tround(QUANTILE(bytes,0.92),2) as p92,\n\tround(QUANTILE(bytes,0.90),2) as p90,\n\tround(QUANTILE(bytes,0.89),2) as p89,\n\tround(QUANTILE(bytes,0.88),2) as p88,\n\tround(median(bytes),2) as p50\nfrom\n\t(\n\tselect\n\t\tcommon_server_ip,\n\t\tsum(common_c2s_byte_num+common_s2c_byte_num) as bytes\n\tfrom\n\t\tsession_record\n\twhere\n\t\tcommon_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}')\n\t    and common_l4_protocol in ('IPv4_UDP', 'IPv6_UDP')\n\t\tand common_server_port in (53,443)\n\tgroup by\n\t\tcommon_server_ip \n)\n"
-										}
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Sessions Distribution of TCP",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"exec": [
-											"pm.test(\"Status code is 200\", function () {",
-											"    pm.response.to.have.status(200);",
-											"});"
-										],
-										"type": "text/javascript"
-									}
-								}
-							],
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"method": "GET",
-								"header": [],
-								"body": {
-									"mode": "formdata",
-									"formdata": []
-								},
-								"url": {
-									"raw": "http://{{qgw_ip}}:{{qgw_port}}/?query=select\n    round(QUANTILE(sessions,0.9999),2) as p9999, \n\t round(QUANTILE(sessions,0.999),2) as p999,\n\tround(QUANTILE(sessions,0.996),2) as p996,\n\tround(QUANTILE(sessions,0.995),2) as p995,\n\tround(QUANTILE(sessions,0.99),2) as p99,\n\tround(QUANTILE(sessions,0.98),2) as p98,\n\tround(QUANTILE(sessions,0.96),2) as p96,\n\tround(QUANTILE(sessions,0.95),2) as p95,\n\tround(QUANTILE(sessions,0.92),2) as p92,\n\tround(QUANTILE(sessions,0.90),2) as p90,\n\tround(QUANTILE(sessions,0.89),2) as p89,\n\tround(QUANTILE(sessions,0.88),2) as p88,\n\tround(median(sessions),2) as p50\nfrom\n\t(\n\tselect\n\t\tcommon_server_ip,\n\t\tcount(*) as sessions\n\tfrom\n\t\tsession_record\n\twhere\n\t\tcommon_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}')\n\t\tAND (common_l4_protocol IN ('IPv4_TCP', 'IPv6_TCP'))\n\tgroup by\n\t\tcommon_server_ip \n)\n",
-									"protocol": "http",
-									"host": [
-										"{{qgw_ip}}"
-									],
-									"port": "{{qgw_port}}",
-									"path": [
-										""
-									],
-									"query": [
-										{
-											"key": "option",
-											"value": "long-term",
-											"disabled": true
-										},
-										{
-											"key": "resultId",
-											"value": "129494",
-											"disabled": true
-										},
-										{
-											"key": "query",
-											"value": "select\n    round(QUANTILE(sessions,0.9999),2) as p9999, \n\t round(QUANTILE(sessions,0.999),2) as p999,\n\tround(QUANTILE(sessions,0.996),2) as p996,\n\tround(QUANTILE(sessions,0.995),2) as p995,\n\tround(QUANTILE(sessions,0.99),2) as p99,\n\tround(QUANTILE(sessions,0.98),2) as p98,\n\tround(QUANTILE(sessions,0.96),2) as p96,\n\tround(QUANTILE(sessions,0.95),2) as p95,\n\tround(QUANTILE(sessions,0.92),2) as p92,\n\tround(QUANTILE(sessions,0.90),2) as p90,\n\tround(QUANTILE(sessions,0.89),2) as p89,\n\tround(QUANTILE(sessions,0.88),2) as p88,\n\tround(median(sessions),2) as p50\nfrom\n\t(\n\tselect\n\t\tcommon_server_ip,\n\t\tcount(*) as sessions\n\tfrom\n\t\tsession_record\n\twhere\n\t\tcommon_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}')\n\t\tAND (common_l4_protocol IN ('IPv4_TCP', 'IPv6_TCP'))\n\tgroup by\n\t\tcommon_server_ip \n)\n"
-										}
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Sessions Distribution of UDP",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"exec": [
-											"pm.test(\"Status code is 200\", function () {",
-											"    pm.response.to.have.status(200);",
-											"});"
-										],
-										"type": "text/javascript"
-									}
-								}
-							],
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"method": "GET",
-								"header": [],
-								"body": {
-									"mode": "formdata",
-									"formdata": []
-								},
-								"url": {
-									"raw": "http://{{qgw_ip}}:{{qgw_port}}/?query=select\n    round(QUANTILE(sessions,0.9999),2) as p9999, \n\t round(QUANTILE(sessions,0.999),2) as p999,\n\tround(QUANTILE(sessions,0.996),2) as p996,\n\tround(QUANTILE(sessions,0.995),2) as p995,\n\tround(QUANTILE(sessions,0.99),2) as p99,\n\tround(QUANTILE(sessions,0.98),2) as p98,\n\tround(QUANTILE(sessions,0.96),2) as p96,\n\tround(QUANTILE(sessions,0.95),2) as p95,\n\tround(QUANTILE(sessions,0.92),2) as p92,\n\tround(QUANTILE(sessions,0.90),2) as p90,\n\tround(QUANTILE(sessions,0.89),2) as p89,\n\tround(QUANTILE(sessions,0.88),2) as p88,\n\tround(median(sessions),2) as p50\nfrom\n\t(\n\tselect\n\t\tcommon_server_ip,\n\t\tcount(*) as sessions\n\tfrom\n\t\tsession_record\n\twhere\n\t\tcommon_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}')\n\t\tand common_l4_protocol in ('IPv4_UDP', 'IPv6_UDP')\n\t\tand common_server_port in (53,443)\n\tgroup by\n\t\tcommon_server_ip \n)\n",
-									"protocol": "http",
-									"host": [
-										"{{qgw_ip}}"
-									],
-									"port": "{{qgw_port}}",
-									"path": [
-										""
-									],
-									"query": [
-										{
-											"key": "option",
-											"value": "long-term",
-											"disabled": true
-										},
-										{
-											"key": "resultId",
-											"value": "129494",
-											"disabled": true
-										},
-										{
-											"key": "query",
-											"value": "select\n    round(QUANTILE(sessions,0.9999),2) as p9999, \n\t round(QUANTILE(sessions,0.999),2) as p999,\n\tround(QUANTILE(sessions,0.996),2) as p996,\n\tround(QUANTILE(sessions,0.995),2) as p995,\n\tround(QUANTILE(sessions,0.99),2) as p99,\n\tround(QUANTILE(sessions,0.98),2) as p98,\n\tround(QUANTILE(sessions,0.96),2) as p96,\n\tround(QUANTILE(sessions,0.95),2) as p95,\n\tround(QUANTILE(sessions,0.92),2) as p92,\n\tround(QUANTILE(sessions,0.90),2) as p90,\n\tround(QUANTILE(sessions,0.89),2) as p89,\n\tround(QUANTILE(sessions,0.88),2) as p88,\n\tround(median(sessions),2) as p50\nfrom\n\t(\n\tselect\n\t\tcommon_server_ip,\n\t\tcount(*) as sessions\n\tfrom\n\t\tsession_record\n\twhere\n\t\tcommon_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}')\n\t\tand common_l4_protocol in ('IPv4_UDP', 'IPv6_UDP')\n\t\tand common_server_port in (53,443)\n\tgroup by\n\t\tcommon_server_ip \n)\n"
-										}
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Clients Distribution of TCP",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"exec": [
-											"pm.test(\"Status code is 200\", function () {",
-											"    pm.response.to.have.status(200);",
-											"});"
-										],
-										"type": "text/javascript"
-									}
-								}
-							],
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"method": "GET",
-								"header": [],
-								"body": {
-									"mode": "formdata",
-									"formdata": []
-								},
-								"url": {
-									"raw": "http://{{qgw_ip}}:{{qgw_port}}/?query=select\n    round(QUANTILE(client_ips,0.9999),2) as p9999, \n\t round(QUANTILE(client_ips,0.999),2) as p999,\n\tround(QUANTILE(client_ips,0.996),2) as p996,\n\tround(QUANTILE(client_ips,0.995),2) as p995,\n\tround(QUANTILE(client_ips,0.99),2) as p99,\n\tround(QUANTILE(client_ips,0.98),2) as p98,\n\tround(QUANTILE(client_ips,0.96),2) as p96,\n\tround(QUANTILE(client_ips,0.95),2) as p95,\n\tround(QUANTILE(client_ips,0.92),2) as p92,\n\tround(QUANTILE(client_ips,0.90),2) as p90,\n\tround(QUANTILE(client_ips,0.89),2) as p89,\n\tround(QUANTILE(client_ips,0.88),2) as p88,\n\tround(median(client_ips),2) as p50\nfrom\n\t(\n\tselect\n\t\tcommon_server_ip,\n\t\tuniq(common_client_ip) as client_ips\n\tfrom\n\t\tsession_record\n\twhere\n\t\tcommon_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}')\n\t\tAND (common_l4_protocol IN ('IPv4_TCP', 'IPv6_TCP'))\n\tgroup by\n\t\tcommon_server_ip \n)\n",
-									"protocol": "http",
-									"host": [
-										"{{qgw_ip}}"
-									],
-									"port": "{{qgw_port}}",
-									"path": [
-										""
-									],
-									"query": [
-										{
-											"key": "option",
-											"value": "long-term",
-											"disabled": true
-										},
-										{
-											"key": "resultId",
-											"value": "129494",
-											"disabled": true
-										},
-										{
-											"key": "query",
-											"value": "select\n    round(QUANTILE(client_ips,0.9999),2) as p9999, \n\t round(QUANTILE(client_ips,0.999),2) as p999,\n\tround(QUANTILE(client_ips,0.996),2) as p996,\n\tround(QUANTILE(client_ips,0.995),2) as p995,\n\tround(QUANTILE(client_ips,0.99),2) as p99,\n\tround(QUANTILE(client_ips,0.98),2) as p98,\n\tround(QUANTILE(client_ips,0.96),2) as p96,\n\tround(QUANTILE(client_ips,0.95),2) as p95,\n\tround(QUANTILE(client_ips,0.92),2) as p92,\n\tround(QUANTILE(client_ips,0.90),2) as p90,\n\tround(QUANTILE(client_ips,0.89),2) as p89,\n\tround(QUANTILE(client_ips,0.88),2) as p88,\n\tround(median(client_ips),2) as p50\nfrom\n\t(\n\tselect\n\t\tcommon_server_ip,\n\t\tuniq(common_client_ip) as client_ips\n\tfrom\n\t\tsession_record\n\twhere\n\t\tcommon_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}')\n\t\tAND (common_l4_protocol IN ('IPv4_TCP', 'IPv6_TCP'))\n\tgroup by\n\t\tcommon_server_ip \n)\n"
-										}
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Clients Distribution of UDP",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"exec": [
-											"pm.test(\"Status code is 200\", function () {",
-											"    pm.response.to.have.status(200);",
-											"});"
-										],
-										"type": "text/javascript"
-									}
-								}
-							],
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"method": "GET",
-								"header": [],
-								"body": {
-									"mode": "formdata",
-									"formdata": []
-								},
-								"url": {
-									"raw": "http://{{qgw_ip}}:{{qgw_port}}/?query=select\n    round(QUANTILE(client_ips,0.9999),2) as p9999, \n\t round(QUANTILE(client_ips,0.999),2) as p999,\n\tround(QUANTILE(client_ips,0.996),2) as p996,\n\tround(QUANTILE(client_ips,0.995),2) as p995,\n\tround(QUANTILE(client_ips,0.99),2) as p99,\n\tround(QUANTILE(client_ips,0.98),2) as p98,\n\tround(QUANTILE(client_ips,0.96),2) as p96,\n\tround(QUANTILE(client_ips,0.95),2) as p95,\n\tround(QUANTILE(client_ips,0.92),2) as p92,\n\tround(QUANTILE(client_ips,0.90),2) as p90,\n\tround(QUANTILE(client_ips,0.89),2) as p89,\n\tround(QUANTILE(client_ips,0.88),2) as p88,\n\tround(median(client_ips),2) as p50\nfrom\n\t(\n\tselect\n\t\tcommon_server_ip,\n\t\tuniq(common_client_ip) as client_ips\n\tfrom\n\t\tsession_record\n\twhere\n\t\tcommon_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}')\n\t\tand common_l4_protocol in ('IPv4_UDP', 'IPv6_UDP')\t\n\tgroup by\n\t\tcommon_server_ip \n)\n",
-									"protocol": "http",
-									"host": [
-										"{{qgw_ip}}"
-									],
-									"port": "{{qgw_port}}",
-									"path": [
-										""
-									],
-									"query": [
-										{
-											"key": "option",
-											"value": "long-term",
-											"disabled": true
-										},
-										{
-											"key": "resultId",
-											"value": "129494",
-											"disabled": true
-										},
-										{
-											"key": "query",
-											"value": "select\n    round(QUANTILE(client_ips,0.9999),2) as p9999, \n\t round(QUANTILE(client_ips,0.999),2) as p999,\n\tround(QUANTILE(client_ips,0.996),2) as p996,\n\tround(QUANTILE(client_ips,0.995),2) as p995,\n\tround(QUANTILE(client_ips,0.99),2) as p99,\n\tround(QUANTILE(client_ips,0.98),2) as p98,\n\tround(QUANTILE(client_ips,0.96),2) as p96,\n\tround(QUANTILE(client_ips,0.95),2) as p95,\n\tround(QUANTILE(client_ips,0.92),2) as p92,\n\tround(QUANTILE(client_ips,0.90),2) as p90,\n\tround(QUANTILE(client_ips,0.89),2) as p89,\n\tround(QUANTILE(client_ips,0.88),2) as p88,\n\tround(median(client_ips),2) as p50\nfrom\n\t(\n\tselect\n\t\tcommon_server_ip,\n\t\tuniq(common_client_ip) as client_ips\n\tfrom\n\t\tsession_record\n\twhere\n\t\tcommon_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}')\n\t\tand common_l4_protocol in ('IPv4_UDP', 'IPv6_UDP')\t\n\tgroup by\n\t\tcommon_server_ip \n)\n"
-										}
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "TopK Server of TCP by Sessions",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"exec": [
-											"pm.test(\"Status code is 200\", function () {",
-											"    pm.response.to.have.status(200);",
-											"});"
-										],
-										"type": "text/javascript"
-									}
-								}
-							],
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"method": "GET",
-								"header": [],
-								"body": {
-									"mode": "formdata",
-									"formdata": []
-								},
-								"url": {
-									"raw": "http://{{qgw_ip}}:{{qgw_port}}/?query=select\n\tsum(sessions) sessions,\n\tcount(*) as server_ips,\n\t(\n\t\tselect\n\t\t\tcount(*)\n\t\tfrom\n\t\t\tsession_record\n\t\twhere\n\t\t   common_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}')\n\t\t    AND (common_l4_protocol IN ('IPv4_TCP', 'IPv6_TCP'))\n\t) as total_sessions,\n\tround(sessions / total_sessions, 6) as percent_sessions_to_total\nfrom\n\t(\n\tSELECT\n\t\tcommon_server_ip,\n\t\tcount(*) AS sessions\n\tFROM\n\t\tsession_record\n\tWHERE\n\t    common_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}')\n\t    AND (common_l4_protocol IN ('IPv4_TCP', 'IPv6_TCP'))\n\t\tGROUP BY common_server_ip\n\t\torder by sessions desc limit 100\n )",
-									"protocol": "http",
-									"host": [
-										"{{qgw_ip}}"
-									],
-									"port": "{{qgw_port}}",
-									"path": [
-										""
-									],
-									"query": [
-										{
-											"key": "option",
-											"value": "long-term",
-											"disabled": true
-										},
-										{
-											"key": "resultId",
-											"value": "129494",
-											"disabled": true
-										},
-										{
-											"key": "query",
-											"value": "select\n\tsum(sessions) sessions,\n\tcount(*) as server_ips,\n\t(\n\t\tselect\n\t\t\tcount(*)\n\t\tfrom\n\t\t\tsession_record\n\t\twhere\n\t\t   common_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}')\n\t\t    AND (common_l4_protocol IN ('IPv4_TCP', 'IPv6_TCP'))\n\t) as total_sessions,\n\tround(sessions / total_sessions, 6) as percent_sessions_to_total\nfrom\n\t(\n\tSELECT\n\t\tcommon_server_ip,\n\t\tcount(*) AS sessions\n\tFROM\n\t\tsession_record\n\tWHERE\n\t    common_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}')\n\t    AND (common_l4_protocol IN ('IPv4_TCP', 'IPv6_TCP'))\n\t\tGROUP BY common_server_ip\n\t\torder by sessions desc limit 100\n )"
-										}
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "TopK Server of UDP by Sessions",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"exec": [
-											"pm.test(\"Status code is 200\", function () {",
-											"    pm.response.to.have.status(200);",
-											"});"
-										],
-										"type": "text/javascript"
-									}
-								}
-							],
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"method": "GET",
-								"header": [],
-								"body": {
-									"mode": "formdata",
-									"formdata": []
-								},
-								"url": {
-									"raw": "http://{{qgw_ip}}:{{qgw_port}}/?query=select\n\tsum(sessions) sessions,\n\tcount(*) as server_ips,\n\t(\n\t\tselect\n\t\t\tcount(*)\n\t\tfrom\n\t\t\tsession_record\n\t\twhere\n\t\t    common_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}')\n\t\t    AND (common_l4_protocol IN ('IPv4_UDP', 'IPv6_UDP'))\n\t) as total_sessions,\n\tround(sessions / total_sessions, 6) as percent_sessions_to_total\nfrom\n\t(\n\tSELECT\n\t\tcommon_server_ip,\n\t\tcount(*) AS sessions\n\tFROM\n\t\tsession_record\n\tWHERE\n\t    common_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}')\n\t    AND (common_l4_protocol IN ('IPv4_UDP', 'IPv6_UDP'))\n\t\tGROUP BY common_server_ip\n\t\torder by sessions desc limit 100\n )",
-									"protocol": "http",
-									"host": [
-										"{{qgw_ip}}"
-									],
-									"port": "{{qgw_port}}",
-									"path": [
-										""
-									],
-									"query": [
-										{
-											"key": "option",
-											"value": "long-term",
-											"disabled": true
-										},
-										{
-											"key": "resultId",
-											"value": "129494",
-											"disabled": true
-										},
-										{
-											"key": "query",
-											"value": "select\n\tsum(sessions) sessions,\n\tcount(*) as server_ips,\n\t(\n\t\tselect\n\t\t\tcount(*)\n\t\tfrom\n\t\t\tsession_record\n\t\twhere\n\t\t    common_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}')\n\t\t    AND (common_l4_protocol IN ('IPv4_UDP', 'IPv6_UDP'))\n\t) as total_sessions,\n\tround(sessions / total_sessions, 6) as percent_sessions_to_total\nfrom\n\t(\n\tSELECT\n\t\tcommon_server_ip,\n\t\tcount(*) AS sessions\n\tFROM\n\t\tsession_record\n\tWHERE\n\t    common_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}')\n\t    AND (common_l4_protocol IN ('IPv4_UDP', 'IPv6_UDP'))\n\t\tGROUP BY common_server_ip\n\t\torder by sessions desc limit 100\n )"
-										}
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "TopK Server of TCP by Bytes",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"exec": [
-											"pm.test(\"Status code is 200\", function () {",
-											"    pm.response.to.have.status(200);",
-											"});"
-										],
-										"type": "text/javascript"
-									}
-								}
-							],
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"method": "GET",
-								"header": [],
-								"body": {
-									"mode": "formdata",
-									"formdata": []
-								},
-								"url": {
-									"raw": "http://{{qgw_ip}}:{{qgw_port}}/?query=select\n\tsum(bytes) as bytes,\n\tcount(*) as server_ips,\n\t(\n\t\tselect\n\t\t\tsum(common_c2s_byte_num+common_s2c_byte_num) as bytes\n\t\tfrom\n\t\t\tsession_record\n\t\twhere\n\t        common_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}')\n\t\t    AND (common_l4_protocol IN ('IPv4_TCP', 'IPv6_TCP'))\n\t) as total_bytes,\n\tround(bytes / total_bytes, 6) as percent_bytes_to_total\nfrom\n\t(\n\tSELECT\n\t\tcommon_server_ip,\n\t\tsum(common_c2s_byte_num+common_s2c_byte_num) as bytes\n\tFROM\n\t\tsession_record\n\tWHERE\n\t\t    common_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}')\n\t\t    AND (common_l4_protocol IN ('IPv4_TCP', 'IPv6_TCP'))\n\t\tGROUP BY common_server_ip\n\t\torder by bytes desc limit 100\n   )\n",
-									"protocol": "http",
-									"host": [
-										"{{qgw_ip}}"
-									],
-									"port": "{{qgw_port}}",
-									"path": [
-										""
-									],
-									"query": [
-										{
-											"key": "option",
-											"value": "long-term",
-											"disabled": true
-										},
-										{
-											"key": "resultId",
-											"value": "129494",
-											"disabled": true
-										},
-										{
-											"key": "query",
-											"value": "select\n\tsum(bytes) as bytes,\n\tcount(*) as server_ips,\n\t(\n\t\tselect\n\t\t\tsum(common_c2s_byte_num+common_s2c_byte_num) as bytes\n\t\tfrom\n\t\t\tsession_record\n\t\twhere\n\t        common_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}')\n\t\t    AND (common_l4_protocol IN ('IPv4_TCP', 'IPv6_TCP'))\n\t) as total_bytes,\n\tround(bytes / total_bytes, 6) as percent_bytes_to_total\nfrom\n\t(\n\tSELECT\n\t\tcommon_server_ip,\n\t\tsum(common_c2s_byte_num+common_s2c_byte_num) as bytes\n\tFROM\n\t\tsession_record\n\tWHERE\n\t\t    common_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}')\n\t\t    AND (common_l4_protocol IN ('IPv4_TCP', 'IPv6_TCP'))\n\t\tGROUP BY common_server_ip\n\t\torder by bytes desc limit 100\n   )\n"
-										}
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "TopK  Server of UDP by Bytes",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"exec": [
-											"pm.test(\"Status code is 200\", function () {",
-											"    pm.response.to.have.status(200);",
-											"});"
-										],
-										"type": "text/javascript"
-									}
-								}
-							],
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"method": "GET",
-								"header": [],
-								"body": {
-									"mode": "formdata",
-									"formdata": []
-								},
-								"url": {
-									"raw": "http://{{qgw_ip}}:{{qgw_port}}/?query=select\n\tsum(bytes) as bytes,\n\tcount(*) as server_ips,\n\t(\n\t\tselect\n\t\t\tsum(common_c2s_byte_num+common_s2c_byte_num) as bytes\n\t\tfrom\n\t\t\tsession_record\n\t\twhere\n\t        common_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}')\n\t\t    AND (common_l4_protocol IN ('IPv4_UDP', 'IPv6_UDP'))\n\t) as total_bytes,\n\tround(bytes / total_bytes, 6) as percent_bytes_to_total\nfrom\n\t(\n\tSELECT\n\t\tcommon_server_ip,\n\t\tsum(common_c2s_byte_num+common_s2c_byte_num) as bytes\n\tFROM\n\t\tsession_record\n\tWHERE\n\t\t   common_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}')\n\t\t    AND (common_l4_protocol IN ('IPv4_UDP', 'IPv6_UDP'))\n\t\tGROUP BY common_server_ip\n\t\torder by bytes desc limit 100\n   )\n",
-									"protocol": "http",
-									"host": [
-										"{{qgw_ip}}"
-									],
-									"port": "{{qgw_port}}",
-									"path": [
-										""
-									],
-									"query": [
-										{
-											"key": "option",
-											"value": "long-term",
-											"disabled": true
-										},
-										{
-											"key": "resultId",
-											"value": "129494",
-											"disabled": true
-										},
-										{
-											"key": "query",
-											"value": "select\n\tsum(bytes) as bytes,\n\tcount(*) as server_ips,\n\t(\n\t\tselect\n\t\t\tsum(common_c2s_byte_num+common_s2c_byte_num) as bytes\n\t\tfrom\n\t\t\tsession_record\n\t\twhere\n\t        common_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}')\n\t\t    AND (common_l4_protocol IN ('IPv4_UDP', 'IPv6_UDP'))\n\t) as total_bytes,\n\tround(bytes / total_bytes, 6) as percent_bytes_to_total\nfrom\n\t(\n\tSELECT\n\t\tcommon_server_ip,\n\t\tsum(common_c2s_byte_num+common_s2c_byte_num) as bytes\n\tFROM\n\t\tsession_record\n\tWHERE\n\t\t   common_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}')\n\t\t    AND (common_l4_protocol IN ('IPv4_UDP', 'IPv6_UDP'))\n\t\tGROUP BY common_server_ip\n\t\torder by bytes desc limit 100\n   )\n"
-										}
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "TopK Server of TCP by Clients",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"exec": [
-											"pm.test(\"Status code is 200\", function () {",
-											"    pm.response.to.have.status(200);",
-											"});"
-										],
-										"type": "text/javascript"
-									}
-								}
-							],
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"method": "GET",
-								"header": [],
-								"body": {
-									"mode": "formdata",
-									"formdata": []
-								},
-								"url": {
-									"raw": "http://{{qgw_ip}}:{{qgw_port}}/?query=select \n\t\tuniq(common_client_ip) as client_ips,\n\t\tcount(*) as sessions,\n\t     (\n\t\t  select uniq(common_client_ip) as total_client_ips from session_record where common_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}') AND (common_l4_protocol IN ('IPv4_TCP', 'IPv6_TCP'))\n\t\t  ) as total_client_ips,\n\t\tround(client_ips / total_client_ips,6) as percent_client_ips_to_total,\n\t\t (\n\t\t\tselect count(*) as total_sessions from session_record where common_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}') AND (common_l4_protocol IN ('IPv4_TCP', 'IPv6_TCP'))\n\t\t) as total_sessions,\n\t\tround(sessions / total_sessions,6) as percent_sessions_to_total,\n\t\tsum(common_c2s_byte_num + common_s2c_byte_num) as bytes,\n\t\t (\n\t\t\tselect sum(common_c2s_byte_num + common_s2c_byte_num) as total_bytes from session_record where common_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}') AND (common_l4_protocol IN ('IPv4_TCP', 'IPv6_TCP'))\n\t\t) as total_bytes,\n\t\tround(bytes / total_bytes,6) as percent_bytes_to_total\n\tFROM\n\t\tsession_record\n\tWHERE\n\t\tcommon_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}') AND (common_l4_protocol IN ('IPv4_TCP', 'IPv6_TCP'))\n\t\tand common_server_ip  in (\n\t\t\tSELECT common_server_ip FROM session_record as cc\n\t\t\tWHERE\n\t\t\tcommon_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}')\n\t\t\tAND (common_l4_protocol IN ('IPv4_TCP', 'IPv6_TCP'))\n\t\t\tGROUP BY\n\t\t\t\tcommon_server_ip\n\t\t\torder by uniq(common_client_ip) desc limit 10\n\t\t\n\t)\n",
-									"protocol": "http",
-									"host": [
-										"{{qgw_ip}}"
-									],
-									"port": "{{qgw_port}}",
-									"path": [
-										""
-									],
-									"query": [
-										{
-											"key": "option",
-											"value": "long-term",
-											"disabled": true
-										},
-										{
-											"key": "resultId",
-											"value": "129494",
-											"disabled": true
-										},
-										{
-											"key": "query",
-											"value": "select \n\t\tuniq(common_client_ip) as client_ips,\n\t\tcount(*) as sessions,\n\t     (\n\t\t  select uniq(common_client_ip) as total_client_ips from session_record where common_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}') AND (common_l4_protocol IN ('IPv4_TCP', 'IPv6_TCP'))\n\t\t  ) as total_client_ips,\n\t\tround(client_ips / total_client_ips,6) as percent_client_ips_to_total,\n\t\t (\n\t\t\tselect count(*) as total_sessions from session_record where common_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}') AND (common_l4_protocol IN ('IPv4_TCP', 'IPv6_TCP'))\n\t\t) as total_sessions,\n\t\tround(sessions / total_sessions,6) as percent_sessions_to_total,\n\t\tsum(common_c2s_byte_num + common_s2c_byte_num) as bytes,\n\t\t (\n\t\t\tselect sum(common_c2s_byte_num + common_s2c_byte_num) as total_bytes from session_record where common_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}') AND (common_l4_protocol IN ('IPv4_TCP', 'IPv6_TCP'))\n\t\t) as total_bytes,\n\t\tround(bytes / total_bytes,6) as percent_bytes_to_total\n\tFROM\n\t\tsession_record\n\tWHERE\n\t\tcommon_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}') AND (common_l4_protocol IN ('IPv4_TCP', 'IPv6_TCP'))\n\t\tand common_server_ip  in (\n\t\t\tSELECT common_server_ip FROM session_record as cc\n\t\t\tWHERE\n\t\t\tcommon_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}')\n\t\t\tAND (common_l4_protocol IN ('IPv4_TCP', 'IPv6_TCP'))\n\t\t\tGROUP BY\n\t\t\t\tcommon_server_ip\n\t\t\torder by uniq(common_client_ip) desc limit 10\n\t\t\n\t)\n"
-										}
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "TopK Server of UDP by Clients",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"exec": [
-											"pm.test(\"Status code is 200\", function () {",
-											"    pm.response.to.have.status(200);",
-											"});"
-										],
-										"type": "text/javascript"
-									}
-								}
-							],
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"method": "GET",
-								"header": [],
-								"body": {
-									"mode": "formdata",
-									"formdata": []
-								},
-								"url": {
-									"raw": "http://{{qgw_ip}}:{{qgw_port}}/?query=select \n\t\tuniq(common_client_ip) as client_ips,\n\t\tcount(*) as sessions,\n\t     (\n\t\t  select uniq(common_client_ip) as total_client_ips from session_record where common_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}')\tAND (common_l4_protocol IN ('IPv4_UDP', 'IPv6_UDP'))\n\t\t  ) as total_client_ips,\n\t\tround(client_ips / total_client_ips,6) as percent_client_ips_to_total,\n\t\t (\n\t\t\tselect count(*) as total_sessions from session_record where common_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}')  AND (common_l4_protocol IN ('IPv4_UDP', 'IPv6_UDP'))\n\t\t) as total_sessions,\n\t\tround(sessions / total_sessions,6) as percent_sessions_to_total,\n\t\tsum(common_c2s_byte_num + common_s2c_byte_num) as bytes,\n\t\t (\n\t\t\tselect sum(common_c2s_byte_num + common_s2c_byte_num) as total_bytes from session_record where common_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}') AND (common_l4_protocol IN ('IPv4_UDP', 'IPv6_UDP'))\n\t\t) as total_bytes,\n\t\tround(bytes / total_bytes,6) as percent_bytes_to_total\n\tFROM\n\t\tsession_record\n\tWHERE\n\t\tcommon_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}')\n\t\tAND (common_l4_protocol IN ('IPv4_UDP', 'IPv6_UDP'))\n\t\tand common_server_ip  in (\n\t\t\tSELECT common_server_ip FROM session_record as cc\n\t\t\tWHERE\n\t\t\tcommon_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}')\n\t\t\tAND (common_l4_protocol IN ('IPv4_UDP', 'IPv6_UDP'))\n\t\t\tGROUP BY\n\t\t\t\tcommon_server_ip\n\t\t\torder by uniq(common_client_ip) desc limit 10\n\t\t\n\t)",
-									"protocol": "http",
-									"host": [
-										"{{qgw_ip}}"
-									],
-									"port": "{{qgw_port}}",
-									"path": [
-										""
-									],
-									"query": [
-										{
-											"key": "option",
-											"value": "long-term",
-											"disabled": true
-										},
-										{
-											"key": "resultId",
-											"value": "129494",
-											"disabled": true
-										},
-										{
-											"key": "query",
-											"value": "select \n\t\tuniq(common_client_ip) as client_ips,\n\t\tcount(*) as sessions,\n\t     (\n\t\t  select uniq(common_client_ip) as total_client_ips from session_record where common_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}')\tAND (common_l4_protocol IN ('IPv4_UDP', 'IPv6_UDP'))\n\t\t  ) as total_client_ips,\n\t\tround(client_ips / total_client_ips,6) as percent_client_ips_to_total,\n\t\t (\n\t\t\tselect count(*) as total_sessions from session_record where common_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}')  AND (common_l4_protocol IN ('IPv4_UDP', 'IPv6_UDP'))\n\t\t) as total_sessions,\n\t\tround(sessions / total_sessions,6) as percent_sessions_to_total,\n\t\tsum(common_c2s_byte_num + common_s2c_byte_num) as bytes,\n\t\t (\n\t\t\tselect sum(common_c2s_byte_num + common_s2c_byte_num) as total_bytes from session_record where common_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}') AND (common_l4_protocol IN ('IPv4_UDP', 'IPv6_UDP'))\n\t\t) as total_bytes,\n\t\tround(bytes / total_bytes,6) as percent_bytes_to_total\n\tFROM\n\t\tsession_record\n\tWHERE\n\t\tcommon_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}')\n\t\tAND (common_l4_protocol IN ('IPv4_UDP', 'IPv6_UDP'))\n\t\tand common_server_ip  in (\n\t\t\tSELECT common_server_ip FROM session_record as cc\n\t\t\tWHERE\n\t\t\tcommon_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}')\n\t\t\tAND (common_l4_protocol IN ('IPv4_UDP', 'IPv6_UDP'))\n\t\t\tGROUP BY\n\t\t\t\tcommon_server_ip\n\t\t\torder by uniq(common_client_ip) desc limit 10\n\t\t\n\t)"
-										}
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "TopK SNI  by Sessions",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"exec": [
-											"pm.test(\"Status code is 200\", function () {",
-											"    pm.response.to.have.status(200);",
-											"});"
-										],
-										"type": "text/javascript"
-									}
-								}
-							],
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"method": "GET",
-								"header": [],
-								"body": {
-									"mode": "formdata",
-									"formdata": []
-								},
-								"url": {
-									"raw": "http://{{qgw_ip}}:{{qgw_port}}/?query=select\n\tsum(sessions) sessions,\n\tcount(*) as ssl_snis,\n\t(\n\t\tselect\n\t\t\tcount(*)\n\t\tfrom\n\t\t\tsession_record\n\t\twhere\n\t\t    common_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}')\n\t\t    and notEmpty(ssl_sni)\n\t) as total_sessions,\n\tround(sessions / total_sessions, 6) as percent_sessions_to_total\nfrom\n\t(\n\tSELECT\n\t\tssl_sni,\n\t\tcount(*) AS sessions\n\tFROM\n\t\tsession_record\n\tWHERE\n\t    common_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}')\n\t    and notEmpty(ssl_sni)\n\t\tGROUP BY ssl_sni\n\t\torder by sessions desc limit 100\n )",
-									"protocol": "http",
-									"host": [
-										"{{qgw_ip}}"
-									],
-									"port": "{{qgw_port}}",
-									"path": [
-										""
-									],
-									"query": [
-										{
-											"key": "option",
-											"value": "long-term",
-											"disabled": true
-										},
-										{
-											"key": "resultId",
-											"value": "129494",
-											"disabled": true
-										},
-										{
-											"key": "query",
-											"value": "select\n\tsum(sessions) sessions,\n\tcount(*) as ssl_snis,\n\t(\n\t\tselect\n\t\t\tcount(*)\n\t\tfrom\n\t\t\tsession_record\n\t\twhere\n\t\t    common_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}')\n\t\t    and notEmpty(ssl_sni)\n\t) as total_sessions,\n\tround(sessions / total_sessions, 6) as percent_sessions_to_total\nfrom\n\t(\n\tSELECT\n\t\tssl_sni,\n\t\tcount(*) AS sessions\n\tFROM\n\t\tsession_record\n\tWHERE\n\t    common_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}')\n\t    and notEmpty(ssl_sni)\n\t\tGROUP BY ssl_sni\n\t\torder by sessions desc limit 100\n )"
-										}
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "TopK SNI  by Bytes",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"exec": [
-											"pm.test(\"Status code is 200\", function () {",
-											"    pm.response.to.have.status(200);",
-											"});"
-										],
-										"type": "text/javascript"
-									}
-								}
-							],
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"method": "GET",
-								"header": [],
-								"body": {
-									"mode": "formdata",
-									"formdata": []
-								},
-								"url": {
-									"raw": "http://{{qgw_ip}}:{{qgw_port}}/?query=select\n\tsum(bytes) as bytes,\n\tcount(*) as ssl_snis,\n\t(\n\t\tselect\n\t\t\tsum(common_c2s_byte_num+common_s2c_byte_num) as bytes\n\t\tfrom\n\t\t\tsession_record\n\t\twhere\n\t        common_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}')\n\t\t    and notEmpty(ssl_sni)\n\t) as total_bytes,\n\tround(bytes / total_bytes, 6) as percent_bytes_to_total\nfrom\n\t(\n\tSELECT\n\t\tssl_sni,\n\t\tsum(common_c2s_byte_num+common_s2c_byte_num) as bytes\n\tFROM\n\t\tsession_record\n\tWHERE\n\t\t    common_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}')\n\t\t    and notEmpty(ssl_sni)\n\t\tGROUP BY ssl_sni\n\t\torder by bytes desc limit 100\n   )\n",
-									"protocol": "http",
-									"host": [
-										"{{qgw_ip}}"
-									],
-									"port": "{{qgw_port}}",
-									"path": [
-										""
-									],
-									"query": [
-										{
-											"key": "option",
-											"value": "long-term",
-											"disabled": true
-										},
-										{
-											"key": "resultId",
-											"value": "129494",
-											"disabled": true
-										},
-										{
-											"key": "query",
-											"value": "select\n\tsum(bytes) as bytes,\n\tcount(*) as ssl_snis,\n\t(\n\t\tselect\n\t\t\tsum(common_c2s_byte_num+common_s2c_byte_num) as bytes\n\t\tfrom\n\t\t\tsession_record\n\t\twhere\n\t        common_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}')\n\t\t    and notEmpty(ssl_sni)\n\t) as total_bytes,\n\tround(bytes / total_bytes, 6) as percent_bytes_to_total\nfrom\n\t(\n\tSELECT\n\t\tssl_sni,\n\t\tsum(common_c2s_byte_num+common_s2c_byte_num) as bytes\n\tFROM\n\t\tsession_record\n\tWHERE\n\t\t    common_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}')\n\t\t    and notEmpty(ssl_sni)\n\t\tGROUP BY ssl_sni\n\t\torder by bytes desc limit 100\n   )\n"
-										}
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "URLs Length Distribution",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"exec": [
-											"pm.test(\"Status code is 200\", function () {",
-											"    pm.response.to.have.status(200);",
-											"});"
-										],
-										"type": "text/javascript"
-									}
-								}
-							],
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"method": "GET",
-								"header": [],
-								"body": {
-									"mode": "formdata",
-									"formdata": []
-								},
-								"url": {
-									"raw": "http://{{qgw_ip}}:{{qgw_port}}/?query=select\n    round(max(url_length),2) as max,\n    round(QUANTILE(url_length,0.9999),2) as p9999,\n\tround(QUANTILE(url_length,0.99),2) as p99,\n\tround(QUANTILE(url_length,0.95),2) as p95,\n\tround(QUANTILE(url_length,0.90),2) as p90,\n\tround(median(url_length),2) as p50\nfrom\n\t(\n\tselect\n\t\tlength(http_url) as url_length\n\tfrom\n\t\tsession_record\n\twhere\n\t common_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}')\n\t and common_schema_type='HTTP'\n)",
-									"protocol": "http",
-									"host": [
-										"{{qgw_ip}}"
-									],
-									"port": "{{qgw_port}}",
-									"path": [
-										""
-									],
-									"query": [
-										{
-											"key": "option",
-											"value": "long-term",
-											"disabled": true
-										},
-										{
-											"key": "resultId",
-											"value": "129494",
-											"disabled": true
-										},
-										{
-											"key": "query",
-											"value": "select\n    round(max(url_length),2) as max,\n    round(QUANTILE(url_length,0.9999),2) as p9999,\n\tround(QUANTILE(url_length,0.99),2) as p99,\n\tround(QUANTILE(url_length,0.95),2) as p95,\n\tround(QUANTILE(url_length,0.90),2) as p90,\n\tround(median(url_length),2) as p50\nfrom\n\t(\n\tselect\n\t\tlength(http_url) as url_length\n\tfrom\n\t\tsession_record\n\twhere\n\t common_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}')\n\t and common_schema_type='HTTP'\n)"
-										}
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "SSL SAN Length Distribution",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"exec": [
-											"pm.test(\"Status code is 200\", function () {",
-											"    pm.response.to.have.status(200);",
-											"});"
-										],
-										"type": "text/javascript"
-									}
-								}
-							],
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"method": "GET",
-								"header": [],
-								"body": {
-									"mode": "formdata",
-									"formdata": []
-								},
-								"url": {
-									"raw": "http://{{qgw_ip}}:{{qgw_port}}/?query=select\n    round(max(san_length),2) as max,\n    round(QUANTILE(san_length,0.9999),2) as p9999,\n\tround(QUANTILE(san_length,0.99),2) as p99,\n\tround(QUANTILE(san_length,0.95),2) as p95,\n\tround(QUANTILE(san_length,0.90),2) as p90,\n\tround(median(san_length),2) as p50\nfrom\n\t(\n\tselect\n\t\tlength(ssl_san) as san_length\n\tfrom\n\t\tsession_record\n\twhere\n\t common_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}')\n\t and common_schema_type='SSL'\n)",
-									"protocol": "http",
-									"host": [
-										"{{qgw_ip}}"
-									],
-									"port": "{{qgw_port}}",
-									"path": [
-										""
-									],
-									"query": [
-										{
-											"key": "option",
-											"value": "long-term",
-											"disabled": true
-										},
-										{
-											"key": "resultId",
-											"value": "129494",
-											"disabled": true
-										},
-										{
-											"key": "query",
-											"value": "select\n    round(max(san_length),2) as max,\n    round(QUANTILE(san_length,0.9999),2) as p9999,\n\tround(QUANTILE(san_length,0.99),2) as p99,\n\tround(QUANTILE(san_length,0.95),2) as p95,\n\tround(QUANTILE(san_length,0.90),2) as p90,\n\tround(median(san_length),2) as p50\nfrom\n\t(\n\tselect\n\t\tlength(ssl_san) as san_length\n\tfrom\n\t\tsession_record\n\twhere\n\t common_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}')\n\t and common_schema_type='SSL'\n)"
-										}
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "APP Bitrate per Server IP",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"exec": [
-											"pm.test(\"Status code is 200\", function () {",
-											"    pm.response.to.have.status(200);",
-											"});"
-										],
-										"type": "text/javascript"
-									}
-								}
-							],
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"method": "GET",
-								"header": [],
-								"body": {
-									"mode": "formdata",
-									"formdata": []
-								},
-								"url": {
-									"raw": "http://{{qgw_ip}}:{{qgw_port}}/?query=SELECT\n    common_app_label,\t\n    round(median(traffic_bytes) * 8 / 1000 / 1000 / 300,2) AS  \"Medain Mbits/s\",\n\tround(avg(traffic_bytes) * 8 / 1000 / 1000 / 300,2) AS \"AVG Mbits / s\",\n\tround(QUANTILE(traffic_bytes, 0.95) * 8 / 1000 / 1000 / 300,2)  as \"P95 Mbits / s\"\nFROM\n\t(\n\tSELECT\n\t    common_app_label,\n\t\ttoDateTime(intDiv(toUInt32(toDateTime(toDateTime(common_recv_time))),300) * 300) as stat_time,\n\t\tround(sum(common_c2s_byte_num + common_s2c_byte_num)/ uniq(common_server_ip),2) as traffic_bytes\n\tFROM\n\t\tsession_record as ss\n\tWHERE\n\t\t(common_recv_time >= toDateTime('2022-07-19 00:00:00'))\n\t\tAND (common_recv_time < toDateTime('2022-07-20 00:00:00'))\n\tGROUP BY\n\t\tstat_time, common_app_label\n) group by common_app_label order by \"AVG Mbits / s\" desc",
-									"protocol": "http",
-									"host": [
-										"{{qgw_ip}}"
-									],
-									"port": "{{qgw_port}}",
-									"path": [
-										""
-									],
-									"query": [
-										{
-											"key": "option",
-											"value": "long-term",
-											"disabled": true
-										},
-										{
-											"key": "resultId",
-											"value": "129494",
-											"disabled": true
-										},
-										{
-											"key": "query",
-											"value": "SELECT\n    common_app_label,\t\n    round(median(traffic_bytes) * 8 / 1000 / 1000 / 300,2) AS  \"Medain Mbits/s\",\n\tround(avg(traffic_bytes) * 8 / 1000 / 1000 / 300,2) AS \"AVG Mbits / s\",\n\tround(QUANTILE(traffic_bytes, 0.95) * 8 / 1000 / 1000 / 300,2)  as \"P95 Mbits / s\"\nFROM\n\t(\n\tSELECT\n\t    common_app_label,\n\t\ttoDateTime(intDiv(toUInt32(toDateTime(toDateTime(common_recv_time))),300) * 300) as stat_time,\n\t\tround(sum(common_c2s_byte_num + common_s2c_byte_num)/ uniq(common_server_ip),2) as traffic_bytes\n\tFROM\n\t\tsession_record as ss\n\tWHERE\n\t\t(common_recv_time >= toDateTime('2022-07-19 00:00:00'))\n\t\tAND (common_recv_time < toDateTime('2022-07-20 00:00:00'))\n\tGROUP BY\n\t\tstat_time, common_app_label\n) group by common_app_label order by \"AVG Mbits / s\" desc"
 										}
 									]
 								}
@@ -5146,7 +3553,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n   \"statement\" : \"select sum(sum_in_bytes)*8/15 as avg_in_bits_per_sec, sum(sum_out_bytes)*8/15 as avg_out_bits_per_sec, sum(sum_in_bytes+sum_out_bytes)*8/15 as avg_bits_per_sec, sum(sum_in_bytes)/15 as avg_in_bytes_per_sec, sum(sum_out_bytes)/15 as avg_out_bytes_per_sec, sum(sum_in_bytes+sum_out_bytes)/15 as avg_bytes_per_sec, sum(sum_in_pkts)/15 as avg_in_pkts_per_sec, sum(sum_out_pkts)/15 as avg_out_pkts_per_sec, sum(sum_in_pkts+sum_out_pkts)/15 as avg_pkts_per_sec, sum(sum_sessions)/15 as avg_sessions_per_sec, sum(max_active_sessions) as active_sessions from ( select device_id, vsys_id, sum(in_bytes) as sum_in_bytes, sum(out_bytes) as sum_out_bytes, sum(in_pkts) as sum_in_pkts, sum(out_pkts) as sum_out_pkts, sum(sessions) as sum_sessions, max(active_sessions) as max_active_sessions from traffic_general_stat where __time>=FROM_UNIXTIME(UNIX_TIMESTAMP(now())-30) and __time<FROM_UNIXTIME(UNIX_TIMESTAMP(now())-15) and vsys_id in (1,2,3,4,5,6,7,8) group by device_id, vsys_id )\" ,\n   \"output_mode\":\"json\",\n   \"exec_mode\":\"oneshot\"\n\n}",
+											"raw": "{\n   \"statement\" : \"select sum(sum_in_bytes)*8/15 as avg_in_bits_per_sec, sum(sum_out_bytes)*8/15 as avg_out_bits_per_sec, sum(sum_in_bytes+sum_out_bytes)*8/15 as avg_bits_per_sec, sum(sum_in_bytes)/15 as avg_in_bytes_per_sec, sum(sum_out_bytes)/15 as avg_out_bytes_per_sec, sum(sum_in_bytes+sum_out_bytes)/15 as avg_bytes_per_sec, sum(sum_in_pkts)/15 as avg_in_pkts_per_sec, sum(sum_out_pkts)/15 as avg_out_pkts_per_sec, sum(sum_in_pkts+sum_out_pkts)/15 as avg_pkts_per_sec, sum(sum_sessions)/15 as avg_sessions_per_sec, sum(max_active_sessions) as active_sessions from ( select device_id, vsys_id, sum(in_bytes) as sum_in_bytes, sum(out_bytes) as sum_out_bytes, sum(in_pkts) as sum_in_pkts, sum(out_pkts) as sum_out_pkts, sum(sessions) as sum_sessions, max(active_sessions) as max_active_sessions from traffic_general_stat where __time>=FROM_UNIXTIME(UNIX_TIMESTAMP(now())-30) and __time<FROM_UNIXTIME(UNIX_TIMESTAMP(now())-15) and vsys_id in (1) group by device_id, vsys_id )\" ,\n   \"output_mode\":\"json\",\n   \"exec_mode\":\"oneshot\"\n\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -5869,7 +4276,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n    \"name\": \"application-and-protocol-summary\",\n    \"granularity\": \"PT5M\",\n    \"filter\": \"vsys_id in (1,2,3,4,5)\",\n    \"intervals\": [\"{{start_time}}/{{end_time}}\"],\n    \"exec_mode\" : \"oneshot\"\n     \n}",
+											"raw": "{\n    \"name\": \"application-and-protocol-summary\",\n    \"granularity\": \"PT5M\",\n    \"filter\": \"vsys_id in (1)\",\n    \"intervals\": [\"{{start_time}}/{{end_time}}\"],\n    \"exec_mode\" : \"oneshot\"\n     \n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -6190,7 +4597,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n   \"statement\" : \"select client_ip as client_ip, sum(sessions) as sessions, sum(in_bytes) as in_bytes, sum(out_bytes) as out_bytes, sum(in_bytes + out_bytes) as bytes, sum(in_pkts) as in_packets , sum(out_pkts) as out_packets, sum(in_pkts + out_pkts) as packets from top_client_ips where __time >= '{{start_time}}' and __time < '{{end_time}}' and vsys_id in (1,2,3,4,5,6,7,8) and metric = 'sessions' group by client_ip order by sessions desc limit 10\" ,\n   \"output_mode\":\"json\",\n   \"exec_mode\":\"oneshot\"\n\n}",
+											"raw": "{\n   \"statement\" : \"select client_ip as client_ip, sum(sessions) as sessions, sum(in_bytes) as in_bytes, sum(out_bytes) as out_bytes, sum(in_bytes + out_bytes) as bytes, sum(in_pkts) as in_packets , sum(out_pkts) as out_packets, sum(in_pkts + out_pkts) as packets from top_client_ips where __time >= '{{start_time}}' and __time < '{{end_time}}' and vsys_id in (1) and metric = 'sessions' group by client_ip order by sessions desc limit 10\" ,\n   \"output_mode\":\"json\",\n   \"exec_mode\":\"oneshot\"\n\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -9545,7 +7952,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\r\n    \"name\": \"ip-learning-fqdn-relate-ips\",\r\n    \"filter\" : \"vsys_id in (1,2,3,4,5) AND protocol in ('SSL', 'HTTP','DNS') AND depth=1  and uniq_cip > 12 AND fqdn_name in ('google.com', 'itunes.apple.com') \",\r\n    \"intervals\":[\"{{start_time}}/{{end_time}}\"],\r\n    \"limit\": 100,\r\n    \"exec_mode\": \"oneshot\"\r\n}",
+											"raw": "{\r\n    \"name\": \"ip-learning-fqdn-relate-ip\",\r\n    \"filter\" : \"vsys_id in (1,2,3,4,5) AND protocol in ('SSL', 'HTTP','DNS') AND depth=1 and uniq_cip > 12 AND fqdn_name in('google.com', 'itunes.apple.com')\",\r\n    \"intervals\":[\"{{start_time}}/{{end_time}}\"],\r\n    \"limit\": 100,\r\n    \"exec_mode\": \"oneshot\"\r\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -9621,7 +8028,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n   \"statement\": \"select 'General Metrics' as type, min(__time) as first_time, max(__time) as last_time from traffic_general_stat where __time >= '{{start_time}}' and __time < '{{end_time}}' and vsys_id in (1,2,3,4,5,6,7,8) union all select 'Security Policy Rule Hits' as type, min(__time) as first_time, max(__time) as last_time from security_rule_hits where __time >= '{{start_time}}' and __time < '{{end_time}}' and vsys_id in (1,2,3,4,5,6,7,8) union all select 'Proxy Policy Rule Hits' as type, min(__time) as first_time, max(__time) as last_time from proxy_rule_hits where __time >= '{{start_time}}' and __time < '{{end_time}}' and vsys_id in (1,2,3,4,5,6,7,8) union all select 'Traffic Shaping Rule Hits' as type, min(__time) as first_time, max(__time) as last_time from traffic_shaping_rule_hits where __time >= '{{start_time}}' and __time < '{{end_time}}' and vsys_id in (1,2,3,4,5,6,7,8) union all select 'Service Chaining Rule Hits' as type, min(__time) as first_time, max(__time) as last_time from service_chaining_rule_hits where __time >= '{{start_time}}' and __time < '{{end_time}}' and vsys_id in (1,2,3,4,5,6,7,8) union all select 'Internal IPs' as type, min(__time) as first_time, max(__time) as last_time from top_internal_ips where __time >= '{{start_time}}' and __time < '{{end_time}}' and vsys_id in (1,2,3,4,5,6,7,8) union all select 'External IPs' as type, min(__time) as first_time, max(__time) as last_time from top_external_ips where __time >= '{{start_time}}' and __time < '{{end_time}}' and vsys_id in (1,2,3,4,5,6,7,8) union all select 'Subscriber IDs' as type, min(__time) as first_time, max(__time) as last_time from top_subscribers where __time >= '{{start_time}}' and __time < '{{end_time}}' and vsys_id in (1,2,3,4,5,6,7,8) union all select 'Client IPs' as type, min(__time) as first_time, max(__time) as last_time from top_client_ips union all select 'Server IPs' as type, min(__time) as first_time, max(__time) as last_time from top_server_ips where __time >= '{{start_time}}' and __time < '{{end_time}}' and vsys_id in (1,2,3,4,5,6,7,8) union all select 'Server Domains' as type, min(__time) as first_time, max(__time) as last_time from top_server_domains where __time >= '{{start_time}}' and __time < '{{end_time}}' and vsys_id in (1,2,3,4,5,6,7,8) union all select 'Server FQDNs' as type, min(__time) as first_time, max(__time) as last_time from top_server_fqdns where __time >= '{{start_time}}' and __time < '{{end_time}}' and vsys_id in (1,2,3,4,5,6,7,8) union all select 'Application Protocol Stat' as type, min(__time) as first_time, max(__time) as last_time from application_protocol_stat where __time >= '{{start_time}}' and __time < '{{end_time}}' and vsys_id in (1,2,3,4,5,6,7,8) union all select 'Storage Quota' as type, min(__time) as first_time, max(__time) as last_time from sys_storage_log where __time >= '{{start_time}}' and __time < '{{end_time}}' and vsys_id in (1,2,3,4,5,6,7,8)\" ,\n   \"output_mode\":\"json\",\n   \"exec_mode\":\"oneshot\"\n\n}",
+									"raw": "{\n   \"statement\": \"select 'General Metrics' as type, min(__time) as first_time, max(__time) as last_time from traffic_general_stat where __time >= '{{start_time}}' and __time < '{{end_time}}' and vsys_id in (1,2,3,4,5,6,7,8) union all select 'Security Policy Rule Hits' as type, min(__time) as first_time, max(__time) as last_time from security_rule_hits where __time >= '{{start_time}}' and __time < '{{end_time}}' and vsys_id in (1,2,3,4,5,6,7,8) union all select 'Proxy Policy Rule Hits' as type, min(__time) as first_time, max(__time) as last_time from proxy_rule_hits where __time >= '{{start_time}}' and __time < '{{end_time}}' and vsys_id in (1,2,3,4,5,6,7,8) union all select 'Traffic Shaping Rule Hits' as type, min(__time) as first_time, max(__time) as last_time from traffic_shaping_rule_hits where __time >= '{{start_time}}' and __time < '{{end_time}}' and vsys_id in (1,2,3,4,5,6,7,8) union all select 'Service Chaining Rule Hits' as type, min(__time) as first_time, max(__time) as last_time from service_chaining_rule_hits where __time >= '{{start_time}}' and __time < '{{end_time}}' and vsys_id in (1,2,3,4,5,6,7,8) union all select 'Internal IPs' as type, min(__time) as first_time, max(__time) as last_time from top_internal_ips where __time >= '{{start_time}}' and __time < '{{end_time}}' and vsys_id in (1,2,3,4,5,6,7,8) union all select 'External IPs' as type, min(__time) as first_time, max(__time) as last_time from top_external_ips where __time >= '{{start_time}}' and __time < '{{end_time}}' and vsys_id in (1,2,3,4,5,6,7,8) union all select 'Subscriber IDs' as type, min(__time) as first_time, max(__time) as last_time from top_subscribers where __time >= '{{start_time}}' and __time < '{{end_time}}' and vsys_id in (1,2,3,4,5,6,7,8) union all select 'Client IPs' as type, min(__time) as first_time, max(__time) as last_time from top_client_ips union all select 'Server IPs' as type, min(__time) as first_time, max(__time) as last_time from top_server_ips where __time >= '{{start_time}}' and __time < '{{end_time}}' and vsys_id in (1,2,3,4,5,6,7,8) union all select 'Server Domains' as type, min(__time) as first_time, max(__time) as last_time from top_server_domains where __time >= '{{start_time}}' and __time < '{{end_time}}' and vsys_id in (1,2,3,4,5,6,7,8) union all select 'Server FQDNs' as type, min(__time) as first_time, max(__time) as last_time from top_server_fqdns where __time >= '{{start_time}}' and __time < '{{end_time}}' and vsys_id in (1,2,3,4,5,6,7,8) union all select 'Application Protocol Stat' as type, min(__time) as first_time, max(__time) as last_time from application_protocol_stat where __time >= '{{start_time}}' and __time < '{{end_time}}' and vsys_id in (1,2,3,4,5,6,7,8) union all select 'Storage Quota' as type, min(__time) as first_time, max(__time) as last_time from sys_storage_log where __time >= '{{start_time}}' and __time < '{{end_time}}'\" ,\n   \"output_mode\":\"json\",\n   \"exec_mode\":\"oneshot\"\n\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -9645,7 +8052,7 @@
 							"response": []
 						}
 					],
-					"description": "# Dashboard 业务\n\nDashboard 为预聚合计数操作，接入数据源有四处（KAFKA TOPIC）：\n\n* TRAFFIC-METRICS-LOG ： 功能端5秒输出一次\n* CONNECTION-RECORD-COMPLETE-LOG: 数据平台接收CONNECTION-RECORD-LOG 补全后实时输出。\n* PROXY/SECURITY-EVENT-COMPLETE-LOG: 数据平台接收PROXY/SECURITY 命中策略日志补全后实时输出。\n\n## 流量计数Metrics \n\n**功能端 - Kafka（TRAFFIC-METRICS-LOG 每5秒 ) - Druid** \n\n所有基础Metrics（非内容级别的统计）都为功能端提前预聚合输出到TRAFFIC-METRICS-LOG 中，最终数据平台写入Druid 中，供API查询。具体包含：\n\n* System Overview （Traffic 、New、Live）\n* Policy Hits by Action(Security)\n* Policy Hits by Action (proxy) 、Pinning\n\n## TOPN 计算\n\n**流程1：功能端 - Kafka（原始日志） - 补全 - Druid**  // 统计安全策略与代理策略结果，每1分钟\n\n**流程2：功能端 - Kafka（原始日志） - 补全 -  Druid - 调度任务 - kafka -Druid ** // TOPN 计算，每5分钟\n\n所有内容级别，为数据平台进行实时统计，将指标输出到Druid中，供API进行查询。具体包含：\n\n* Top Hits (security) - 流程1\n\n* Top Hits (proxy) - 流程1\n\n* Endpoints (Active Client/Server/Internal/External , Top Domains, Active Subscriber ID,Top urls) - 流程2\n\n  ",
+					"description": "# Dashboard 业务\n\nDashboard 为预聚合计数操作，接入数据源有四处（KAFKA TOPIC）：\n\n- TRAFFIC-METRICS-LOG ： 功能端5秒输出一次\n- CONNECTION-RECORD-COMPLETE-LOG: 数据平台接收CONNECTION-RECORD-LOG 补全后实时输出。\n- PROXY/SECURITY-EVENT-COMPLETE-LOG: 数据平台接收PROXY/SECURITY 命中策略日志补全后实时输出。\n    \n\n## 流量计数Metrics\n\n**功能端 - Kafka（TRAFFIC-METRICS-LOG 每5秒 ) - Druid**\n\n所有基础Metrics（非内容级别的统计）都为功能端提前预聚合输出到TRAFFIC-METRICS-LOG 中，最终数据平台写入Druid 中，供API查询。具体包含：\n\n- System Overview （Traffic 、New、Live）\n- Policy Hits by Action(Security)\n- Policy Hits by Action (proxy) 、Pinning\n    \n\n## TOPN 计算\n\n**流程1：功能端 - Kafka（原始日志） - 补全 - Druid** // 统计安全策略与代理策略结果，每1分钟\n\n\\*_流程2：功能端 - Kafka（原始日志） - 补全 - Druid - 调度任务 - kafka -Druid \\*_ // TOPN 计算，每5分钟\n\n所有内容级别，为数据平台进行实时统计，将指标输出到Druid中，供API进行查询。具体包含：\n\n- Top Hits (security) - 流程1\n- Top Hits (proxy) - 流程1\n- Endpoints (Active Client/Server/Internal/External , Top Domains, Active Subscriber ID,Top urls) - 流程2",
 					"event": [
 						{
 							"listen": "prerequest",
@@ -9818,6 +8225,63 @@
 						"body": {
 							"mode": "raw",
 							"raw": "{\n   \"statement\" : \"describe session_record\" ,\n   \"output_mode\":\"json\",\n   \"exec_mode\": \"oneshot\"\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{qgw_ip}}:{{qgw_port}}/v1/query/sql",
+							"protocol": "http",
+							"host": [
+								"{{qgw_ip}}"
+							],
+							"port": "{{qgw_port}}",
+							"path": [
+								"v1",
+								"query",
+								"sql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create SQL Dry Run Query",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);    ",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"followOriginalHttpMethod": false,
+						"followRedirects": false
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"statement\" : \"select FROM_UNIXTIME(TIME_FLOOR_WITH_FILL(recv_time,'PT30S')) as stat_time, round(sum(sent_bytes)*8/30/1000/1000,2) as Bytes_Sent_Mbps, round(sum(received_bytes)*8/30/1000/1000,2) as Bytes_Received_Mbps, round(sum(sent_bytes + received_bytes)*8/30/1000/1000,2) as Mbps, round(sum(sent_pkts + received_pkts)/30/1000,2) as Kpps, round(count(1)/30/1000,2) as \\\"Ksessions/s\\\" from session_record where recv_time >= UNIX_TIMESTAMP('{{start_time}}') and recv_time <UNIX_TIMESTAMP('{{end_time}}') group by stat_time order by stat_time asc\" ,\n   \"output_mode\":\"json\",\n   \"is_dry_run\": 1,\n   \"exec_mode\": \"oneshot\"\n\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -10107,7 +8571,7 @@
 							}
 						],
 						"url": {
-							"raw": "http://{{qgw_ip}}:{{qgw_port}}/v1/query/job/{{normal_job_id}}?/result?is_saved_query=0",
+							"raw": "http://{{qgw_ip}}:{{qgw_port}}/v1/query/job/{{normal_job_id}}/result?is_saved_query=0",
 							"protocol": "http",
 							"host": [
 								"{{qgw_ip}}"
@@ -10117,11 +8581,12 @@
 								"v1",
 								"query",
 								"job",
-								"{{normal_job_id}}"
+								"{{normal_job_id}}",
+								"result"
 							],
 							"query": [
 								{
-									"key": "/result?is_saved_query",
+									"key": "is_saved_query",
 									"value": "0"
 								}
 							]
@@ -11005,6 +9470,1232 @@
 										"v1",
 										"query",
 										"sql"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Cardinality Estimation",
+					"item": [
+						{
+							"name": "Log Summary",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"followOriginalHttpMethod": false,
+								"followRedirects": false
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n   \"statement\" : \"select round(tcp_logs / logs,2) as \\\"TCP Percentage\\\", round(udp_logs / logs,2) as \\\"UDP Percentage\\\", round(out_bytes / bytes,2) as \\\"Outgoing Percentage\\\", round(in_bytes / bytes,2) as \\\"Incoming Percentage\\\", tcp_logs as \\\"TCP Logs\\\", udp_logs as \\\"UDP Logs\\\", logs as \\\"Logs\\\", out_bytes as \\\"Outgoing Bytes\\\", in_bytes as \\\"Incoming Bytes\\\", bytes as \\\"Bytes\\\" from ( select sum(if(arrayElement(splitByString('.', decoded_path), length(splitByString('.', decoded_path))) in('TCP'), 1, 0)) as tcp_logs, sum(if(arrayElement(splitByString('.', decoded_path), length(splitByString('.', decoded_path))) in('UDP'), 1, 0)) as udp_logs, sum(if(bitAnd(flags, 8) = 8, sent_bytes, received_bytes))as out_bytes, sum(if(bitAnd(flags, 8) = 8, received_bytes, sent_bytes)) as in_bytes, count(*) as logs, sum(sent_bytes + received_bytes) as bytes from session_record where recv_time >= UNIX_TIMESTAMP('{{start_time}}') and recv_time <UNIX_TIMESTAMP('{{end_time}}') )\" ,\n   \"output_mode\":\"json\",\n   \"exec_mode\":\"oneshot\"\n\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{qgw_ip}}:{{qgw_port}}/v1/query/sql",
+									"protocol": "http",
+									"host": [
+										"{{qgw_ip}}"
+									],
+									"port": "{{qgw_port}}",
+									"path": [
+										"v1",
+										"query",
+										"sql"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Decoded AS",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"followOriginalHttpMethod": false,
+								"followRedirects": false
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n   \"statement\" : \"select round(base_logs / total_logs, 2) as \\\"BASE Percentage\\\", round(http_logs / total_logs, 2) as \\\"HTTP Percentage\\\", round(ssl_logs / total_logs, 2) as \\\"SSL Percentage\\\", round(dns_logs / total_logs, 2) as \\\"DNS Percentage\\\", round(mail_logs / total_logs, 2) as \\\"MAIL Percentage\\\", round(rtp_logs / total_logs, 2) as \\\"RTP Percentage\\\", round(sip_logs / total_logs, 2) as \\\"SIP Percentage\\\", round(ftp_logs / total_logs, 2) as \\\"FTP Percentage\\\", base_logs as \\\"BASE Logs\\\", http_logs as \\\"HTTP Logs\\\", ssl_logs as \\\"SSL Logs\\\", dns_logs as \\\"DNS Logs\\\", mail_logs as \\\"MAIL Logs\\\", rtp_logs as \\\"RTP Logs\\\", sip_logs as \\\"SIP Logs\\\", ftp_logs as \\\"FTP Logs\\\", total_logs as \\\"Total Logs\\\" from ( select sum(if(decoded_as='BASE', 1, 0)) as base_logs, sum(if(decoded_as='HTTP', 1, 0)) as http_logs, sum(if(decoded_as='SSL', 1, 0)) as ssl_logs, sum(if(decoded_as='DNS', 1, 0)) as dns_logs, sum(if(decoded_as='MAIL', 1, 0)) as mail_logs, sum(if(decoded_as='RTP', 1, 0)) as rtp_logs, sum(if(decoded_as='SIP', 1, 0)) as sip_logs, sum(if(decoded_as='FTP', 1, 0)) as ftp_logs, count(*) as total_logs from session_record as sub_connection where recv_time >= UNIX_TIMESTAMP('{{start_time}}') and recv_time <UNIX_TIMESTAMP('{{end_time}}') )\" ,\n   \"output_mode\":\"json\",\n   \"exec_mode\":\"oneshot\"\n\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{qgw_ip}}:{{qgw_port}}/v1/query/sql",
+									"protocol": "http",
+									"host": [
+										"{{qgw_ip}}"
+									],
+									"port": "{{qgw_port}}",
+									"path": [
+										"v1",
+										"query",
+										"sql"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Endpoints",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"followOriginalHttpMethod": false,
+								"followRedirects": false
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n   \"statement\" : \"select uniq(client_ip) as \\\"Client IPs\\\", uniq(server_ip) as \\\"Server IPs\\\", uniq(server_domain) as \\\"Domains\\\", uniq(http_host) as \\\"Hosts\\\", uniq(ssl_sni) as \\\"SNIs\\\" , uniq(client_ip, server_ip) as \\\"Client and Server IPs\\\" from session_record where recv_time >= UNIX_TIMESTAMP('{{start_time}}') and recv_time <UNIX_TIMESTAMP('{{end_time}}')\" ,\n   \"output_mode\":\"json\",\n   \"exec_mode\":\"oneshot\"\n\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{qgw_ip}}:{{qgw_port}}/v1/query/sql",
+									"protocol": "http",
+									"host": [
+										"{{qgw_ip}}"
+									],
+									"port": "{{qgw_port}}",
+									"path": [
+										"v1",
+										"query",
+										"sql"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Endpoints of TCP",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"followOriginalHttpMethod": false,
+								"followRedirects": false
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n   \"statement\" : \"select uniq(client_ip) as \\\"Client IPs\\\", uniq(server_ip) as \\\"Server IPs\\\", uniq(server_domain) as \\\"Domains\\\", uniq(http_host) as \\\"Hosts\\\", uniq(ssl_sni) as \\\"SNIs\\\" , uniq(client_ip, server_ip) as \\\"Client and Server IPs\\\" from session_record where recv_time >= UNIX_TIMESTAMP('{{start_time}}') and recv_time <UNIX_TIMESTAMP('{{end_time}}') and arrayElement(splitByString('.', decoded_path), length(splitByString('.', decoded_path))) ='TCP'\" ,\n   \"output_mode\":\"json\",\n   \"exec_mode\":\"oneshot\"\n\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{qgw_ip}}:{{qgw_port}}/v1/query/sql",
+									"protocol": "http",
+									"host": [
+										"{{qgw_ip}}"
+									],
+									"port": "{{qgw_port}}",
+									"path": [
+										"v1",
+										"query",
+										"sql"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Endpoints of UDP",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"followOriginalHttpMethod": false,
+								"followRedirects": false
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n   \"statement\" : \"select uniq(client_ip) as \\\"Client IPs\\\", uniq(server_ip) as \\\"Server IPs\\\", uniq(server_domain) as \\\"Domains\\\", uniq(http_host) as \\\"Hosts\\\", uniq(ssl_sni) as \\\"SNIs\\\" , uniq(client_ip, server_ip) as \\\"Client and Server IPs\\\" from session_record where recv_time >= UNIX_TIMESTAMP('{{start_time}}') and recv_time <UNIX_TIMESTAMP('{{end_time}}') and arrayElement(splitByString('.', decoded_path), length(splitByString('.', decoded_path))) ='UDP'\" ,\n   \"output_mode\":\"json\",\n   \"exec_mode\":\"oneshot\"\n\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{qgw_ip}}:{{qgw_port}}/v1/query/sql",
+									"protocol": "http",
+									"host": [
+										"{{qgw_ip}}"
+									],
+									"port": "{{qgw_port}}",
+									"path": [
+										"v1",
+										"query",
+										"sql"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Bytes Distribution of TCP",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "http://{{qgw_ip}}:{{qgw_port}}/?query=select\n    round(QUANTILE(bytes,0.9999),2) as p9999, \n\t round(QUANTILE(bytes,0.999),2) as p999,\n\tround(QUANTILE(bytes,0.996),2) as p996,\n\tround(QUANTILE(bytes,0.995),2) as p995,\n\tround(QUANTILE(bytes,0.99),2) as p99,\n\tround(QUANTILE(bytes,0.98),2) as p98,\n\tround(QUANTILE(bytes,0.96),2) as p96,\n\tround(QUANTILE(bytes,0.95),2) as p95,\n\tround(QUANTILE(bytes,0.92),2) as p92,\n\tround(QUANTILE(bytes,0.90),2) as p90,\n\tround(QUANTILE(bytes,0.89),2) as p89,\n\tround(QUANTILE(bytes,0.88),2) as p88,\n\tround(median(bytes),2) as p50\nfrom\n\t(\n\tselect\n\t\tcommon_server_ip,\n\t\tsum(common_c2s_byte_num+common_s2c_byte_num) as bytes\n\tfrom\n\t\tsession_record\n\twhere\n\t\tcommon_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}')\n\t\tAND (common_l4_protocol IN ('IPv4_TCP', 'IPv6_TCP'))\n\tgroup by\n\t\tcommon_server_ip \n)\n",
+									"protocol": "http",
+									"host": [
+										"{{qgw_ip}}"
+									],
+									"port": "{{qgw_port}}",
+									"path": [
+										""
+									],
+									"query": [
+										{
+											"key": "option",
+											"value": "long-term",
+											"disabled": true
+										},
+										{
+											"key": "resultId",
+											"value": "129494",
+											"disabled": true
+										},
+										{
+											"key": "query",
+											"value": "select\n    round(QUANTILE(bytes,0.9999),2) as p9999, \n\t round(QUANTILE(bytes,0.999),2) as p999,\n\tround(QUANTILE(bytes,0.996),2) as p996,\n\tround(QUANTILE(bytes,0.995),2) as p995,\n\tround(QUANTILE(bytes,0.99),2) as p99,\n\tround(QUANTILE(bytes,0.98),2) as p98,\n\tround(QUANTILE(bytes,0.96),2) as p96,\n\tround(QUANTILE(bytes,0.95),2) as p95,\n\tround(QUANTILE(bytes,0.92),2) as p92,\n\tround(QUANTILE(bytes,0.90),2) as p90,\n\tround(QUANTILE(bytes,0.89),2) as p89,\n\tround(QUANTILE(bytes,0.88),2) as p88,\n\tround(median(bytes),2) as p50\nfrom\n\t(\n\tselect\n\t\tcommon_server_ip,\n\t\tsum(common_c2s_byte_num+common_s2c_byte_num) as bytes\n\tfrom\n\t\tsession_record\n\twhere\n\t\tcommon_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}')\n\t\tAND (common_l4_protocol IN ('IPv4_TCP', 'IPv6_TCP'))\n\tgroup by\n\t\tcommon_server_ip \n)\n"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Bytes Distribution of UDP",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "http://{{qgw_ip}}:{{qgw_port}}/?query=select\n    round(QUANTILE(bytes,0.9999),2) as p9999, \n\t round(QUANTILE(bytes,0.999),2) as p999,\n\tround(QUANTILE(bytes,0.996),2) as p996,\n\tround(QUANTILE(bytes,0.995),2) as p995,\n\tround(QUANTILE(bytes,0.99),2) as p99,\n\tround(QUANTILE(bytes,0.98),2) as p98,\n\tround(QUANTILE(bytes,0.96),2) as p96,\n\tround(QUANTILE(bytes,0.95),2) as p95,\n\tround(QUANTILE(bytes,0.92),2) as p92,\n\tround(QUANTILE(bytes,0.90),2) as p90,\n\tround(QUANTILE(bytes,0.89),2) as p89,\n\tround(QUANTILE(bytes,0.88),2) as p88,\n\tround(median(bytes),2) as p50\nfrom\n\t(\n\tselect\n\t\tcommon_server_ip,\n\t\tsum(common_c2s_byte_num+common_s2c_byte_num) as bytes\n\tfrom\n\t\tsession_record\n\twhere\n\t\tcommon_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}')\n\t    and common_l4_protocol in ('IPv4_UDP', 'IPv6_UDP')\n\t\tand common_server_port in (53,443)\n\tgroup by\n\t\tcommon_server_ip \n)\n",
+									"protocol": "http",
+									"host": [
+										"{{qgw_ip}}"
+									],
+									"port": "{{qgw_port}}",
+									"path": [
+										""
+									],
+									"query": [
+										{
+											"key": "option",
+											"value": "long-term",
+											"disabled": true
+										},
+										{
+											"key": "resultId",
+											"value": "129494",
+											"disabled": true
+										},
+										{
+											"key": "query",
+											"value": "select\n    round(QUANTILE(bytes,0.9999),2) as p9999, \n\t round(QUANTILE(bytes,0.999),2) as p999,\n\tround(QUANTILE(bytes,0.996),2) as p996,\n\tround(QUANTILE(bytes,0.995),2) as p995,\n\tround(QUANTILE(bytes,0.99),2) as p99,\n\tround(QUANTILE(bytes,0.98),2) as p98,\n\tround(QUANTILE(bytes,0.96),2) as p96,\n\tround(QUANTILE(bytes,0.95),2) as p95,\n\tround(QUANTILE(bytes,0.92),2) as p92,\n\tround(QUANTILE(bytes,0.90),2) as p90,\n\tround(QUANTILE(bytes,0.89),2) as p89,\n\tround(QUANTILE(bytes,0.88),2) as p88,\n\tround(median(bytes),2) as p50\nfrom\n\t(\n\tselect\n\t\tcommon_server_ip,\n\t\tsum(common_c2s_byte_num+common_s2c_byte_num) as bytes\n\tfrom\n\t\tsession_record\n\twhere\n\t\tcommon_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}')\n\t    and common_l4_protocol in ('IPv4_UDP', 'IPv6_UDP')\n\t\tand common_server_port in (53,443)\n\tgroup by\n\t\tcommon_server_ip \n)\n"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Sessions Distribution of TCP",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "http://{{qgw_ip}}:{{qgw_port}}/?query=select\n    round(QUANTILE(sessions,0.9999),2) as p9999, \n\t round(QUANTILE(sessions,0.999),2) as p999,\n\tround(QUANTILE(sessions,0.996),2) as p996,\n\tround(QUANTILE(sessions,0.995),2) as p995,\n\tround(QUANTILE(sessions,0.99),2) as p99,\n\tround(QUANTILE(sessions,0.98),2) as p98,\n\tround(QUANTILE(sessions,0.96),2) as p96,\n\tround(QUANTILE(sessions,0.95),2) as p95,\n\tround(QUANTILE(sessions,0.92),2) as p92,\n\tround(QUANTILE(sessions,0.90),2) as p90,\n\tround(QUANTILE(sessions,0.89),2) as p89,\n\tround(QUANTILE(sessions,0.88),2) as p88,\n\tround(median(sessions),2) as p50\nfrom\n\t(\n\tselect\n\t\tcommon_server_ip,\n\t\tcount(*) as sessions\n\tfrom\n\t\tsession_record\n\twhere\n\t\tcommon_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}')\n\t\tAND (common_l4_protocol IN ('IPv4_TCP', 'IPv6_TCP'))\n\tgroup by\n\t\tcommon_server_ip \n)\n",
+									"protocol": "http",
+									"host": [
+										"{{qgw_ip}}"
+									],
+									"port": "{{qgw_port}}",
+									"path": [
+										""
+									],
+									"query": [
+										{
+											"key": "option",
+											"value": "long-term",
+											"disabled": true
+										},
+										{
+											"key": "resultId",
+											"value": "129494",
+											"disabled": true
+										},
+										{
+											"key": "query",
+											"value": "select\n    round(QUANTILE(sessions,0.9999),2) as p9999, \n\t round(QUANTILE(sessions,0.999),2) as p999,\n\tround(QUANTILE(sessions,0.996),2) as p996,\n\tround(QUANTILE(sessions,0.995),2) as p995,\n\tround(QUANTILE(sessions,0.99),2) as p99,\n\tround(QUANTILE(sessions,0.98),2) as p98,\n\tround(QUANTILE(sessions,0.96),2) as p96,\n\tround(QUANTILE(sessions,0.95),2) as p95,\n\tround(QUANTILE(sessions,0.92),2) as p92,\n\tround(QUANTILE(sessions,0.90),2) as p90,\n\tround(QUANTILE(sessions,0.89),2) as p89,\n\tround(QUANTILE(sessions,0.88),2) as p88,\n\tround(median(sessions),2) as p50\nfrom\n\t(\n\tselect\n\t\tcommon_server_ip,\n\t\tcount(*) as sessions\n\tfrom\n\t\tsession_record\n\twhere\n\t\tcommon_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}')\n\t\tAND (common_l4_protocol IN ('IPv4_TCP', 'IPv6_TCP'))\n\tgroup by\n\t\tcommon_server_ip \n)\n"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Sessions Distribution of UDP",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "http://{{qgw_ip}}:{{qgw_port}}/?query=select\n    round(QUANTILE(sessions,0.9999),2) as p9999, \n\t round(QUANTILE(sessions,0.999),2) as p999,\n\tround(QUANTILE(sessions,0.996),2) as p996,\n\tround(QUANTILE(sessions,0.995),2) as p995,\n\tround(QUANTILE(sessions,0.99),2) as p99,\n\tround(QUANTILE(sessions,0.98),2) as p98,\n\tround(QUANTILE(sessions,0.96),2) as p96,\n\tround(QUANTILE(sessions,0.95),2) as p95,\n\tround(QUANTILE(sessions,0.92),2) as p92,\n\tround(QUANTILE(sessions,0.90),2) as p90,\n\tround(QUANTILE(sessions,0.89),2) as p89,\n\tround(QUANTILE(sessions,0.88),2) as p88,\n\tround(median(sessions),2) as p50\nfrom\n\t(\n\tselect\n\t\tcommon_server_ip,\n\t\tcount(*) as sessions\n\tfrom\n\t\tsession_record\n\twhere\n\t\tcommon_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}')\n\t\tand common_l4_protocol in ('IPv4_UDP', 'IPv6_UDP')\n\t\tand common_server_port in (53,443)\n\tgroup by\n\t\tcommon_server_ip \n)\n",
+									"protocol": "http",
+									"host": [
+										"{{qgw_ip}}"
+									],
+									"port": "{{qgw_port}}",
+									"path": [
+										""
+									],
+									"query": [
+										{
+											"key": "option",
+											"value": "long-term",
+											"disabled": true
+										},
+										{
+											"key": "resultId",
+											"value": "129494",
+											"disabled": true
+										},
+										{
+											"key": "query",
+											"value": "select\n    round(QUANTILE(sessions,0.9999),2) as p9999, \n\t round(QUANTILE(sessions,0.999),2) as p999,\n\tround(QUANTILE(sessions,0.996),2) as p996,\n\tround(QUANTILE(sessions,0.995),2) as p995,\n\tround(QUANTILE(sessions,0.99),2) as p99,\n\tround(QUANTILE(sessions,0.98),2) as p98,\n\tround(QUANTILE(sessions,0.96),2) as p96,\n\tround(QUANTILE(sessions,0.95),2) as p95,\n\tround(QUANTILE(sessions,0.92),2) as p92,\n\tround(QUANTILE(sessions,0.90),2) as p90,\n\tround(QUANTILE(sessions,0.89),2) as p89,\n\tround(QUANTILE(sessions,0.88),2) as p88,\n\tround(median(sessions),2) as p50\nfrom\n\t(\n\tselect\n\t\tcommon_server_ip,\n\t\tcount(*) as sessions\n\tfrom\n\t\tsession_record\n\twhere\n\t\tcommon_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}')\n\t\tand common_l4_protocol in ('IPv4_UDP', 'IPv6_UDP')\n\t\tand common_server_port in (53,443)\n\tgroup by\n\t\tcommon_server_ip \n)\n"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Clients Distribution of TCP",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "http://{{qgw_ip}}:{{qgw_port}}/?query=select\n    round(QUANTILE(client_ips,0.9999),2) as p9999, \n\t round(QUANTILE(client_ips,0.999),2) as p999,\n\tround(QUANTILE(client_ips,0.996),2) as p996,\n\tround(QUANTILE(client_ips,0.995),2) as p995,\n\tround(QUANTILE(client_ips,0.99),2) as p99,\n\tround(QUANTILE(client_ips,0.98),2) as p98,\n\tround(QUANTILE(client_ips,0.96),2) as p96,\n\tround(QUANTILE(client_ips,0.95),2) as p95,\n\tround(QUANTILE(client_ips,0.92),2) as p92,\n\tround(QUANTILE(client_ips,0.90),2) as p90,\n\tround(QUANTILE(client_ips,0.89),2) as p89,\n\tround(QUANTILE(client_ips,0.88),2) as p88,\n\tround(median(client_ips),2) as p50\nfrom\n\t(\n\tselect\n\t\tcommon_server_ip,\n\t\tuniq(common_client_ip) as client_ips\n\tfrom\n\t\tsession_record\n\twhere\n\t\tcommon_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}')\n\t\tAND (common_l4_protocol IN ('IPv4_TCP', 'IPv6_TCP'))\n\tgroup by\n\t\tcommon_server_ip \n)\n",
+									"protocol": "http",
+									"host": [
+										"{{qgw_ip}}"
+									],
+									"port": "{{qgw_port}}",
+									"path": [
+										""
+									],
+									"query": [
+										{
+											"key": "option",
+											"value": "long-term",
+											"disabled": true
+										},
+										{
+											"key": "resultId",
+											"value": "129494",
+											"disabled": true
+										},
+										{
+											"key": "query",
+											"value": "select\n    round(QUANTILE(client_ips,0.9999),2) as p9999, \n\t round(QUANTILE(client_ips,0.999),2) as p999,\n\tround(QUANTILE(client_ips,0.996),2) as p996,\n\tround(QUANTILE(client_ips,0.995),2) as p995,\n\tround(QUANTILE(client_ips,0.99),2) as p99,\n\tround(QUANTILE(client_ips,0.98),2) as p98,\n\tround(QUANTILE(client_ips,0.96),2) as p96,\n\tround(QUANTILE(client_ips,0.95),2) as p95,\n\tround(QUANTILE(client_ips,0.92),2) as p92,\n\tround(QUANTILE(client_ips,0.90),2) as p90,\n\tround(QUANTILE(client_ips,0.89),2) as p89,\n\tround(QUANTILE(client_ips,0.88),2) as p88,\n\tround(median(client_ips),2) as p50\nfrom\n\t(\n\tselect\n\t\tcommon_server_ip,\n\t\tuniq(common_client_ip) as client_ips\n\tfrom\n\t\tsession_record\n\twhere\n\t\tcommon_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}')\n\t\tAND (common_l4_protocol IN ('IPv4_TCP', 'IPv6_TCP'))\n\tgroup by\n\t\tcommon_server_ip \n)\n"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Clients Distribution of UDP",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "http://{{qgw_ip}}:{{qgw_port}}/?query=select\n    round(QUANTILE(client_ips,0.9999),2) as p9999, \n\t round(QUANTILE(client_ips,0.999),2) as p999,\n\tround(QUANTILE(client_ips,0.996),2) as p996,\n\tround(QUANTILE(client_ips,0.995),2) as p995,\n\tround(QUANTILE(client_ips,0.99),2) as p99,\n\tround(QUANTILE(client_ips,0.98),2) as p98,\n\tround(QUANTILE(client_ips,0.96),2) as p96,\n\tround(QUANTILE(client_ips,0.95),2) as p95,\n\tround(QUANTILE(client_ips,0.92),2) as p92,\n\tround(QUANTILE(client_ips,0.90),2) as p90,\n\tround(QUANTILE(client_ips,0.89),2) as p89,\n\tround(QUANTILE(client_ips,0.88),2) as p88,\n\tround(median(client_ips),2) as p50\nfrom\n\t(\n\tselect\n\t\tcommon_server_ip,\n\t\tuniq(common_client_ip) as client_ips\n\tfrom\n\t\tsession_record\n\twhere\n\t\tcommon_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}')\n\t\tand common_l4_protocol in ('IPv4_UDP', 'IPv6_UDP')\t\n\tgroup by\n\t\tcommon_server_ip \n)\n",
+									"protocol": "http",
+									"host": [
+										"{{qgw_ip}}"
+									],
+									"port": "{{qgw_port}}",
+									"path": [
+										""
+									],
+									"query": [
+										{
+											"key": "option",
+											"value": "long-term",
+											"disabled": true
+										},
+										{
+											"key": "resultId",
+											"value": "129494",
+											"disabled": true
+										},
+										{
+											"key": "query",
+											"value": "select\n    round(QUANTILE(client_ips,0.9999),2) as p9999, \n\t round(QUANTILE(client_ips,0.999),2) as p999,\n\tround(QUANTILE(client_ips,0.996),2) as p996,\n\tround(QUANTILE(client_ips,0.995),2) as p995,\n\tround(QUANTILE(client_ips,0.99),2) as p99,\n\tround(QUANTILE(client_ips,0.98),2) as p98,\n\tround(QUANTILE(client_ips,0.96),2) as p96,\n\tround(QUANTILE(client_ips,0.95),2) as p95,\n\tround(QUANTILE(client_ips,0.92),2) as p92,\n\tround(QUANTILE(client_ips,0.90),2) as p90,\n\tround(QUANTILE(client_ips,0.89),2) as p89,\n\tround(QUANTILE(client_ips,0.88),2) as p88,\n\tround(median(client_ips),2) as p50\nfrom\n\t(\n\tselect\n\t\tcommon_server_ip,\n\t\tuniq(common_client_ip) as client_ips\n\tfrom\n\t\tsession_record\n\twhere\n\t\tcommon_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}')\n\t\tand common_l4_protocol in ('IPv4_UDP', 'IPv6_UDP')\t\n\tgroup by\n\t\tcommon_server_ip \n)\n"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "TopK Server of TCP by Sessions",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "http://{{qgw_ip}}:{{qgw_port}}/?query=select\n\tsum(sessions) sessions,\n\tcount(*) as server_ips,\n\t(\n\t\tselect\n\t\t\tcount(*)\n\t\tfrom\n\t\t\tsession_record\n\t\twhere\n\t\t   common_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}')\n\t\t    AND (common_l4_protocol IN ('IPv4_TCP', 'IPv6_TCP'))\n\t) as total_sessions,\n\tround(sessions / total_sessions, 6) as percent_sessions_to_total\nfrom\n\t(\n\tSELECT\n\t\tcommon_server_ip,\n\t\tcount(*) AS sessions\n\tFROM\n\t\tsession_record\n\tWHERE\n\t    common_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}')\n\t    AND (common_l4_protocol IN ('IPv4_TCP', 'IPv6_TCP'))\n\t\tGROUP BY common_server_ip\n\t\torder by sessions desc limit 100\n )",
+									"protocol": "http",
+									"host": [
+										"{{qgw_ip}}"
+									],
+									"port": "{{qgw_port}}",
+									"path": [
+										""
+									],
+									"query": [
+										{
+											"key": "option",
+											"value": "long-term",
+											"disabled": true
+										},
+										{
+											"key": "resultId",
+											"value": "129494",
+											"disabled": true
+										},
+										{
+											"key": "query",
+											"value": "select\n\tsum(sessions) sessions,\n\tcount(*) as server_ips,\n\t(\n\t\tselect\n\t\t\tcount(*)\n\t\tfrom\n\t\t\tsession_record\n\t\twhere\n\t\t   common_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}')\n\t\t    AND (common_l4_protocol IN ('IPv4_TCP', 'IPv6_TCP'))\n\t) as total_sessions,\n\tround(sessions / total_sessions, 6) as percent_sessions_to_total\nfrom\n\t(\n\tSELECT\n\t\tcommon_server_ip,\n\t\tcount(*) AS sessions\n\tFROM\n\t\tsession_record\n\tWHERE\n\t    common_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}')\n\t    AND (common_l4_protocol IN ('IPv4_TCP', 'IPv6_TCP'))\n\t\tGROUP BY common_server_ip\n\t\torder by sessions desc limit 100\n )"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "TopK Server of UDP by Sessions",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "http://{{qgw_ip}}:{{qgw_port}}/?query=select\n\tsum(sessions) sessions,\n\tcount(*) as server_ips,\n\t(\n\t\tselect\n\t\t\tcount(*)\n\t\tfrom\n\t\t\tsession_record\n\t\twhere\n\t\t    common_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}')\n\t\t    AND (common_l4_protocol IN ('IPv4_UDP', 'IPv6_UDP'))\n\t) as total_sessions,\n\tround(sessions / total_sessions, 6) as percent_sessions_to_total\nfrom\n\t(\n\tSELECT\n\t\tcommon_server_ip,\n\t\tcount(*) AS sessions\n\tFROM\n\t\tsession_record\n\tWHERE\n\t    common_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}')\n\t    AND (common_l4_protocol IN ('IPv4_UDP', 'IPv6_UDP'))\n\t\tGROUP BY common_server_ip\n\t\torder by sessions desc limit 100\n )",
+									"protocol": "http",
+									"host": [
+										"{{qgw_ip}}"
+									],
+									"port": "{{qgw_port}}",
+									"path": [
+										""
+									],
+									"query": [
+										{
+											"key": "option",
+											"value": "long-term",
+											"disabled": true
+										},
+										{
+											"key": "resultId",
+											"value": "129494",
+											"disabled": true
+										},
+										{
+											"key": "query",
+											"value": "select\n\tsum(sessions) sessions,\n\tcount(*) as server_ips,\n\t(\n\t\tselect\n\t\t\tcount(*)\n\t\tfrom\n\t\t\tsession_record\n\t\twhere\n\t\t    common_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}')\n\t\t    AND (common_l4_protocol IN ('IPv4_UDP', 'IPv6_UDP'))\n\t) as total_sessions,\n\tround(sessions / total_sessions, 6) as percent_sessions_to_total\nfrom\n\t(\n\tSELECT\n\t\tcommon_server_ip,\n\t\tcount(*) AS sessions\n\tFROM\n\t\tsession_record\n\tWHERE\n\t    common_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}')\n\t    AND (common_l4_protocol IN ('IPv4_UDP', 'IPv6_UDP'))\n\t\tGROUP BY common_server_ip\n\t\torder by sessions desc limit 100\n )"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "TopK Server of TCP by Bytes",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "http://{{qgw_ip}}:{{qgw_port}}/?query=select\n\tsum(bytes) as bytes,\n\tcount(*) as server_ips,\n\t(\n\t\tselect\n\t\t\tsum(common_c2s_byte_num+common_s2c_byte_num) as bytes\n\t\tfrom\n\t\t\tsession_record\n\t\twhere\n\t        common_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}')\n\t\t    AND (common_l4_protocol IN ('IPv4_TCP', 'IPv6_TCP'))\n\t) as total_bytes,\n\tround(bytes / total_bytes, 6) as percent_bytes_to_total\nfrom\n\t(\n\tSELECT\n\t\tcommon_server_ip,\n\t\tsum(common_c2s_byte_num+common_s2c_byte_num) as bytes\n\tFROM\n\t\tsession_record\n\tWHERE\n\t\t    common_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}')\n\t\t    AND (common_l4_protocol IN ('IPv4_TCP', 'IPv6_TCP'))\n\t\tGROUP BY common_server_ip\n\t\torder by bytes desc limit 100\n   )\n",
+									"protocol": "http",
+									"host": [
+										"{{qgw_ip}}"
+									],
+									"port": "{{qgw_port}}",
+									"path": [
+										""
+									],
+									"query": [
+										{
+											"key": "option",
+											"value": "long-term",
+											"disabled": true
+										},
+										{
+											"key": "resultId",
+											"value": "129494",
+											"disabled": true
+										},
+										{
+											"key": "query",
+											"value": "select\n\tsum(bytes) as bytes,\n\tcount(*) as server_ips,\n\t(\n\t\tselect\n\t\t\tsum(common_c2s_byte_num+common_s2c_byte_num) as bytes\n\t\tfrom\n\t\t\tsession_record\n\t\twhere\n\t        common_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}')\n\t\t    AND (common_l4_protocol IN ('IPv4_TCP', 'IPv6_TCP'))\n\t) as total_bytes,\n\tround(bytes / total_bytes, 6) as percent_bytes_to_total\nfrom\n\t(\n\tSELECT\n\t\tcommon_server_ip,\n\t\tsum(common_c2s_byte_num+common_s2c_byte_num) as bytes\n\tFROM\n\t\tsession_record\n\tWHERE\n\t\t    common_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}')\n\t\t    AND (common_l4_protocol IN ('IPv4_TCP', 'IPv6_TCP'))\n\t\tGROUP BY common_server_ip\n\t\torder by bytes desc limit 100\n   )\n"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "TopK  Server of UDP by Bytes",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "http://{{qgw_ip}}:{{qgw_port}}/?query=select\n\tsum(bytes) as bytes,\n\tcount(*) as server_ips,\n\t(\n\t\tselect\n\t\t\tsum(common_c2s_byte_num+common_s2c_byte_num) as bytes\n\t\tfrom\n\t\t\tsession_record\n\t\twhere\n\t        common_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}')\n\t\t    AND (common_l4_protocol IN ('IPv4_UDP', 'IPv6_UDP'))\n\t) as total_bytes,\n\tround(bytes / total_bytes, 6) as percent_bytes_to_total\nfrom\n\t(\n\tSELECT\n\t\tcommon_server_ip,\n\t\tsum(common_c2s_byte_num+common_s2c_byte_num) as bytes\n\tFROM\n\t\tsession_record\n\tWHERE\n\t\t   common_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}')\n\t\t    AND (common_l4_protocol IN ('IPv4_UDP', 'IPv6_UDP'))\n\t\tGROUP BY common_server_ip\n\t\torder by bytes desc limit 100\n   )\n",
+									"protocol": "http",
+									"host": [
+										"{{qgw_ip}}"
+									],
+									"port": "{{qgw_port}}",
+									"path": [
+										""
+									],
+									"query": [
+										{
+											"key": "option",
+											"value": "long-term",
+											"disabled": true
+										},
+										{
+											"key": "resultId",
+											"value": "129494",
+											"disabled": true
+										},
+										{
+											"key": "query",
+											"value": "select\n\tsum(bytes) as bytes,\n\tcount(*) as server_ips,\n\t(\n\t\tselect\n\t\t\tsum(common_c2s_byte_num+common_s2c_byte_num) as bytes\n\t\tfrom\n\t\t\tsession_record\n\t\twhere\n\t        common_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}')\n\t\t    AND (common_l4_protocol IN ('IPv4_UDP', 'IPv6_UDP'))\n\t) as total_bytes,\n\tround(bytes / total_bytes, 6) as percent_bytes_to_total\nfrom\n\t(\n\tSELECT\n\t\tcommon_server_ip,\n\t\tsum(common_c2s_byte_num+common_s2c_byte_num) as bytes\n\tFROM\n\t\tsession_record\n\tWHERE\n\t\t   common_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}')\n\t\t    AND (common_l4_protocol IN ('IPv4_UDP', 'IPv6_UDP'))\n\t\tGROUP BY common_server_ip\n\t\torder by bytes desc limit 100\n   )\n"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "TopK Server of TCP by Clients",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "http://{{qgw_ip}}:{{qgw_port}}/?query=select \n\t\tuniq(common_client_ip) as client_ips,\n\t\tcount(*) as sessions,\n\t     (\n\t\t  select uniq(common_client_ip) as total_client_ips from session_record where common_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}') AND (common_l4_protocol IN ('IPv4_TCP', 'IPv6_TCP'))\n\t\t  ) as total_client_ips,\n\t\tround(client_ips / total_client_ips,6) as percent_client_ips_to_total,\n\t\t (\n\t\t\tselect count(*) as total_sessions from session_record where common_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}') AND (common_l4_protocol IN ('IPv4_TCP', 'IPv6_TCP'))\n\t\t) as total_sessions,\n\t\tround(sessions / total_sessions,6) as percent_sessions_to_total,\n\t\tsum(common_c2s_byte_num + common_s2c_byte_num) as bytes,\n\t\t (\n\t\t\tselect sum(common_c2s_byte_num + common_s2c_byte_num) as total_bytes from session_record where common_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}') AND (common_l4_protocol IN ('IPv4_TCP', 'IPv6_TCP'))\n\t\t) as total_bytes,\n\t\tround(bytes / total_bytes,6) as percent_bytes_to_total\n\tFROM\n\t\tsession_record\n\tWHERE\n\t\tcommon_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}') AND (common_l4_protocol IN ('IPv4_TCP', 'IPv6_TCP'))\n\t\tand common_server_ip  in (\n\t\t\tSELECT common_server_ip FROM session_record as cc\n\t\t\tWHERE\n\t\t\tcommon_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}')\n\t\t\tAND (common_l4_protocol IN ('IPv4_TCP', 'IPv6_TCP'))\n\t\t\tGROUP BY\n\t\t\t\tcommon_server_ip\n\t\t\torder by uniq(common_client_ip) desc limit 10\n\t\t\n\t)\n",
+									"protocol": "http",
+									"host": [
+										"{{qgw_ip}}"
+									],
+									"port": "{{qgw_port}}",
+									"path": [
+										""
+									],
+									"query": [
+										{
+											"key": "option",
+											"value": "long-term",
+											"disabled": true
+										},
+										{
+											"key": "resultId",
+											"value": "129494",
+											"disabled": true
+										},
+										{
+											"key": "query",
+											"value": "select \n\t\tuniq(common_client_ip) as client_ips,\n\t\tcount(*) as sessions,\n\t     (\n\t\t  select uniq(common_client_ip) as total_client_ips from session_record where common_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}') AND (common_l4_protocol IN ('IPv4_TCP', 'IPv6_TCP'))\n\t\t  ) as total_client_ips,\n\t\tround(client_ips / total_client_ips,6) as percent_client_ips_to_total,\n\t\t (\n\t\t\tselect count(*) as total_sessions from session_record where common_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}') AND (common_l4_protocol IN ('IPv4_TCP', 'IPv6_TCP'))\n\t\t) as total_sessions,\n\t\tround(sessions / total_sessions,6) as percent_sessions_to_total,\n\t\tsum(common_c2s_byte_num + common_s2c_byte_num) as bytes,\n\t\t (\n\t\t\tselect sum(common_c2s_byte_num + common_s2c_byte_num) as total_bytes from session_record where common_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}') AND (common_l4_protocol IN ('IPv4_TCP', 'IPv6_TCP'))\n\t\t) as total_bytes,\n\t\tround(bytes / total_bytes,6) as percent_bytes_to_total\n\tFROM\n\t\tsession_record\n\tWHERE\n\t\tcommon_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}') AND (common_l4_protocol IN ('IPv4_TCP', 'IPv6_TCP'))\n\t\tand common_server_ip  in (\n\t\t\tSELECT common_server_ip FROM session_record as cc\n\t\t\tWHERE\n\t\t\tcommon_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}')\n\t\t\tAND (common_l4_protocol IN ('IPv4_TCP', 'IPv6_TCP'))\n\t\t\tGROUP BY\n\t\t\t\tcommon_server_ip\n\t\t\torder by uniq(common_client_ip) desc limit 10\n\t\t\n\t)\n"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "TopK Server of UDP by Clients",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "http://{{qgw_ip}}:{{qgw_port}}/?query=select \n\t\tuniq(common_client_ip) as client_ips,\n\t\tcount(*) as sessions,\n\t     (\n\t\t  select uniq(common_client_ip) as total_client_ips from session_record where common_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}')\tAND (common_l4_protocol IN ('IPv4_UDP', 'IPv6_UDP'))\n\t\t  ) as total_client_ips,\n\t\tround(client_ips / total_client_ips,6) as percent_client_ips_to_total,\n\t\t (\n\t\t\tselect count(*) as total_sessions from session_record where common_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}')  AND (common_l4_protocol IN ('IPv4_UDP', 'IPv6_UDP'))\n\t\t) as total_sessions,\n\t\tround(sessions / total_sessions,6) as percent_sessions_to_total,\n\t\tsum(common_c2s_byte_num + common_s2c_byte_num) as bytes,\n\t\t (\n\t\t\tselect sum(common_c2s_byte_num + common_s2c_byte_num) as total_bytes from session_record where common_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}') AND (common_l4_protocol IN ('IPv4_UDP', 'IPv6_UDP'))\n\t\t) as total_bytes,\n\t\tround(bytes / total_bytes,6) as percent_bytes_to_total\n\tFROM\n\t\tsession_record\n\tWHERE\n\t\tcommon_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}')\n\t\tAND (common_l4_protocol IN ('IPv4_UDP', 'IPv6_UDP'))\n\t\tand common_server_ip  in (\n\t\t\tSELECT common_server_ip FROM session_record as cc\n\t\t\tWHERE\n\t\t\tcommon_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}')\n\t\t\tAND (common_l4_protocol IN ('IPv4_UDP', 'IPv6_UDP'))\n\t\t\tGROUP BY\n\t\t\t\tcommon_server_ip\n\t\t\torder by uniq(common_client_ip) desc limit 10\n\t\t\n\t)",
+									"protocol": "http",
+									"host": [
+										"{{qgw_ip}}"
+									],
+									"port": "{{qgw_port}}",
+									"path": [
+										""
+									],
+									"query": [
+										{
+											"key": "option",
+											"value": "long-term",
+											"disabled": true
+										},
+										{
+											"key": "resultId",
+											"value": "129494",
+											"disabled": true
+										},
+										{
+											"key": "query",
+											"value": "select \n\t\tuniq(common_client_ip) as client_ips,\n\t\tcount(*) as sessions,\n\t     (\n\t\t  select uniq(common_client_ip) as total_client_ips from session_record where common_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}')\tAND (common_l4_protocol IN ('IPv4_UDP', 'IPv6_UDP'))\n\t\t  ) as total_client_ips,\n\t\tround(client_ips / total_client_ips,6) as percent_client_ips_to_total,\n\t\t (\n\t\t\tselect count(*) as total_sessions from session_record where common_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}')  AND (common_l4_protocol IN ('IPv4_UDP', 'IPv6_UDP'))\n\t\t) as total_sessions,\n\t\tround(sessions / total_sessions,6) as percent_sessions_to_total,\n\t\tsum(common_c2s_byte_num + common_s2c_byte_num) as bytes,\n\t\t (\n\t\t\tselect sum(common_c2s_byte_num + common_s2c_byte_num) as total_bytes from session_record where common_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}') AND (common_l4_protocol IN ('IPv4_UDP', 'IPv6_UDP'))\n\t\t) as total_bytes,\n\t\tround(bytes / total_bytes,6) as percent_bytes_to_total\n\tFROM\n\t\tsession_record\n\tWHERE\n\t\tcommon_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}')\n\t\tAND (common_l4_protocol IN ('IPv4_UDP', 'IPv6_UDP'))\n\t\tand common_server_ip  in (\n\t\t\tSELECT common_server_ip FROM session_record as cc\n\t\t\tWHERE\n\t\t\tcommon_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}')\n\t\t\tAND (common_l4_protocol IN ('IPv4_UDP', 'IPv6_UDP'))\n\t\t\tGROUP BY\n\t\t\t\tcommon_server_ip\n\t\t\torder by uniq(common_client_ip) desc limit 10\n\t\t\n\t)"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "TopK SNI  by Sessions",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "http://{{qgw_ip}}:{{qgw_port}}/?query=select\n\tsum(sessions) sessions,\n\tcount(*) as ssl_snis,\n\t(\n\t\tselect\n\t\t\tcount(*)\n\t\tfrom\n\t\t\tsession_record\n\t\twhere\n\t\t    common_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}')\n\t\t    and notEmpty(ssl_sni)\n\t) as total_sessions,\n\tround(sessions / total_sessions, 6) as percent_sessions_to_total\nfrom\n\t(\n\tSELECT\n\t\tssl_sni,\n\t\tcount(*) AS sessions\n\tFROM\n\t\tsession_record\n\tWHERE\n\t    common_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}')\n\t    and notEmpty(ssl_sni)\n\t\tGROUP BY ssl_sni\n\t\torder by sessions desc limit 100\n )",
+									"protocol": "http",
+									"host": [
+										"{{qgw_ip}}"
+									],
+									"port": "{{qgw_port}}",
+									"path": [
+										""
+									],
+									"query": [
+										{
+											"key": "option",
+											"value": "long-term",
+											"disabled": true
+										},
+										{
+											"key": "resultId",
+											"value": "129494",
+											"disabled": true
+										},
+										{
+											"key": "query",
+											"value": "select\n\tsum(sessions) sessions,\n\tcount(*) as ssl_snis,\n\t(\n\t\tselect\n\t\t\tcount(*)\n\t\tfrom\n\t\t\tsession_record\n\t\twhere\n\t\t    common_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}')\n\t\t    and notEmpty(ssl_sni)\n\t) as total_sessions,\n\tround(sessions / total_sessions, 6) as percent_sessions_to_total\nfrom\n\t(\n\tSELECT\n\t\tssl_sni,\n\t\tcount(*) AS sessions\n\tFROM\n\t\tsession_record\n\tWHERE\n\t    common_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}')\n\t    and notEmpty(ssl_sni)\n\t\tGROUP BY ssl_sni\n\t\torder by sessions desc limit 100\n )"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "TopK SNI  by Bytes",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "http://{{qgw_ip}}:{{qgw_port}}/?query=select\n\tsum(bytes) as bytes,\n\tcount(*) as ssl_snis,\n\t(\n\t\tselect\n\t\t\tsum(common_c2s_byte_num+common_s2c_byte_num) as bytes\n\t\tfrom\n\t\t\tsession_record\n\t\twhere\n\t        common_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}')\n\t\t    and notEmpty(ssl_sni)\n\t) as total_bytes,\n\tround(bytes / total_bytes, 6) as percent_bytes_to_total\nfrom\n\t(\n\tSELECT\n\t\tssl_sni,\n\t\tsum(common_c2s_byte_num+common_s2c_byte_num) as bytes\n\tFROM\n\t\tsession_record\n\tWHERE\n\t\t    common_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}')\n\t\t    and notEmpty(ssl_sni)\n\t\tGROUP BY ssl_sni\n\t\torder by bytes desc limit 100\n   )\n",
+									"protocol": "http",
+									"host": [
+										"{{qgw_ip}}"
+									],
+									"port": "{{qgw_port}}",
+									"path": [
+										""
+									],
+									"query": [
+										{
+											"key": "option",
+											"value": "long-term",
+											"disabled": true
+										},
+										{
+											"key": "resultId",
+											"value": "129494",
+											"disabled": true
+										},
+										{
+											"key": "query",
+											"value": "select\n\tsum(bytes) as bytes,\n\tcount(*) as ssl_snis,\n\t(\n\t\tselect\n\t\t\tsum(common_c2s_byte_num+common_s2c_byte_num) as bytes\n\t\tfrom\n\t\t\tsession_record\n\t\twhere\n\t        common_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}')\n\t\t    and notEmpty(ssl_sni)\n\t) as total_bytes,\n\tround(bytes / total_bytes, 6) as percent_bytes_to_total\nfrom\n\t(\n\tSELECT\n\t\tssl_sni,\n\t\tsum(common_c2s_byte_num+common_s2c_byte_num) as bytes\n\tFROM\n\t\tsession_record\n\tWHERE\n\t\t    common_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}')\n\t\t    and notEmpty(ssl_sni)\n\t\tGROUP BY ssl_sni\n\t\torder by bytes desc limit 100\n   )\n"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "URLs Length Distribution",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "http://{{qgw_ip}}:{{qgw_port}}/?query=select\n    round(max(url_length),2) as max,\n    round(QUANTILE(url_length,0.9999),2) as p9999,\n\tround(QUANTILE(url_length,0.99),2) as p99,\n\tround(QUANTILE(url_length,0.95),2) as p95,\n\tround(QUANTILE(url_length,0.90),2) as p90,\n\tround(median(url_length),2) as p50\nfrom\n\t(\n\tselect\n\t\tlength(http_url) as url_length\n\tfrom\n\t\tsession_record\n\twhere\n\t common_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}')\n\t and common_schema_type='HTTP'\n)",
+									"protocol": "http",
+									"host": [
+										"{{qgw_ip}}"
+									],
+									"port": "{{qgw_port}}",
+									"path": [
+										""
+									],
+									"query": [
+										{
+											"key": "option",
+											"value": "long-term",
+											"disabled": true
+										},
+										{
+											"key": "resultId",
+											"value": "129494",
+											"disabled": true
+										},
+										{
+											"key": "query",
+											"value": "select\n    round(max(url_length),2) as max,\n    round(QUANTILE(url_length,0.9999),2) as p9999,\n\tround(QUANTILE(url_length,0.99),2) as p99,\n\tround(QUANTILE(url_length,0.95),2) as p95,\n\tround(QUANTILE(url_length,0.90),2) as p90,\n\tround(median(url_length),2) as p50\nfrom\n\t(\n\tselect\n\t\tlength(http_url) as url_length\n\tfrom\n\t\tsession_record\n\twhere\n\t common_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}')\n\t and common_schema_type='HTTP'\n)"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "SSL SAN Length Distribution",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "http://{{qgw_ip}}:{{qgw_port}}/?query=select\n    round(max(san_length),2) as max,\n    round(QUANTILE(san_length,0.9999),2) as p9999,\n\tround(QUANTILE(san_length,0.99),2) as p99,\n\tround(QUANTILE(san_length,0.95),2) as p95,\n\tround(QUANTILE(san_length,0.90),2) as p90,\n\tround(median(san_length),2) as p50\nfrom\n\t(\n\tselect\n\t\tlength(ssl_san) as san_length\n\tfrom\n\t\tsession_record\n\twhere\n\t common_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}')\n\t and common_schema_type='SSL'\n)",
+									"protocol": "http",
+									"host": [
+										"{{qgw_ip}}"
+									],
+									"port": "{{qgw_port}}",
+									"path": [
+										""
+									],
+									"query": [
+										{
+											"key": "option",
+											"value": "long-term",
+											"disabled": true
+										},
+										{
+											"key": "resultId",
+											"value": "129494",
+											"disabled": true
+										},
+										{
+											"key": "query",
+											"value": "select\n    round(max(san_length),2) as max,\n    round(QUANTILE(san_length,0.9999),2) as p9999,\n\tround(QUANTILE(san_length,0.99),2) as p99,\n\tround(QUANTILE(san_length,0.95),2) as p95,\n\tround(QUANTILE(san_length,0.90),2) as p90,\n\tround(median(san_length),2) as p50\nfrom\n\t(\n\tselect\n\t\tlength(ssl_san) as san_length\n\tfrom\n\t\tsession_record\n\twhere\n\t common_recv_time >= UNIX_TIMESTAMP('{{start_time}}') and common_recv_time <UNIX_TIMESTAMP('{{end_time}}')\n\t and common_schema_type='SSL'\n)"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "APP Bitrate per Server IP",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "http://{{qgw_ip}}:{{qgw_port}}/?query=SELECT\n    common_app_label,\t\n    round(median(traffic_bytes) * 8 / 1000 / 1000 / 300,2) AS  \"Medain Mbits/s\",\n\tround(avg(traffic_bytes) * 8 / 1000 / 1000 / 300,2) AS \"AVG Mbits / s\",\n\tround(QUANTILE(traffic_bytes, 0.95) * 8 / 1000 / 1000 / 300,2)  as \"P95 Mbits / s\"\nFROM\n\t(\n\tSELECT\n\t    common_app_label,\n\t\ttoDateTime(intDiv(toUInt32(toDateTime(toDateTime(common_recv_time))),300) * 300) as stat_time,\n\t\tround(sum(common_c2s_byte_num + common_s2c_byte_num)/ uniq(common_server_ip),2) as traffic_bytes\n\tFROM\n\t\tsession_record as ss\n\tWHERE\n\t\t(common_recv_time >= toDateTime('2022-07-19 00:00:00'))\n\t\tAND (common_recv_time < toDateTime('2022-07-20 00:00:00'))\n\tGROUP BY\n\t\tstat_time, common_app_label\n) group by common_app_label order by \"AVG Mbits / s\" desc",
+									"protocol": "http",
+									"host": [
+										"{{qgw_ip}}"
+									],
+									"port": "{{qgw_port}}",
+									"path": [
+										""
+									],
+									"query": [
+										{
+											"key": "option",
+											"value": "long-term",
+											"disabled": true
+										},
+										{
+											"key": "resultId",
+											"value": "129494",
+											"disabled": true
+										},
+										{
+											"key": "query",
+											"value": "SELECT\n    common_app_label,\t\n    round(median(traffic_bytes) * 8 / 1000 / 1000 / 300,2) AS  \"Medain Mbits/s\",\n\tround(avg(traffic_bytes) * 8 / 1000 / 1000 / 300,2) AS \"AVG Mbits / s\",\n\tround(QUANTILE(traffic_bytes, 0.95) * 8 / 1000 / 1000 / 300,2)  as \"P95 Mbits / s\"\nFROM\n\t(\n\tSELECT\n\t    common_app_label,\n\t\ttoDateTime(intDiv(toUInt32(toDateTime(toDateTime(common_recv_time))),300) * 300) as stat_time,\n\t\tround(sum(common_c2s_byte_num + common_s2c_byte_num)/ uniq(common_server_ip),2) as traffic_bytes\n\tFROM\n\t\tsession_record as ss\n\tWHERE\n\t\t(common_recv_time >= toDateTime('2022-07-19 00:00:00'))\n\t\tAND (common_recv_time < toDateTime('2022-07-20 00:00:00'))\n\tGROUP BY\n\t\tstat_time, common_app_label\n) group by common_app_label order by \"AVG Mbits / s\" desc"
+										}
 									]
 								}
 							},
@@ -13021,40 +12712,49 @@
 										"exec": [
 											"pm.test(\"Status code is 200\", function () {",
 											"    pm.response.to.have.status(200);",
-											"});"
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
 										],
 										"type": "text/javascript"
 									}
 								}
 							],
+							"protocolProfileBehavior": {
+								"followOriginalHttpMethod": false,
+								"followRedirects": false
+							},
 							"request": {
-								"method": "GET",
+								"method": "POST",
 								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n   \"statement\" : \"SELECT initial_query_id, type as error_type, query_start_time, intDiv(query_duration_ms,1000) as query_duration_s , query , exception, initial_user , http_user_agent , initial_address FROM system.query_log_cluster where type IN ('ExceptionBeforeStart', 'ExceptionWhileProcessing') and initial_query_id = query_id and event_time > (now()-86400) and event_time < now() order by event_time desc limit 100\" ,\n   \"output_mode\":\"json\",\n   \"exec_mode\":\"oneshot\"\n\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
 								"url": {
-									"raw": "http://{{qgw_ip}}:{{qgw_port}}/?query=SELECT\n    initial_query_id,\n    type as error_type,\n    query_start_time,\n    intDiv(query_duration_ms,1000) as query_duration_s ,\n    query ,\n    exception,\n    initial_user ,\n    http_user_agent ,\n    initial_address\nFROM\n    system.query_log_cluster\nwhere\n    type IN ('ExceptionBeforeStart', 'ExceptionWhileProcessing')\n    and initial_query_id = query_id\n    and event_time > (now()-86400)\n    and event_time < now()\norder by\n     event_time desc\nlimit 100",
+									"raw": "http://{{qgw_ip}}:{{qgw_port}}/v1/query/sql",
 									"protocol": "http",
 									"host": [
 										"{{qgw_ip}}"
 									],
 									"port": "{{qgw_port}}",
 									"path": [
-										""
-									],
-									"query": [
-										{
-											"key": "option",
-											"value": "long-term",
-											"disabled": true
-										},
-										{
-											"key": "resultId",
-											"value": "129494",
-											"disabled": true
-										},
-										{
-											"key": "query",
-											"value": "SELECT\n    initial_query_id,\n    type as error_type,\n    query_start_time,\n    intDiv(query_duration_ms,1000) as query_duration_s ,\n    query ,\n    exception,\n    initial_user ,\n    http_user_agent ,\n    initial_address\nFROM\n    system.query_log_cluster\nwhere\n    type IN ('ExceptionBeforeStart', 'ExceptionWhileProcessing')\n    and initial_query_id = query_id\n    and event_time > (now()-86400)\n    and event_time < now()\norder by\n     event_time desc\nlimit 100"
-										}
+										"v1",
+										"query",
+										"sql"
 									]
 								}
 							},
@@ -13069,40 +12769,49 @@
 										"exec": [
 											"pm.test(\"Status code is 200\", function () {",
 											"    pm.response.to.have.status(200);",
-											"});"
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
 										],
 										"type": "text/javascript"
 									}
 								}
 							],
+							"protocolProfileBehavior": {
+								"followOriginalHttpMethod": false,
+								"followRedirects": false
+							},
 							"request": {
-								"method": "GET",
+								"method": "POST",
 								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n   \"statement\" : \"select databases, initial_query_id , query, event_time, intDiv(query_duration_ms,1000) as query_duration_s, read_rows , read_bytes , initial_user, http_user_agent, initial_address from system.query_log_cluster where query_kind = 'Select' and query_start_time>(now()-86400) and initial_query_id = query_id and type IN ('QueryFinish') order by query_duration_ms desc limit 100\" ,\n   \"output_mode\":\"json\",\n   \"exec_mode\":\"oneshot\"\n\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
 								"url": {
-									"raw": "http://{{qgw_ip}}:{{qgw_port}}/?query=select\n    databases,\n    initial_query_id ,\n    query,\n    event_time,\n    intDiv(query_duration_ms,1000) as query_duration_s,\n    read_rows ,\n    read_bytes ,\n    initial_user,\n    http_user_agent,\n    initial_address\n from\n    system.query_log_cluster\nwhere\n    query_kind = 'Select'\n    and query_start_time>(now()-86400)\n    and initial_query_id = query_id\n    and type IN ('QueryFinish')\norder by\n    query_duration_ms desc\nlimit 100",
+									"raw": "http://{{qgw_ip}}:{{qgw_port}}/v1/query/sql",
 									"protocol": "http",
 									"host": [
 										"{{qgw_ip}}"
 									],
 									"port": "{{qgw_port}}",
 									"path": [
-										""
-									],
-									"query": [
-										{
-											"key": "option",
-											"value": "long-term",
-											"disabled": true
-										},
-										{
-											"key": "resultId",
-											"value": "129494",
-											"disabled": true
-										},
-										{
-											"key": "query",
-											"value": "select\n    databases,\n    initial_query_id ,\n    query,\n    event_time,\n    intDiv(query_duration_ms,1000) as query_duration_s,\n    read_rows ,\n    read_bytes ,\n    initial_user,\n    http_user_agent,\n    initial_address\n from\n    system.query_log_cluster\nwhere\n    query_kind = 'Select'\n    and query_start_time>(now()-86400)\n    and initial_query_id = query_id\n    and type IN ('QueryFinish')\norder by\n    query_duration_ms desc\nlimit 100"
-										}
+										"v1",
+										"query",
+										"sql"
 									]
 								}
 							},
@@ -13117,40 +12826,49 @@
 										"exec": [
 											"pm.test(\"Status code is 200\", function () {",
 											"    pm.response.to.have.status(200);",
-											"});"
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
 										],
 										"type": "text/javascript"
 									}
 								}
 							],
+							"protocolProfileBehavior": {
+								"followOriginalHttpMethod": false,
+								"followRedirects": false
+							},
 							"request": {
-								"method": "GET",
+								"method": "POST",
 								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n   \"statement\" : \"select arrayJoin(columns) as used_columns, count() as columns_num from system.query_log_cluster where query_kind = 'Select' and query_start_time>(now()-86400) and initial_query_id = query_id and type IN ('QueryFinish') group by used_columns order by columns_num desc limit 100\" ,\n   \"output_mode\":\"json\",\n   \"exec_mode\":\"oneshot\"\n\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
 								"url": {
-									"raw": "http://{{qgw_ip}}:{{qgw_port}}/?query=select\n    arrayJoin(columns) as used_columns,\n    count() as columns_num\nfrom\n    system.query_log_cluster\nwhere\n     query_kind = 'Select'\n    and query_start_time>(now()-86400)\n    and initial_query_id = query_id\n    and type IN ('QueryFinish')\ngroup by\n    used_columns\norder by\n    columns_num desc\nlimit 100",
+									"raw": "http://{{qgw_ip}}:{{qgw_port}}/v1/query/sql",
 									"protocol": "http",
 									"host": [
 										"{{qgw_ip}}"
 									],
 									"port": "{{qgw_port}}",
 									"path": [
-										""
-									],
-									"query": [
-										{
-											"key": "option",
-											"value": "long-term",
-											"disabled": true
-										},
-										{
-											"key": "resultId",
-											"value": "129494",
-											"disabled": true
-										},
-										{
-											"key": "query",
-											"value": "select\n    arrayJoin(columns) as used_columns,\n    count() as columns_num\nfrom\n    system.query_log_cluster\nwhere\n     query_kind = 'Select'\n    and query_start_time>(now()-86400)\n    and initial_query_id = query_id\n    and type IN ('QueryFinish')\ngroup by\n    used_columns\norder by\n    columns_num desc\nlimit 100"
-										}
+										"v1",
+										"query",
+										"sql"
 									]
 								}
 							},
@@ -13165,40 +12883,49 @@
 										"exec": [
 											"pm.test(\"Status code is 200\", function () {",
 											"    pm.response.to.have.status(200);",
-											"});"
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
 										],
 										"type": "text/javascript"
 									}
 								}
 							],
+							"protocolProfileBehavior": {
+								"followOriginalHttpMethod": false,
+								"followRedirects": false
+							},
 							"request": {
-								"method": "GET",
+								"method": "POST",
 								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n   \"statement\" : \"select\\n    anyLast(query) as sql,\\n    intDiv(avg(query_duration_ms),1000) as avg_query_duration_s,\\n    intDiv(max(query_duration_ms),1000) as max_query_duration_s,\\n    QUANTILE(query_duration_ms, 0.95)/1000 as p95_query_duration_s,   \\n    max(read_rows) ,\\n    anyLast(http_user_agent) as last_http_user_agent,\\n    used_aggregate_functions,\\n    count() as query_count\\nfrom\\n    system.query_log_cluster\\nwhere\\n    query_kind = 'Select'\\n    and query_start_time>(now()-86400)\\n    and initial_query_id = query_id\\n    and type IN ('QueryFinish')\\n    and empty(used_aggregate_functions ) = 0\\ngroup by\\n    toString(used_functions),\\n    toString(used_aggregate_functions ),\\n    toString(columns)\\norder by\\n    avg_query_duration_s desc\\nlimit 100\" ,\n   \"output_mode\":\"json\",\n   \"exec_mode\":\"oneshot\"\n\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
 								"url": {
-									"raw": "http://{{qgw_ip}}:{{qgw_port}}/?query=select\n    anyLast(query) as sql,\n    intDiv(avg(query_duration_ms),1000) as avg_query_duration_s,\n    intDiv(max(query_duration_ms),1000) as max_query_duration_s,\n    QUANTILE(query_duration_ms, 0.95)/1000 as p95_query_duration_s,   \n    max(read_rows) ,\n    anyLast(http_user_agent) as last_http_user_agent,\n    used_aggregate_functions,\n    count() as query_count\nfrom\n    system.query_log_cluster\nwhere\n    query_kind = 'Select'\n    and query_start_time>(now()-86400)\n    and initial_query_id = query_id\n    and type IN ('QueryFinish')\n    and empty(used_aggregate_functions ) = 0\ngroup by\n    toString(used_functions),\n    toString(used_aggregate_functions ),\n    toString(columns)\norder by\n    avg_query_duration_s desc\nlimit 100",
+									"raw": "http://{{qgw_ip}}:{{qgw_port}}/v1/query/sql",
 									"protocol": "http",
 									"host": [
 										"{{qgw_ip}}"
 									],
 									"port": "{{qgw_port}}",
 									"path": [
-										""
-									],
-									"query": [
-										{
-											"key": "option",
-											"value": "long-term",
-											"disabled": true
-										},
-										{
-											"key": "resultId",
-											"value": "129494",
-											"disabled": true
-										},
-										{
-											"key": "query",
-											"value": "select\n    anyLast(query) as sql,\n    intDiv(avg(query_duration_ms),1000) as avg_query_duration_s,\n    intDiv(max(query_duration_ms),1000) as max_query_duration_s,\n    QUANTILE(query_duration_ms, 0.95)/1000 as p95_query_duration_s,   \n    max(read_rows) ,\n    anyLast(http_user_agent) as last_http_user_agent,\n    used_aggregate_functions,\n    count() as query_count\nfrom\n    system.query_log_cluster\nwhere\n    query_kind = 'Select'\n    and query_start_time>(now()-86400)\n    and initial_query_id = query_id\n    and type IN ('QueryFinish')\n    and empty(used_aggregate_functions ) = 0\ngroup by\n    toString(used_functions),\n    toString(used_aggregate_functions ),\n    toString(columns)\norder by\n    avg_query_duration_s desc\nlimit 100"
-										}
+										"v1",
+										"query",
+										"sql"
 									]
 								}
 							},
@@ -13213,40 +12940,49 @@
 										"exec": [
 											"pm.test(\"Status code is 200\", function () {",
 											"    pm.response.to.have.status(200);",
-											"});"
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
 										],
 										"type": "text/javascript"
 									}
 								}
 							],
+							"protocolProfileBehavior": {
+								"followOriginalHttpMethod": false,
+								"followRedirects": false
+							},
 							"request": {
-								"method": "GET",
+								"method": "POST",
 								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n   \"statement\" : \"select anyLast(query) as sql, intDiv(avg(query_duration_ms),1000) as avg_query_duration_s, toInt64(avg(memory_usage))/1024/1024 as avg_memory_MB, used_aggregate_functions, avg(ProfileEvents['FileOpen']) as FileOpen,  avg(ProfileEvents['DiskReadElapsedMicroseconds'])/1000000 as DiskRead_s,count() as query_count from system.query_log_cluster where query_kind = 'Select' and query_start_time>(now()-86400) and initial_query_id != query_id and type IN ('QueryFinish') and empty(used_aggregate_functions ) = 0 group by toString(used_functions), toString(used_aggregate_functions ), toString(columns) order by avg_memory_MB desc limit 100\" ,\n   \"output_mode\":\"json\",\n   \"exec_mode\":\"oneshot\"\n\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
 								"url": {
-									"raw": "http://{{qgw_ip}}:{{qgw_port}}/?query=select\n    anyLast(query) as sql,\n    intDiv(avg(query_duration_ms),1000) as avg_query_duration_s,\n    toInt64(avg(memory_usage))/1024/1024 as avg_memory_MB,\n    used_aggregate_functions,\navg(ProfileEvents%5B'FileOpen'%5D)%20as%20FileOpen%2C%0A%20%20%20%20avg(ProfileEvents%5B'DiskReadElapsedMicroseconds'%5D)%2F1000000%20as%20DiskRead_s%2C\n    count() as query_count\nfrom\n    system.query_log_cluster\nwhere\n    query_kind = 'Select'\n    and query_start_time>(now()-86400)\n    and initial_query_id != query_id\n    and type IN ('QueryFinish')\n    and empty(used_aggregate_functions ) = 0\ngroup by\n    toString(used_functions),\n    toString(used_aggregate_functions ),\n    toString(columns)\norder by\n    avg_memory_MB desc\nlimit 100",
+									"raw": "http://{{qgw_ip}}:{{qgw_port}}/v1/query/sql",
 									"protocol": "http",
 									"host": [
 										"{{qgw_ip}}"
 									],
 									"port": "{{qgw_port}}",
 									"path": [
-										""
-									],
-									"query": [
-										{
-											"key": "option",
-											"value": "long-term",
-											"disabled": true
-										},
-										{
-											"key": "resultId",
-											"value": "129494",
-											"disabled": true
-										},
-										{
-											"key": "query",
-											"value": "select\n    anyLast(query) as sql,\n    intDiv(avg(query_duration_ms),1000) as avg_query_duration_s,\n    toInt64(avg(memory_usage))/1024/1024 as avg_memory_MB,\n    used_aggregate_functions,\navg(ProfileEvents%5B'FileOpen'%5D)%20as%20FileOpen%2C%0A%20%20%20%20avg(ProfileEvents%5B'DiskReadElapsedMicroseconds'%5D)%2F1000000%20as%20DiskRead_s%2C\n    count() as query_count\nfrom\n    system.query_log_cluster\nwhere\n    query_kind = 'Select'\n    and query_start_time>(now()-86400)\n    and initial_query_id != query_id\n    and type IN ('QueryFinish')\n    and empty(used_aggregate_functions ) = 0\ngroup by\n    toString(used_functions),\n    toString(used_aggregate_functions ),\n    toString(columns)\norder by\n    avg_memory_MB desc\nlimit 100"
-										}
+										"v1",
+										"query",
+										"sql"
 									]
 								}
 							},
@@ -13261,40 +12997,49 @@
 										"exec": [
 											"pm.test(\"Status code is 200\", function () {",
 											"    pm.response.to.have.status(200);",
-											"});"
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
 										],
 										"type": "text/javascript"
 									}
 								}
 							],
+							"protocolProfileBehavior": {
+								"followOriginalHttpMethod": false,
+								"followRedirects": false
+							},
 							"request": {
-								"method": "GET",
+								"method": "POST",
 								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n   \"statement\" : \"SELECT type, event_time, initial_query_id, formatReadableSize(memory_usage) AS memory, \n     `ProfileEvents.Values`[indexOf(`ProfileEvents.Names`, 'UserTimeMicroseconds')] AS userCPU,\n    `ProfileEvents.Values`[indexOf(`ProfileEvents.Names`, 'SystemTimeMicroseconds')] AS systemCPU, normalizedQueryHash(query) AS normalized_query_hash FROM system.query_log_cluster where query_start_time>(now()-86400) ORDER BY memory_usage DESC LIMIT 10\" ,\n   \"output_mode\":\"json\",\n   \"exec_mode\":\"oneshot\"\n\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
 								"url": {
-									"raw": "http://{{qgw_ip}}:{{qgw_port}}/?query=SELECT\n    type,\n    event_time,\n    initial_query_id,\n    formatReadableSize(memory_usage) AS memory,\n    %60ProfileEvents.Values%60%5BindexOf(%60ProfileEvents.Names%60%2C%20'UserTimeMicroseconds')%5D%20AS%20userCPU%2C%0A%20%20%20%20%60ProfileEvents.Values%60%5BindexOf(%60ProfileEvents.Names%60%2C%20'SystemTimeMicroseconds')%5D%20AS%20systemCPU%2C\n    normalizedQueryHash(query) AS normalized_query_hash\nFROM system.query_log_cluster  where  query_start_time>(now()-86400)\nORDER BY memory_usage DESC\nLIMIT 10",
+									"raw": "http://{{qgw_ip}}:{{qgw_port}}/v1/query/sql",
 									"protocol": "http",
 									"host": [
 										"{{qgw_ip}}"
 									],
 									"port": "{{qgw_port}}",
 									"path": [
-										""
-									],
-									"query": [
-										{
-											"key": "option",
-											"value": "long-term",
-											"disabled": true
-										},
-										{
-											"key": "resultId",
-											"value": "129494",
-											"disabled": true
-										},
-										{
-											"key": "query",
-											"value": "SELECT\n    type,\n    event_time,\n    initial_query_id,\n    formatReadableSize(memory_usage) AS memory,\n    %60ProfileEvents.Values%60%5BindexOf(%60ProfileEvents.Names%60%2C%20'UserTimeMicroseconds')%5D%20AS%20userCPU%2C%0A%20%20%20%20%60ProfileEvents.Values%60%5BindexOf(%60ProfileEvents.Names%60%2C%20'SystemTimeMicroseconds')%5D%20AS%20systemCPU%2C\n    normalizedQueryHash(query) AS normalized_query_hash\nFROM system.query_log_cluster  where  query_start_time>(now()-86400)\nORDER BY memory_usage DESC\nLIMIT 10"
-										}
+										"v1",
+										"query",
+										"sql"
 									]
 								}
 							},
@@ -13634,7 +13379,13 @@
 					},
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "urlencoded",
 							"urlencoded": []
@@ -13743,6 +13494,86 @@
 					"response": []
 				},
 				{
+					"name": "schema-consistency-test",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{qgw_ip}}:{{qgw_port}}/v1/troubleshooting/sanity?test=schema_consistency",
+							"protocol": "http",
+							"host": [
+								"{{qgw_ip}}"
+							],
+							"port": "{{qgw_port}}",
+							"path": [
+								"v1",
+								"troubleshooting",
+								"sanity"
+							],
+							"query": [
+								{
+									"key": "test",
+									"value": "schema_consistency"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "dataset-verification-test",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{qgw_ip}}:{{qgw_port}}/v1/troubleshooting/sanity?test=dataset_verification",
+							"protocol": "http",
+							"host": [
+								"{{qgw_ip}}"
+							],
+							"port": "{{qgw_port}}",
+							"path": [
+								"v1",
+								"troubleshooting",
+								"sanity"
+							],
+							"query": [
+								{
+									"key": "test",
+									"value": "dataset_verification"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "sql-benchmark-test",
 					"event": [
 						{
@@ -13761,7 +13592,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://{{qgw_ip}}:{{qgw_port}}/v1/troubleshooting/benchmark?test=sql_validation&category=traffic_general_stat&is_saved=0",
+							"raw": "http://{{qgw_ip}}:{{qgw_port}}/v1/troubleshooting/benchmark?test=sql_execution&category=session_record&is_saved=0",
 							"protocol": "http",
 							"host": [
 								"{{qgw_ip}}"
@@ -13775,11 +13606,11 @@
 							"query": [
 								{
 									"key": "test",
-									"value": "sql_validation"
+									"value": "sql_execution"
 								},
 								{
 									"key": "category",
-									"value": "traffic_general_stat"
+									"value": "session_record"
 								},
 								{
 									"key": "is_saved",
@@ -13928,7 +13759,7 @@
 							}
 						],
 						"url": {
-							"raw": "http://{{qgw_ip}}:{{qgw_port}}/v1/hos/pcap_file_bucket?prefix=1",
+							"raw": "http://{{qgw_ip}}:{{qgw_port}}/v1/hos/troubleshooting_file_bucket?prefix=1",
 							"protocol": "http",
 							"host": [
 								"{{qgw_ip}}"
@@ -13937,7 +13768,7 @@
 							"path": [
 								"v1",
 								"hos",
-								"pcap_file_bucket"
+								"troubleshooting_file_bucket"
 							],
 							"query": [
 								{
