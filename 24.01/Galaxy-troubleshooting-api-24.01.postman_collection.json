@@ -6885,7 +6885,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"statement\": \"select item, sum(count) as count,sum(bytes)  from ( select arrayJoin(items) as item, count, bytes from ( select security_rule_list as items, count(*) as count,sum(sent_bytes+received_bytes) as bytes  from session_record as sr where recv_time >= UNIX_TIMESTAMP('{{start_time}}') and recv_time <UNIX_TIMESTAMP('{{end_time}}') and notEmpty(security_rule_list) group by security_rule_list )) group by item order by count desc limit 20\",\n    \"exec_mode\": \"oneshot\"\n}",
+									"raw": "{\n    \"statement\": \"select item, sum(count) as count,sum(bytes)  from ( select arrayJoin(items) as item, count, bytes from ( select monitor_rule_list as items, count(*) as count,sum(sent_bytes+received_bytes) as bytes  from session_record as sr where recv_time >= UNIX_TIMESTAMP('{{start_time}}') and recv_time <UNIX_TIMESTAMP('{{end_time}}') and notEmpty(monitor_rule_list) group by monitor_rule_list )) group by item order by count desc limit 20\",\n    \"exec_mode\": \"oneshot\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -6928,7 +6928,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"statement\": \"select  arrayJoin(security_rule_list) as item, count(*) as count,sum(sent_bytes+received_bytes) as bytes from session_record as sr where recv_time >= UNIX_TIMESTAMP('{{start_time}}') and recv_time <UNIX_TIMESTAMP('{{end_time}}') and notEmpty(security_rule_list) and  has(security_rule_list,402159) group by arrayJoin(security_rule_list) order by count desc limit 20\",\n    \"exec_mode\": \"oneshot\"\n}",
+									"raw": "{\n    \"statement\": \"select  arrayJoin(monitor_rule_list) as item, count(*) as count,sum(sent_bytes+received_bytes) as bytes from session_record as sr where recv_time >= UNIX_TIMESTAMP('{{start_time}}') and recv_time <UNIX_TIMESTAMP('{{end_time}}') and notEmpty(monitor_rule_list) group by arrayJoin(monitor_rule_list) order by count desc limit 20\",\n    \"exec_mode\": \"oneshot\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -8370,6 +8370,94 @@
 								"body": {
 									"mode": "raw",
 									"raw": "{\n    \"statement\": \"select FROM_UNIXTIME(TIME_FLOOR_WITH_FILL(UNIX_TIMESTAMP(__time), 'PT30m')) as stat_time, sum(in_bytes + out_bytes)*8/1800/1000/1000 as normal_rate_mbps, sum(in_bytes + out_bytes)/count(distinct(TIME_FLOOR_WITH_FILL(UNIX_TIMESTAMP(__time), 'PT15s')))*8/15/1000/1000 as usage_rate_mbps from traffic_general_stat where __time >= '{{start_time}}' and __time < '{{end_time}}' and vsys_id in (1) group by TIME_FLOOR_WITH_FILL(UNIX_TIMESTAMP(__time),'PT30m') order by stat_time asc \",\n    \"exec_mode\": \"oneshot\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{qgw_ip}}:{{qgw_port}}/v1/query/sql",
+									"protocol": "http",
+									"host": [
+										"{{qgw_ip}}"
+									],
+									"port": "{{qgw_port}}",
+									"path": [
+										"v1",
+										"query",
+										"sql"
+									]
+								},
+								"description": "平均速率的两种计算方式。例如计算5分钟的平均速率：\n\n- sum(bytes)/5分钟：若5分钟内仅有30秒产生流量，产生结果将不准确\n- sum(bytes)/活跃时间 ： 其中活跃时间=count(distinct(统计时间))\\* 预聚合粒度\n    - 统计时间：time_floor(时间字段,'PT15S')\n    - 预聚合粒度： 存储到时序数据库的统计粒度"
+							},
+							"response": []
+						},
+						{
+							"name": "Top 100 slowest domains",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"statement\": \"select server_domain as domain, round(avg(tcp_rtt_ms),0) avg_rtt_latency_ms from session_record where recv_time >= UNIX_TIMESTAMP('{{start_time}}') and recv_time <UNIX_TIMESTAMP('{{end_time}}') and notEmpty(server_domain) group by server_domain order by avg_rtt_latency_ms desc limit 100\",\n    \"exec_mode\": \"oneshot\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{qgw_ip}}:{{qgw_port}}/v1/query/sql",
+									"protocol": "http",
+									"host": [
+										"{{qgw_ip}}"
+									],
+									"port": "{{qgw_port}}",
+									"path": [
+										"v1",
+										"query",
+										"sql"
+									]
+								},
+								"description": "平均速率的两种计算方式。例如计算5分钟的平均速率：\n\n- sum(bytes)/5分钟：若5分钟内仅有30秒产生流量，产生结果将不准确\n- sum(bytes)/活跃时间 ： 其中活跃时间=count(distinct(统计时间))\\* 预聚合粒度\n    - 统计时间：time_floor(时间字段,'PT15S')\n    - 预聚合粒度： 存储到时序数据库的统计粒度"
+							},
+							"response": []
+						},
+						{
+							"name": "Duplicate logs Assessment",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"statement\": \"select 'Session Records' as type, count(*) as num from (select log_id,count(*) as num from session_record where recv_time >= UNIX_TIMESTAMP('{{start_time}}') and recv_time <UNIX_TIMESTAMP('{{end_time}}') group by log_id having num >1)  union all select 'Proxy Events' as type, count(*) as num from (select log_id,count(*) as num from proxy_event where recv_time >= UNIX_TIMESTAMP('{{start_time}}') and recv_time <UNIX_TIMESTAMP('{{end_time}}') group by log_id having num >1)\",\n    \"exec_mode\": \"oneshot\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -11715,6 +11803,50 @@
 									"value": "default",
 									"disabled": true
 								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Knowledge Base File",
+			"item": [
+				{
+					"name": "Get List",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://{{qgw_ip}}:{{qgw_port}}/v1/knowledge_base",
+							"protocol": "http",
+							"host": [
+								"{{qgw_ip}}"
+							],
+							"port": "{{qgw_port}}",
+							"path": [
+								"v1",
+								"knowledge_base"
 							]
 						}
 					},
