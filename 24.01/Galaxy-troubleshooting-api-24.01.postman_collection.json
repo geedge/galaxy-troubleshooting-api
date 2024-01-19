@@ -6744,49 +6744,6 @@
 							"response": []
 						},
 						{
-							"name": "Top frequent elements in Flags",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"exec": [
-											"pm.test(\"Status code is 200\", function () {",
-											"    pm.response.to.have.status(200);",
-											"});"
-										],
-										"type": "text/javascript"
-									}
-								}
-							],
-							"request": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"statement\": \"select item,sum(count) as count from ( select arrayJoin(items) as item, count from ( select bitmaskToArray(flags) as items,count(*) as count from session_record as sr where recv_time >= UNIX_TIMESTAMP('{{start_time}}') and recv_time <UNIX_TIMESTAMP('{{end_time}}') group by flags )) group by item order by count desc\",\n    \"exec_mode\": \"oneshot\"\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "http://{{qgw_ip}}:{{qgw_port}}/v1/query/sql",
-									"protocol": "http",
-									"host": [
-										"{{qgw_ip}}"
-									],
-									"port": "{{qgw_port}}",
-									"path": [
-										"v1",
-										"query",
-										"sql"
-									]
-								}
-							},
-							"response": []
-						},
-						{
 							"name": "Top frequent elements in Flags(with Label)",
 							"event": [
 								{
@@ -6873,7 +6830,7 @@
 							"response": []
 						},
 						{
-							"name": "Top frequent elements in Array by subquery",
+							"name": "Top frequent elements in Array use subquery",
 							"event": [
 								{
 									"listen": "test",
@@ -7264,7 +7221,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n   \"statement\" : \"select uniq(client_ip) as \\\"Client IPs\\\", uniq(server_ip) as \\\"Server IPs\\\", uniq(server_domain) as \\\"Domains\\\", uniq(http_host) as \\\"Hosts\\\", uniq(ssl_sni) as \\\"SNIs\\\" , uniq(client_ip, server_ip) as \\\"Client and Server IPs\\\" from session_record where recv_time >= UNIX_TIMESTAMP('{{start_time}}') and recv_time <UNIX_TIMESTAMP('{{end_time}}') and ip_protocol ='tcp'\" ,\n   \"output_mode\":\"json\",\n   \"exec_mode\":\"oneshot\"\n\n}",
+									"raw": "{\n   \"statement\" : \"select uniq(client_ip) as \\\"Client IPs\\\", uniq(server_ip) as \\\"Server IPs\\\", uniq(server_domain) as \\\"Domains\\\", uniq(http_host) as \\\"Hosts\\\", uniq(ssl_sni) as \\\"SNIs\\\" , uniq(client_ip, server_ip) as \\\"Client and Server IPs\\\" from session_record where recv_time >= UNIX_TIMESTAMP('{{start_time}}') and recv_time <UNIX_TIMESTAMP('{{end_time}}') and ip_protocol ='udp'\" ,\n   \"output_mode\":\"json\",\n   \"exec_mode\":\"oneshot\"\n\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -7288,7 +7245,7 @@
 							"response": []
 						},
 						{
-							"name": "TCP Percentile Distribution Bytes",
+							"name": "TCP percentile distribution bytes",
 							"event": [
 								{
 									"listen": "test",
@@ -7345,7 +7302,7 @@
 							"response": []
 						},
 						{
-							"name": "TCP Percentile Distribution Sessions",
+							"name": "TCP percentile distribution sessions",
 							"event": [
 								{
 									"listen": "test",
@@ -7402,7 +7359,7 @@
 							"response": []
 						},
 						{
-							"name": "UDP(53,443) Percentile Distribution Bytes",
+							"name": "UDP(53,443) percentile distribution bytes",
 							"event": [
 								{
 									"listen": "test",
@@ -7459,7 +7416,7 @@
 							"response": []
 						},
 						{
-							"name": "UDP(53,443) Percentile Distribution Sessions",
+							"name": "UDP(53,443) Percentile distribution sessions",
 							"event": [
 								{
 									"listen": "test",
@@ -7516,7 +7473,7 @@
 							"response": []
 						},
 						{
-							"name": "TCP percentile distribution of Server IP relate uniq CIP",
+							"name": "TCP percentile distribution of server ip relate uniq CIP",
 							"event": [
 								{
 									"listen": "test",
@@ -7573,7 +7530,7 @@
 							"response": []
 						},
 						{
-							"name": "UDP percentile distribution of Server IP relate uniq CIP",
+							"name": "UDP percentile distribution of server ip relate uniq CIP",
 							"event": [
 								{
 									"listen": "test",
@@ -7630,7 +7587,7 @@
 							"response": []
 						},
 						{
-							"name": "TCP Session Percent of Top 100 Server IP",
+							"name": "TCP session percent of top 100 server ip",
 							"event": [
 								{
 									"listen": "test",
@@ -7687,7 +7644,7 @@
 							"response": []
 						},
 						{
-							"name": "UDP Session Percent of Top 100 Server IP",
+							"name": "UDP session percent of top 100 server ip",
 							"event": [
 								{
 									"listen": "test",
@@ -7744,7 +7701,7 @@
 							"response": []
 						},
 						{
-							"name": "TCP Byte Percent of Top 100 Server IP",
+							"name": "TCP byte percent of top 100 server ip",
 							"event": [
 								{
 									"listen": "test",
@@ -7801,7 +7758,7 @@
 							"response": []
 						},
 						{
-							"name": "UDP Byte Percent of Top 100 Server IP",
+							"name": "UDP byte percent of top 100 server ip",
 							"event": [
 								{
 									"listen": "test",
@@ -7858,7 +7815,7 @@
 							"response": []
 						},
 						{
-							"name": "TCP Client IP and Traffic Percent of Top 100 Server IP",
+							"name": "TCP client ip and traffic percent of top 100 server ip",
 							"event": [
 								{
 									"listen": "test",
@@ -7915,7 +7872,7 @@
 							"response": []
 						},
 						{
-							"name": "UDP Client IP and Traffic Percent of Top 100 Server IP",
+							"name": "UDP client ip and traffic percent of top 100 server ip",
 							"event": [
 								{
 									"listen": "test",
@@ -7972,7 +7929,7 @@
 							"response": []
 						},
 						{
-							"name": "Session Percent of Top 100 SNI",
+							"name": "Session percent of top 100 SNI",
 							"event": [
 								{
 									"listen": "test",
@@ -8029,7 +7986,7 @@
 							"response": []
 						},
 						{
-							"name": "Byte Percent of Top 100 SNI",
+							"name": "Byte percent of top 100 SNI",
 							"event": [
 								{
 									"listen": "test",
@@ -8086,7 +8043,7 @@
 							"response": []
 						},
 						{
-							"name": "Top 10 Client IP with Others",
+							"name": "Top 10 client ip with Others",
 							"event": [
 								{
 									"listen": "test",
@@ -8129,7 +8086,7 @@
 							"response": []
 						},
 						{
-							"name": "APP Bitrate per Server IP",
+							"name": "APP Bitrate per server ip",
 							"event": [
 								{
 									"listen": "test",
@@ -8186,7 +8143,7 @@
 							"response": []
 						},
 						{
-							"name": "HTTP URL Length Distribution",
+							"name": "HTTP URL length distribution",
 							"event": [
 								{
 									"listen": "test",
@@ -8243,7 +8200,7 @@
 							"response": []
 						},
 						{
-							"name": "DNS RR Length Distribution",
+							"name": "DNS RR length distribution",
 							"event": [
 								{
 									"listen": "test",
@@ -8300,7 +8257,7 @@
 							"response": []
 						},
 						{
-							"name": "SSL SAN Length Distribution",
+							"name": "SSL SAN length distribution",
 							"event": [
 								{
 									"listen": "test",
@@ -8445,7 +8402,7 @@
 							"response": []
 						},
 						{
-							"name": "Duplicate logs Assessment",
+							"name": "Duplicate logs assessment",
 							"event": [
 								{
 									"listen": "test",
