@@ -2,6 +2,13 @@
 
 使用Postman组件，基于Rest API接口对TSG OLAP 进行功能验证。包括组件健康检查，功能集成测试及故障诊断。
 
+## Release 24.02 (29 FEB 2024)
+
+###### Update
+
+* Metric相关接口内层嵌套查询调整粒度为1s
+* 基础字段tunnels修改为encapsulation
+
 ## Release 24.01 (31 JAN 2024)
 
 ###### New Features
