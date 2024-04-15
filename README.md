@@ -2,6 +2,27 @@
 
 使用Postman组件，基于Rest API接口对TSG OLAP 进行功能验证。包括组件健康检查，功能集成测试及故障诊断。
 
+## Release 24.04 (28 APR 2024)
+
+###### New Features
+
+- 增加DoS Protection Rule Metric 相关Datasets
+    
+
+###### Update
+
+- 日志公共字段增加tunnel_id_list,client_country, client_super_administrative_area, client_administrative_area, client_sub_administrative_area,server_country, server_super_administrative_area, server_administrative_area, server_sub_administrative_area
+- QGW Query API 参数由execution_mode修改 execution_mode
+- DoS Threat Map 增加 attack volume接口
+- Statistics Rule Metric增加Client ASN和Server ASN Dataset
+- TopK 增加维度rank_by
+- TopK Metric 增加Top Client Countries，Top Server Countries
+
+###### Delete
+
+- 删除Top Subscribers
+
+
 ## Release 24.03 (28 MAR 2024)
 
 ###### Update
