@@ -52,9 +52,9 @@ kafka-operation.sh producer STATISTICS-RULE-METRIC < ./datasets/metrics/statisti
 
 - Files
 
-### 输出测试报告
+### 输出故障诊断报告
 
-- 不指定folder进行全部故障诊断，包括logs, metrics, files
+- 不指定folder选项，将对所有模块进行诊断，具体包括logs, metrics, files
 ```shell
 
 # Logs进行故障诊断，输出诊断明细
