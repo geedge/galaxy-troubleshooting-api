@@ -45,9 +45,9 @@ kafka-operation.sh producer NETWORK-TRAFFIC-METRIC < ./datasets/metrics/network_
 
 kafka-operation.sh producer POLICY-RULE-METRIC < ./datasets/metrics/policy_rule_metric.dat
 
-kafka-operation.sh producer OBJECT-STATISTICS-METRIC < ./datasets/logs/object_statistics_metric.dat
+kafka-operation.sh producer OBJECT-STATISTICS-METRIC < ./datasets/metrics/object_statistics_metric.dat
 
-kafka-operation.sh producer STATISTICS-RULE-METRIC < ./datasets/logs/statistics_rule_metric.dat
+kafka-operation.sh producer STATISTICS-RULE-METRIC < ./datasets/metrics/statistics_rule_metric.dat
 ```
 
 - Files
