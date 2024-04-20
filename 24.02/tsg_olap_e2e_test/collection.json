@@ -50,7 +50,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n   \"statement\" : \"select data_center, count(*) as cnt from proxy_event where vsys_id=1024 and recv_time >={{Last 5 Minutes Start}} group by data_center order by cnt asc\" ,\n   \"output_mode\":\"json\",\n   \"exec_mode\": \"oneshot\"\n}",
+							"raw": "{\n   \"statement\" : \"select data_center, count(*) as cnt from proxy_event where vsys_id=1024 and recv_time >={{Last 10 Minutes Start}} group by data_center order by cnt asc\" ,\n   \"output_mode\":\"json\",\n   \"exec_mode\": \"oneshot\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -114,7 +114,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n   \"statement\" : \"select data_center, count(*) as cnt from voip_record where vsys_id=1024 and decoded_as='VoIP' and recv_time >={{Last 5 Minutes Start}} group by data_center order by cnt asc\" ,\n   \"output_mode\":\"json\",\n   \"exec_mode\": \"oneshot\"\n}",
+							"raw": "{\n   \"statement\" : \"select data_center, count(*) as cnt from voip_record where vsys_id=1024 and decoded_as='VoIP' and recv_time >={{Last 10 Minutes Start}} group by data_center order by cnt asc\" ,\n   \"output_mode\":\"json\",\n   \"exec_mode\": \"oneshot\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -178,7 +178,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n   \"statement\" : \"select data_center, count(*) as cnt from monitor_event where vsys_id=1024 and recv_time >={{Last 5 Minutes Start}} group by data_center order by cnt asc\" ,\n   \"output_mode\":\"json\",\n   \"exec_mode\":\"oneshot\"\n}",
+							"raw": "{\n   \"statement\" : \"select data_center, count(*) as cnt from monitor_event where vsys_id=1024 and recv_time >={{Last 10 Minutes Start}} group by data_center order by cnt asc\" ,\n   \"output_mode\":\"json\",\n   \"exec_mode\":\"oneshot\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -242,7 +242,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n   \"statement\" : \"select data_center, count(*) as cnt from security_event where vsys_id=1024 and recv_time >={{Last 5 Minutes Start}} group by data_center order by cnt asc\" ,\n   \"output_mode\":\"json\",\n   \"exec_mode\":\"oneshot\"\n}",
+							"raw": "{\n   \"statement\" : \"select data_center, count(*) as cnt from security_event where vsys_id=1024 and recv_time >={{Last 10 Minutes Start}} group by data_center order by cnt asc\" ,\n   \"output_mode\":\"json\",\n   \"exec_mode\":\"oneshot\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -306,7 +306,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n   \"statement\" : \"select data_center, count(*) as cnt from session_record where vsys_id=1024 and recv_time >={{Last 5 Minutes Start}} group by data_center order by cnt asc\",\n   \"output_mode\":\"json\",\n   \"exec_mode\":\"oneshot\"\n}",
+							"raw": "{\n   \"statement\" : \"select data_center, count(*) as cnt from session_record where vsys_id=1024 and recv_time >={{Last 10 Minutes Start}} group by data_center order by cnt asc\",\n   \"output_mode\":\"json\",\n   \"exec_mode\":\"oneshot\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -375,7 +375,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n   \"statement\" : \"select count(*) as cnt from traffic_general_stat where vsys_id=1024 and __time = {{metric_fixed_time}} \" ,\n   \"output_mode\":\"json\",\n   \"exec_mode\": \"oneshot\"\n}",
+							"raw": "{\n   \"statement\" : \"select data_center, count(*) as cnt from traffic_general_stat where  __time = {{metric_fixed_time}} and vsys_id=1024 group by data_center order by cnt asc\" ,\n   \"output_mode\":\"json\",\n   \"exec_mode\": \"oneshot\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -439,7 +439,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n   \"statement\" : \"select count(*) as cnt from application_protocol_stat where vsys_id=1024 and __time = {{metric_fixed_time}} \" ,\n   \"output_mode\":\"json\",\n   \"exec_mode\": \"oneshot\"\n}",
+							"raw": "{\n   \"statement\" : \"select data_center, count(*) as cnt from application_protocol_stat where __time = {{metric_fixed_time}} and vsys_id=1024 group by data_center order by cnt asc\" ,\n   \"output_mode\":\"json\",\n   \"exec_mode\": \"oneshot\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -503,7 +503,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n   \"statement\" : \"select count(*) as cnt from statistics_rule_hits where vsys_id=1024 and __time ={{metric_fixed_time}}\" ,\n   \"output_mode\":\"json\",\n   \"exec_mode\": \"oneshot\"\n}",
+							"raw": "{\n   \"statement\" : \"select data_center,count(*) as cnt from statistics_rule_hits where __time ={{metric_fixed_time}} and vsys_id=1024 group by data_center order by cnt asc\" ,\n   \"output_mode\":\"json\",\n   \"exec_mode\": \"oneshot\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -567,7 +567,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n   \"statement\" : \"select count(*) as cnt from security_rule_hits where vsys_id=1024 and __time ={{metric_fixed_time}}\" ,\n   \"output_mode\":\"json\",\n   \"exec_mode\": \"oneshot\"\n}",
+							"raw": "{\n   \"statement\" : \"select data_center, count(*) as cnt from security_rule_hits where __time ={{metric_fixed_time}} and vsys_id=1024 group by data_center order by cnt asc\" ,\n   \"output_mode\":\"json\",\n   \"exec_mode\": \"oneshot\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -627,7 +627,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n   \"statement\" : \"select count(*) as cnt from monitor_rule_hits where vsys_id=1024 and __time ={{metric_fixed_time}}\" ,\n   \"output_mode\":\"json\",\n   \"exec_mode\": \"oneshot\"\n}",
+							"raw": "{\n   \"statement\" : \"select data_center, count(*) as cnt from monitor_rule_hits where __time ={{metric_fixed_time}} and vsys_id=1024 group by data_center order by cnt asc\" ,\n   \"output_mode\":\"json\",\n   \"exec_mode\": \"oneshot\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -687,7 +687,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n   \"statement\" : \"select count(*) as cnt from proxy_rule_hits where vsys_id=1024 and __time ={{metric_fixed_time}}\" ,\n   \"output_mode\":\"json\",\n   \"exec_mode\": \"oneshot\"\n}",
+							"raw": "{\n   \"statement\" : \"select data_center,count(*) as cnt from proxy_rule_hits where __time ={{metric_fixed_time}} and vsys_id=1024 group by data_center order by cnt asc\" ,\n   \"output_mode\":\"json\",\n   \"exec_mode\": \"oneshot\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -747,7 +747,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n   \"statement\" : \"select count(*) as cnt from service_chaining_rule_hits where __time ={{metric_fixed_time}} and vsys_id=1024 \" ,\n   \"output_mode\":\"json\",\n   \"exec_mode\": \"oneshot\"\n}",
+							"raw": "{\n   \"statement\" : \"select data_center, count(*) as cnt from service_chaining_rule_hits where __time ={{metric_fixed_time}} and vsys_id=1024 group by data_center order by cnt asc\" ,\n   \"output_mode\":\"json\",\n   \"exec_mode\": \"oneshot\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -807,7 +807,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n   \"statement\" : \"select count(*) as cnt from object_statistics where __time ={{metric_fixed_time}} and vsys_id=1024 \" ,\n   \"output_mode\":\"json\",\n   \"exec_mode\": \"oneshot\"\n}",
+							"raw": "{\n   \"statement\" : \"select data_center, count(*) as cnt from object_statistics where __time ={{metric_fixed_time}} and vsys_id=1024 group by data_center order by cnt asc\" ,\n   \"output_mode\":\"json\",\n   \"exec_mode\": \"oneshot\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -867,7 +867,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n   \"statement\" : \"select count(*) as cnt from statistics_rule where __time ={{metric_fixed_time}} and vsys_id=1024 \" ,\n   \"output_mode\":\"json\",\n   \"exec_mode\": \"oneshot\"\n}",
+							"raw": "{\n   \"statement\" : \"select data_center, count(*) as cnt from statistics_rule where __time ={{metric_fixed_time}} and vsys_id=1024 group by data_center order by cnt asc\" ,\n   \"output_mode\":\"json\",\n   \"exec_mode\": \"oneshot\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
