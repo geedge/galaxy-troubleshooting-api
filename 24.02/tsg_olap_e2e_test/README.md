@@ -58,13 +58,13 @@ kafka-operation.sh producer STATISTICS-RULE-METRIC < ./datasets/metrics/statisti
 ```shell
 
 # Logs进行故障诊断，输出诊断明细
-newman run ./collection.json -n 3 -e ./enviroment.json --delay-request 1000 --timeout-script 10000 --timeout-request 300000 --timeout 3600000 --insecure  --verbose --ignore-redirects --folder logs 
+newman run ./collection.json -n 3 -e ./environment.json --delay-request 1000 --timeout-script 10000 --timeout-request 300000 --timeout 3600000 --insecure  --verbose --ignore-redirects --folder logs 
 
 #Logs进行故障诊断，通过表情形式输出测试结果
-newman run ./collection.json -n 3 --delay-request 1000 -e ./enviroment.json --ignore-redirects --folder logs -r emojitrain
+newman run ./collection.json -n 3 --delay-request 1000 -e ./environment.json --ignore-redirects --folder logs -r emojitrain
 
 #Logs进行故障诊断，输出报告json格式，自动存储newman目录
-newman run ./collection.json -n 3 --delay-request 1000 -e ./enviroment.json --ignore-redirects --folder logs -r json
+newman run ./collection.json -n 3 --delay-request 1000 -e ./environment.json --ignore-redirects --folder logs -r json
 
 ```
 
