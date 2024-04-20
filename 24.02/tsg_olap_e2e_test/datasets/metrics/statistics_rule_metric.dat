@@ -1,0 +1,1 @@
+{"name":"statistics_rule","tags":{"data_center":"tsg_olap","device_group":"tsg_olap","device_id":"0000000000000000","rule_id":"-1","action":0,"vsys_id":1024,"__timestamp":946681200,"__inputid":"tsg_olap","chart_id":0,"version":1,"template_id":0},"fields":{"in_bytes":0,"out_bytes":0},"timestamp_ms":946681200000}

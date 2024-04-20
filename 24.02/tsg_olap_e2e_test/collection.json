@@ -1,0 +1,1296 @@
+{
+	"info": {
+		"_postman_id": "8d632c51-8d7b-426a-ae7d-baaf5d41dca3",
+		"name": "tsg-olap-e2e-test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8105037"
+	},
+	"item": [
+		{
+			"name": "logs",
+			"item": [
+				{
+					"name": "proxy_event_test",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"   pm.response.to.not.be.error;",
+									"   pm.response.to.be.json;",
+									"   const responseJson = pm.response.json();",
+									"   pm.expect(Number(responseJson.data[0].cnt)).to.at.least(1);",
+									"});",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"followOriginalHttpMethod": false,
+						"followRedirects": false
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"statement\" : \"select count(*) as cnt from proxy_event where vsys_id=1024 and recv_time >={{Last 5 Minutes Start}}\" ,\n   \"output_mode\":\"json\",\n   \"exec_mode\": \"oneshot\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{qgw_ip}}:{{qgw_port}}/v1/query/sql",
+							"protocol": "http",
+							"host": [
+								"{{qgw_ip}}"
+							],
+							"port": "{{qgw_port}}",
+							"path": [
+								"v1",
+								"query",
+								"sql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "voip_record_test",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"   pm.response.to.not.be.error;",
+									"   pm.response.to.be.json;",
+									"   const responseJson = pm.response.json();",
+									"   pm.expect(Number(responseJson.data[0].cnt)).to.at.least(1);",
+									"});",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"followOriginalHttpMethod": false,
+						"followRedirects": false
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"statement\" : \"select count(*) as cnt from voip_record where vsys_id=1024 and decoded_as='VoIP' and recv_time >={{Last 5 Minutes Start}}\" ,\n   \"output_mode\":\"json\",\n   \"exec_mode\": \"oneshot\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{qgw_ip}}:{{qgw_port}}/v1/query/sql",
+							"protocol": "http",
+							"host": [
+								"{{qgw_ip}}"
+							],
+							"port": "{{qgw_port}}",
+							"path": [
+								"v1",
+								"query",
+								"sql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "monitor_event_test",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"   pm.response.to.not.be.error;",
+									"   pm.response.to.be.json;",
+									"   const responseJson = pm.response.json();",
+									"   pm.expect(Number(responseJson.data[0].cnt)).to.at.least(7);",
+									"});",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"followOriginalHttpMethod": false,
+						"followRedirects": false
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"statement\" : \"select count(*) as cnt from monitor_event where vsys_id=1024 and recv_time >={{Last 5 Minutes Start}}\" ,\n   \"output_mode\":\"json\",\n   \"exec_mode\":\"oneshot\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{qgw_ip}}:{{qgw_port}}/v1/query/sql",
+							"protocol": "http",
+							"host": [
+								"{{qgw_ip}}"
+							],
+							"port": "{{qgw_port}}",
+							"path": [
+								"v1",
+								"query",
+								"sql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "security_event_test",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"   pm.response.to.not.be.error;",
+									"   pm.response.to.be.json;",
+									"   const responseJson = pm.response.json();",
+									"   pm.expect(Number(responseJson.data[0].cnt)).to.at.least(7);",
+									"});",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"followOriginalHttpMethod": false,
+						"followRedirects": false
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"statement\" : \"select count(*) as cnt from security_event where vsys_id=1024 and recv_time >={{Last 5 Minutes Start}}\" ,\n   \"output_mode\":\"json\",\n   \"exec_mode\":\"oneshot\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{qgw_ip}}:{{qgw_port}}/v1/query/sql",
+							"protocol": "http",
+							"host": [
+								"{{qgw_ip}}"
+							],
+							"port": "{{qgw_port}}",
+							"path": [
+								"v1",
+								"query",
+								"sql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "session_record_test",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"   pm.response.to.not.be.error;",
+									"   pm.response.to.be.json;",
+									"   const responseJson = pm.response.json();",
+									"   pm.expect(Number(responseJson.data[0].cnt)).to.at.least(7);",
+									"});",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"followOriginalHttpMethod": false,
+						"followRedirects": false
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"statement\" : \"select count(*) as cnt from session_record where vsys_id=1024 and recv_time >={{Last 5 Minutes Start}}\" ,\n   \"output_mode\":\"json\",\n   \"exec_mode\":\"oneshot\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{qgw_ip}}:{{qgw_port}}/v1/query/sql",
+							"protocol": "http",
+							"host": [
+								"{{qgw_ip}}"
+							],
+							"port": "{{qgw_port}}",
+							"path": [
+								"v1",
+								"query",
+								"sql"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "metrics",
+			"item": [
+				{
+					"name": "traffic_general_stat_test",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"   pm.response.to.not.be.error;",
+									"   pm.response.to.be.json;",
+									"   const responseJson = pm.response.json();",
+									"   pm.expect(Number(responseJson.data[0].cnt)).to.at.least(1);",
+									"});",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"followOriginalHttpMethod": false,
+						"followRedirects": false
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"statement\" : \"select count(*) as cnt from traffic_general_stat where vsys_id=1024 and __time = {{metric_fixed_time}} \" ,\n   \"output_mode\":\"json\",\n   \"exec_mode\": \"oneshot\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{qgw_ip}}:{{qgw_port}}/v1/query/sql",
+							"protocol": "http",
+							"host": [
+								"{{qgw_ip}}"
+							],
+							"port": "{{qgw_port}}",
+							"path": [
+								"v1",
+								"query",
+								"sql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "application_protocol_stat_test",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"   pm.response.to.not.be.error;",
+									"   pm.response.to.be.json;",
+									"   const responseJson = pm.response.json();",
+									"   pm.expect(Number(responseJson.data[0].cnt)).to.at.least(1);",
+									"});",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"followOriginalHttpMethod": false,
+						"followRedirects": false
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"statement\" : \"select count(*) as cnt from application_protocol_stat where vsys_id=1024 and __time = {{metric_fixed_time}} \" ,\n   \"output_mode\":\"json\",\n   \"exec_mode\": \"oneshot\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{qgw_ip}}:{{qgw_port}}/v1/query/sql",
+							"protocol": "http",
+							"host": [
+								"{{qgw_ip}}"
+							],
+							"port": "{{qgw_port}}",
+							"path": [
+								"v1",
+								"query",
+								"sql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "statistics_rule_hits_test",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"   pm.response.to.not.be.error;",
+									"   pm.response.to.be.json;",
+									"   const responseJson = pm.response.json();",
+									"   pm.expect(Number(responseJson.data[0].cnt)).to.at.least(1);",
+									"});",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"followOriginalHttpMethod": false,
+						"followRedirects": false
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"statement\" : \"select count(*) as cnt from statistics_rule_hits where vsys_id=1024 and __time ={{metric_fixed_time}}\" ,\n   \"output_mode\":\"json\",\n   \"exec_mode\": \"oneshot\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{qgw_ip}}:{{qgw_port}}/v1/query/sql",
+							"protocol": "http",
+							"host": [
+								"{{qgw_ip}}"
+							],
+							"port": "{{qgw_port}}",
+							"path": [
+								"v1",
+								"query",
+								"sql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "security_rule_hits_test",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"   pm.response.to.not.be.error;",
+									"   pm.response.to.be.json;",
+									"   const responseJson = pm.response.json();",
+									"   pm.expect(Number(responseJson.data[0].cnt)).to.at.least(1);",
+									"});",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"followOriginalHttpMethod": false,
+						"followRedirects": false
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"statement\" : \"select count(*) as cnt from security_rule_hits where vsys_id=1024 and __time ={{metric_fixed_time}}\" ,\n   \"output_mode\":\"json\",\n   \"exec_mode\": \"oneshot\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{qgw_ip}}:{{qgw_port}}/v1/query/sql",
+							"protocol": "http",
+							"host": [
+								"{{qgw_ip}}"
+							],
+							"port": "{{qgw_port}}",
+							"path": [
+								"v1",
+								"query",
+								"sql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "monitor_rule_hits_test",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"   pm.response.to.not.be.error;",
+									"   pm.response.to.be.json;",
+									"   const responseJson = pm.response.json();",
+									"   pm.expect(Number(responseJson.data[0].cnt)).to.at.least(1);",
+									"});",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"statement\" : \"select count(*) as cnt from monitor_rule_hits where vsys_id=1024 and __time ={{metric_fixed_time}}\" ,\n   \"output_mode\":\"json\",\n   \"exec_mode\": \"oneshot\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{qgw_ip}}:{{qgw_port}}/v1/query/sql",
+							"protocol": "http",
+							"host": [
+								"{{qgw_ip}}"
+							],
+							"port": "{{qgw_port}}",
+							"path": [
+								"v1",
+								"query",
+								"sql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "proxy_rule_hits_test",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"   pm.response.to.not.be.error;",
+									"   pm.response.to.be.json;",
+									"   const responseJson = pm.response.json();",
+									"   pm.expect(Number(responseJson.data[0].cnt)).to.at.least(1);",
+									"});",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"statement\" : \"select count(*) as cnt from proxy_rule_hits where vsys_id=1024 and __time ={{metric_fixed_time}}\" ,\n   \"output_mode\":\"json\",\n   \"exec_mode\": \"oneshot\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{qgw_ip}}:{{qgw_port}}/v1/query/sql",
+							"protocol": "http",
+							"host": [
+								"{{qgw_ip}}"
+							],
+							"port": "{{qgw_port}}",
+							"path": [
+								"v1",
+								"query",
+								"sql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "service_chaining_rule_hits_test",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"   pm.response.to.not.be.error;",
+									"   pm.response.to.be.json;",
+									"   const responseJson = pm.response.json();",
+									"   pm.expect(Number(responseJson.data[0].cnt)).to.at.least(1);",
+									"});",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"statement\" : \"select count(*) as cnt from service_chaining_rule_hits where __time ={{metric_fixed_time}} and vsys_id=1024 \" ,\n   \"output_mode\":\"json\",\n   \"exec_mode\": \"oneshot\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{qgw_ip}}:{{qgw_port}}/v1/query/sql",
+							"protocol": "http",
+							"host": [
+								"{{qgw_ip}}"
+							],
+							"port": "{{qgw_port}}",
+							"path": [
+								"v1",
+								"query",
+								"sql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "object_statistics_test",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"   pm.response.to.not.be.error;",
+									"   pm.response.to.be.json;",
+									"   const responseJson = pm.response.json();",
+									"   pm.expect(Number(responseJson.data[0].cnt)).to.at.least(1);",
+									"});",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"statement\" : \"select count(*) as cnt from object_statistics where __time ={{metric_fixed_time}} and vsys_id=1024 \" ,\n   \"output_mode\":\"json\",\n   \"exec_mode\": \"oneshot\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{qgw_ip}}:{{qgw_port}}/v1/query/sql",
+							"protocol": "http",
+							"host": [
+								"{{qgw_ip}}"
+							],
+							"port": "{{qgw_port}}",
+							"path": [
+								"v1",
+								"query",
+								"sql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "statistics_rule_test",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"   pm.response.to.not.be.error;",
+									"   pm.response.to.be.json;",
+									"   const responseJson = pm.response.json();",
+									"   pm.expect(Number(responseJson.data[0].cnt)).to.at.least(1);",
+									"});",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"statement\" : \"select count(*) as cnt from statistics_rule where __time ={{metric_fixed_time}} and vsys_id=1024 \" ,\n   \"output_mode\":\"json\",\n   \"exec_mode\": \"oneshot\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{qgw_ip}}:{{qgw_port}}/v1/query/sql",
+							"protocol": "http",
+							"host": [
+								"{{qgw_ip}}"
+							],
+							"port": "{{qgw_port}}",
+							"path": [
+								"v1",
+								"query",
+								"sql"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "files",
+			"item": [
+				{
+					"name": "packet_capture_file_test",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"   pm.response.to.not.be.error;",
+									"   pm.response.to.be.json;",
+									"   const responseJson = pm.response.json();",
+									"   pm.expect(responseJson.data[0].fileName).to.be.not.null;",
+									"});",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "http://{{qgw_ip}}:{{qgw_port}}/v1/hos/traffic_file_bucket/23e4567-e89b-12d3-a456-426614174001",
+							"protocol": "http",
+							"host": [
+								"{{qgw_ip}}"
+							],
+							"port": "{{qgw_port}}",
+							"path": [
+								"v1",
+								"hos",
+								"traffic_file_bucket",
+								"23e4567-e89b-12d3-a456-426614174001"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http_request_body_test",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"   pm.response.to.not.be.error;",
+									"   pm.response.to.be.json;",
+									"   const responseJson = pm.response.json();",
+									"   pm.expect(responseJson.data[0].fileName).to.be.not.null;",
+									"});",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "http://{{qgw_ip}}:{{qgw_port}}/v1/hos/traffic_file_bucket/123e4567-e89b-12d3-a456-426614174002",
+							"protocol": "http",
+							"host": [
+								"{{qgw_ip}}"
+							],
+							"port": "{{qgw_port}}",
+							"path": [
+								"v1",
+								"hos",
+								"traffic_file_bucket",
+								"123e4567-e89b-12d3-a456-426614174002"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http_response_body_test",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"   pm.response.to.not.be.error;",
+									"   pm.response.to.be.json;",
+									"   const responseJson = pm.response.json();",
+									"   pm.expect(responseJson.data[0].fileName).to.be.not.null;",
+									"});",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "http://{{qgw_ip}}:{{qgw_port}}/v1/hos/traffic_file_bucket/123e4567-e89b-12d3-a456-426614174003",
+							"protocol": "http",
+							"host": [
+								"{{qgw_ip}}"
+							],
+							"port": "{{qgw_port}}",
+							"path": [
+								"v1",
+								"hos",
+								"traffic_file_bucket",
+								"123e4567-e89b-12d3-a456-426614174003"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "mail_eml_file_test",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"   pm.response.to.not.be.error;",
+									"   pm.response.to.be.json;",
+									"   const responseJson = pm.response.json();",
+									"   pm.expect(responseJson.data[0].fileName).to.be.not.null;",
+									"});",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "http://{{qgw_ip}}:{{qgw_port}}/v1/hos/traffic_file_bucket/123e4567-e89b-12d3-a456-426614174004",
+							"protocol": "http",
+							"host": [
+								"{{qgw_ip}}"
+							],
+							"port": "{{qgw_port}}",
+							"path": [
+								"v1",
+								"hos",
+								"traffic_file_bucket",
+								"123e4567-e89b-12d3-a456-426614174004"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "rtp_pcap_path_test",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"   pm.response.to.not.be.error;",
+									"   pm.response.to.be.json;",
+									"   const responseJson = pm.response.json();",
+									"   pm.expect(responseJson.data[0].fileName).to.be.not.null;",
+									"});",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "http://{{qgw_ip}}:{{qgw_port}}/v1/hos/traffic_file_bucket/123e4567-e89b-12d3-a456-426614174005",
+							"protocol": "http",
+							"host": [
+								"{{qgw_ip}}"
+							],
+							"port": "{{qgw_port}}",
+							"path": [
+								"v1",
+								"hos",
+								"traffic_file_bucket",
+								"123e4567-e89b-12d3-a456-426614174005"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete_traffic_files_test",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"   pm.response.to.not.be.error;",
+									"   pm.response.to.be.json;",
+									"   const responseJson = pm.response.json();",
+									"   pm.expect(responseJson.data[0].fileName).to.be.not.null;",
+									"});",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "http://{{qgw_ip}}:{{qgw_port}}/v1/hos?bucket_name=traffic_file_bucket&file_names=123e4567-e89b-12d3-a456-426614174001,123e4567-e89b-12d3-a456-426614174002,123e4567-e89b-12d3-a456-426614174003,123e4567-e89b-12d3-a456-426614174004,123e4567-e89b-12d3-a456-426614174005",
+							"protocol": "http",
+							"host": [
+								"{{qgw_ip}}"
+							],
+							"port": "{{qgw_port}}",
+							"path": [
+								"v1",
+								"hos"
+							],
+							"query": [
+								{
+									"key": "bucket_name",
+									"value": "traffic_file_bucket"
+								},
+								{
+									"key": "file_names",
+									"value": "123e4567-e89b-12d3-a456-426614174001,123e4567-e89b-12d3-a456-426614174002,123e4567-e89b-12d3-a456-426614174003,123e4567-e89b-12d3-a456-426614174004,123e4567-e89b-12d3-a456-426614174005"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
