@@ -8,7 +8,7 @@
 
 ## 使用方法
 
-### 配置QGW API 地址
+### 配置QGW API 
 
 - 修改 `enviroment.json`，配置QGW的IP地址和端口 (首次安装)
 ```json
@@ -25,6 +25,14 @@
         "enabled": true
 }
 ```
+### 配置File Chunks 生成工具
+
+- 修改`config.properties`, 增加Kafka Topic名称和连接地址
+```props
+kafka.server=192.168.41.29:9092 
+kafka.topic=TRAFFIC-FILE-STREAM-RECORD
+```
+
 ### 写入测试集至Kafka
 - Logs
 ```shell
@@ -51,6 +59,21 @@ kafka-operation.sh producer STATISTICS-RULE-METRIC < ./datasets/metrics/statisti
 ```
 
 - Files
+
+```shell
+cd flie-chunk-util/
+
+java -jar file-chunk-util.jar -n 123e4567-e89b-12d3-a456-426614174001 --file_type pcapng
+
+java -jar file-chunk-util.jar -n 123e4567-e89b-12d3-a456-426614174002 --file_type html
+
+java -jar file-chunk-util.jar -n 123e4567-e89b-12d3-a456-426614174003 --file_type html
+
+java -jar file-chunk-util.jar -n 123e4567-e89b-12d3-a456-426614174004 --file_type eml
+
+java -jar file-chunk-util.jar -n 123e4567-e89b-12d3-a456-426614174005 --file_type pcapng
+
+```
 
 ### 输出故障诊断报告
 
