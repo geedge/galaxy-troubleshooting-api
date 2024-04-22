@@ -2,8 +2,8 @@
 
 ## 环境依赖
 
-- 安装 kafka CLI  `kafka-operation.sh` ，详细参考[帮助文档](https://docs.geedge.net/pages/viewpage.action?pageId=8029767)
- 
+- Logs和Metric生成工具 `kafka-operation.sh` ，详细参考[帮助文档](https://docs.geedge.net/pages/viewpage.action?pageId=8029767)
+- File Chunks生成工具 `file-chunk-util.jar`
 - 安装`Newman`，详细参考[帮助文档](https://learning.postman.com/docs/collections/using-newman-cli/newman-options/)
 
 ## 使用方法
