@@ -87,7 +87,7 @@ newman run ./collection.json -n 3 -e ./environment.json --delay-request 1000 --t
 newman run ./collection.json -n 3 --delay-request 1000 -e ./environment.json --ignore-redirects --folder logs -r emojitrain
 
 #Logs进行故障诊断，输出报告json格式，自动存储newman目录
-newman run ./collection.json -n 3 --delay-request 1000 -e ./environment.json --ignore-redirects --folder logs -r json
+newman run ./collection.json -n 3 --delay-request 1000 -e ./environment.json --ignore-redirects --folder logs -r cli,json
 
 ```
 
