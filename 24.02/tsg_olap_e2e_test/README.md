@@ -1,5 +1,10 @@
 # TSG OLAP End-to-End Test
 
+## 概述
+
+TSG OLAP的数据摄入分为三种类型：Logs、Metrics 和 File Chunks。为确保能够正确处理并写入相应存储系统，需要支持端到端业务自检。
+![End-to-End Workflow](images/e2e-test-flow-figure.png)
+
 ## 环境依赖
 
 - Logs和Metric生成工具 `kafka-operation.sh` ，详细参考[帮助文档](https://docs.geedge.net/pages/viewpage.action?pageId=8029767)
