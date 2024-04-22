@@ -7,6 +7,7 @@
 ###### New Features
 
 - 增加DoS Protection Rule Metric 相关Datasets
+- 增加DoS Protection Policy Rule Hits
     
 
 ###### Update
@@ -17,6 +18,7 @@
 - Statistics Rule Metric增加Client ASN和Server ASN Dataset
 - TopK 增加维度rank_by
 - TopK Metric 增加Top Client Countries，Top Server Countries
+    
 
 ###### Delete
 
