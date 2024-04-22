@@ -58,7 +58,7 @@ kafka-operation.sh producer OBJECT-STATISTICS-METRIC < ./datasets/metrics/object
 kafka-operation.sh producer STATISTICS-RULE-METRIC < ./datasets/metrics/statistics_rule_metric.dat
 ```
 
-- Files
+- Files(与日志路径对应)
 
 ```shell
 cd flie-chunk-util/
@@ -75,9 +75,9 @@ java -jar file-chunk-util.jar -n 123e4567-e89b-12d3-a456-426614174005 --file_typ
 
 ```
 
-### 输出故障诊断报告
+### 输出故障诊断报告（等待5分钟）
 
-- 不指定folder选项，将对所有模块进行诊断，具体包括logs, metrics, files
+- folder参数包括 logs, metrics, files；不指定将对所有模块进行自检。
 ```shell
 
 # Logs进行故障诊断，输出诊断明细
