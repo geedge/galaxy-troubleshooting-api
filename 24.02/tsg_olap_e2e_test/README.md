@@ -8,7 +8,7 @@ TSG OLAP的数据摄入分为三种类型：Logs、Metrics 和 File Chunks。为
 ## 环境依赖
 
 - Logs和Metric生成工具 `kafka-operation.sh` ，详细参考[帮助文档](https://docs.geedge.net/pages/viewpage.action?pageId=8029767)
-- File Chunks生成工具 `file-chunk-util.jar`
+- File Chunks生成工具 `file-chunk-generator.jar`
 - 安装`Newman`，详细参考[帮助文档](https://learning.postman.com/docs/collections/using-newman-cli/newman-options/)
 
 ## 使用方法
@@ -66,17 +66,17 @@ kafka-operation.sh producer STATISTICS-RULE-METRIC < ./datasets/metrics/statisti
 - Files(与日志路径对应)
 
 ```shell
-cd flie-chunk-util/
+cd flie-chunk-generator/
 
-java -jar file-chunk-util.jar -n 123e4567-e89b-12d3-a456-426614174001 --file_type pcapng
+java -jar file-chunk-generator.jar -n 123e4567-e89b-12d3-a456-426614174001 --file_type pcapng
 
-java -jar file-chunk-util.jar -n 123e4567-e89b-12d3-a456-426614174002 --file_type html
+java -jar file-chunk-generator.jar -n 123e4567-e89b-12d3-a456-426614174002 --file_type html
 
-java -jar file-chunk-util.jar -n 123e4567-e89b-12d3-a456-426614174003 --file_type html
+java -jar file-chunk-generator.jar -n 123e4567-e89b-12d3-a456-426614174003 --file_type html
 
-java -jar file-chunk-util.jar -n 123e4567-e89b-12d3-a456-426614174004 --file_type eml
+java -jar file-chunk-generator.jar -n 123e4567-e89b-12d3-a456-426614174004 --file_type eml
 
-java -jar file-chunk-util.jar -n 123e4567-e89b-12d3-a456-426614174005 --file_type pcapng
+java -jar file-chunk-generator.jar -n 123e4567-e89b-12d3-a456-426614174005 --file_type pcapng
 
 ```
 
