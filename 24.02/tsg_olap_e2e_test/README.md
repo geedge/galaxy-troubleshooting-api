@@ -77,9 +77,8 @@ java -jar file-chunk-util.jar -n 123e4567-e89b-12d3-a456-426614174005 --file_typ
 
 ### 输出故障诊断报告（等待5分钟）
 
-- folder参数包括 logs, metrics, files；不指定将对所有模块进行自检。
 ```shell
-
+# -n 执行次数 --folder 测试目录，logs，metrics，files；不指定将对所有模块进行自检
 # Logs进行故障诊断，输出诊断明细
 newman run ./collection.json -n 3 -e ./environment.json --delay-request 1000 --timeout-script 10000 --timeout-request 300000 --timeout 3600000 --insecure  --verbose --ignore-redirects --folder logs 
 
