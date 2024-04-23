@@ -80,18 +80,22 @@ java -jar file-chunk-generator.jar -n 123e4567-e89b-12d3-a456-426614174005 --fil
 
 ```
 
-### 输出故障诊断报告（等待5分钟）
+### 输出故障诊断报告（等待1分钟）
 
 ```shell
 # -n 执行次数 --folder 测试目录，logs，metrics，files；不指定将对所有模块进行自检
 # Logs进行故障诊断，输出诊断明细
-newman run ./collection.json -n 3 -e ./environment.json --delay-request 1000 --timeout-script 10000 --timeout-request 300000 --timeout 3600000 --insecure  --verbose --ignore-redirects --folder logs 
+newman run ./collection.json -n 1 -e ./environment.json --delay-request 500 --timeout-script 10000 --timeout-request 300000 --timeout 3600000 --insecure  --verbose --ignore-redirects --folder logs 
 
 #Logs进行故障诊断，通过表情形式输出测试结果
-newman run ./collection.json -n 3 --delay-request 1000 -e ./environment.json --ignore-redirects --folder logs -r emojitrain
+newman run ./collection.json -n 1 --delay-request 500 -e ./environment.json --ignore-redirects --folder logs -r emojitrain
 
 #Logs进行故障诊断，输出报告json格式，自动存储newman目录
-newman run ./collection.json -n 3 --delay-request 1000 -e ./environment.json --ignore-redirects --folder logs -r cli,json
+newman run ./collection.json -n 1 --delay-request 500 -e ./environment.json --ignore-redirects --folder logs -r cli,json
+
+#清除测试数据（暂支持文件删除）
+newman run ./collection.json -n 1 --delay-request 500 -e ./environment.json --ignore-redirects --folder clear_test_data -r emojitrain
+
 
 ```
 
