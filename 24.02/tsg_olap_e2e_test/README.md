@@ -98,7 +98,7 @@ java -jar file-chunk-generator.jar --topic TRAFFIC-FILE-STREAM-RECORD -n 123e456
 
 java -jar file-chunk-generator.jar --topic TRAFFIC-FILE-STREAM-RECORD -n 123e4567-e89b-12d3-a456-426614174005 --file_type traffic_pcapng
 
-java -jar file-chunk-generator.jar --topic TROUBLESHOOTING-FILE-STREAM-RECORD -n 123e4567-e89b-12d3-a456-426614174005 --file_type troubleshooting_pcapng
+java -jar file-chunk-generator.jar --topic TROUBLESHOOTING-FILE-STREAM-RECORD -n 123e4567-e89b-12d3-a456-426614174006 --file_type troubleshooting_pcapng
 
 ```
 
