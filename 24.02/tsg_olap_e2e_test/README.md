@@ -13,29 +13,45 @@ TSG OLAP的数据摄入分为三种类型：Logs、Metrics 和 File Chunks。为
 
 ## 使用方法
 
-### 配置QGW API 
-
-- 修改 `enviroment.json`，配置QGW的IP地址和端口 (首次安装)
+### 配置Newman CLI enviroment.json
 ```json
   {
-        "key": "qgw_ip",
-        "value": "192.168.44.30",
-        "type": "default",
-        "enabled": true
-},
-{
-        "key": "qgw_port",
-        "value": "9999",
-        "type": "default",
-        "enabled": true
-}
+			"key": "qgw_ip",
+			"value": "192.168.44.30",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "qgw_port",
+			"value": "9999",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "hos_ip",
+			"value": "192.168.44.30",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "hos_port",
+			"value": "9098",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "hos_token",
+			"value": "xxxxxx",
+			"type": "default",
+			"enabled": true
+		}
+
 ```
 ### 配置File Chunks 生成工具
 
-- 修改`config.properties`, 增加Kafka Topic名称和连接地址
+- 修改`config.properties`, 增加Kafka访问地址
 ```props
-kafka.server=192.168.41.29:9092 
-kafka.topic=TRAFFIC-FILE-STREAM-RECORD
+  kafka.server=192.168.41.29:9092 
 ```
 
 ### 写入测试集至Kafka
@@ -68,15 +84,17 @@ kafka-operation.sh producer STATISTICS-RULE-METRIC < ./datasets/metrics/statisti
 ```shell
 cd file-chunk-generator/
 
-java -jar file-chunk-generator.jar -n 123e4567-e89b-12d3-a456-426614174001 --file_type pcapng
+java -jar file-chunk-generator.jar --topic TRAFFIC-FILE-STREAM-RECORD -n 123e4567-e89b-12d3-a456-426614174001 --file_type traffic_pcapng
 
-java -jar file-chunk-generator.jar -n 123e4567-e89b-12d3-a456-426614174002 --file_type html
+java -jar file-chunk-generator.jar --topic TRAFFIC-FILE-STREAM-RECORD -n 123e4567-e89b-12d3-a456-426614174002 --file_type html
 
-java -jar file-chunk-generator.jar -n 123e4567-e89b-12d3-a456-426614174003 --file_type html
+java -jar file-chunk-generator.jar --topic TRAFFIC-FILE-STREAM-RECORD -n 123e4567-e89b-12d3-a456-426614174003 --file_type html
 
-java -jar file-chunk-generator.jar -n 123e4567-e89b-12d3-a456-426614174004 --file_type eml
+java -jar file-chunk-generator.jar --topic TRAFFIC-FILE-STREAM-RECORD -n 123e4567-e89b-12d3-a456-426614174004 --file_type eml
 
-java -jar file-chunk-generator.jar -n 123e4567-e89b-12d3-a456-426614174005 --file_type pcapng
+java -jar file-chunk-generator.jar --topic TRAFFIC-FILE-STREAM-RECORD -n 123e4567-e89b-12d3-a456-426614174005 --file_type traffic_pcapng
+
+java -jar file-chunk-generator.jar --topic TROUBLESHOOTING-FILE-STREAM-RECORD -n 123e4567-e89b-12d3-a456-426614174005 --file_type troubleshooting_pcapng
 
 ```
 
