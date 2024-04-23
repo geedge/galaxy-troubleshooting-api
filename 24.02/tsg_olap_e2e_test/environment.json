@@ -4,13 +4,31 @@
 	"values": [
 		{
 			"key": "qgw_ip",
-			"value": "192.168.44.67",
+			"value": "192.168.44.30",
 			"type": "default",
 			"enabled": true
 		},
 		{
 			"key": "qgw_port",
 			"value": "9999",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "hos_ip",
+			"value": "192.168.44.30",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "hos_port",
+			"value": "9098",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "hos_token",
+			"value": "fea0ee76be8147bd9b53ad995b7ef603",
 			"type": "default",
 			"enabled": true
 		},
@@ -28,6 +46,6 @@
 		}
 	],
 	"_postman_variable_scope": "environment",
-	"_postman_exported_at": "2024-04-20T15:08:41.582Z",
+	"_postman_exported_at": "2024-04-23T09:59:24.045Z",
 	"_postman_exported_using": "Postman/10.24.22"
 }
