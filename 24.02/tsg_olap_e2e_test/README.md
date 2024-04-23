@@ -2,7 +2,10 @@
 
 ## 概述
 
-TSG OLAP的数据摄入分为三种类型：Logs、Metrics 和 File Chunks。为确保能够正确处理并写入相应存储系统，需要支持端到端业务自检。
+TSG OLAP的数据摄入分为三种类型：Logs、Metrics 和 File Chunks。为确保能够正确处理并写入相应存储系统，需要支持端到端业务自检。支持部署方式：
+- 集中式部署
+- 多数据中心部署
+
 
 ![End-to-End Workflow](images/e2e-test-flow-figure.png)
 
@@ -112,7 +115,7 @@ newman run ./collection.json -n 1 --delay-request 500 -e ./environment.json --ig
 #Logs进行故障诊断，输出报告json格式，自动存储newman目录
 newman run ./collection.json -n 1 --delay-request 500 -e ./environment.json --ignore-redirects --folder logs -r cli,json
 
-#清除测试数据（暂支持文件删除）
+#清除测试数据（暂支持对文件的删除）
 newman run ./collection.json -n 1 --delay-request 500 -e ./environment.json --ignore-redirects --folder clear_test_data -r emojitrain
 
 
