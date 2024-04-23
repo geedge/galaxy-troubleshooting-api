@@ -66,7 +66,7 @@ kafka-operation.sh producer STATISTICS-RULE-METRIC < ./datasets/metrics/statisti
 - Files(与日志路径对应)
 
 ```shell
-cd flie-chunk-generator/
+cd file-chunk-generator/
 
 java -jar file-chunk-generator.jar -n 123e4567-e89b-12d3-a456-426614174001 --file_type pcapng
 
