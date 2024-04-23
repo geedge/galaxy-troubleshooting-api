@@ -80,7 +80,7 @@ java -jar file-chunk-generator.jar -n 123e4567-e89b-12d3-a456-426614174005 --fil
 
 ```
 
-### 输出故障诊断报告（等待1分钟）
+### 输出故障诊断报告（等待3-5分钟）
 
 ```shell
 # -n 执行次数 --folder 测试目录，logs，metrics，files；不指定将对所有模块进行自检
