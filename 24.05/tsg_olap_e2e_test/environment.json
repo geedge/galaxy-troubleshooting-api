@@ -1,0 +1,51 @@
+{
+	"id": "a42e7855-52e8-49e6-9a35-a6af2130f899",
+	"name": "tsg_olap_e2e_test",
+	"values": [
+		{
+			"key": "qgw_ip",
+			"value": "192.168.44.30",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "qgw_port",
+			"value": "9999",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "hos_ip",
+			"value": "192.168.44.30",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "hos_port",
+			"value": "9098",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "hos_token",
+			"value": "fea0ee76be8147bd9b53ad995b7ef603",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "Last 10 Minutes Start",
+			"value": "FROM_UNIXTIME(UNIX_TIMESTAMP(now())-600)",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "metric_fixed_time",
+			"value": "FROM_UNIXTIME(946681200)",
+			"type": "default",
+			"enabled": true
+		}
+	],
+	"_postman_variable_scope": "environment",
+	"_postman_exported_at": "2024-04-23T09:59:24.045Z",
+	"_postman_exported_using": "Postman/10.24.22"
+}
