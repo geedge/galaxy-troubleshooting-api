@@ -58,7 +58,7 @@ TSG OLAP的数据摄入分为三种类型：Logs、Metrics 和 File Chunks。为
   kafka.server=192.168.41.29:9092 
 ```
 
-### 写入测试集至Kafka
+### 分中心写入测试集至Kafka
 - Logs
 ```shell
 cd tsg_olap_e2e_test/ 
@@ -102,18 +102,25 @@ java -jar file-chunk-generator.jar --topic TROUBLESHOOTING-FILE-STREAM-RECORD -n
 
 ```
 
-### 输出故障诊断报告（等待3-5分钟）
+### 国家中心输出故障诊断报告（等待3-5分钟）
 
 ```shell
-# -n 执行次数 --folder 测试目录，logs，metrics，files；不指定将对所有模块进行自检
-# Logs进行故障诊断，输出诊断明细
+
+# -folder logs ：对日志进行故障诊断，输出诊断明细
 newman run ./collection.json -n 1 -e ./environment.json --delay-request 500 --timeout-script 10000 --timeout-request 300000 --timeout 3600000 --insecure  --verbose --ignore-redirects --env-var "data_center=tsg_olap"  --folder logs 
 
-#Logs进行故障诊断，通过表情形式输出测试结果
+# -folder metrics：对Metrics进行故障诊断，输出诊断明细
+newman run ./collection.json -n 1 -e ./environment.json --delay-request 500 --timeout-script 10000 --timeout-request 300000 --timeout 3600000 --insecure  --verbose --ignore-redirects --env-var "data_center=tsg_olap"  --folder metrics 
+
+# -folder logs：对日志进行故障诊断，通过表情形式输出测试结果
 newman run ./collection.json -n 1 --delay-request 500 -e ./environment.json --env-var "data_center=tsg_olap" --ignore-redirects --folder logs -r emojitrain
 
-#Logs进行故障诊断，输出报告json格式，自动存储newman目录
-newman run ./collection.json -n 1 --delay-request 500 -e ./environment.json --ignore-redirects --env-var "data_center=tsg_olap"  --folder logs -r cli,json
+# -folder files：对文件进行故障诊断，输出诊断明细
+newman run ./collection.json -n 1 -e ./environment.json --delay-request 500 --timeout-script 10000 --timeout-request 300000 --timeout 3600000 --insecure  --verbose --ignore-redirects --env-var "hos_ip=127.0.0.1"  --folder files 
+
+#-folder files：对文件进行故障诊断，通过表情形式输出测试结果
+newman run ./collection.json -n 1 --delay-request 500 -e ./environment.json  --env-var "hos_ip=127.0.0.1"  --ignore-redirects --folder files -r emojitrain
+
 
 #清除测试数据（暂支持对文件的删除）
 newman run ./collection.json -n 1 --delay-request 500 -e ./environment.json --ignore-redirects --folder clear_test_data -r emojitrain
