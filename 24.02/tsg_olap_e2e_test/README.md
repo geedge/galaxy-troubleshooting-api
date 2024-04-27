@@ -30,24 +30,6 @@ TSG OLAP的数据摄入分为三种类型：Logs、Metrics 和 File Chunks。为
 			"value": "9999",
 			"type": "default",
 			"enabled": true
-		},
-		{
-			"key": "hos_ip",
-			"value": "192.168.44.30",
-			"type": "default",
-			"enabled": true
-		},
-		{
-			"key": "hos_port",
-			"value": "9098",
-			"type": "default",
-			"enabled": true
-		},
-		{
-			"key": "hos_token",
-			"value": "xxxxxx",
-			"type": "default",
-			"enabled": true
 		}
 
 ```
