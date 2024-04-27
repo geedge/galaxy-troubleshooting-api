@@ -2,12 +2,7 @@
 
 ## 概述
 
-TSG OLAP的数据摄入分为三种类型：Logs、Metrics 和 File Chunks。为确保能够正确处理并写入相应存储系统，需要支持端到端业务自检。支持部署方式：
-- 集中式部署
-- 多数据中心部署
-
-
-![End-to-End Workflow](images/e2e-test-flow-figure.png)
+TSG OLAP的数据摄入分为三种类型：Logs、Metrics 和 File Chunks。为确保能够正确处理并写入相应存储系统，需要支持端到端业务自检。
 
 ## 环境依赖
 
