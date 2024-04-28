@@ -6,13 +6,13 @@ TSG OLAP的数据摄入分为三种类型：Logs、Metrics 和 File Chunks。为
 
 ## 环境依赖
 
-- Logs和Metric生成工具 `kafka-operation.sh` ，详细参考[帮助文档](https://docs.geedge.net/pages/viewpage.action?pageId=8029767)
-- File Chunks生成工具 `file-chunk-generator.jar`
+- 测试数据生成工具 `e2e-mockdata-generator.jar`
 - 安装`Newman`，详细参考[帮助文档](https://learning.postman.com/docs/collections/using-newman-cli/newman-options/)
 
 ## 使用方法
 
-### 配置Newman CLI enviroment.json
+### Newman CLI enviroment.json 修改如下配置
+`Newman CLI 使用QGW HTTP Rest API 接口输出诊断报告，一般部署至国家中心`
 ```json
   {
 			"key": "qgw_ip",
@@ -28,74 +28,85 @@ TSG OLAP的数据摄入分为三种类型：Logs、Metrics 和 File Chunks。为
 		}
 
 ```
-### 配置File Chunks 生成工具
+### 测试数据生成工具修改Kafka地址
+
+`Kafka需为分中心地址`
 
 - 修改`config.properties`, 增加Kafka访问地址
 ```props
   kafka.server=192.168.41.29:9092 
 ```
 
-### 分中心写入测试集至Kafka
+### 写入测试集至Kafka
 - Logs
 ```shell
-cd tsg_olap_e2e_test/ 
 
-kafka-operation.sh producer SESSION-RECORD < ./datasets/logs/session_record.dat
+cd e2e-mockdata-generator/
 
-kafka-operation.sh producer VOIP-RECORD < ./datasets/logs/voip_record.dat
+java -cp e2e-mockdata-generator.jar com.geedgenetworks.LogGenerator --topic SESSION-RECORD  -f ./datasets/logs/session_record.dat
 
-kafka-operation.sh producer PROXY-EVENT < ./datasets/logs/proxy_event.dat
+java -cp e2e-mockdata-generator.jar com.geedgenetworks.LogGenerator --topic VOIP-RECORD  -f ./datasets/logs/voip_record.dat
+
+java -cp e2e-mockdata-generator.jar com.geedgenetworks.LogGenerator --topic PROXY-EVENT  -f ./datasets/logs/proxy_event.dat
+
 ```
 - Metrics
 
 ```shell
-cd tsg_olap_e2e_test/ 
+cd e2e-mockdata-generator/
 
-kafka-operation.sh producer NETWORK-TRAFFIC-METRIC < ./datasets/metrics/network_traffic_metric.dat
+java -cp e2e-mockdata-generator.jar com.geedgenetworks.LogGenerator --topic NETWORK-TRAFFIC-METRIC  -f ./datasets/metrics/network_traffic_metric.dat
 
-kafka-operation.sh producer POLICY-RULE-METRIC < ./datasets/metrics/policy_rule_metric.dat
+java -cp e2e-mockdata-generator.jar com.geedgenetworks.LogGenerator --topic POLICY-RULE-METRIC  -f ./datasets/metrics/policy_rule_metric.dat
 
-kafka-operation.sh producer OBJECT-STATISTICS-METRIC < ./datasets/metrics/object_statistics_metric.dat
+java -cp e2e-mockdata-generator.jar com.geedgenetworks.LogGenerator --topic OBJECT-STATISTICS-METRIC  -f ./datasets/metrics/object_statistics_metric.dat
 
-kafka-operation.sh producer STATISTICS-RULE-METRIC < ./datasets/metrics/statistics_rule_metric.dat
+java -cp e2e-mockdata-generator.jar com.geedgenetworks.LogGenerator --topic STATISTICS-RULE-METRIC  -f ./datasets/metrics/statistics_rule_metric.dat
+
 ```
 
-- Files(与日志路径对应)
+- Files
+	- 123e4567-e89b-12d3-a456-426614174001  监测策略PCAPNG
+	- 123e4567-e89b-12d3-a456-426614174002  HTTP Request Body
+	- 123e4567-e89b-12d3-a456-426614174003  HTTP Response Body
+	- 123e4567-e89b-12d3-a456-426614174004  MAIL EML
+	- 123e4567-e89b-12d3-a456-426614174005  RTP PCPAPNG
+	- 123e4567-e89b-12d3-a456-426614174006  Troubleshooting PCPAPNG
 
 ```shell
-cd file-chunk-generator/
+cd e2e-mockdata-generator/
 
-java -jar file-chunk-generator.jar --topic TRAFFIC-FILE-STREAM-RECORD -n 123e4567-e89b-12d3-a456-426614174001 --file_type traffic_pcapng
+java -cp e2e-mockdata-generator.jar com.geedgenetworks.FileChunkGenerator --topic TRAFFIC-FILE-STREAM-RECORD -n 123e4567-e89b-12d3-a456-426614174001 --file_type traffic_pcapng
 
-java -jar file-chunk-generator.jar --topic TRAFFIC-FILE-STREAM-RECORD -n 123e4567-e89b-12d3-a456-426614174002 --file_type html
+java -cp e2e-mockdata-generator.jar com.geedgenetworks.FileChunkGenerator --topic TRAFFIC-FILE-STREAM-RECORD -n 123e4567-e89b-12d3-a456-426614174002 --file_type html
 
-java -jar file-chunk-generator.jar --topic TRAFFIC-FILE-STREAM-RECORD -n 123e4567-e89b-12d3-a456-426614174003 --file_type html
+java -cp e2e-mockdata-generator.jar com.geedgenetworks.FileChunkGenerator --topic TRAFFIC-FILE-STREAM-RECORD -n 123e4567-e89b-12d3-a456-426614174003 --file_type html
 
-java -jar file-chunk-generator.jar --topic TRAFFIC-FILE-STREAM-RECORD -n 123e4567-e89b-12d3-a456-426614174004 --file_type eml
+java -cp e2e-mockdata-generator.jar com.geedgenetworks.FileChunkGenerator --topic TRAFFIC-FILE-STREAM-RECORD -n 123e4567-e89b-12d3-a456-426614174004 --file_type eml
 
-java -jar file-chunk-generator.jar --topic TRAFFIC-FILE-STREAM-RECORD -n 123e4567-e89b-12d3-a456-426614174005 --file_type traffic_pcapng
+java -cp e2e-mockdata-generator.jar com.geedgenetworks.FileChunkGenerator --topic TRAFFIC-FILE-STREAM-RECORD -n 123e4567-e89b-12d3-a456-426614174005 --file_type traffic_pcapng
 
-java -jar file-chunk-generator.jar --topic TROUBLESHOOTING-FILE-STREAM-RECORD -n 123e4567-e89b-12d3-a456-426614174006 --file_type troubleshooting_pcapng
+java -cp e2e-mockdata-generator.jar com.geedgenetworks.FileChunkGenerator --topic TROUBLESHOOTING-FILE-STREAM-RECORD -n 123e4567-e89b-12d3-a456-426614174006 --file_type troubleshooting_pcapng
 
 ```
 
-### 国家中心输出故障诊断报告（等待3-5分钟）
+### 输出故障诊断报告（等待3-5分钟）
 
 ```shell
 
 # -folder logs ：对日志进行故障诊断，输出诊断明细
+# -folder metrics：对Metrics进行故障诊断，输出诊断明细
+# -folder files：对文件进行故障诊断，输出诊断明细；指定分中心HOS访问地址
 newman run ./collection.json -n 1 -e ./environment.json --delay-request 500 --timeout-script 10000 --timeout-request 300000 --timeout 3600000 --insecure  --verbose --ignore-redirects --env-var "data_center=tsg_olap"  --folder logs 
 
-# -folder metrics：对Metrics进行故障诊断，输出诊断明细
 newman run ./collection.json -n 1 -e ./environment.json --delay-request 500 --timeout-script 10000 --timeout-request 300000 --timeout 3600000 --insecure  --verbose --ignore-redirects --env-var "data_center=tsg_olap"  --folder metrics 
 
-# -folder logs：对日志进行故障诊断，通过表情形式输出测试结果
-newman run ./collection.json -n 1 --delay-request 500 -e ./environment.json --env-var "data_center=tsg_olap" --ignore-redirects --folder logs -r emojitrain
-
-# -folder files：对文件进行故障诊断，输出诊断明细
 newman run ./collection.json -n 1 -e ./environment.json --delay-request 500 --timeout-script 10000 --timeout-request 300000 --timeout 3600000 --insecure  --verbose --ignore-redirects --env-var "hos_ip=127.0.0.1"  --folder files 
 
-#-folder files：对文件进行故障诊断，通过表情形式输出测试结果
+# -folder logs：对日志进行故障诊断，通过表情形式输出测试结果
+# -folder files：对文件进行故障诊断，通过表情形式输出测试结果
+newman run ./collection.json -n 1 --delay-request 500 -e ./environment.json --env-var "data_center=tsg_olap" --ignore-redirects --folder logs -r emojitrain
+
 newman run ./collection.json -n 1 --delay-request 500 -e ./environment.json  --env-var "hos_ip=127.0.0.1"  --ignore-redirects --folder files -r emojitrain
 
 
