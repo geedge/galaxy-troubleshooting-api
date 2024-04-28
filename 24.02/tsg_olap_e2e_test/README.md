@@ -66,12 +66,12 @@ java -cp e2e-mockdata-generator.jar com.geedgenetworks.LogGenerator --topic STAT
 ```
 
 - Files
-	- 123e4567-e89b-12d3-a456-426614174001  监测策略PCAPNG
+	- 123e4567-e89b-12d3-a456-426614174001  监测策略 PcapNG
 	- 123e4567-e89b-12d3-a456-426614174002  HTTP Request Body
 	- 123e4567-e89b-12d3-a456-426614174003  HTTP Response Body
 	- 123e4567-e89b-12d3-a456-426614174004  MAIL EML
-	- 123e4567-e89b-12d3-a456-426614174005  RTP PCPAPNG
-	- 123e4567-e89b-12d3-a456-426614174006  Troubleshooting PCPAPNG
+	- 123e4567-e89b-12d3-a456-426614174005  RTP PcapNG
+	- 123e4567-e89b-12d3-a456-426614174006  Troubleshooting PcapNG
 
 ```shell
 cd e2e-mockdata-generator/
@@ -106,9 +106,7 @@ newman run ./collection.json -n 1 -e ./environment.json --delay-request 500 --ti
 # -folder logs：对日志进行故障诊断，通过表情形式输出测试结果
 # -folder files：对文件进行故障诊断，通过表情形式输出测试结果
 newman run ./collection.json -n 1 --delay-request 500 -e ./environment.json --env-var "data_center=tsg_olap" --ignore-redirects --folder logs -r emojitrain
-
 newman run ./collection.json -n 1 --delay-request 500 -e ./environment.json  --env-var "hos_ip=127.0.0.1"  --ignore-redirects --folder files -r emojitrain
-
 
 #清除测试数据（暂支持对文件的删除）
 newman run ./collection.json -n 1 --delay-request 500 -e ./environment.json --ignore-redirects --folder clear_test_data -r emojitrain
