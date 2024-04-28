@@ -94,9 +94,9 @@ java -cp e2e-mockdata-generator.jar com.geedgenetworks.FileChunkGenerator --topi
 
 ```shell
 
-# -folder logs ：对日志进行故障诊断，输出诊断明细
-# -folder metrics：对Metrics进行故障诊断，输出诊断明细
-# -folder files：对文件进行故障诊断，输出诊断明细；指定分中心HOS访问地址
+# -folder logs ：对日志进行故障诊断，输出诊断明细；指定data_center。
+# -folder metrics：对Metrics进行故障诊断，输出诊断明细；指定data_center。
+# -folder files：对文件进行故障诊断，输出诊断明细；指定分中心HOS访问地址。
 newman run ./collection.json -n 1 -e ./environment.json --delay-request 500 --timeout-script 10000 --timeout-request 300000 --timeout 3600000 --insecure  --verbose --ignore-redirects --env-var "data_center=tsg_olap"  --folder logs 
 
 newman run ./collection.json -n 1 -e ./environment.json --delay-request 500 --timeout-script 10000 --timeout-request 300000 --timeout 3600000 --insecure  --verbose --ignore-redirects --env-var "data_center=tsg_olap"  --folder metrics 
