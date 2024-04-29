@@ -72,6 +72,7 @@ java -cp e2e-mockdata-generator.jar com.geedgenetworks.LogGenerator --topic STAT
 	- 123e4567-e89b-12d3-a456-426614174004  MAIL EML
 	- 123e4567-e89b-12d3-a456-426614174005  RTP PcapNG
 	- 123e4567-e89b-12d3-a456-426614174006  Troubleshooting PcapNG
+	- 123e4567-e89b-12d3-a456-426614174007  Datapath Telemetry PcapNG
 
 ```shell
 cd e2e-mockdata-generator/
