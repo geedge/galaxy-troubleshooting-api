@@ -87,9 +87,9 @@ java -cp e2e-mockdata-generator.jar com.geedgenetworks.FileChunkGenerator --topi
 
 java -cp e2e-mockdata-generator.jar com.geedgenetworks.FileChunkGenerator --topic TRAFFIC-FILE-STREAM-RECORD -n 123e4567-e89b-12d3-a456-426614174005 --file_type traffic_pcapng
 
-java -cp e2e-mockdata-generator.jar com.geedgenetworks.FileChunkGenerator --topic TROUBLESHOOTING-FILE-STREAM-RECORD -n 123e4567-e89b-12d3-a456-426614174006 --file_type troubleshooting_pcapng
+# java -cp e2e-mockdata-generator.jar com.geedgenetworks.FileChunkGenerator --topic TROUBLESHOOTING-FILE-STREAM-RECORD -n 123e4567-e89b-12d3-a456-426614174006 --file_type troubleshooting_pcapng
 
-java -cp e2e-mockdata-generator.jar com.geedgenetworks.FileChunkGenerator --topic DATAPATH-TELEMETRY-RECORD -n 123e4567-e89b-12d3-a456-426614174007 --file_type datapath_telemetry_pcapng
+# java -cp e2e-mockdata-generator.jar com.geedgenetworks.FileChunkGenerator --topic DATAPATH-TELEMETRY-RECORD -n 123e4567-e89b-12d3-a456-426614174007 --file_type datapath_telemetry_pcapng
 
 ```
 
