@@ -2,6 +2,18 @@
 
 使用Postman组件，基于Rest API接口对TSG OLAP 进行功能验证。包括组件健康检查，功能集成测试及故障诊断。
 
+## Release 24.05 (28 MAY 2024)
+
+###### New Features
+
+- 增加Scehma datapath_telemetry_record
+    
+
+###### Update
+
+- Session Records 查询增加c2s_ttl,s2c_ttl
+
+
 ## Release 24.04 (28 APR 2024)
 
 ###### New Features
