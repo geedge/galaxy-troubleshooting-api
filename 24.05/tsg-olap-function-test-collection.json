@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "5cf7b968-33c6-4c40-a178-d4f15a8803cb",
-		"name": "Galaxy-troubleshooting-api-24.05",
+		"name": "tsg-olap-function-test-24.05",
 		"description": "# galaxy-troubleshooting-api\n\n使用Postman组件，基于Rest API接口对TSG OLAP 进行功能验证。包括组件健康检查，功能集成测试及故障诊断。\n\n## Release 24.05 (28 MAY 2024)\n\n###### New Features\n\n- 增加Scehma datapath_telemetry_record\n    \n\n###### Update\n\n- Session Records 查询增加c2s_ttl,s2c_ttl\n    \n\n## Release 24.04 (28 APR 2024)\n\n###### New Features\n\n- 增加DoS Protection Rule Metric 相关Datasets\n    \n- 增加DoS Protection Policy Rule Hits\n    \n\n###### Update\n\n- 日志公共字段增加tunnel_id_list,client_country, client_super_administrative_area, client_administrative_area, client_sub_administrative_area,server_country, server_super_administrative_area, server_administrative_area, server_sub_administrative_area\n    \n- QGW Query API 参数由execution_mode修改 execution_mode\n    \n- DoS Threat Map 增加 attack volume接口\n    \n- Statistics Rule Metric增加Client ASN和Server ASN Dataset\n    \n- TopK 增加维度rank_by\n    \n- TopK Metric 增加Top Client Countries，Top Server Countries\n    \n\n###### Delete\n\n- 删除Top Subscribers\n    \n\n## Release 24.03 (28 MAR 2024)\n\n###### Update\n\n- Top-k metrics 去掉metric维度\n    \n- Saved query scheduler 增加monitor 接口\n    \n\n## Release 24.02 (29 FEB 2024)\n\n###### Update\n\n- Metric相关接口内层嵌套查询调整粒度为1s\n    \n- 基础字段tunnels修改为encapsulation\n    \n\n## Release 24.01 (31 JAN 2024)\n\n###### New Features\n\n- 依据OLAP API 组织接口\n    \n- 接口进行重构，不再兼容23.10及之前版本\n    \n\n## Release 23.10 (30 OCT 2023)\n\n###### Update\n\n- 会话日志增加毫米级时间戳字段common_start_timestamp_ms, common_end_timestamp_ms\n    \n- 会话日志增加操作系统指纹common_client_os_name,common_server_os_name\n    \n\n## Release 23.09 (30 SEP 2023)\n\n###### Update\n\n- metrics 修改表名由statistics_object改为object_statistics\n    \n- Flags统计增加Bidirectional标识\n    \n- Closed Session Records 增加http_status_code, ssl_esni_flag, ssl_ech_flag\n    \n- 删除Kafka Topics 目录\n    \n\n## Release 23.08 (21 AUG 2023)\n\n###### New Features\n\n- Metrics增加Statistics Policy 相关接口\n    \n- Metrics增加Statistics Object 相关接口\n    \n- Metrics增加Statistics rule 命中计数接口\n    \n\n###### Update\n\n- 会话日志查询，增加重命名字段common_out_link_id、common_in_link_id\n    \n\n## Release 23.07 (21 JUL 2023)\n\n###### Update\n\n- 修复Network Throughput Active Sessions计算错误，不除时间粒度\n    \n\n## Release 23.06 (21 JUN 2023)\n\n###### Update\n\n- 优化Limit返回值\n    \n\n## Release 23.05 (28 MAY 2023)\n\n###### New Features\n\n- 增加Service chaining统计接口\n    \n- QGW增加嵌套子查询接口，用于验证高级搜索\n    \n\n###### Update\n\n- Main Dashboard统计接口重构，更改统计源\n    \n- Live Traffic Chart 接口重构，更改统计源\n    \n- 原代理日志拆分为Intercept和Manipulation\n    \n- 相关Metrics的Schema更改为重构后的数据源\n    \n\n## Release 23.04 (28 APR 2023)\n\n###### New Features\n\n- 增加数据写入延迟接口Session Insert Latency Distribution\n    \n- 增加数据写入Kafka延迟接口 Session Ingestion Latency Distribution\n    \n\n###### Update\n\n- 重构 Security Policy Hits Metrics 统计\n    \n- 重构 Traffic Shaping Metrics 统计\n    \n\n## Release 23.03 (28 MAR 2023)\n\n###### New Features\n\n- 目录整体重构，重新梳理功能，便于Newman CLI运行\n    \n- ClickHouse目录下增加慢查询故障诊断语句\n    \n- 参数与API接口统一改为英文，避免中文编码执行异常\n    \n- 加密环境变量密码、token等敏感信息\n    \n- 定义全局动态变量：时间范围、随机IP、随机域名等\n    \n\n###### Update\n\n- Flags 添加C2S与S2C标志位标签\n    \n\n## Release 23.02 (28 FEB 2023)\n\n###### New Features\n\n- 增加Traffic Shaping 相关统计接口\n    \n\n###### Update\n\n- 会话日志增加列common_shaping_rule_ids\n    \n- 会话与安全事件日志增加列common_server_domain\n    \n- 会话与安全事件日志增加列common_flags_identify_info\n    \n\n## Release 23.01 (31 JAN 2023)\n\n###### Update\n\n- 会话与安全事件日志增加列common_server_fqdn\n    \n- 会话与安全事件日志增加列common_app_full_path\n    \n\n## Release 22.12 (30 DEC 2022)\n\n###### New Features\n\n- 新增Dashboards-增加App推荐\n    \n- 新增系统报告-会话日志Flags统计\n    \n- 新增系统报告-会话日志Flags占比\n    \n\n###### Update\n\n- 会话与安全事件日志增加common_flags列\n    \n- 自定义IP映射-增加对ASN函数\n    \n\n## Release 22.1 (30 NOV 2022)\n\n###### New Features\n\n###### Update\n\n- 会话与安全事件日志增加ssl_ja3s_hash列\n    \n\n## Release 22.10 (30 OCT 2022)\n\n###### New Features\n\n- 06其它-功能验证-Traffic Summary增加Throughput接口\n    \n    ###### Update\n    \n- 更新原有查询，将VSYS ID作为默认查询条件\n    \n\n## Release 22.09 (30 SEP 2022)\n\n###### Update\n\n- 会话与安全事件日志增加common_tunnel_endpoint_a_desc, common_tunnel_endpoint_b_desc,dtls_sni 列\n    \n\n## Release 22.08 (31 AUG 2022)\n\n###### New Features\n\n- 其它-查询网关-Live Charts 总带宽流量校验\n    \n- 增加检查数据流-SQL执行计划\n    \n- 增加检查数据流-SQL查看表结构\n    \n- 增加检查数据推荐-推荐IMSI到TEID关系\n    \n- 增加检查数据推荐-推荐IMEI到TEID关系\n    \n- 增加检查数据推荐-推荐Phone Number到TEID关系\n    \n- 增加检查数据推荐-推荐apn到TEID关系\n    \n- 增加检查数据推荐-实时查询任务-提交查询任务(实时统计)\n    \n- 增加检查数据推荐-实时查询任务-获取任务结果(实时统计)\n    \n- 增加检查数据推荐-知识库列表\n    \n- 增加预处理检查-检测预处理延迟\n    \n- 增加预处理检查-已关闭会话日志延迟分布\n    \n    ###### Update\n    \n\n## Release 22.07 (30 JUL 2022)\n\n###### New Features\n\n- 增加检查数据推荐-Top Server IP流量概况评估\n    \n- 增加检查数据推荐-Top SNI 流量概况评估\n    \n    ###### Update\n    \n\n## Release 22.06 (30 JUE 2022)\n\n###### New Features\n\n- 检查数据流-增加存储配额一致性检查\n    \n    ###### Update\n    \n- 系统报告检查-增加与CM默认VSYSID=1参数\n    \n\n## Release 22.05 (31 MAY 2022)\n\n###### New Features\n\n###### Update\n\n- 检查日志-会话日志/安全事件日志增加RDP类型校验\n    \n\n## Release 22.04 (29 APR 2022)\n\n###### New Features\n\n###### Update\n\n- 预处理检查-是否有数据验证，改为通过console后台打印日志\n    \n- Dashboards Top部分功能增加device_group, data_center维度校验\n    \n\n## Release 22.03 (8 APR 2022)\n\n###### New Features\n\n- 增加数据预处理检查，为每类日志增加多个测试用例，区分功能或无数据问题\n    \n    ###### Update\n    \n- 其它-评估日志预处理，增加ETL处理时延和写入Kafka时延指标\n    \n- 检查日志模块对会话，安全和代理事件日志基于具体字段查询\n    \n\n###### Delete\n\n- 删除检查数据流，关于Topic的测试用例\n    \n\n## Release 22.02 (8 MAR 2022)\n\n###### New Features\n\n- 检查数据流-元数据检查 增加schema评价文件事件日志\n    \n\n## Release 22.01 (27 JAN 2022)\n\n###### New Features\n\n- 检查数据流-TopN计算 增加Application接口验证\n    \n\n###### Update\n\n- 重新梳理分类，删除无用接口\n    \n- 重新排列分类，将系统自检放到首位\n    \n\n## Release 21.12 (1 Dec 2021)\n\n###### New Features\n\n- 新增数据推荐查询-实时查询任务\n    \n- 新增数据推荐查询-推荐Subscriber ID 到IP关系\n    \n- 新增数据推荐查询-推荐APP活跃客户端IP\n    \n- 新增数据推荐查询-推荐TopN Server IP\n    \n- 新增数据推荐查询-推荐TopN SNI\n    \n- 新增常用快捷功能-查询网关，增加优化查询测试集\n    \n    - Top 查询优化\n        \n    - Calcite 缓存查询\n        \n    - 自定义时间函数补全功能\n        \n\n###### Update\n\n- Dashboard 查询，代理策略命中动作增加Edit Element 统计\n    \n\n## Release 21.11 (5 Nov 2021)\n\n###### New Features\n\n- Delete\n    \n- Update\n    \n- 修改报告查询接口(由查询mariadb方式变更为API接口)\n    \n- 修改规范“数据推荐查询”所有接口的命名\n    \n\n## Release 21.10 (28 OCT 2021)\n\n###### New Features\n\n- 新增HOS健康状态检测接口\n    \n- Delete\n    \n- 删除原ClickHouse/Druid/ArangoDB 状态检查接口\n    \n\n## Release 21.09 (23 SEP 2021)\n\n###### New Features\n\n- Update\n    \n- 删除分布式调度任务，5分钟TOPN校验，交由FLink统计\n    \n- 原始日志表名进行重命名，相关查询接口更新\n    \n- 修正DNS分析的SQL数据集\n    \n\n## Release 21.08 (15 AUG 2021)\n\n###### New Features\n\n- 新增“Dashboard查询-DoS Threat Map”功能列表，显示DoS检测地图接口\n    \n- 新增“原始日志查询-DoS事件日志”，显示DoS攻击检测日志\n    \n- 新增“原始日志查询-DoS事件日志-Summary”，显示DoS攻击趋势统计\n    \n- 新增“原始日志查询-DoS事件日志-Destination IP Traffic Trend”，显示受害者IP历史流量趋势\n    \n- Update\n    \n- 迁移“Dashboard查询”liveCharts接口，放到“Live Charts”目录中统一管理。\n    \n- 对DNS分析，增加一些查询样例\n    \n\n## Release 21.07 (5 JUL 2021)\n\n###### New Features\n\n- 增加”常用快捷功能-基数统计“，用于分析日志分布情况\n    \n- 增加”常用快捷功能-DNS放大攻击“，查询特征数据集\n    \n- 增加”通用检查-对象存储-获取某个文件“，用于文件获取验证\n    \n\n###### Update\n\n- 为所有接口增加Tests脚本，对接口进行批量验证测试\n    \n- 修正部分接口查询异常\n    \n\n## Release 21.06 (7 JUN 2021)\n\n###### New Features\n\n- Environments 增加环境变量domain、client_ip、server_ip、l7_protocol和PT1M_TIME\n    \n- 常用快捷功能增加某域名下钻、某IP下钻、协议下钻和DNS分析功能\n    \n\n###### Update\n\n- 原始日志查询，基于Druid近1小时日志变化粒度从5分钟改为1分钟。包含通联、策略和代理日志。\n    \n\n## Release 21.05 (6 MAY 2021)\n\n###### New Features\n\n- 新增“GTP-C日志”功能，辅助故障诊断\n    \n- 新增“事务日志”功能，辅助故障诊断\n    \n- 新增“活跃会话日志”功能，辅助故障诊断\n    \n- 新增“07.常用快捷功能-评估写入日志量”，查看当前系统的吞吐\n    \n\n###### Update\n\n- 修改\"01.通用检查-数据存储检查\"，增加事务、活跃及GTP-C 检测\n    \n\n## Release 21.04 (3 APR 2021)\n\n###### New Features\n\n- 增加“VoIP日志”功能，辅助故障诊断\n    \n- 增加“元数据检查”分类目录\n    \n- 增加“HOS对象存储”目录，用于定位对象存储\n    \n\n###### Update\n\n- 修改“SQL语法检查”为“SQL语法验证”，支持SQL语句的静态分析和数据库语义验证\n    \n- 迁移功能项位置，方便问题定位\n    \n\n###### Delete\n\n- 删除“系统检查-查询引擎SQL测试集\\[过时\\]”功能，由“故障诊断-sql性能测试”替代。\n    \n\n## Release 21.03 (2 MAR 2021)\n\n###### New Features\n\n- 增加故障诊断-元数据功能，可分析日志字段是否与schema一致\n    \n- 增加故障诊断-sql性能测试，可对查询引擎进行功能性验证和POC性能测试\n    \n\n###### Update\n\n- 对查询引擎SQL测试集标记过时\n    \n\n## Release 21.02 (1 FEB 2021)\n\n###### Update\n\n- 改善内部测试集，应对新的功能修改\n    \n\n## Release 20.11.rc3 (11 DEC 2020)\n\n###### New Features\n\n- 增加常用快捷功能- 安装证书独立客户端IP数据趋势\n    \n- 增加常用快捷功能-访问速度最慢TOP20 域名\n    \n- 增加常用快捷功能-报告预置Metrics\n    \n- 增加原始日志查询-安全策略-动作命中计数\n    \n- 增加原始日志查询-代理策略-动作命中计数\n    \n- 增加原始日志查询-通联-流量计数(now)\n    \n\n###### Update\n\n- 改善Dashboard查询-基础统计-新建、活跃（计数）-now\n    \n- 改善Dashboard查询-新建、活跃（趋势）\n    \n- 目录增加编号，便于管理\n    \n- 修改分布式调度任务-5分钟TOPN-hot表验证表名\n    \n- 部分Action为post 改为 get，便于导出命令行",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "8105037"
@@ -4979,7 +4979,8 @@
 													"});",
 													""
 												],
-												"type": "text/javascript"
+												"type": "text/javascript",
+												"packages": {}
 											}
 										},
 										{
@@ -4988,7 +4989,8 @@
 												"exec": [
 													""
 												],
-												"type": "text/javascript"
+												"type": "text/javascript",
+												"packages": {}
 											}
 										}
 									],
@@ -5001,7 +5003,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n   \"statement\" : \"select PERCENTILES_HDR(latency_ms_sketch) as histogram_tcp_latency_ms,HDR_GET_QUANTILES(HDR_HISTOGRAM(latency_ms_sketch), 0.5,0.95,0.99) as tcp_latency_quantiles from statistics_rule where __time >= '{{start_time}}' and __time < '{{end_time}}' and vsys_id in (1,2,3,4,5,6,7,8) and rule_id=1 and chart_id=8267\" ,\n   \"output_mode\":\"json\",\n   \"execution_mode\":\"oneshot\"\n\n}",
+											"raw": "{\n   \"statement\" : \"select PERCENTILES_HDR(latency_ms_sketch) as histogram_tcp_latency_ms,HDR_GET_QUANTILES(HDR_HISTOGRAM(latency_ms_sketch), 0.5,0.95,0.99) as tcp_latency_quantiles from statistics_rule where __time >= '{{start_time}}' and __time < '{{end_time}}' and vsys_id in (1,2,3,4,5,6,7,8)\" ,\n   \"output_mode\":\"json\",\n   \"execution_mode\":\"oneshot\"\n\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -6101,7 +6103,6 @@
 											{
 												"key": "Authorization",
 												"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjEuNTkzNTIwMTQyMTI4MTA3OGUrNiwiZXhwIjoxNTk2MTEyMTQyLCJpc3MiOiJhcmFuZ29kYiIsInByZWZlcnJlZF91c2VybmFtZSI6InJvb3QifQ==.6KZ2P32UymePwXgB3QudnufM2ZgnKepGzuYYkQHNF0A=",
-												"type": "text",
 												"disabled": true
 											}
 										],
@@ -12008,7 +12009,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://{{qgw_ip}}:{{qgw_port}}/v1/troubleshooting/benchmark?test=sql_benchmark_dataset&is_saved=0",
+							"raw": "http://{{qgw_ip}}:{{qgw_port}}/v1/troubleshooting/benchmark?test=benchmark&is_saved=0",
 							"protocol": "http",
 							"host": [
 								"{{qgw_ip}}"
@@ -12022,7 +12023,7 @@
 							"query": [
 								{
 									"key": "test",
-									"value": "sql_benchmark_dataset"
+									"value": "benchmark"
 								},
 								{
 									"key": "is_saved",

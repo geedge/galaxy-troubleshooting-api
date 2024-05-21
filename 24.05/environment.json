@@ -224,9 +224,27 @@
 			"value": "",
 			"type": "any",
 			"enabled": true
+		},
+		{
+			"key": "Last 10 Minutes Start",
+			"value": "FROM_UNIXTIME(UNIX_TIMESTAMP(now())-600)",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "metric_fixed_time",
+			"value": "FROM_UNIXTIME(946681200)",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "data_center",
+			"value": "tsg_olap",
+			"type": "default",
+			"enabled": true
 		}
 	],
 	"_postman_variable_scope": "environment",
-	"_postman_exported_at": "2024-05-15T08:28:02.251Z",
-	"_postman_exported_using": "Postman/11.1.1"
+	"_postman_exported_at": "2024-05-21T02:39:03.800Z",
+	"_postman_exported_using": "Postman/11.1.3"
 }
