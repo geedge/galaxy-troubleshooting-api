@@ -100,19 +100,19 @@ java -cp e2e-mockdata-generator.jar com.geedgenetworks.FileChunkGenerator --topi
 # -folder logs ：对日志进行故障诊断，输出诊断明细；指定data_center。
 # -folder metrics：对Metrics进行故障诊断，输出诊断明细；指定data_center。
 # -folder files：对文件进行故障诊断，输出诊断明细；指定分中心HOS访问地址。
-newman run ./collection.json -n 1 -e ./environment.json --delay-request 500 --timeout-script 10000 --timeout-request 300000 --timeout 3600000 --insecure  --verbose --ignore-redirects --env-var "data_center=tsg_olap"  --folder logs 
+newman run ./tsg-olap-e2e-test-collection.json -n 1 -e ./environment.json --delay-request 500 --timeout-script 10000 --timeout-request 300000 --timeout 3600000 --insecure  --verbose --ignore-redirects --env-var "data_center=tsg_olap"  --folder logs 
 
-newman run ./collection.json -n 1 -e ./environment.json --delay-request 500 --timeout-script 10000 --timeout-request 300000 --timeout 3600000 --insecure  --verbose --ignore-redirects --env-var "data_center=tsg_olap"  --folder metrics 
+newman run ./tsg-olap-e2e-test-collection.json -n 1 -e ./environment.json --delay-request 500 --timeout-script 10000 --timeout-request 300000 --timeout 3600000 --insecure  --verbose --ignore-redirects --env-var "data_center=tsg_olap"  --folder metrics 
 
-newman run ./collection.json -n 1 -e ./environment.json --delay-request 500 --timeout-script 10000 --timeout-request 300000 --timeout 3600000 --insecure  --verbose --ignore-redirects --env-var "hos_ip=127.0.0.1"  --folder files 
+newman run ./tsg-olap-e2e-test-collection.json -n 1 -e ./environment.json --delay-request 500 --timeout-script 10000 --timeout-request 300000 --timeout 3600000 --insecure  --verbose --ignore-redirects --env-var "hos_ip=127.0.0.1"  --folder files 
 
 # -folder logs：对日志进行故障诊断，通过表情形式输出测试结果
 # -folder files：对文件进行故障诊断，通过表情形式输出测试结果
-newman run ./collection.json -n 1 --delay-request 500 -e ./environment.json --env-var "data_center=tsg_olap" --ignore-redirects --folder logs -r emojitrain
-newman run ./collection.json -n 1 --delay-request 500 -e ./environment.json  --env-var "hos_ip=127.0.0.1"  --ignore-redirects --folder files -r emojitrain
+newman run ./tsg-olap-e2e-test-collection.json -n 1 --delay-request 500 -e ./environment.json --env-var "data_center=tsg_olap" --ignore-redirects --folder logs -r emojitrain
+newman run ./tsg-olap-e2e-test-collection.json -n 1 --delay-request 500 -e ./environment.json  --env-var "hos_ip=127.0.0.1"  --ignore-redirects --folder files -r emojitrain
 
 #清除测试数据（暂支持对文件的删除）
-newman run ./collection.json -n 1 --delay-request 500 -e ./environment.json --ignore-redirects --folder clear_test_data -r emojitrain
+newman run ./tsg-olap-e2e-test-collection.json -n 1 --delay-request 500 -e ./environment.json --ignore-redirects --folder clear_test_data -r emojitrain
 
 
 ```
