@@ -15,26 +15,27 @@ TSG OLAP 支持对Logs，Metrics和Files进行端到端业务自检,自检数据
 
 `Newman CLI 使用QGW HTTP REST API 输出诊断报告,需要添加访问IP`
 ```json
+[
   {
-			"key": "qgw_ip",
-			"value": "127.0.0.1",
-			"type": "default",
-			"enabled": true
-		},
-		{
-			"key": "qgw_port",
-			"value": "9999",
-			"type": "default",
-			"enabled": true
-		}
-
+    "key": "qgw_ip",
+    "value": "127.0.0.1",
+    "type": "default",
+    "enabled": true
+  },
+  {
+    "key": "qgw_port",
+    "value": "9999",
+    "type": "default",
+    "enabled": true
+  }
+]
 ```
 ### 修改e2e_test.sh配置
 
-- 增加每个分中心的Kafka地址
+- 增加每个分中心的kafka broker地址
 
 ```shell
-  # data_center_name:kafka_server
+  # [data_center_name]:kafka_server_list
   declare -A KAFKA_SERVERS=(
     ["tsg_olap_dc_a"]="192.168.44.11:9092"
     ["tsg_olap_dc_b"]="192.168.44.11:9092"
@@ -42,7 +43,7 @@ TSG OLAP 支持对Logs，Metrics和Files进行端到端业务自检,自检数据
 ```
 - 增加每个分中心的HOS访问地址
 ```shell
-  # data_center_name:hos_endpoint
+  # [data_center_name]:hos_endpoint_uri
   declare -A HOS_ENDPOINTS=(
     ["tsg_olap_dc_a"]="192.168.44.11"
     ["tsg_olap_dc_b"]="192.168.44.11"
