@@ -32,10 +32,7 @@ TSG OLAP的数据摄入分为三种类型：Logs、Metrics 和 File Chunks。为
 
 `Kafka需为分中心地址`
 
-- 修改`config.properties`, 增加Kafka访问地址
-```props
-  kafka.server=192.168.41.29:9092 
-```
+- 修改命令行中的`{{ kafka_server }}`, 设置Kafka访问地址
 
 ### 写入测试集至Kafka
 - Logs
@@ -43,11 +40,11 @@ TSG OLAP的数据摄入分为三种类型：Logs、Metrics 和 File Chunks。为
 
 cd e2e-mockdata-generator/
 
-java -cp e2e-mockdata-generator.jar com.geedgenetworks.LogGenerator --topic SESSION-RECORD  -f ./datasets/logs/session_record.dat
+java -cp e2e-mockdata-generator.jar com.geedgenetworks.LogGenerator --bootstrap_server {{ kafka_server }} --topic SESSION-RECORD  -f ./datasets/logs/session_record.dat
 
-java -cp e2e-mockdata-generator.jar com.geedgenetworks.LogGenerator --topic VOIP-RECORD  -f ./datasets/logs/voip_record.dat
+java -cp e2e-mockdata-generator.jar com.geedgenetworks.LogGenerator --bootstrap_server {{ kafka_server }} --topic VOIP-RECORD  -f ./datasets/logs/voip_record.dat
 
-java -cp e2e-mockdata-generator.jar com.geedgenetworks.LogGenerator --topic PROXY-EVENT  -f ./datasets/logs/proxy_event.dat
+java -cp e2e-mockdata-generator.jar com.geedgenetworks.LogGenerator --bootstrap_server {{ kafka_server }} --topic PROXY-EVENT  -f ./datasets/logs/proxy_event.dat
 
 ```
 - Metrics
@@ -55,13 +52,13 @@ java -cp e2e-mockdata-generator.jar com.geedgenetworks.LogGenerator --topic PROX
 ```shell
 cd e2e-mockdata-generator/
 
-java -cp e2e-mockdata-generator.jar com.geedgenetworks.LogGenerator --topic NETWORK-TRAFFIC-METRIC  -f ./datasets/metrics/network_traffic_metric.dat
+java -cp e2e-mockdata-generator.jar com.geedgenetworks.LogGenerator --bootstrap_server {{ kafka_server }} --topic NETWORK-TRAFFIC-METRIC  -f ./datasets/metrics/network_traffic_metric.dat
 
-java -cp e2e-mockdata-generator.jar com.geedgenetworks.LogGenerator --topic POLICY-RULE-METRIC  -f ./datasets/metrics/policy_rule_metric.dat
+java -cp e2e-mockdata-generator.jar com.geedgenetworks.LogGenerator --bootstrap_server {{ kafka_server }} --topic POLICY-RULE-METRIC  -f ./datasets/metrics/policy_rule_metric.dat
 
-java -cp e2e-mockdata-generator.jar com.geedgenetworks.LogGenerator --topic OBJECT-STATISTICS-METRIC  -f ./datasets/metrics/object_statistics_metric.dat
+java -cp e2e-mockdata-generator.jar com.geedgenetworks.LogGenerator --bootstrap_server {{ kafka_server }} --topic OBJECT-STATISTICS-METRIC  -f ./datasets/metrics/object_statistics_metric.dat
 
-java -cp e2e-mockdata-generator.jar com.geedgenetworks.LogGenerator --topic STATISTICS-RULE-METRIC  -f ./datasets/metrics/statistics_rule_metric.dat
+java -cp e2e-mockdata-generator.jar com.geedgenetworks.LogGenerator --bootstrap_server {{ kafka_server }} --topic STATISTICS-RULE-METRIC  -f ./datasets/metrics/statistics_rule_metric.dat
 
 ```
 
@@ -76,17 +73,17 @@ java -cp e2e-mockdata-generator.jar com.geedgenetworks.LogGenerator --topic STAT
 ```shell
 cd e2e-mockdata-generator/
 
-java -cp e2e-mockdata-generator.jar com.geedgenetworks.FileChunkGenerator --topic TRAFFIC-FILE-STREAM-RECORD -n 123e4567-e89b-12d3-a456-426614174001 --file_type traffic_pcapng
+java -cp e2e-mockdata-generator.jar com.geedgenetworks.FileChunkGenerator --bootstrap_server {{ kafka_server }} --topic TRAFFIC-FILE-STREAM-RECORD -n 123e4567-e89b-12d3-a456-426614174001 --file_type traffic_pcapng
 
-java -cp e2e-mockdata-generator.jar com.geedgenetworks.FileChunkGenerator --topic TRAFFIC-FILE-STREAM-RECORD -n 123e4567-e89b-12d3-a456-426614174002 --file_type html
+java -cp e2e-mockdata-generator.jar com.geedgenetworks.FileChunkGenerator --bootstrap_server {{ kafka_server }} --topic TRAFFIC-FILE-STREAM-RECORD -n 123e4567-e89b-12d3-a456-426614174002 --file_type html
 
-java -cp e2e-mockdata-generator.jar com.geedgenetworks.FileChunkGenerator --topic TRAFFIC-FILE-STREAM-RECORD -n 123e4567-e89b-12d3-a456-426614174003 --file_type html
+java -cp e2e-mockdata-generator.jar com.geedgenetworks.FileChunkGenerator --bootstrap_server {{ kafka_server }} --topic TRAFFIC-FILE-STREAM-RECORD -n 123e4567-e89b-12d3-a456-426614174003 --file_type html
 
-java -cp e2e-mockdata-generator.jar com.geedgenetworks.FileChunkGenerator --topic TRAFFIC-FILE-STREAM-RECORD -n 123e4567-e89b-12d3-a456-426614174004 --file_type eml
+java -cp e2e-mockdata-generator.jar com.geedgenetworks.FileChunkGenerator --bootstrap_server {{ kafka_server }} --topic TRAFFIC-FILE-STREAM-RECORD -n 123e4567-e89b-12d3-a456-426614174004 --file_type eml
 
-java -cp e2e-mockdata-generator.jar com.geedgenetworks.FileChunkGenerator --topic TRAFFIC-FILE-STREAM-RECORD -n 123e4567-e89b-12d3-a456-426614174005 --file_type traffic_pcapng
+java -cp e2e-mockdata-generator.jar com.geedgenetworks.FileChunkGenerator --bootstrap_server {{ kafka_server }} --topic TRAFFIC-FILE-STREAM-RECORD -n 123e4567-e89b-12d3-a456-426614174005 --file_type traffic_pcapng
 
-java -cp e2e-mockdata-generator.jar com.geedgenetworks.FileChunkGenerator --topic TROUBLESHOOTING-FILE-STREAM-RECORD -n 123e4567-e89b-12d3-a456-426614174006 --file_type troubleshooting_pcapng
+java -cp e2e-mockdata-generator.jar com.geedgenetworks.FileChunkGenerator --bootstrap_server {{ kafka_server }} --topic TROUBLESHOOTING-FILE-STREAM-RECORD -n 123e4567-e89b-12d3-a456-426614174006 --file_type troubleshooting_pcapng
 
 ```
 
