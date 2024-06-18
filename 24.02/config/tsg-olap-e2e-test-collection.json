@@ -1382,7 +1382,7 @@
 							"urlencoded": []
 						},
 						"url": {
-							"raw": "http://{{qgw_ip}}:{{qgw_port}}/v1/hos/traffic_file_bucket?file_names=123e4567-e89b-12d3-a456-426614174006",
+							"raw": "http://{{qgw_ip}}:{{qgw_port}}/v1/hos/troubleshooting_file_bucket?file_names=123e4567-e89b-12d3-a456-426614174006",
 							"protocol": "http",
 							"host": [
 								"{{qgw_ip}}"
@@ -1391,7 +1391,7 @@
 							"path": [
 								"v1",
 								"hos",
-								"traffic_file_bucket"
+								"troubleshooting_file_bucket"
 							],
 							"query": [
 								{
