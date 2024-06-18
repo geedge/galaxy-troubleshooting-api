@@ -23,11 +23,12 @@ TSG OLAP 支持对Logs，Metrics和Files进行端到端业务自检,自检数据
     "enabled": true
   },
   {
-    "key": "qgw_port",
-    "value": "9999",
-    "type": "default",
-    "enabled": true
+		"key": "hos_token",
+		"value": "c21f969b5f03d33d43e04f8f136e7682",
+		type": "secret",
+		"enabled": true
   }
+
 ]
 ```
 ### 修改e2e_test.sh配置
