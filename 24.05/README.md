@@ -2,119 +2,78 @@
 
 ## 概述
 
-TSG OLAP的数据摄入分为三种类型：Logs、Metrics 和 File Chunks。为确保能够正确处理并写入相应存储系统，需要支持端到端业务自检。
+TSG OLAP 支持对Logs，Metrics和Files进行端到端业务自检,自检数据流： Smaple Datasets -> Kafka Topic -> FLINK ETL -> Storage DB -> QGW API .
 
 ## 环境依赖
 
-- 测试数据生成工具 `e2e-mockdata-generator.jar`
-- 安装`Newman`，详细参考[帮助文档](https://learning.postman.com/docs/collections/using-newman-cli/newman-options/)
+- 样例数据生成工具：`e2e-mockdata-generator` ，需要JDK11环境
+- Report诊断工具：`Newman`，具体参考[帮助文档](https://learning.postman.com/docs/collections/using-newman-cli/newman-options/)
 
 ## 使用方法
 
-### Newman CLI enviroment.json 修改如下配置
-`Newman CLI 使用QGW HTTP Rest API 接口输出诊断报告，一般部署至国家中心`
+### 修改 enviroment.json 配置
+
+`Newman CLI 使用QGW HTTP REST API 输出诊断报告,需要添加访问IP`
 ```json
+[
   {
-			"key": "qgw_ip",
-			"value": "192.168.44.30",
-			"type": "default",
-			"enabled": true
-		},
-		{
-			"key": "qgw_port",
-			"value": "9999",
-			"type": "default",
-			"enabled": true
-		}
-
+    "key": "qgw_ip",
+    "value": "127.0.0.1",
+    "type": "default",
+    "enabled": true
+  },
+  {
+    "key": "hos_token",
+    "value": "c21f969b5f03d33d43e04f8f136e7682",
+    "type": "secret",
+    "enabled": true
+  }
+]
 ```
-### 测试数据生成工具修改Kafka地址
+### 修改e2e_test.sh配置
 
-`Kafka需为分中心地址`
-
-- 修改`config.properties`, 增加Kafka访问地址
-```props
-  kafka.server=192.168.41.29:9092 
-```
-
-### 写入测试集至Kafka
-- Logs
-```shell
-
-cd e2e-mockdata-generator/
-
-java -cp e2e-mockdata-generator.jar com.geedgenetworks.LogGenerator --topic SESSION-RECORD  -f ./datasets/logs/session_record.dat
-
-java -cp e2e-mockdata-generator.jar com.geedgenetworks.LogGenerator --topic VOIP-RECORD  -f ./datasets/logs/voip_record.dat
-
-java -cp e2e-mockdata-generator.jar com.geedgenetworks.LogGenerator --topic PROXY-EVENT  -f ./datasets/logs/proxy_event.dat
-
-```
-- Metrics
+- 增加每个分中心的kafka broker地址
 
 ```shell
-cd e2e-mockdata-generator/
-
-java -cp e2e-mockdata-generator.jar com.geedgenetworks.LogGenerator --topic NETWORK-TRAFFIC-METRIC  -f ./datasets/metrics/network_traffic_metric.dat
-
-java -cp e2e-mockdata-generator.jar com.geedgenetworks.LogGenerator --topic POLICY-RULE-METRIC  -f ./datasets/metrics/policy_rule_metric.dat
-
-java -cp e2e-mockdata-generator.jar com.geedgenetworks.LogGenerator --topic OBJECT-STATISTICS-METRIC  -f ./datasets/metrics/object_statistics_metric.dat
-
-java -cp e2e-mockdata-generator.jar com.geedgenetworks.LogGenerator --topic STATISTICS-RULE-METRIC  -f ./datasets/metrics/statistics_rule_metric.dat
-
+  # [data_center_name]:kafka_server_list
+  declare -A KAFKA_SERVERS=(
+    ["tsg_olap_dc_a"]="192.168.44.11:9092"
+    ["tsg_olap_dc_b"]="192.168.44.11:9092"
+  )
+```
+- 增加每个分中心的HOS访问地址
+```shell
+  # [data_center_name]:hos_endpoint_uri
+  declare -A HOS_ENDPOINTS=(
+    ["tsg_olap_dc_a"]="192.168.44.11"
+    ["tsg_olap_dc_b"]="192.168.44.11"
+  )
 ```
 
-- Files
-	- 123e4567-e89b-12d3-a456-426614174001  监测策略 PcapNG
-	- 123e4567-e89b-12d3-a456-426614174002  HTTP Request Body
-	- 123e4567-e89b-12d3-a456-426614174003  HTTP Response Body
-	- 123e4567-e89b-12d3-a456-426614174004  MAIL EML
-	- 123e4567-e89b-12d3-a456-426614174005  RTP PcapNG
-	- 123e4567-e89b-12d3-a456-426614174006  Troubleshooting PcapNG
-	- 123e4567-e89b-12d3-a456-426614174007  Datapath Telemetry PcapNG
+### 命令详解
+
+`./e2e_test.sh -h`
 
 ```shell
-cd e2e-mockdata-generator/
+Usage: ./e2e_test.sh [options]
 
-java -cp e2e-mockdata-generator.jar com.geedgenetworks.FileChunkGenerator --topic TRAFFIC-FILE-STREAM-RECORD -n 123e4567-e89b-12d3-a456-426614174001 --file_type traffic_pcapng
+Options:
+  -g <type>           Generate data (logs, metrics, files)
+  -d <type>           Run diagnostic report (logs, metrics, files)
+  -c                  Clear test data
+  -a                  Perform all operations: generate data, run diagnostics, and clear data
+  -i <key=value,...>  Set environment variable (data_center, hos_ip)
+  -v                  Enable verbose reporting
+  -e                  Enable emojitrain reporting
+  -h                  Show this help message
 
-java -cp e2e-mockdata-generator.jar com.geedgenetworks.FileChunkGenerator --topic TRAFFIC-FILE-STREAM-RECORD -n 123e4567-e89b-12d3-a456-426614174002 --file_type html
-
-java -cp e2e-mockdata-generator.jar com.geedgenetworks.FileChunkGenerator --topic TRAFFIC-FILE-STREAM-RECORD -n 123e4567-e89b-12d3-a456-426614174003 --file_type html
-
-java -cp e2e-mockdata-generator.jar com.geedgenetworks.FileChunkGenerator --topic TRAFFIC-FILE-STREAM-RECORD -n 123e4567-e89b-12d3-a456-426614174004 --file_type eml
-
-java -cp e2e-mockdata-generator.jar com.geedgenetworks.FileChunkGenerator --topic TRAFFIC-FILE-STREAM-RECORD -n 123e4567-e89b-12d3-a456-426614174005 --file_type traffic_pcapng
-
-# java -cp e2e-mockdata-generator.jar com.geedgenetworks.FileChunkGenerator --topic TROUBLESHOOTING-FILE-STREAM-RECORD -n 123e4567-e89b-12d3-a456-426614174006 --file_type troubleshooting_pcapng
-
-# java -cp e2e-mockdata-generator.jar com.geedgenetworks.FileChunkGenerator --topic DATAPATH-TELEMETRY-RECORD -n 123e4567-e89b-12d3-a456-426614174007 --file_type datapath_telemetry_pcapng
-
-```
-
-### 输出故障诊断报告（等待3-5分钟）
-
-```shell
-
-# -folder logs ：对日志进行故障诊断，输出诊断明细；指定data_center。
-# -folder metrics：对Metrics进行故障诊断，输出诊断明细；指定data_center。
-# -folder files：对文件进行故障诊断，输出诊断明细；指定分中心HOS访问地址。
-newman run ./tsg-olap-e2e-test-collection.json -n 1 -e ./environment.json --delay-request 500 --timeout-script 10000 --timeout-request 300000 --timeout 3600000 --insecure  --verbose --ignore-redirects --env-var "data_center=tsg_olap"  --folder logs 
-
-newman run ./tsg-olap-e2e-test-collection.json -n 1 -e ./environment.json --delay-request 500 --timeout-script 10000 --timeout-request 300000 --timeout 3600000 --insecure  --verbose --ignore-redirects --env-var "data_center=tsg_olap"  --folder metrics 
-
-newman run ./tsg-olap-e2e-test-collection.json -n 1 -e ./environment.json --delay-request 500 --timeout-script 10000 --timeout-request 300000 --timeout 3600000 --insecure  --verbose --ignore-redirects --env-var "hos_ip=127.0.0.1"  --folder files 
-
-# -folder logs：对日志进行故障诊断，通过表情形式输出测试结果
-# -folder files：对文件进行故障诊断，通过表情形式输出测试结果
-newman run ./tsg-olap-e2e-test-collection.json -n 1 --delay-request 500 -e ./environment.json --env-var "data_center=tsg_olap" --ignore-redirects --folder logs -r emojitrain
-newman run ./tsg-olap-e2e-test-collection.json -n 1 --delay-request 500 -e ./environment.json  --env-var "hos_ip=127.0.0.1"  --ignore-redirects --folder files -r emojitrain
-
-#清除测试数据（暂支持对文件的删除）
-newman run ./tsg-olap-e2e-test-collection.json -n 1 --delay-request 500 -e ./environment.json --ignore-redirects --folder clear_test_data -r emojitrain
-
+Examples:
+  ./e2e_test.sh -a -e                                   Perform all operations and enable emojitrain reporting
+  ./e2e_test.sh -g logs -i data_center=my_data_center   Generate log data at my_data_center
+  ./e2e_test.sh -d logs -v                              Run diagnostics on logs data with verbose reporting
+  ./e2e_test.sh -d metrics -v                           Run diagnostics on metrics data with verbose reporting
+  ./e2e_test.sh -g logs                                 Generate log data use default data center
+  ./e2e_test.sh -c                                      Clear test data
+  
 
 ```
-
-
