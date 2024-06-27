@@ -115,8 +115,15 @@ run_diagnostic() {
   if $emojitrain_flag; then
     emojitrain="-r emojitrain"
   fi
+
+  # Split the env_var string by comma and prepare the env_var_str
+  IFS=',' read -ra env_vars <<< "$env_var"
+  local env_var_str=""
+  for var in "${env_vars[@]}"; do
+    env_var_str+="--env-var $var "
+  done
   
-   newman run $CONFIG_PATH/tsg-olap-e2e-test-collection.json -g $CONFIG_PATH/globals.json -n 1 -e $CONFIG_PATH/environment.json --delay-request 500 --timeout-script 10000 --timeout-request 300000 --timeout 3600000 --insecure $verbose --ignore-redirects --env-var $env_var --folder $folder $emojitrain
+   newman run $CONFIG_PATH/tsg-olap-e2e-test-collection.json -g $CONFIG_PATH/globals.json -n 1 -e $CONFIG_PATH/environment.json --delay-request 500 --timeout-script 10000 --timeout-request 300000 --timeout 3600000 --insecure $verbose --ignore-redirects  $env_var_str --folder $folder $emojitrain
 }
 
 
