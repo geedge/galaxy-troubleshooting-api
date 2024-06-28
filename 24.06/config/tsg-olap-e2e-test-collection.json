@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "8d632c51-8d7b-426a-ae7d-baaf5d41dca3",
-		"name": "tsg-olap-e2e-test-24.05",
+		"name": "tsg-olap-e2e-test-24.06",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "8105037"
 	},
@@ -9,6 +9,70 @@
 		{
 			"name": "logs",
 			"item": [
+				{
+					"name": "session_record_test",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"   pm.response.to.not.be.error;",
+									"   pm.response.to.be.json;",
+									"   const responseJson = pm.response.json();",
+									"   pm.expect(Number(responseJson.data[0].cnt)).to.at.least(7);",
+									"});",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"followOriginalHttpMethod": false,
+						"followRedirects": false
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"statement\" : \"select data_center, count(*) as cnt from session_record where vsys_id=1024 and recv_time >={{Last 10 Minutes Start}} and data_center='{{data_center}}' group by data_center order by cnt asc\",\n   \"output_mode\":\"json\",\n   \"execution_mode\":\"oneshot\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{qgw_ip}}:{{qgw_port}}/v1/query/sql",
+							"protocol": "http",
+							"host": [
+								"{{qgw_ip}}"
+							],
+							"port": "{{qgw_port}}",
+							"path": [
+								"v1",
+								"query",
+								"sql"
+							]
+						}
+					},
+					"response": []
+				},
 				{
 					"name": "proxy_event_test",
 					"event": [
@@ -264,70 +328,6 @@
 						}
 					},
 					"response": []
-				},
-				{
-					"name": "session_record_test",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"pm.test(\"Status code is 200\", function () {",
-									"   pm.response.to.not.be.error;",
-									"   pm.response.to.be.json;",
-									"   const responseJson = pm.response.json();",
-									"   pm.expect(Number(responseJson.data[0].cnt)).to.at.least(7);",
-									"});",
-									"",
-									"",
-									""
-								],
-								"type": "text/javascript",
-								"packages": {}
-							}
-						},
-						{
-							"listen": "prerequest",
-							"script": {
-								"exec": [
-									""
-								],
-								"type": "text/javascript",
-								"packages": {}
-							}
-						}
-					],
-					"protocolProfileBehavior": {
-						"followOriginalHttpMethod": false,
-						"followRedirects": false
-					},
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n   \"statement\" : \"select data_center, count(*) as cnt from session_record where vsys_id=1024 and recv_time >={{Last 10 Minutes Start}} and data_center='{{data_center}}' group by data_center order by cnt asc\",\n   \"output_mode\":\"json\",\n   \"execution_mode\":\"oneshot\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://{{qgw_ip}}:{{qgw_port}}/v1/query/sql",
-							"protocol": "http",
-							"host": [
-								"{{qgw_ip}}"
-							],
-							"port": "{{qgw_port}}",
-							"path": [
-								"v1",
-								"query",
-								"sql"
-							]
-						}
-					},
-					"response": []
 				}
 			]
 		},
@@ -375,7 +375,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n   \"statement\" : \"select data_center, count(*) as cnt from traffic_general_stat where __time = {{metric_fixed_time}} and vsys_id=1024 and data_center='{{data_center}}' group by data_center order by cnt asc\" ,\n   \"output_mode\":\"json\",\n   \"execution_mode\": \"oneshot\"\n}",
+							"raw": "{\n   \"statement\" : \"select data_center, count(*) as cnt from traffic_general_stat where __time >={{Last 10 Minutes Start}}  and vsys_id=1024 and data_center='{{data_center}}' group by data_center order by cnt asc\" ,\n   \"output_mode\":\"json\",\n   \"execution_mode\": \"oneshot\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -439,7 +439,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n   \"statement\" : \"select data_center, count(*) as cnt from application_protocol_stat where __time = {{metric_fixed_time}} and vsys_id=1024 and data_center='{{data_center}}' group by data_center order by cnt asc\" ,\n   \"output_mode\":\"json\",\n   \"execution_mode\": \"oneshot\"\n}",
+							"raw": "{\n   \"statement\" : \"select data_center, count(*) as cnt from application_protocol_stat where __time >={{Last 10 Minutes Start}}  and vsys_id=1024 and data_center='{{data_center}}' group by data_center order by cnt asc\" ,\n   \"output_mode\":\"json\",\n   \"execution_mode\": \"oneshot\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -503,7 +503,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n   \"statement\" : \"select data_center,count(*) as cnt from statistics_rule_hits where __time ={{metric_fixed_time}} and vsys_id=1024 and data_center='{{data_center}}' group by data_center order by cnt asc\" ,\n   \"output_mode\":\"json\",\n   \"execution_mode\": \"oneshot\"\n}",
+							"raw": "{\n   \"statement\" : \"select data_center,count(*) as cnt from statistics_rule_hits where __time>={{Last 10 Minutes Start}} and vsys_id=1024 and data_center='{{data_center}}' group by data_center order by cnt asc\" ,\n   \"output_mode\":\"json\",\n   \"execution_mode\": \"oneshot\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -567,7 +567,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n   \"statement\" : \"select data_center, count(*) as cnt from security_rule_hits where __time ={{metric_fixed_time}} and vsys_id=1024 and data_center='{{data_center}}' group by data_center order by cnt asc\" ,\n   \"output_mode\":\"json\",\n   \"execution_mode\": \"oneshot\"\n}",
+							"raw": "{\n   \"statement\" : \"select data_center, count(*) as cnt from security_rule_hits where __time >={{Last 10 Minutes Start}}  and vsys_id=1024 and data_center='{{data_center}}' group by data_center order by cnt asc\" ,\n   \"output_mode\":\"json\",\n   \"execution_mode\": \"oneshot\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -627,7 +627,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n   \"statement\" : \"select data_center, count(*) as cnt from monitor_rule_hits where __time ={{metric_fixed_time}} and vsys_id=1024 and data_center='{{data_center}}' group by data_center order by cnt asc\" ,\n   \"output_mode\":\"json\",\n   \"execution_mode\": \"oneshot\"\n}",
+							"raw": "{\n   \"statement\" : \"select data_center, count(*) as cnt from monitor_rule_hits where __time>={{Last 10 Minutes Start}}  and vsys_id=1024 and data_center='{{data_center}}' group by data_center order by cnt asc\" ,\n   \"output_mode\":\"json\",\n   \"execution_mode\": \"oneshot\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -687,7 +687,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n   \"statement\" : \"select data_center,count(*) as cnt from proxy_rule_hits where __time ={{metric_fixed_time}} and vsys_id=1024 and data_center='{{data_center}}' group by data_center order by cnt asc\" ,\n   \"output_mode\":\"json\",\n   \"execution_mode\": \"oneshot\"\n}",
+							"raw": "{\n   \"statement\" : \"select data_center,count(*) as cnt from proxy_rule_hits where __time >={{Last 10 Minutes Start}}  and vsys_id=1024 and data_center='{{data_center}}' group by data_center order by cnt asc\" ,\n   \"output_mode\":\"json\",\n   \"execution_mode\": \"oneshot\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -747,7 +747,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n   \"statement\" : \"select data_center, count(*) as cnt from service_chaining_rule_hits where __time ={{metric_fixed_time}} and vsys_id=1024 and data_center='{{data_center}}' group by data_center order by cnt asc\" ,\n   \"output_mode\":\"json\",\n   \"execution_mode\": \"oneshot\"\n}",
+							"raw": "{\n   \"statement\" : \"select data_center, count(*) as cnt from service_chaining_rule_hits where __time>={{Last 10 Minutes Start}} and vsys_id=1024 and data_center='{{data_center}}' group by data_center order by cnt asc\" ,\n   \"output_mode\":\"json\",\n   \"execution_mode\": \"oneshot\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -807,7 +807,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n   \"statement\" : \"select data_center, count(*) as cnt from object_statistics where __time ={{metric_fixed_time}} and vsys_id=1024 and data_center='{{data_center}}' group by data_center order by cnt asc\" ,\n   \"output_mode\":\"json\",\n   \"execution_mode\": \"oneshot\"\n}",
+							"raw": "{\n   \"statement\" : \"select data_center, count(*) as cnt from object_statistics where __time >={{Last 10 Minutes Start}}  and vsys_id=1024 and data_center='{{data_center}}' group by data_center order by cnt asc\" ,\n   \"output_mode\":\"json\",\n   \"execution_mode\": \"oneshot\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -867,7 +867,67 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n   \"statement\" : \"select data_center, count(*) as cnt from statistics_rule where __time ={{metric_fixed_time}} and vsys_id=1024 and data_center='{{data_center}}' group by data_center order by cnt asc\" ,\n   \"output_mode\":\"json\",\n   \"execution_mode\": \"oneshot\"\n}",
+							"raw": "{\n   \"statement\" : \"select data_center, count(*) as cnt from statistics_rule where __time>={{Last 10 Minutes Start}}  and vsys_id=1024 and data_center='{{data_center}}' group by data_center order by cnt asc\" ,\n   \"output_mode\":\"json\",\n   \"execution_mode\": \"oneshot\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{qgw_ip}}:{{qgw_port}}/v1/query/sql",
+							"protocol": "http",
+							"host": [
+								"{{qgw_ip}}"
+							],
+							"port": "{{qgw_port}}",
+							"path": [
+								"v1",
+								"query",
+								"sql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "traffic_sketch_metric_test",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"   pm.response.to.not.be.error;",
+									"   pm.response.to.be.json;",
+									"   const responseJson = pm.response.json();",
+									"   pm.expect(Number(responseJson.data[0].cnt)).to.at.least(1);",
+									"});",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"statement\" : \"select data_center, count(*) as cnt from traffic_sketch_metric where recv_time >={{Last 10 Minutes Start}} and vsys_id=1024 and data_center='{{data_center}}' group by data_center order by cnt asc\" ,\n   \"output_mode\":\"json\",\n   \"execution_mode\": \"oneshot\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"

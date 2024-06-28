@@ -12,17 +12,22 @@ E2E_MOCKDATA_GENERATOR_PATH="$BASE_DIR/e2e-mockdata-generator"
 CONFIG_PATH="$BASE_DIR/config"
 COLLECTION="tsg-olap-e2e-test-collection.json"
 ENVIRONMENT="$BASE_DIR/environment.json"
-DATA_CENTER="tsg_olap_dc_a" # Default Data Center 
+DATA_CENTER="tsg_olap" # Default Data Center 
 OTHER_VAR=""
+current=`date "+%Y-%m-%d %H:%M:%S"`
+timeStamp=`date -d "$current" +%s`
+currentTimeStamp=$((timeStamp*1000+10#`date "+%N"`/1000000))
 
 # data_center_name:kafka_server
-declare -A KAFKA_SERVERS=(
+declare -A  KAFKA_SERVERS=(
+  ["tsg_olap"]="192.168.44.11:9092"
   ["tsg_olap_dc_a"]="192.168.44.11:9092"
   ["tsg_olap_dc_b"]="192.168.44.11:9092"
 )
 
 # data_center_name:hos_endpoint
-declare -A HOS_ENDPOINTS=(
+HOS_ENDPOINTS=(
+  ["tsg_olap"]="192.168.44.11"
   ["tsg_olap_dc_a"]="192.168.44.11"
   ["tsg_olap_dc_b"]="192.168.44.11"
 )
@@ -58,10 +63,14 @@ generate_metrics() {
     ["POLICY-RULE-METRIC"]="policy_rule_metric.dat"
     ["OBJECT-STATISTICS-METRIC"]="object_statistics_metric.dat"
     ["STATISTICS-RULE-METRIC"]="statistics_rule_metric.dat"
+    ["TRAFFIC-SKETCH-METRIC"]="traffic_sketch_metric.dat"
   )
     for topic in "${!METRICS[@]}"; do
       # Replace the "data_center" value in the file
       sed -i "s/\"data_center\":\"[^\"]*\"/\"data_center\":\"$data_center\"/g" ./datasets/metrics/${METRICS[$topic]}
+      # Replace the "timestamp_ms" value in the file
+      sed -i "s/\"timestamp_ms\":[0-9]*/\"timestamp_ms\":$currentTimeStamp/" ./datasets/metrics/${METRICS[$topic]}
+
       java -cp e2e-mockdata-generator.jar com.geedgenetworks.LogGenerator --bootstrap_server $bootstrap_server --topic $topic -f ./datasets/metrics/${METRICS[$topic]}
     done
 }
@@ -119,7 +128,6 @@ run_diagnostic() {
   
    newman run $CONFIG_PATH/tsg-olap-e2e-test-collection.json -g $CONFIG_PATH/globals.json -n 1 -e $CONFIG_PATH/environment.json --delay-request 500 --timeout-script 10000 --timeout-request 300000 --timeout 3600000 --insecure $verbose --ignore-redirects $env_var_str --folder $folder $emojitrain
 }
-
 
 clear_data() {
   log_message "Clearing test data..."
