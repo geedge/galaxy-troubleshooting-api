@@ -2,6 +2,22 @@
 
 使用Postman组件，基于Rest API接口对TSG OLAP 进行功能验证。包括组件健康检查，功能集成测试及故障诊断。
 
+## Release 24.07 (28 JUL 2024)
+
+###### New Features
+
+- Datasets Time_Floor 函数支持时间粒度获取函数 CHART_GRANULARITY, SAMPLE_GRANULARITY
+    
+
+###### Update
+
+- Druid Datasets 增加函数HDR_DESCRIBE,HDR_GET_PERCENTILES_DESCRIPTION使用
+    
+
+###### Delete
+
+- 删除Apache Druid ，Report and Metrics 接口
+
 ## Release 24.06 (28 JUN 2024)
 
 ###### New Features
