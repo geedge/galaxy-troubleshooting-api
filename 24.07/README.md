@@ -60,7 +60,7 @@ Usage: ./e2e_test.sh [options]
 Options:
   -g <type>           Generate data (logs, metrics, files)
   -d <type>           Run diagnostic report (logs, metrics, files)
-  -c                  Clear test data
+  -c                  Clear test data(Only support clear files)
   -a                  Perform all operations: generate data, run diagnostics, and clear data
   -i <key=value,...>  Set environment variable (data_center, hos_ip)
   -v                  Enable verbose reporting
