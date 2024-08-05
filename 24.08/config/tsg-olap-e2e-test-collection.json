@@ -1,0 +1,1536 @@
+{
+	"info": {
+		"_postman_id": "8d632c51-8d7b-426a-ae7d-baaf5d41dca3",
+		"name": "tsg-olap-e2e-test-24.07",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8105037"
+	},
+	"item": [
+		{
+			"name": "logs",
+			"item": [
+				{
+					"name": "proxy_event_test",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"   pm.response.to.not.be.error;",
+									"   pm.response.to.be.json;",
+									"   const responseJson = pm.response.json();",
+									"   pm.expect(Number(responseJson.data[0].cnt)).to.at.least(1);",
+									"});",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"followOriginalHttpMethod": false,
+						"followRedirects": false
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"statement\" : \"select data_center, count(*) as cnt from proxy_event where vsys_id=1024 and recv_time >={{Last 10 Minutes Start}} and data_center='{{data_center}}' group by data_center order by cnt asc\" ,\n   \"output_mode\":\"json\",\n   \"execution_mode\": \"oneshot\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{qgw_ip}}:{{qgw_port}}/v1/query/sql",
+							"protocol": "http",
+							"host": [
+								"{{qgw_ip}}"
+							],
+							"port": "{{qgw_port}}",
+							"path": [
+								"v1",
+								"query",
+								"sql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "voip_record_test",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"   pm.response.to.not.be.error;",
+									"   pm.response.to.be.json;",
+									"   const responseJson = pm.response.json();",
+									"   pm.expect(Number(responseJson.data[0].cnt)).to.at.least(1);",
+									"});",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"followOriginalHttpMethod": false,
+						"followRedirects": false
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"statement\" : \"select data_center, count(*) as cnt from voip_record where vsys_id=1024 and decoded_as='VoIP' and recv_time >={{Last 10 Minutes Start}} and data_center='{{data_center}}' group by data_center order by cnt asc\" ,\n   \"output_mode\":\"json\",\n   \"execution_mode\": \"oneshot\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{qgw_ip}}:{{qgw_port}}/v1/query/sql",
+							"protocol": "http",
+							"host": [
+								"{{qgw_ip}}"
+							],
+							"port": "{{qgw_port}}",
+							"path": [
+								"v1",
+								"query",
+								"sql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "monitor_event_test",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"   pm.response.to.not.be.error;",
+									"   pm.response.to.be.json;",
+									"   const responseJson = pm.response.json();",
+									"   pm.expect(Number(responseJson.data[0].cnt)).to.at.least(7);",
+									"});",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"followOriginalHttpMethod": false,
+						"followRedirects": false
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"statement\" : \"select data_center, count(*) as cnt from monitor_event where vsys_id=1024 and recv_time >={{Last 10 Minutes Start}} and data_center='{{data_center}}' group by data_center order by cnt asc\" ,\n   \"output_mode\":\"json\",\n   \"execution_mode\":\"oneshot\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{qgw_ip}}:{{qgw_port}}/v1/query/sql",
+							"protocol": "http",
+							"host": [
+								"{{qgw_ip}}"
+							],
+							"port": "{{qgw_port}}",
+							"path": [
+								"v1",
+								"query",
+								"sql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "security_event_test",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"   pm.response.to.not.be.error;",
+									"   pm.response.to.be.json;",
+									"   const responseJson = pm.response.json();",
+									"   pm.expect(Number(responseJson.data[0].cnt)).to.at.least(7);",
+									"});",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"followOriginalHttpMethod": false,
+						"followRedirects": false
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"statement\" : \"select data_center, count(*) as cnt from security_event where vsys_id=1024 and recv_time >={{Last 10 Minutes Start}} and data_center='{{data_center}}' group by data_center order by cnt asc\" ,\n   \"output_mode\":\"json\",\n   \"execution_mode\":\"oneshot\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{qgw_ip}}:{{qgw_port}}/v1/query/sql",
+							"protocol": "http",
+							"host": [
+								"{{qgw_ip}}"
+							],
+							"port": "{{qgw_port}}",
+							"path": [
+								"v1",
+								"query",
+								"sql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "session_record_test",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"   pm.response.to.not.be.error;",
+									"   pm.response.to.be.json;",
+									"   const responseJson = pm.response.json();",
+									"   pm.expect(Number(responseJson.data[0].cnt)).to.at.least(7);",
+									"});",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"followOriginalHttpMethod": false,
+						"followRedirects": false
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"statement\" : \"select data_center, count(*) as cnt from session_record where vsys_id=1024 and recv_time >={{Last 10 Minutes Start}} and data_center='{{data_center}}' group by data_center order by cnt asc\",\n   \"output_mode\":\"json\",\n   \"execution_mode\":\"oneshot\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{qgw_ip}}:{{qgw_port}}/v1/query/sql",
+							"protocol": "http",
+							"host": [
+								"{{qgw_ip}}"
+							],
+							"port": "{{qgw_port}}",
+							"path": [
+								"v1",
+								"query",
+								"sql"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "metrics",
+			"item": [
+				{
+					"name": "traffic_general_stat_test",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"   pm.response.to.not.be.error;",
+									"   pm.response.to.be.json;",
+									"   const responseJson = pm.response.json();",
+									"   pm.expect(Number(responseJson.data[0].cnt)).to.at.least(1);",
+									"});",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"followOriginalHttpMethod": false,
+						"followRedirects": false
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"statement\" : \"select data_center, count(*) as cnt from traffic_general_stat where __time >={{Last 10 Minutes Start}}  and vsys_id=1024 and data_center='{{data_center}}' group by data_center order by cnt asc\" ,\n   \"output_mode\":\"json\",\n   \"execution_mode\": \"oneshot\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{qgw_ip}}:{{qgw_port}}/v1/query/sql",
+							"protocol": "http",
+							"host": [
+								"{{qgw_ip}}"
+							],
+							"port": "{{qgw_port}}",
+							"path": [
+								"v1",
+								"query",
+								"sql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "application_protocol_stat_test",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"   pm.response.to.not.be.error;",
+									"   pm.response.to.be.json;",
+									"   const responseJson = pm.response.json();",
+									"   pm.expect(Number(responseJson.data[0].cnt)).to.at.least(1);",
+									"});",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"followOriginalHttpMethod": false,
+						"followRedirects": false
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"statement\" : \"select data_center, count(*) as cnt from application_protocol_stat where __time >={{Last 10 Minutes Start}}  and vsys_id=1024 and data_center='{{data_center}}' group by data_center order by cnt asc\" ,\n   \"output_mode\":\"json\",\n   \"execution_mode\": \"oneshot\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{qgw_ip}}:{{qgw_port}}/v1/query/sql",
+							"protocol": "http",
+							"host": [
+								"{{qgw_ip}}"
+							],
+							"port": "{{qgw_port}}",
+							"path": [
+								"v1",
+								"query",
+								"sql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "statistics_rule_hits_test",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"   pm.response.to.not.be.error;",
+									"   pm.response.to.be.json;",
+									"   const responseJson = pm.response.json();",
+									"   pm.expect(Number(responseJson.data[0].cnt)).to.at.least(1);",
+									"});",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"followOriginalHttpMethod": false,
+						"followRedirects": false
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"statement\" : \"select data_center,count(*) as cnt from statistics_rule_hits where __time>={{Last 10 Minutes Start}} and vsys_id=1024 and data_center='{{data_center}}' group by data_center order by cnt asc\" ,\n   \"output_mode\":\"json\",\n   \"execution_mode\": \"oneshot\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{qgw_ip}}:{{qgw_port}}/v1/query/sql",
+							"protocol": "http",
+							"host": [
+								"{{qgw_ip}}"
+							],
+							"port": "{{qgw_port}}",
+							"path": [
+								"v1",
+								"query",
+								"sql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "security_rule_hits_test",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"   pm.response.to.not.be.error;",
+									"   pm.response.to.be.json;",
+									"   const responseJson = pm.response.json();",
+									"   pm.expect(Number(responseJson.data[0].cnt)).to.at.least(1);",
+									"});",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"followOriginalHttpMethod": false,
+						"followRedirects": false
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"statement\" : \"select data_center, count(*) as cnt from security_rule_hits where __time >={{Last 10 Minutes Start}}  and vsys_id=1024 and data_center='{{data_center}}' group by data_center order by cnt asc\" ,\n   \"output_mode\":\"json\",\n   \"execution_mode\": \"oneshot\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{qgw_ip}}:{{qgw_port}}/v1/query/sql",
+							"protocol": "http",
+							"host": [
+								"{{qgw_ip}}"
+							],
+							"port": "{{qgw_port}}",
+							"path": [
+								"v1",
+								"query",
+								"sql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "monitor_rule_hits_test",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"   pm.response.to.not.be.error;",
+									"   pm.response.to.be.json;",
+									"   const responseJson = pm.response.json();",
+									"   pm.expect(Number(responseJson.data[0].cnt)).to.at.least(1);",
+									"});",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"statement\" : \"select data_center, count(*) as cnt from monitor_rule_hits where __time>={{Last 10 Minutes Start}}  and vsys_id=1024 and data_center='{{data_center}}' group by data_center order by cnt asc\" ,\n   \"output_mode\":\"json\",\n   \"execution_mode\": \"oneshot\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{qgw_ip}}:{{qgw_port}}/v1/query/sql",
+							"protocol": "http",
+							"host": [
+								"{{qgw_ip}}"
+							],
+							"port": "{{qgw_port}}",
+							"path": [
+								"v1",
+								"query",
+								"sql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "proxy_rule_hits_test",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"   pm.response.to.not.be.error;",
+									"   pm.response.to.be.json;",
+									"   const responseJson = pm.response.json();",
+									"   pm.expect(Number(responseJson.data[0].cnt)).to.at.least(1);",
+									"});",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"statement\" : \"select data_center,count(*) as cnt from proxy_rule_hits where __time >={{Last 10 Minutes Start}}  and vsys_id=1024 and data_center='{{data_center}}' group by data_center order by cnt asc\" ,\n   \"output_mode\":\"json\",\n   \"execution_mode\": \"oneshot\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{qgw_ip}}:{{qgw_port}}/v1/query/sql",
+							"protocol": "http",
+							"host": [
+								"{{qgw_ip}}"
+							],
+							"port": "{{qgw_port}}",
+							"path": [
+								"v1",
+								"query",
+								"sql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "service_chaining_rule_hits_test",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"   pm.response.to.not.be.error;",
+									"   pm.response.to.be.json;",
+									"   const responseJson = pm.response.json();",
+									"   pm.expect(Number(responseJson.data[0].cnt)).to.at.least(1);",
+									"});",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"statement\" : \"select data_center, count(*) as cnt from service_chaining_rule_hits where __time>={{Last 10 Minutes Start}} and vsys_id=1024 and data_center='{{data_center}}' group by data_center order by cnt asc\" ,\n   \"output_mode\":\"json\",\n   \"execution_mode\": \"oneshot\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{qgw_ip}}:{{qgw_port}}/v1/query/sql",
+							"protocol": "http",
+							"host": [
+								"{{qgw_ip}}"
+							],
+							"port": "{{qgw_port}}",
+							"path": [
+								"v1",
+								"query",
+								"sql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "object_statistics_test",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"   pm.response.to.not.be.error;",
+									"   pm.response.to.be.json;",
+									"   const responseJson = pm.response.json();",
+									"   pm.expect(Number(responseJson.data[0].cnt)).to.at.least(1);",
+									"});",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"statement\" : \"select data_center, count(*) as cnt from object_statistics where __time >={{Last 10 Minutes Start}}  and vsys_id=1024 and data_center='{{data_center}}' group by data_center order by cnt asc\" ,\n   \"output_mode\":\"json\",\n   \"execution_mode\": \"oneshot\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{qgw_ip}}:{{qgw_port}}/v1/query/sql",
+							"protocol": "http",
+							"host": [
+								"{{qgw_ip}}"
+							],
+							"port": "{{qgw_port}}",
+							"path": [
+								"v1",
+								"query",
+								"sql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "statistics_rule_test",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"   pm.response.to.not.be.error;",
+									"   pm.response.to.be.json;",
+									"   const responseJson = pm.response.json();",
+									"   pm.expect(Number(responseJson.data[0].cnt)).to.at.least(1);",
+									"});",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"statement\" : \"select data_center, count(*) as cnt from statistics_rule where __time>={{Last 10 Minutes Start}}  and vsys_id=1024 and data_center='{{data_center}}' group by data_center order by cnt asc\" ,\n   \"output_mode\":\"json\",\n   \"execution_mode\": \"oneshot\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{qgw_ip}}:{{qgw_port}}/v1/query/sql",
+							"protocol": "http",
+							"host": [
+								"{{qgw_ip}}"
+							],
+							"port": "{{qgw_port}}",
+							"path": [
+								"v1",
+								"query",
+								"sql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "traffic_sketch_metric_test",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"   pm.response.to.not.be.error;",
+									"   pm.response.to.be.json;",
+									"   const responseJson = pm.response.json();",
+									"   pm.expect(Number(responseJson.data[0].cnt)).to.at.least(1);",
+									"});",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"statement\" : \"select data_center, count(*) as cnt from traffic_sketch_metric where recv_time >={{Last 10 Minutes Start}} and vsys_id=1024 and data_center='{{data_center}}' group by data_center order by cnt asc\" ,\n   \"output_mode\":\"json\",\n   \"execution_mode\": \"oneshot\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{qgw_ip}}:{{qgw_port}}/v1/query/sql",
+							"protocol": "http",
+							"host": [
+								"{{qgw_ip}}"
+							],
+							"port": "{{qgw_port}}",
+							"path": [
+								"v1",
+								"query",
+								"sql"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "files",
+			"item": [
+				{
+					"name": "monitor_packet_capture_file_test",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"   pm.response.to.not.be.error;",
+									"});",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "HEAD",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "http://{{hos_ip}}:{{hos_port}}/hos/traffic_file_bucket/123e4567-e89b-12d3-a456-426614174001",
+							"protocol": "http",
+							"host": [
+								"{{hos_ip}}"
+							],
+							"port": "{{hos_port}}",
+							"path": [
+								"hos",
+								"traffic_file_bucket",
+								"123e4567-e89b-12d3-a456-426614174001"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http_request_body_test",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"   pm.response.to.not.be.error;",
+									"});",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "HEAD",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "http://{{hos_ip}}:{{hos_port}}/hos/traffic_file_bucket/123e4567-e89b-12d3-a456-426614174002",
+							"protocol": "http",
+							"host": [
+								"{{hos_ip}}"
+							],
+							"port": "{{hos_port}}",
+							"path": [
+								"hos",
+								"traffic_file_bucket",
+								"123e4567-e89b-12d3-a456-426614174002"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http_response_body_test",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"   pm.response.to.not.be.error;",
+									"});",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "HEAD",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "http://{{hos_ip}}:{{hos_port}}/hos/traffic_file_bucket/123e4567-e89b-12d3-a456-426614174003",
+							"protocol": "http",
+							"host": [
+								"{{hos_ip}}"
+							],
+							"port": "{{hos_port}}",
+							"path": [
+								"hos",
+								"traffic_file_bucket",
+								"123e4567-e89b-12d3-a456-426614174003"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "mail_eml_file_test",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"   pm.response.to.not.be.error;",
+									"});",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "HEAD",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "http://{{hos_ip}}:{{hos_port}}/hos/traffic_file_bucket/123e4567-e89b-12d3-a456-426614174004",
+							"protocol": "http",
+							"host": [
+								"{{hos_ip}}"
+							],
+							"port": "{{hos_port}}",
+							"path": [
+								"hos",
+								"traffic_file_bucket",
+								"123e4567-e89b-12d3-a456-426614174004"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "rtp_pcap_path_test",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"   pm.response.to.not.be.error;",
+									"});",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "HEAD",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "http://{{hos_ip}}:{{hos_port}}/hos/traffic_file_bucket/123e4567-e89b-12d3-a456-426614174005",
+							"protocol": "http",
+							"host": [
+								"{{hos_ip}}"
+							],
+							"port": "{{hos_port}}",
+							"path": [
+								"hos",
+								"traffic_file_bucket",
+								"123e4567-e89b-12d3-a456-426614174005"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Reports",
+			"item": [
+				{
+					"name": "Session Record Summary",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"     postman.setEnvironmentVariable(\"saved_query_job_id\", JSON.parse(responseBody).job.job_id);",
+									"});",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"followOriginalHttpMethod": false,
+						"followRedirects": false
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"statement\" : \"select round(tcp_logs / logs,4) as \\\"TCP Percentage\\\", round(udp_logs / logs,4) as \\\"UDP Percentage\\\", round(out_bytes / bytes,4) as \\\"Outgoing Percentage\\\", round(in_bytes / bytes,4) as \\\"Incoming Percentage\\\", formatReadableQuantity(tcp_logs) as \\\"TCP Logs\\\", formatReadableQuantity(udp_logs) as \\\"UDP Logs\\\", formatReadableQuantity(logs) as \\\"Logs\\\",  formatReadableSize(out_bytes) as \\\"Outgoing Bytes\\\", formatReadableSize(in_bytes) as \\\"Incoming Bytes\\\", formatReadableSize(bytes) as \\\"Bytes\\\" from ( select sum(if(ip_protocol='tcp', 1, 0)) as tcp_logs, sum(if(ip_protocol='udp', 1, 0)) as udp_logs, sum(if(bitAnd(flags, 8) = 8, sent_bytes, received_bytes))as out_bytes, sum(if(bitAnd(flags, 8) = 8, received_bytes, sent_bytes)) as in_bytes, count(*) as logs, sum(sent_bytes + received_bytes) as bytes from session_record where recv_time >= UNIX_TIMESTAMP('{{start_time}}') and recv_time <UNIX_TIMESTAMP('{{end_time}}') )\" ,\n   \"output_mode\":\"json\",\n   \"execution_mode\":\"normal\",  \n   \"is_saved_query\":1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{qgw_ip}}:{{qgw_port}}/v1/query/sql",
+							"protocol": "http",
+							"host": [
+								"{{qgw_ip}}"
+							],
+							"port": "{{qgw_port}}",
+							"path": [
+								"v1",
+								"query",
+								"sql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Summary Job Results",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"setTimeout(function() {     ",
+									"    ",
+									"}, 60000);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    var responseData = pm.response.json().data[0];",
+									"    pm.expect(responseData.job.is_done).to.be.true;",
+									"    pm.expect(responseData.job.is_failed).to.be.false;",
+									"})"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://{{qgw_ip}}:{{qgw_port}}/v1/query/job/result?job_ids={{saved_query_job_id}}&is_saved_query=1",
+							"protocol": "http",
+							"host": [
+								"{{qgw_ip}}"
+							],
+							"port": "{{qgw_port}}",
+							"path": [
+								"v1",
+								"query",
+								"job",
+								"result"
+							],
+							"query": [
+								{
+									"key": "job_ids",
+									"value": "{{saved_query_job_id}}"
+								},
+								{
+									"key": "is_saved_query",
+									"value": "1"
+								}
+							]
+						},
+						"description": "\nThe API endpoint retrieves the result of a saved query job by providing the job ID and specifying that it is a saved query.\n\nThe response schema for the request is as follows:\n\n```json\n{\n    \"type\": \"object\",\n    \"properties\": {\n        \"status\": {\n            \"type\": \"integer\"\n        },\n        \"message\": {\n            \"type\": \"string\"\n        },\n        \"request_id\": {\n            \"type\": [\"string\", \"null\"]\n        },\n        \"success\": {\n            \"type\": \"boolean\"\n        },\n        \"code\": {\n            \"type\": \"string\"\n        },\n        \"job\": {\n            \"type\": [\"object\", \"null\"]\n        },\n        \"output_mode\": {\n            \"type\": [\"string\", \"null\"]\n        },\n        \"statistics\": {\n            \"type\": [\"object\", \"null\"],\n            \"properties\": {\n                \"elapsed\": {\n                    \"type\": \"integer\"\n                },\n                \"rows_read\": {\n                    \"type\": \"integer\"\n                },\n                \"bytes_read\": {\n                    \"type\": \"integer\"\n                },\n                \"result_bytes\": {\n                    \"type\": \"integer\"\n                },\n                \"result_rows\": {\n                    \"type\": \"integer\"\n                }\n            }\n        },\n        \"meta\": {\n            \"type\": [\"object\", \"null\"]\n        },\n        \"data\": {\n            \"type\": \"array\",\n            \"items\": {\n                \"type\": \"object\",\n                \"properties\": {\n                    \"job\": {\n                        \"type\": [\"object\", \"null\"],\n                        \"properties\": {\n                            \"job_id\": {\n                                \"type\": \"string\"\n                            },\n                            \"is_done\": {\n                                \"type\": \"boolean\"\n                            },\n                            \"done_progress\": {\n                                \"type\": \"integer\"\n                            },\n                            \"is_canceled\": {\n                                \"type\": \"boolean\"\n                            },\n                            \"is_failed\": {\n                                \"type\": \"boolean\"\n                            },\n                            \"reason\": {\n                                \"type\": \"string\"\n                            },\n                            \"start_time\": {\n                                \"type\": \"string\"\n                            },\n                            \"end_time\": {\n                                \"type\": \"string\"\n                            },\n                            \"links\": {\n                                \"type\": \"object\",\n                                \"properties\": {\n                                    \"status\": {\n                                        \"type\": \"string\"\n                                    },\n                                    \"result\": {\n                                        \"type\": \"string\"\n                                    }\n                                }\n                            }\n                        }\n                    },\n                    \"statistics\": {\n                        \"type\": [\"object\", \"null\"],\n                        \"properties\": {\n                            \"elapsed\": {\n                                \"type\": \"integer\"\n                            },\n                            \"rows_read\": {\n                                \"type\": \"integer\"\n                            },\n                            \"bytes_read\": {\n                                \"type\": \"integer\"\n                            },\n                            \"result_bytes\": {\n                                \"type\": \"integer\"\n                            },\n                            \"result_rows\": {\n                                \"type\": \"integer\"\n                            }\n                        }\n                    },\n                    \"meta\": {\n                        \"type\": [\"object\", \"null\"]\n                    },\n                    \"data\": {\n                        \"type\": \"array\",\n                        \"items\": {\n                            \"type\": \"object\",\n                            \"properties\": {\n                                \"TCP Percentage\": {\n                                    \"type\": \"integer\"\n                                },\n                                \"UDP Percentage\": {\n                                    \"type\": \"integer\"\n                                },\n                                \"Outgoing Percentage\": {\n                                    \"type\": \"integer\"\n                                },\n                                \"Incoming Percentage\": {\n                                    \"type\": \"integer\"\n                                },\n                                \"TCP Logs\": {\n                                    \"type\": \"string\"\n                                },\n                                \"UDP Logs\": {\n                                    \"type\": \"string\"\n                                },\n                                \"Logs\": {\n                                    \"type\": \"string\"\n                                },\n                                \"Outgoing Bytes\": {\n                                    \"type\": \"string\"\n                                },\n                                \"Incoming Bytes\": {\n                                    \"type\": \"string\"\n                                },\n                                \"Bytes\": {\n                                    \"type\": \"string\"\n                                }\n                            }\n                        }\n                    }\n                }\n            }\n        }\n    }\n}\n```\n"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "clear_test_data",
+			"item": [
+				{
+					"name": "delete_traffic_files_test",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"   pm.response.to.not.be.error;",
+									"});",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{hos_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<Delete>\n    <Quiet>true</Quiet>\n    <Object>\n        <Key>123e4567-e89b-12d3-a456-426614174001</Key>\n    </Object>\n    <Object>\n        <Key>123e4567-e89b-12d3-a456-426614174002</Key>\n    </Object>\n    <Object>\n        <Key>123e4567-e89b-12d3-a456-426614174003</Key>\n    </Object>\n    <Object>\n        <Key>123e4567-e89b-12d3-a456-426614174004</Key>\n    </Object>\n    <Object>\n        <Key>123e4567-e89b-12d3-a456-426614174005</Key>\n    </Object>\n</Delete>",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{hos_ip}}:{{hos_port}}/hos/traffic_file_bucket?delete",
+							"protocol": "http",
+							"host": [
+								"{{hos_ip}}"
+							],
+							"port": "{{hos_port}}",
+							"path": [
+								"hos",
+								"traffic_file_bucket"
+							],
+							"query": [
+								{
+									"key": "delete",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete_datapath_telemery_pcap_files_test",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"   pm.response.to.not.be.error;",
+									"   pm.response.to.be.json;",
+									"});",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "http://{{qgw_ip}}:{{qgw_port}}/v1/hos/traffic_file_bucket?file_names=123e4567-e89b-12d3-a456-426614174007",
+							"protocol": "http",
+							"host": [
+								"{{qgw_ip}}"
+							],
+							"port": "{{qgw_port}}",
+							"path": [
+								"v1",
+								"hos",
+								"traffic_file_bucket"
+							],
+							"query": [
+								{
+									"key": "file_names",
+									"value": "123e4567-e89b-12d3-a456-426614174007"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

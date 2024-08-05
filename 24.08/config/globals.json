@@ -1,0 +1,39 @@
+{
+	"id": "0083244f-f7da-4ec8-8c09-317c1121d3ad",
+	"values": [
+		{
+			"key": "start_time",
+			"value": "",
+			"type": "any",
+			"enabled": true
+		},
+		{
+			"key": "end_time",
+			"value": "",
+			"type": "any",
+			"enabled": true
+		},
+		{
+			"key": "domain",
+			"value": "",
+			"type": "any",
+			"enabled": true
+		},
+		{
+			"key": "client_ip",
+			"value": "",
+			"type": "any",
+			"enabled": true
+		},
+		{
+			"key": "server_ip",
+			"value": "",
+			"type": "any",
+			"enabled": true
+		}
+	],
+	"name": "Globals",
+	"_postman_variable_scope": "globals",
+	"_postman_exported_at": "2024-05-21T02:39:11.566Z",
+	"_postman_exported_using": "Postman/11.1.3"
+}
