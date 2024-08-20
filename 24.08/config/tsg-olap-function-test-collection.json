@@ -1,8 +1,8 @@
 {
 	"info": {
 		"_postman_id": "5cf7b968-33c6-4c40-a178-d4f15a8803cb",
-		"name": "tsg-olap-function-test-24.07",
-		"description": "# galaxy-troubleshooting-api\n\n使用Postman组件，基于Rest API接口对TSG OLAP 进行功能验证。包括组件健康检查，功能集成测试及故障诊断。\n\n## Release 24.07 (28 JUL 2024)\n\n###### New Features\n\n- Datasets Time_Floor 函数支持时间粒度获取函数 CHART_GRANULARITY, SAMPLE_GRANULARITY\n    \n\n###### Update\n\n- Druid Datasets 增加函数HDR_DESCRIBE,HDR_GET_PERCENTILES_DESCRIPTION使用\n    \n\n###### Delete\n\n- 删除Apache Druid ，Report and Metrics 接口\n    \n\n## Release 24.06 (28 JUN 2024)\n\n###### New Features\n\n- 增加Traffic Spectrum 数据集\n    \n\n###### Update\n\n- Troubleshooting 增加Test Script\n    \n- Statistics Rule Metrics 增加Client Port，Server Port及Packet Length 数据集\n    \n\n## Release 24.05 (28 MAY 2024)\n\n###### New Features\n\n- 增加Scehma datapath_telemetry_record\n    \n\n###### Update\n\n- Session Records 查询增加c2s_ttl,s2c_ttl\n    \n\n## Release 24.04 (28 APR 2024)\n\n###### New Features\n\n- 增加DoS Protection Rule Metric 相关Datasets\n    \n- 增加DoS Protection Policy Rule Hits\n    \n\n###### Update\n\n- 日志公共字段增加tunnel_id_list,client_country, client_super_administrative_area, client_administrative_area, client_sub_administrative_area,server_country, server_super_administrative_area, server_administrative_area, server_sub_administrative_area\n    \n- QGW Query API 参数由execution_mode修改 execution_mode\n    \n- DoS Threat Map 增加 attack volume接口\n    \n- Statistics Rule Metric增加Client ASN和Server ASN Dataset\n    \n- TopK 增加维度rank_by\n    \n- TopK Metric 增加Top Client Countries，Top Server Countries\n    \n\n###### Delete\n\n- 删除Top Subscribers\n    \n\n## Release 24.03 (28 MAR 2024)\n\n###### Update\n\n- Top-k metrics 去掉metric维度\n    \n- Saved query scheduler 增加monitor 接口\n    \n\n## Release 24.02 (29 FEB 2024)\n\n###### Update\n\n- Metric相关接口内层嵌套查询调整粒度为1s\n    \n- 基础字段tunnels修改为encapsulation\n    \n\n## Release 24.01 (31 JAN 2024)\n\n###### New Features\n\n- 依据OLAP API 组织接口\n    \n- 接口进行重构，不再兼容23.10及之前版本\n    \n\n## Release 23.10 (30 OCT 2023)\n\n###### Update\n\n- 会话日志增加毫米级时间戳字段common_start_timestamp_ms, common_end_timestamp_ms\n    \n- 会话日志增加操作系统指纹common_client_os_name,common_server_os_name\n    \n\n## Release 23.09 (30 SEP 2023)\n\n###### Update\n\n- metrics 修改表名由statistics_object改为object_statistics\n    \n- Flags统计增加Bidirectional标识\n    \n- Closed Session Records 增加http_status_code, ssl_esni_flag, ssl_ech_flag\n    \n- 删除Kafka Topics 目录\n    \n\n## Release 23.08 (21 AUG 2023)\n\n###### New Features\n\n- Metrics增加Statistics Policy 相关接口\n    \n- Metrics增加Statistics Object 相关接口\n    \n- Metrics增加Statistics rule 命中计数接口\n    \n\n###### Update\n\n- 会话日志查询，增加重命名字段common_out_link_id、common_in_link_id\n    \n\n## Release 23.07 (21 JUL 2023)\n\n###### Update\n\n- 修复Network Throughput Active Sessions计算错误，不除时间粒度\n    \n\n## Release 23.06 (21 JUN 2023)\n\n###### Update\n\n- 优化Limit返回值\n    \n\n## Release 23.05 (28 MAY 2023)\n\n###### New Features\n\n- 增加Service chaining统计接口\n    \n- QGW增加嵌套子查询接口，用于验证高级搜索\n    \n\n###### Update\n\n- Main Dashboard统计接口重构，更改统计源\n    \n- Live Traffic Chart 接口重构，更改统计源\n    \n- 原代理日志拆分为Intercept和Manipulation\n    \n- 相关Metrics的Schema更改为重构后的数据源\n    \n\n## Release 23.04 (28 APR 2023)\n\n###### New Features\n\n- 增加数据写入延迟接口Session Insert Latency Distribution\n    \n- 增加数据写入Kafka延迟接口 Session Ingestion Latency Distribution\n    \n\n###### Update\n\n- 重构 Security Policy Hits Metrics 统计\n    \n- 重构 Traffic Shaping Metrics 统计\n    \n\n## Release 23.03 (28 MAR 2023)\n\n###### New Features\n\n- 目录整体重构，重新梳理功能，便于Newman CLI运行\n    \n- ClickHouse目录下增加慢查询故障诊断语句\n    \n- 参数与API接口统一改为英文，避免中文编码执行异常\n    \n- 加密环境变量密码、token等敏感信息\n    \n- 定义全局动态变量：时间范围、随机IP、随机域名等\n    \n\n###### Update\n\n- Flags 添加C2S与S2C标志位标签\n    \n\n## Release 23.02 (28 FEB 2023)\n\n###### New Features\n\n- 增加Traffic Shaping 相关统计接口\n    \n\n###### Update\n\n- 会话日志增加列common_shaping_rule_ids\n    \n- 会话与安全事件日志增加列common_server_domain\n    \n- 会话与安全事件日志增加列common_flags_identify_info\n    \n\n## Release 23.01 (31 JAN 2023)\n\n###### Update\n\n- 会话与安全事件日志增加列common_server_fqdn\n    \n- 会话与安全事件日志增加列common_app_full_path\n    \n\n## Release 22.12 (30 DEC 2022)\n\n###### New Features\n\n- 新增Dashboards-增加App推荐\n    \n- 新增系统报告-会话日志Flags统计\n    \n- 新增系统报告-会话日志Flags占比\n    \n\n###### Update\n\n- 会话与安全事件日志增加common_flags列\n    \n- 自定义IP映射-增加对ASN函数\n    \n\n## Release 22.1 (30 NOV 2022)\n\n###### New Features\n\n###### Update\n\n- 会话与安全事件日志增加ssl_ja3s_hash列\n    \n\n## Release 22.10 (30 OCT 2022)\n\n###### New Features\n\n- 06其它-功能验证-Traffic Summary增加Throughput接口\n    \n    ###### Update\n    \n- 更新原有查询，将VSYS ID作为默认查询条件\n    \n\n## Release 22.09 (30 SEP 2022)\n\n###### Update\n\n- 会话与安全事件日志增加common_tunnel_endpoint_a_desc, common_tunnel_endpoint_b_desc,dtls_sni 列\n    \n\n## Release 22.08 (31 AUG 2022)\n\n###### New Features\n\n- 其它-查询网关-Live Charts 总带宽流量校验\n    \n- 增加检查数据流-SQL执行计划\n    \n- 增加检查数据流-SQL查看表结构\n    \n- 增加检查数据推荐-推荐IMSI到TEID关系\n    \n- 增加检查数据推荐-推荐IMEI到TEID关系\n    \n- 增加检查数据推荐-推荐Phone Number到TEID关系\n    \n- 增加检查数据推荐-推荐apn到TEID关系\n    \n- 增加检查数据推荐-实时查询任务-提交查询任务(实时统计)\n    \n- 增加检查数据推荐-实时查询任务-获取任务结果(实时统计)\n    \n- 增加检查数据推荐-知识库列表\n    \n- 增加预处理检查-检测预处理延迟\n    \n- 增加预处理检查-已关闭会话日志延迟分布\n    \n    ###### Update\n    \n\n## Release 22.07 (30 JUL 2022)\n\n###### New Features\n\n- 增加检查数据推荐-Top Server IP流量概况评估\n    \n- 增加检查数据推荐-Top SNI 流量概况评估\n    \n    ###### Update\n    \n\n## Release 22.06 (30 JUE 2022)\n\n###### New Features\n\n- 检查数据流-增加存储配额一致性检查\n    \n    ###### Update\n    \n- 系统报告检查-增加与CM默认VSYSID=1参数\n    \n\n## Release 22.05 (31 MAY 2022)\n\n###### New Features\n\n###### Update\n\n- 检查日志-会话日志/安全事件日志增加RDP类型校验\n    \n\n## Release 22.04 (29 APR 2022)\n\n###### New Features\n\n###### Update\n\n- 预处理检查-是否有数据验证，改为通过console后台打印日志\n    \n- Dashboards Top部分功能增加device_group, data_center维度校验\n    \n\n## Release 22.03 (8 APR 2022)\n\n###### New Features\n\n- 增加数据预处理检查，为每类日志增加多个测试用例，区分功能或无数据问题\n    \n    ###### Update\n    \n- 其它-评估日志预处理，增加ETL处理时延和写入Kafka时延指标\n    \n- 检查日志模块对会话，安全和代理事件日志基于具体字段查询\n    \n\n###### Delete\n\n- 删除检查数据流，关于Topic的测试用例\n    \n\n## Release 22.02 (8 MAR 2022)\n\n###### New Features\n\n- 检查数据流-元数据检查 增加schema评价文件事件日志\n    \n\n## Release 22.01 (27 JAN 2022)\n\n###### New Features\n\n- 检查数据流-TopN计算 增加Application接口验证\n    \n\n###### Update\n\n- 重新梳理分类，删除无用接口\n    \n- 重新排列分类，将系统自检放到首位\n    \n\n## Release 21.12 (1 Dec 2021)\n\n###### New Features\n\n- 新增数据推荐查询-实时查询任务\n    \n- 新增数据推荐查询-推荐Subscriber ID 到IP关系\n    \n- 新增数据推荐查询-推荐APP活跃客户端IP\n    \n- 新增数据推荐查询-推荐TopN Server IP\n    \n- 新增数据推荐查询-推荐TopN SNI\n    \n- 新增常用快捷功能-查询网关，增加优化查询测试集\n    \n    - Top 查询优化\n        \n    - Calcite 缓存查询\n        \n    - 自定义时间函数补全功能\n        \n\n###### Update\n\n- Dashboard 查询，代理策略命中动作增加Edit Element 统计\n    \n\n## Release 21.11 (5 Nov 2021)\n\n###### New Features\n\n- Delete\n    \n- Update\n    \n- 修改报告查询接口(由查询mariadb方式变更为API接口)\n    \n- 修改规范“数据推荐查询”所有接口的命名\n    \n\n## Release 21.10 (28 OCT 2021)\n\n###### New Features\n\n- 新增HOS健康状态检测接口\n    \n- Delete\n    \n- 删除原ClickHouse/Druid/ArangoDB 状态检查接口\n    \n\n## Release 21.09 (23 SEP 2021)\n\n###### New Features\n\n- Update\n    \n- 删除分布式调度任务，5分钟TOPN校验，交由FLink统计\n    \n- 原始日志表名进行重命名，相关查询接口更新\n    \n- 修正DNS分析的SQL数据集\n    \n\n## Release 21.08 (15 AUG 2021)\n\n###### New Features\n\n- 新增“Dashboard查询-DoS Threat Map”功能列表，显示DoS检测地图接口\n    \n- 新增“原始日志查询-DoS事件日志”，显示DoS攻击检测日志\n    \n- 新增“原始日志查询-DoS事件日志-Summary”，显示DoS攻击趋势统计\n    \n- 新增“原始日志查询-DoS事件日志-Destination IP Traffic Trend”，显示受害者IP历史流量趋势\n    \n- Update\n    \n- 迁移“Dashboard查询”liveCharts接口，放到“Live Charts”目录中统一管理。\n    \n- 对DNS分析，增加一些查询样例\n    \n\n## Release 21.07 (5 JUL 2021)\n\n###### New Features\n\n- 增加”常用快捷功能-基数统计“，用于分析日志分布情况\n    \n- 增加”常用快捷功能-DNS放大攻击“，查询特征数据集\n    \n- 增加”通用检查-对象存储-获取某个文件“，用于文件获取验证\n    \n\n###### Update\n\n- 为所有接口增加Tests脚本，对接口进行批量验证测试\n    \n- 修正部分接口查询异常\n    \n\n## Release 21.06 (7 JUN 2021)\n\n###### New Features\n\n- Environments 增加环境变量domain、client_ip、server_ip、l7_protocol和PT1M_TIME\n    \n- 常用快捷功能增加某域名下钻、某IP下钻、协议下钻和DNS分析功能\n    \n\n###### Update\n\n- 原始日志查询，基于Druid近1小时日志变化粒度从5分钟改为1分钟。包含通联、策略和代理日志。\n    \n\n## Release 21.05 (6 MAY 2021)\n\n###### New Features\n\n- 新增“GTP-C日志”功能，辅助故障诊断\n    \n- 新增“事务日志”功能，辅助故障诊断\n    \n- 新增“活跃会话日志”功能，辅助故障诊断\n    \n- 新增“07.常用快捷功能-评估写入日志量”，查看当前系统的吞吐\n    \n\n###### Update\n\n- 修改\"01.通用检查-数据存储检查\"，增加事务、活跃及GTP-C 检测\n    \n\n## Release 21.04 (3 APR 2021)\n\n###### New Features\n\n- 增加“VoIP日志”功能，辅助故障诊断\n    \n- 增加“元数据检查”分类目录\n    \n- 增加“HOS对象存储”目录，用于定位对象存储\n    \n\n###### Update\n\n- 修改“SQL语法检查”为“SQL语法验证”，支持SQL语句的静态分析和数据库语义验证\n    \n- 迁移功能项位置，方便问题定位\n    \n\n###### Delete\n\n- 删除“系统检查-查询引擎SQL测试集\\[过时\\]”功能，由“故障诊断-sql性能测试”替代。\n    \n\n## Release 21.03 (2 MAR 2021)\n\n###### New Features\n\n- 增加故障诊断-元数据功能，可分析日志字段是否与schema一致\n    \n- 增加故障诊断-sql性能测试，可对查询引擎进行功能性验证和POC性能测试\n    \n\n###### Update\n\n- 对查询引擎SQL测试集标记过时\n    \n\n## Release 21.02 (1 FEB 2021)\n\n###### Update\n\n- 改善内部测试集，应对新的功能修改\n    \n\n## Release 20.11.rc3 (11 DEC 2020)\n\n###### New Features\n\n- 增加常用快捷功能- 安装证书独立客户端IP数据趋势\n    \n- 增加常用快捷功能-访问速度最慢TOP20 域名\n    \n- 增加常用快捷功能-报告预置Metrics\n    \n- 增加原始日志查询-安全策略-动作命中计数\n    \n- 增加原始日志查询-代理策略-动作命中计数\n    \n- 增加原始日志查询-通联-流量计数(now)\n    \n\n###### Update\n\n- 改善Dashboard查询-基础统计-新建、活跃（计数）-now\n    \n- 改善Dashboard查询-新建、活跃（趋势）\n    \n- 目录增加编号，便于管理\n    \n- 修改分布式调度任务-5分钟TOPN-hot表验证表名\n    \n- 部分Action为post 改为 get，便于导出命令行",
+		"name": "tsg-olap-function-test-24.08",
+		"description": "# galaxy-troubleshooting-api\n\n使用Postman组件，基于Rest API接口对TSG OLAP 进行功能验证。包括组件健康检查，功能集成测试及故障诊断。\n\n## Release 24.08 (28 AUG 2024)\n\n###### Update\n\n- Session Records 增加client_ip_tags, server_ip_tags, server_fqdn_tags列\n    \n- Statistics Rule 基于动态Metric构建测试集\n    \n\n## Release 24.07 (28 JUL 2024)\n\n###### New Features\n\n- Datasets Time_Floor 函数支持时间粒度获取函数 CHART_GRANULARITY, SAMPLE_GRANULARITY\n    \n\n###### Update\n\n- Druid Datasets 增加函数HDR_DESCRIBE,HDR_GET_PERCENTILES_DESCRIPTION使用\n    \n\n###### Delete\n\n- 删除Apache Druid ，Report and Metrics 接口\n    \n\n## Release 24.06 (28 JUN 2024)\n\n###### New Features\n\n- 增加Traffic Spectrum 数据集\n    \n\n###### Update\n\n- Troubleshooting 增加Test Script\n    \n- Statistics Rule Metrics 增加Client Port，Server Port及Packet Length 数据集\n    \n\n## Release 24.05 (28 MAY 2024)\n\n###### New Features\n\n- 增加Scehma datapath_telemetry_record\n    \n\n###### Update\n\n- Session Records 查询增加c2s_ttl,s2c_ttl\n    \n\n## Release 24.04 (28 APR 2024)\n\n###### New Features\n\n- 增加DoS Protection Rule Metric 相关Datasets\n    \n- 增加DoS Protection Policy Rule Hits\n    \n\n###### Update\n\n- 日志公共字段增加tunnel_id_list,client_country, client_super_administrative_area, client_administrative_area, client_sub_administrative_area,server_country, server_super_administrative_area, server_administrative_area, server_sub_administrative_area\n    \n- QGW Query API 参数由execution_mode修改 execution_mode\n    \n- DoS Threat Map 增加 attack volume接口\n    \n- Statistics Rule Metric增加Client ASN和Server ASN Dataset\n    \n- TopK 增加维度rank_by\n    \n- TopK Metric 增加Top Client Countries，Top Server Countries\n    \n\n###### Delete\n\n- 删除Top Subscribers\n    \n\n## Release 24.03 (28 MAR 2024)\n\n###### Update\n\n- Top-k metrics 去掉metric维度\n    \n- Saved query scheduler 增加monitor 接口\n    \n\n## Release 24.02 (29 FEB 2024)\n\n###### Update\n\n- Metric相关接口内层嵌套查询调整粒度为1s\n    \n- 基础字段tunnels修改为encapsulation\n    \n\n## Release 24.01 (31 JAN 2024)\n\n###### New Features\n\n- 依据OLAP API 组织接口\n    \n- 接口进行重构，不再兼容23.10及之前版本\n    \n\n## Release 23.10 (30 OCT 2023)\n\n###### Update\n\n- 会话日志增加毫米级时间戳字段common_start_timestamp_ms, common_end_timestamp_ms\n    \n- 会话日志增加操作系统指纹common_client_os_name,common_server_os_name\n    \n\n## Release 23.09 (30 SEP 2023)\n\n###### Update\n\n- metrics 修改表名由statistics_object改为object_statistics\n    \n- Flags统计增加Bidirectional标识\n    \n- Closed Session Records 增加http_status_code, ssl_esni_flag, ssl_ech_flag\n    \n- 删除Kafka Topics 目录\n    \n\n## Release 23.08 (21 AUG 2023)\n\n###### New Features\n\n- Metrics增加Statistics Policy 相关接口\n    \n- Metrics增加Statistics Object 相关接口\n    \n- Metrics增加Statistics rule 命中计数接口\n    \n\n###### Update\n\n- 会话日志查询，增加重命名字段common_out_link_id、common_in_link_id\n    \n\n## Release 23.07 (21 JUL 2023)\n\n###### Update\n\n- 修复Network Throughput Active Sessions计算错误，不除时间粒度\n    \n\n## Release 23.06 (21 JUN 2023)\n\n###### Update\n\n- 优化Limit返回值\n    \n\n## Release 23.05 (28 MAY 2023)\n\n###### New Features\n\n- 增加Service chaining统计接口\n    \n- QGW增加嵌套子查询接口，用于验证高级搜索\n    \n\n###### Update\n\n- Main Dashboard统计接口重构，更改统计源\n    \n- Live Traffic Chart 接口重构，更改统计源\n    \n- 原代理日志拆分为Intercept和Manipulation\n    \n- 相关Metrics的Schema更改为重构后的数据源\n    \n\n## Release 23.04 (28 APR 2023)\n\n###### New Features\n\n- 增加数据写入延迟接口Session Insert Latency Distribution\n    \n- 增加数据写入Kafka延迟接口 Session Ingestion Latency Distribution\n    \n\n###### Update\n\n- 重构 Security Policy Hits Metrics 统计\n    \n- 重构 Traffic Shaping Metrics 统计\n    \n\n## Release 23.03 (28 MAR 2023)\n\n###### New Features\n\n- 目录整体重构，重新梳理功能，便于Newman CLI运行\n    \n- ClickHouse目录下增加慢查询故障诊断语句\n    \n- 参数与API接口统一改为英文，避免中文编码执行异常\n    \n- 加密环境变量密码、token等敏感信息\n    \n- 定义全局动态变量：时间范围、随机IP、随机域名等\n    \n\n###### Update\n\n- Flags 添加C2S与S2C标志位标签\n    \n\n## Release 23.02 (28 FEB 2023)\n\n###### New Features\n\n- 增加Traffic Shaping 相关统计接口\n    \n\n###### Update\n\n- 会话日志增加列common_shaping_rule_ids\n    \n- 会话与安全事件日志增加列common_server_domain\n    \n- 会话与安全事件日志增加列common_flags_identify_info\n    \n\n## Release 23.01 (31 JAN 2023)\n\n###### Update\n\n- 会话与安全事件日志增加列common_server_fqdn\n    \n- 会话与安全事件日志增加列common_app_full_path\n    \n\n## Release 22.12 (30 DEC 2022)\n\n###### New Features\n\n- 新增Dashboards-增加App推荐\n    \n- 新增系统报告-会话日志Flags统计\n    \n- 新增系统报告-会话日志Flags占比\n    \n\n###### Update\n\n- 会话与安全事件日志增加common_flags列\n    \n- 自定义IP映射-增加对ASN函数\n    \n\n## Release 22.1 (30 NOV 2022)\n\n###### New Features\n\n###### Update\n\n- 会话与安全事件日志增加ssl_ja3s_hash列\n    \n\n## Release 22.10 (30 OCT 2022)\n\n###### New Features\n\n- 06其它-功能验证-Traffic Summary增加Throughput接口\n    \n    ###### Update\n    \n- 更新原有查询，将VSYS ID作为默认查询条件\n    \n\n## Release 22.09 (30 SEP 2022)\n\n###### Update\n\n- 会话与安全事件日志增加common_tunnel_endpoint_a_desc, common_tunnel_endpoint_b_desc,dtls_sni 列\n    \n\n## Release 22.08 (31 AUG 2022)\n\n###### New Features\n\n- 其它-查询网关-Live Charts 总带宽流量校验\n    \n- 增加检查数据流-SQL执行计划\n    \n- 增加检查数据流-SQL查看表结构\n    \n- 增加检查数据推荐-推荐IMSI到TEID关系\n    \n- 增加检查数据推荐-推荐IMEI到TEID关系\n    \n- 增加检查数据推荐-推荐Phone Number到TEID关系\n    \n- 增加检查数据推荐-推荐apn到TEID关系\n    \n- 增加检查数据推荐-实时查询任务-提交查询任务(实时统计)\n    \n- 增加检查数据推荐-实时查询任务-获取任务结果(实时统计)\n    \n- 增加检查数据推荐-知识库列表\n    \n- 增加预处理检查-检测预处理延迟\n    \n- 增加预处理检查-已关闭会话日志延迟分布\n    \n    ###### Update\n    \n\n## Release 22.07 (30 JUL 2022)\n\n###### New Features\n\n- 增加检查数据推荐-Top Server IP流量概况评估\n    \n- 增加检查数据推荐-Top SNI 流量概况评估\n    \n    ###### Update\n    \n\n## Release 22.06 (30 JUE 2022)\n\n###### New Features\n\n- 检查数据流-增加存储配额一致性检查\n    \n    ###### Update\n    \n- 系统报告检查-增加与CM默认VSYSID=1参数\n    \n\n## Release 22.05 (31 MAY 2022)\n\n###### New Features\n\n###### Update\n\n- 检查日志-会话日志/安全事件日志增加RDP类型校验\n    \n\n## Release 22.04 (29 APR 2022)\n\n###### New Features\n\n###### Update\n\n- 预处理检查-是否有数据验证，改为通过console后台打印日志\n    \n- Dashboards Top部分功能增加device_group, data_center维度校验\n    \n\n## Release 22.03 (8 APR 2022)\n\n###### New Features\n\n- 增加数据预处理检查，为每类日志增加多个测试用例，区分功能或无数据问题\n    \n    ###### Update\n    \n- 其它-评估日志预处理，增加ETL处理时延和写入Kafka时延指标\n    \n- 检查日志模块对会话，安全和代理事件日志基于具体字段查询\n    \n\n###### Delete\n\n- 删除检查数据流，关于Topic的测试用例\n    \n\n## Release 22.02 (8 MAR 2022)\n\n###### New Features\n\n- 检查数据流-元数据检查 增加schema评价文件事件日志\n    \n\n## Release 22.01 (27 JAN 2022)\n\n###### New Features\n\n- 检查数据流-TopN计算 增加Application接口验证\n    \n\n###### Update\n\n- 重新梳理分类，删除无用接口\n    \n- 重新排列分类，将系统自检放到首位\n    \n\n## Release 21.12 (1 Dec 2021)\n\n###### New Features\n\n- 新增数据推荐查询-实时查询任务\n    \n- 新增数据推荐查询-推荐Subscriber ID 到IP关系\n    \n- 新增数据推荐查询-推荐APP活跃客户端IP\n    \n- 新增数据推荐查询-推荐TopN Server IP\n    \n- 新增数据推荐查询-推荐TopN SNI\n    \n- 新增常用快捷功能-查询网关，增加优化查询测试集\n    \n    - Top 查询优化\n        \n    - Calcite 缓存查询\n        \n    - 自定义时间函数补全功能\n        \n\n###### Update\n\n- Dashboard 查询，代理策略命中动作增加Edit Element 统计\n    \n\n## Release 21.11 (5 Nov 2021)\n\n###### New Features\n\n- Delete\n    \n- Update\n    \n- 修改报告查询接口(由查询mariadb方式变更为API接口)\n    \n- 修改规范“数据推荐查询”所有接口的命名\n    \n\n## Release 21.10 (28 OCT 2021)\n\n###### New Features\n\n- 新增HOS健康状态检测接口\n    \n- Delete\n    \n- 删除原ClickHouse/Druid/ArangoDB 状态检查接口\n    \n\n## Release 21.09 (23 SEP 2021)\n\n###### New Features\n\n- Update\n    \n- 删除分布式调度任务，5分钟TOPN校验，交由FLink统计\n    \n- 原始日志表名进行重命名，相关查询接口更新\n    \n- 修正DNS分析的SQL数据集\n    \n\n## Release 21.08 (15 AUG 2021)\n\n###### New Features\n\n- 新增“Dashboard查询-DoS Threat Map”功能列表，显示DoS检测地图接口\n    \n- 新增“原始日志查询-DoS事件日志”，显示DoS攻击检测日志\n    \n- 新增“原始日志查询-DoS事件日志-Summary”，显示DoS攻击趋势统计\n    \n- 新增“原始日志查询-DoS事件日志-Destination IP Traffic Trend”，显示受害者IP历史流量趋势\n    \n- Update\n    \n- 迁移“Dashboard查询”liveCharts接口，放到“Live Charts”目录中统一管理。\n    \n- 对DNS分析，增加一些查询样例\n    \n\n## Release 21.07 (5 JUL 2021)\n\n###### New Features\n\n- 增加”常用快捷功能-基数统计“，用于分析日志分布情况\n    \n- 增加”常用快捷功能-DNS放大攻击“，查询特征数据集\n    \n- 增加”通用检查-对象存储-获取某个文件“，用于文件获取验证\n    \n\n###### Update\n\n- 为所有接口增加Tests脚本，对接口进行批量验证测试\n    \n- 修正部分接口查询异常\n    \n\n## Release 21.06 (7 JUN 2021)\n\n###### New Features\n\n- Environments 增加环境变量domain、client_ip、server_ip、l7_protocol和PT1M_TIME\n    \n- 常用快捷功能增加某域名下钻、某IP下钻、协议下钻和DNS分析功能\n    \n\n###### Update\n\n- 原始日志查询，基于Druid近1小时日志变化粒度从5分钟改为1分钟。包含通联、策略和代理日志。\n    \n\n## Release 21.05 (6 MAY 2021)\n\n###### New Features\n\n- 新增“GTP-C日志”功能，辅助故障诊断\n    \n- 新增“事务日志”功能，辅助故障诊断\n    \n- 新增“活跃会话日志”功能，辅助故障诊断\n    \n- 新增“07.常用快捷功能-评估写入日志量”，查看当前系统的吞吐\n    \n\n###### Update\n\n- 修改\"01.通用检查-数据存储检查\"，增加事务、活跃及GTP-C 检测\n    \n\n## Release 21.04 (3 APR 2021)\n\n###### New Features\n\n- 增加“VoIP日志”功能，辅助故障诊断\n    \n- 增加“元数据检查”分类目录\n    \n- 增加“HOS对象存储”目录，用于定位对象存储\n    \n\n###### Update\n\n- 修改“SQL语法检查”为“SQL语法验证”，支持SQL语句的静态分析和数据库语义验证\n    \n- 迁移功能项位置，方便问题定位\n    \n\n###### Delete\n\n- 删除“系统检查-查询引擎SQL测试集\\[过时\\]”功能，由“故障诊断-sql性能测试”替代。\n    \n\n## Release 21.03 (2 MAR 2021)\n\n###### New Features\n\n- 增加故障诊断-元数据功能，可分析日志字段是否与schema一致\n    \n- 增加故障诊断-sql性能测试，可对查询引擎进行功能性验证和POC性能测试\n    \n\n###### Update\n\n- 对查询引擎SQL测试集标记过时\n    \n\n## Release 21.02 (1 FEB 2021)\n\n###### Update\n\n- 改善内部测试集，应对新的功能修改\n    \n\n## Release 20.11.rc3 (11 DEC 2020)\n\n###### New Features\n\n- 增加常用快捷功能- 安装证书独立客户端IP数据趋势\n    \n- 增加常用快捷功能-访问速度最慢TOP20 域名\n    \n- 增加常用快捷功能-报告预置Metrics\n    \n- 增加原始日志查询-安全策略-动作命中计数\n    \n- 增加原始日志查询-代理策略-动作命中计数\n    \n- 增加原始日志查询-通联-流量计数(now)\n    \n\n###### Update\n\n- 改善Dashboard查询-基础统计-新建、活跃（计数）-now\n    \n- 改善Dashboard查询-新建、活跃（趋势）\n    \n- 目录增加编号，便于管理\n    \n- 修改分布式调度任务-5分钟TOPN-hot表验证表名\n    \n- 部分Action为post 改为 get，便于导出命令行",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "8105037"
 	},
@@ -44,7 +44,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n   \"statement\" : \"SELECT FROM_UNIXTIME(recv_time) as recv_time, log_id, decoded_as, session_id, start_timestamp_ms, end_timestamp_ms, duration_ms, tcp_handshake_latency_ms, ingestion_time, processing_time, insert_time, device_id, out_link_id, in_link_id, device_tag, data_center, device_group, sled_ip, address_type, vsys_id, t_vsys_id, flags, flags_identify_info, security_rule_list, security_action, monitor_rule_list, sc_rule_list, sc_rsp_raw, sc_rsp_decrypted, shaping_rule_list, proxy_rule_list, proxy_action, proxy_pinning_status, proxy_intercept_status, proxy_passthrough_reason, proxy_client_side_latency_ms, proxy_server_side_latency_ms, proxy_client_side_version, proxy_server_side_version, proxy_cert_verify, proxy_intercept_error, monitor_mirrored_pkts, monitor_mirrored_bytes, client_ip, client_port, client_os_desc, client_geolocation, client_asn, subscriber_id, imei, imsi, phone_number, apn, server_ip, server_port, server_os_desc, server_geolocation, server_asn, server_fqdn, server_domain, app_transition, app, app_debug_info, app_content, fqdn_category_list, decoded_path,ip_protocol, dns_message_id, dns_qr, dns_opcode, dns_aa, dns_tc, dns_rd, dns_ra, dns_rcode, dns_qdcount, dns_ancount, dns_nscount, dns_arcount, dns_qname, dns_qtype, dns_qclass, dns_cname, dns_sub, dns_rr, dns_response_latency_ms, http_url, http_host, http_request_line, http_response_line, http_request_body, http_response_body, http_proxy_flag, http_sequence, http_cookie, http_referer, http_user_agent, http_request_content_length, http_request_content_type, http_response_content_length, http_response_content_type, http_set_cookie, http_version, http_status_code, http_response_latency_ms, http_session_duration_ms, http_action_file_size, ssl_version, ssl_sni, ssl_san, ssl_cn, ssl_handshake_latency_ms, ssl_ja3_hash, ssl_ja3s_hash, ssl_cert_issuer, ssl_cert_subject, ssl_esni_flag, ssl_ech_flag, dtls_cookie, dtls_version, dtls_sni, dtls_san, dtls_cn, dtls_handshake_latency_ms, dtls_ja3_fingerprint, dtls_ja3_hash, dtls_cert_issuer, dtls_cert_subject, mail_protocol_type, mail_account, mail_from_cmd, mail_to_cmd, mail_from, mail_password, mail_to, mail_cc, mail_bcc, mail_subject, mail_subject_charset, mail_attachment_name, mail_attachment_name_charset, mail_eml_file, ftp_account, ftp_url, ftp_link_type, quic_version, quic_sni, quic_user_agent, rdp_cookie, rdp_security_protocol, rdp_client_channels, rdp_keyboard_layout, rdp_client_version, rdp_client_name, rdp_client_product_id, rdp_desktop_width, rdp_desktop_height, rdp_requested_color_depth, rdp_certificate_type, rdp_certificate_count, rdp_certificate_permanent, rdp_encryption_level, rdp_encryption_method, ssh_version, ssh_auth_success, ssh_client_version, ssh_server_version, ssh_cipher_alg, ssh_mac_alg, ssh_compression_alg, ssh_kex_alg, ssh_host_key_alg, ssh_host_key, ssh_hassh, sip_call_id, sip_originator_description, sip_responder_description, sip_user_agent, sip_server, sip_originator_sdp_connect_ip, sip_originator_sdp_media_port, sip_originator_sdp_media_type, sip_originator_sdp_content, sip_responder_sdp_connect_ip, sip_responder_sdp_media_port, sip_responder_sdp_media_type, sip_responder_sdp_content, sip_duration_s, sip_bye, rtp_payload_type_c2s, rtp_payload_type_s2c, rtp_pcap_path, rtp_originator_dir, stratum_cryptocurrency, stratum_mining_pools, stratum_mining_program, stratum_mining_subscribe, sent_pkts, received_pkts, sent_bytes, received_bytes, tcp_c2s_ip_fragments, tcp_s2c_ip_fragments, tcp_c2s_lost_bytes, tcp_s2c_lost_bytes, tcp_c2s_o3_pkts, tcp_s2c_o3_pkts, tcp_c2s_rtx_pkts, tcp_s2c_rtx_pkts, tcp_c2s_rtx_bytes, tcp_s2c_rtx_bytes, tcp_rtt_ms, tcp_client_isn, tcp_server_isn, packet_capture_file, in_src_mac, out_src_mac, in_dest_mac, out_dest_mac, encapsulation, dup_traffic_flag, tunnel_endpoint_a_desc, tunnel_endpoint_b_desc,mail_starttls_flag,client_country, client_super_administrative_area, client_administrative_area, client_sub_administrative_area,server_country, server_super_administrative_area, server_administrative_area, server_sub_administrative_area,tunnel_id_list, app_extra_info,c2s_ttl,s2c_ttl  FROM session_record AS session_record WHERE recv_time  >= UNIX_TIMESTAMP('{{start_time}}') and recv_time <  UNIX_TIMESTAMP('{{end_time}}') AND  vsys_id IN (1)  ORDER BY recv_time DESC LIMIT 20\" ,\n   \"execution_mode\":\"oneshot\",\n   \"output_mode\":\"json\"\n\n}",
+									"raw": "{\n   \"statement\" : \"SELECT FROM_UNIXTIME(recv_time) as recv_time, log_id, decoded_as, session_id, start_timestamp_ms, end_timestamp_ms, duration_ms, tcp_handshake_latency_ms, ingestion_time, processing_time, insert_time, device_id, out_link_id, in_link_id, device_tag, data_center, device_group, sled_ip, address_type, vsys_id, t_vsys_id, flags, flags_identify_info, security_rule_list, security_action, monitor_rule_list, sc_rule_list, sc_rsp_raw, sc_rsp_decrypted, shaping_rule_list, proxy_rule_list, proxy_action, proxy_pinning_status, proxy_intercept_status, proxy_passthrough_reason, proxy_client_side_latency_ms, proxy_server_side_latency_ms, proxy_client_side_version, proxy_server_side_version, proxy_cert_verify, proxy_intercept_error, monitor_mirrored_pkts, monitor_mirrored_bytes, client_ip, client_port, client_os_desc, client_geolocation, client_asn, subscriber_id, imei, imsi, phone_number, apn, server_ip, server_port, server_os_desc, server_geolocation, server_asn, server_fqdn, server_domain, app_transition, app, app_debug_info, app_content, fqdn_category_list, decoded_path,ip_protocol, dns_message_id, dns_qr, dns_opcode, dns_aa, dns_tc, dns_rd, dns_ra, dns_rcode, dns_qdcount, dns_ancount, dns_nscount, dns_arcount, dns_qname, dns_qtype, dns_qclass, dns_cname, dns_sub, dns_rr, dns_response_latency_ms, http_url, http_host, http_request_line, http_response_line, http_request_body, http_response_body, http_proxy_flag, http_sequence, http_cookie, http_referer, http_user_agent, http_request_content_length, http_request_content_type, http_response_content_length, http_response_content_type, http_set_cookie, http_version, http_status_code, http_response_latency_ms, http_session_duration_ms, http_action_file_size, ssl_version, ssl_sni, ssl_san, ssl_cn, ssl_handshake_latency_ms, ssl_ja3_hash, ssl_ja3s_hash, ssl_cert_issuer, ssl_cert_subject, ssl_esni_flag, ssl_ech_flag, dtls_cookie, dtls_version, dtls_sni, dtls_san, dtls_cn, dtls_handshake_latency_ms, dtls_ja3_fingerprint, dtls_ja3_hash, dtls_cert_issuer, dtls_cert_subject, mail_protocol_type, mail_account, mail_from_cmd, mail_to_cmd, mail_from, mail_password, mail_to, mail_cc, mail_bcc, mail_subject, mail_subject_charset, mail_attachment_name, mail_attachment_name_charset, mail_eml_file, ftp_account, ftp_url, ftp_link_type, quic_version, quic_sni, quic_user_agent, rdp_cookie, rdp_security_protocol, rdp_client_channels, rdp_keyboard_layout, rdp_client_version, rdp_client_name, rdp_client_product_id, rdp_desktop_width, rdp_desktop_height, rdp_requested_color_depth, rdp_certificate_type, rdp_certificate_count, rdp_certificate_permanent, rdp_encryption_level, rdp_encryption_method, ssh_version, ssh_auth_success, ssh_client_version, ssh_server_version, ssh_cipher_alg, ssh_mac_alg, ssh_compression_alg, ssh_kex_alg, ssh_host_key_alg, ssh_host_key, ssh_hassh, sip_call_id, sip_originator_description, sip_responder_description, sip_user_agent, sip_server, sip_originator_sdp_connect_ip, sip_originator_sdp_media_port, sip_originator_sdp_media_type, sip_originator_sdp_content, sip_responder_sdp_connect_ip, sip_responder_sdp_media_port, sip_responder_sdp_media_type, sip_responder_sdp_content, sip_duration_s, sip_bye, rtp_payload_type_c2s, rtp_payload_type_s2c, rtp_pcap_path, rtp_originator_dir, stratum_cryptocurrency, stratum_mining_pools, stratum_mining_program, stratum_mining_subscribe, sent_pkts, received_pkts, sent_bytes, received_bytes, tcp_c2s_ip_fragments, tcp_s2c_ip_fragments, tcp_c2s_lost_bytes, tcp_s2c_lost_bytes, tcp_c2s_o3_pkts, tcp_s2c_o3_pkts, tcp_c2s_rtx_pkts, tcp_s2c_rtx_pkts, tcp_c2s_rtx_bytes, tcp_s2c_rtx_bytes, tcp_rtt_ms, tcp_client_isn, tcp_server_isn, packet_capture_file, in_src_mac, out_src_mac, in_dest_mac, out_dest_mac, encapsulation, dup_traffic_flag, tunnel_endpoint_a_desc, tunnel_endpoint_b_desc,mail_starttls_flag,client_country, client_super_administrative_area, client_administrative_area, client_sub_administrative_area,server_country, server_super_administrative_area, server_administrative_area, server_sub_administrative_area,tunnel_id_list, app_extra_info,c2s_ttl,s2c_ttl,client_ip_tags,server_ip_tags,server_fqdn_tags  FROM session_record AS session_record WHERE recv_time  >= UNIX_TIMESTAMP('{{start_time}}') and recv_time <  UNIX_TIMESTAMP('{{end_time}}') AND  vsys_id IN (1)  ORDER BY recv_time DESC LIMIT 20\" ,\n   \"execution_mode\":\"oneshot\",\n   \"output_mode\":\"json\"\n\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -236,7 +236,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n   \"statement\" : \"SELECT recv_time, log_id, decoded_as, session_id, start_timestamp_ms, end_timestamp_ms, duration_ms, tcp_handshake_latency_ms, ingestion_time, processing_time, insert_time, device_id, out_link_id, in_link_id, device_tag, data_center, device_group, sled_ip, address_type, vsys_id, t_vsys_id, flags, flags_identify_info, security_rule_list, security_action, monitor_rule_list, shaping_rule_list, proxy_rule_list, sc_rule_list, sc_rsp_raw, sc_rsp_decrypted, proxy_action, proxy_pinning_status, proxy_intercept_status, proxy_passthrough_reason, proxy_client_side_latency_ms, proxy_server_side_latency_ms, proxy_client_side_version, proxy_server_side_version, proxy_cert_verify, proxy_intercept_error, monitor_mirrored_pkts, monitor_mirrored_bytes, client_ip, client_port, client_os_desc, client_geolocation, client_asn, subscriber_id, imei, imsi, phone_number, apn, server_ip, server_port, server_os_desc, server_geolocation, server_asn, server_fqdn, server_domain, app_transition, app, app_debug_info, app_content, fqdn_category_list, decoded_path, ip_protocol,dns_message_id, dns_qr, dns_opcode, dns_aa, dns_tc, dns_rd, dns_ra, dns_rcode, dns_qdcount, dns_ancount, dns_nscount, dns_arcount, dns_qname, dns_qtype, dns_qclass, dns_cname, dns_sub, dns_rr, dns_response_latency_ms, http_url, http_host, http_request_line, http_response_line, http_request_body, http_response_body, http_proxy_flag, http_sequence, http_cookie, http_referer, http_user_agent, http_request_content_length, http_request_content_type, http_response_content_length, http_response_content_type, http_set_cookie, http_version, http_status_code, http_response_latency_ms, http_session_duration_ms, http_action_file_size, ssl_version, ssl_sni, ssl_san, ssl_cn, ssl_handshake_latency_ms, ssl_ja3_hash, ssl_ja3s_hash, ssl_cert_issuer, ssl_cert_subject, ssl_esni_flag, ssl_ech_flag, dtls_cookie, dtls_version, dtls_sni, dtls_san, dtls_cn, dtls_handshake_latency_ms, dtls_ja3_fingerprint, dtls_ja3_hash, dtls_cert_issuer, dtls_cert_subject, mail_protocol_type, mail_account, mail_from_cmd, mail_to_cmd, mail_from, mail_password, mail_to, mail_cc, mail_bcc, mail_subject, mail_subject_charset, mail_attachment_name, mail_attachment_name_charset, mail_eml_file, ftp_account, ftp_url, ftp_link_type, quic_version, quic_sni, quic_user_agent, rdp_cookie, rdp_security_protocol, rdp_client_channels, rdp_keyboard_layout, rdp_client_version, rdp_client_name, rdp_client_product_id, rdp_desktop_width, rdp_desktop_height, rdp_requested_color_depth, rdp_certificate_type, rdp_certificate_count, rdp_certificate_permanent, rdp_encryption_level, rdp_encryption_method, ssh_version, ssh_auth_success, ssh_client_version, ssh_server_version, ssh_cipher_alg, ssh_mac_alg, ssh_compression_alg, ssh_kex_alg, ssh_host_key_alg, ssh_host_key, ssh_hassh, sip_call_id, sip_originator_description, sip_responder_description, sip_user_agent, sip_server, sip_originator_sdp_connect_ip, sip_originator_sdp_media_port, sip_originator_sdp_media_type, sip_originator_sdp_content, sip_responder_sdp_connect_ip, sip_responder_sdp_media_port, sip_responder_sdp_media_type, sip_responder_sdp_content, sip_duration_s, sip_bye, rtp_payload_type_c2s, rtp_payload_type_s2c, rtp_pcap_path, rtp_originator_dir, stratum_cryptocurrency, stratum_mining_pools, stratum_mining_program, stratum_mining_subscribe, sent_pkts, received_pkts, sent_bytes, received_bytes, tcp_c2s_ip_fragments, tcp_s2c_ip_fragments, tcp_c2s_lost_bytes, tcp_s2c_lost_bytes, tcp_c2s_o3_pkts, tcp_s2c_o3_pkts, tcp_c2s_rtx_pkts, tcp_s2c_rtx_pkts, tcp_c2s_rtx_bytes, tcp_s2c_rtx_bytes, tcp_rtt_ms, tcp_client_isn, tcp_server_isn, packet_capture_file, in_src_mac, out_src_mac, in_dest_mac, out_dest_mac, encapsulation, dup_traffic_flag, tunnel_endpoint_a_desc, tunnel_endpoint_b_desc,tunnel_id_list,client_country, client_super_administrative_area, client_administrative_area, client_sub_administrative_area,server_country, server_super_administrative_area, server_administrative_area, server_sub_administrative_area  FROM security_event AS security_record WHERE recv_time  >= UNIX_TIMESTAMP('{{start_time}}') and recv_time <  UNIX_TIMESTAMP('{{end_time}}')   AND  vsys_id IN (1) ORDER BY recv_time DESC LIMIT 20\" ,\n   \"execution_mode\":\"oneshot\",\n   \"output_mode\":\"json\"\n\n}",
+									"raw": "{\n   \"statement\" : \"SELECT recv_time, log_id, decoded_as, session_id, start_timestamp_ms, end_timestamp_ms, duration_ms, tcp_handshake_latency_ms, ingestion_time, processing_time, insert_time, device_id, out_link_id, in_link_id, device_tag, data_center, device_group, sled_ip, address_type, vsys_id, t_vsys_id, flags, flags_identify_info, security_rule_list, security_action, monitor_rule_list, shaping_rule_list, proxy_rule_list, sc_rule_list, sc_rsp_raw, sc_rsp_decrypted, proxy_action, proxy_pinning_status, proxy_intercept_status, proxy_passthrough_reason, proxy_client_side_latency_ms, proxy_server_side_latency_ms, proxy_client_side_version, proxy_server_side_version, proxy_cert_verify, proxy_intercept_error, monitor_mirrored_pkts, monitor_mirrored_bytes, client_ip, client_port, client_os_desc, client_geolocation, client_asn, subscriber_id, imei, imsi, phone_number, apn, server_ip, server_port, server_os_desc, server_geolocation, server_asn, server_fqdn, server_domain, app_transition, app, app_debug_info, app_content, fqdn_category_list, decoded_path, ip_protocol,dns_message_id, dns_qr, dns_opcode, dns_aa, dns_tc, dns_rd, dns_ra, dns_rcode, dns_qdcount, dns_ancount, dns_nscount, dns_arcount, dns_qname, dns_qtype, dns_qclass, dns_cname, dns_sub, dns_rr, dns_response_latency_ms, http_url, http_host, http_request_line, http_response_line, http_request_body, http_response_body, http_proxy_flag, http_sequence, http_cookie, http_referer, http_user_agent, http_request_content_length, http_request_content_type, http_response_content_length, http_response_content_type, http_set_cookie, http_version, http_status_code, http_response_latency_ms, http_session_duration_ms, http_action_file_size, ssl_version, ssl_sni, ssl_san, ssl_cn, ssl_handshake_latency_ms, ssl_ja3_hash, ssl_ja3s_hash, ssl_cert_issuer, ssl_cert_subject, ssl_esni_flag, ssl_ech_flag, dtls_cookie, dtls_version, dtls_sni, dtls_san, dtls_cn, dtls_handshake_latency_ms, dtls_ja3_fingerprint, dtls_ja3_hash, dtls_cert_issuer, dtls_cert_subject, mail_protocol_type, mail_account, mail_from_cmd, mail_to_cmd, mail_from, mail_password, mail_to, mail_cc, mail_bcc, mail_subject, mail_subject_charset, mail_attachment_name, mail_attachment_name_charset, mail_eml_file, ftp_account, ftp_url, ftp_link_type, quic_version, quic_sni, quic_user_agent, rdp_cookie, rdp_security_protocol, rdp_client_channels, rdp_keyboard_layout, rdp_client_version, rdp_client_name, rdp_client_product_id, rdp_desktop_width, rdp_desktop_height, rdp_requested_color_depth, rdp_certificate_type, rdp_certificate_count, rdp_certificate_permanent, rdp_encryption_level, rdp_encryption_method, ssh_version, ssh_auth_success, ssh_client_version, ssh_server_version, ssh_cipher_alg, ssh_mac_alg, ssh_compression_alg, ssh_kex_alg, ssh_host_key_alg, ssh_host_key, ssh_hassh, sip_call_id, sip_originator_description, sip_responder_description, sip_user_agent, sip_server, sip_originator_sdp_connect_ip, sip_originator_sdp_media_port, sip_originator_sdp_media_type, sip_originator_sdp_content, sip_responder_sdp_connect_ip, sip_responder_sdp_media_port, sip_responder_sdp_media_type, sip_responder_sdp_content, sip_duration_s, sip_bye, rtp_payload_type_c2s, rtp_payload_type_s2c, rtp_pcap_path, rtp_originator_dir, stratum_cryptocurrency, stratum_mining_pools, stratum_mining_program, stratum_mining_subscribe, sent_pkts, received_pkts, sent_bytes, received_bytes, tcp_c2s_ip_fragments, tcp_s2c_ip_fragments, tcp_c2s_lost_bytes, tcp_s2c_lost_bytes, tcp_c2s_o3_pkts, tcp_s2c_o3_pkts, tcp_c2s_rtx_pkts, tcp_s2c_rtx_pkts, tcp_c2s_rtx_bytes, tcp_s2c_rtx_bytes, tcp_rtt_ms, tcp_client_isn, tcp_server_isn, packet_capture_file, in_src_mac, out_src_mac, in_dest_mac, out_dest_mac, encapsulation, dup_traffic_flag, tunnel_endpoint_a_desc, tunnel_endpoint_b_desc,tunnel_id_list,client_country, client_super_administrative_area, client_administrative_area, client_sub_administrative_area,server_country, server_super_administrative_area, server_administrative_area, server_sub_administrative_area,client_ip_tags,server_ip_tags,server_fqdn_tags  FROM security_event AS security_record WHERE recv_time  >= UNIX_TIMESTAMP('{{start_time}}') and recv_time <  UNIX_TIMESTAMP('{{end_time}}')   AND  vsys_id IN (1) ORDER BY recv_time DESC LIMIT 20\" ,\n   \"execution_mode\":\"oneshot\",\n   \"output_mode\":\"json\"\n\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -706,7 +706,8 @@
 											"    pm.response.to.have.status(200);",
 											"});"
 										],
-										"type": "text/javascript"
+										"type": "text/javascript",
+										"packages": {}
 									}
 								}
 							],
@@ -715,7 +716,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n   \"statement\" : \"select 'Session Record' as type, round(count(*)/300,0) as \\\"logs/sec\\\", round(avg(processing_time-ingestion_time),2) as \\\"avg_etl_latency(s)\\\", round(avg(insert_time-ingestion_time),2) as \\\"avg_insert_latency(s)\\\" from session_record crl where recv_time >= UNIX_TIMESTAMP({{Last 5 Minutes Start}}) and recv_time < UNIX_TIMESTAMP({{now}}) union all select 'Transaction Record' as type, round(count(*)/300,0) as \\\"logs/sec\\\", round(avg(processing_time-ingestion_time),2) as \\\"etl_latency(s)\\\", round(avg(insert_time-ingestion_time),2) as \\\"avg_insert_latency(s)\\\" from transaction_record crl where recv_time >= UNIX_TIMESTAMP({{Last 5 Minutes Start}}) and recv_time < UNIX_TIMESTAMP({{now}}) union all select 'Security Event' as type, round(count(*)/300,0) as \\\"logs/sec\\\", round(avg(processing_time-ingestion_time),2) as \\\"avg_etl_latency(s)\\\", round(avg(insert_time-ingestion_time),2) as \\\"avg_insert_latency(s)\\\" from security_event crl where recv_time >= UNIX_TIMESTAMP({{Last 5 Minutes Start}}) and recv_time < UNIX_TIMESTAMP({{now}})\" ,\n   \"execution_mode\":\"oneshot\",\n   \"output_mode\":\"json\"\n\n}",
+									"raw": "{\n   \"statement\" : \"select 'session_record' as type, round(count(*)/300,0) as logs_per_second, round(avg(processing_time-ingestion_time),2) as avg_etl_latency_s, round(avg(insert_time-ingestion_time),2) as avg_insert_latency_s from session_record crl where recv_time >= UNIX_TIMESTAMP({{Last 5 Minutes Start}}) and recv_time < UNIX_TIMESTAMP({{now}}) union all select 'transaction_record' as type, round(count(*)/300,0) as logs_per_second, round(avg(processing_time-ingestion_time),2) as avg_etl_latency_s, round(avg(insert_time-ingestion_time),2) as avg_insert_latency_s from transaction_record crl where recv_time >= UNIX_TIMESTAMP({{Last 5 Minutes Start}}) and recv_time < UNIX_TIMESTAMP({{now}}) union all select 'security_event' as type, round(count(*)/300,0) as logs_per_second, round(avg(processing_time-ingestion_time),2) as avg_etl_latency_s, round(avg(insert_time-ingestion_time),2) as avg_insert_latency_s from security_event crl where recv_time >= UNIX_TIMESTAMP({{Last 5 Minutes Start}}) and recv_time < UNIX_TIMESTAMP({{now}})\" ,\n   \"execution_mode\":\"oneshot\",\n   \"output_mode\":\"json\"\n\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -4744,7 +4745,7 @@
 							"name": "Statistics Rule",
 							"item": [
 								{
-									"name": "Incoming Bytes, Outgoing Bytes and Bytes",
+									"name": "Time Series Count Metric for Sum Statistics",
 									"event": [
 										{
 											"listen": "test",
@@ -4755,7 +4756,8 @@
 													"});",
 													""
 												],
-												"type": "text/javascript"
+												"type": "text/javascript",
+												"packages": {}
 											}
 										},
 										{
@@ -4764,7 +4766,8 @@
 												"exec": [
 													""
 												],
-												"type": "text/javascript"
+												"type": "text/javascript",
+												"packages": {}
 											}
 										}
 									],
@@ -4777,7 +4780,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n   \"statement\" : \"select FROM_UNIXTIME(TIME_FLOOR_WITH_FILL(stat_time, 'PT30S', 'zero')) as stat_time , sum(in_bytes) as in_bytes, sum(out_bytes) as out_bytes, sum(bytes) as bytes from ( select TIME_FLOOR_WITH_FILL(UNIX_TIMESTAMP(__time),'PT1S') as stat_time, sum(in_bytes) as in_bytes, sum(out_bytes) as out_bytes, sum(bytes) as bytes from statistics_rule where __time >= '{{start_time}}' and __time < '{{end_time}}' and vsys_id in (1) and version=1 group by TIME_FLOOR_WITH_FILL(UNIX_TIMESTAMP(__time), 'PT1S')) group by FROM_UNIXTIME(TIME_FLOOR_WITH_FILL(stat_time, 'PT30S', 'zero')) order by stat_time asc limit 1000\" ,\n   \"output_mode\":\"json\",\n   \"execution_mode\":\"oneshot\"\n\n}",
+											"raw": "{\n   \"statement\" : \"select FROM_UNIXTIME(TIME_FLOOR_WITH_FILL(stat_time, 'PT30S', 'zero')) as stat_time , sum(count_1) as count_1, sum(count_2) as count_2, sum(count_3) as count_3 from ( select TIME_FLOOR_WITH_FILL(UNIX_TIMESTAMP(__time),'PT1S') as stat_time,sum(count_1) as count_1, sum(count_2) as count_2, sum(count_3) as count_3  from statistics_rule where __time >= '{{start_time}}' and __time < '{{end_time}}' and vsys_id in (1) and version=1 group by TIME_FLOOR_WITH_FILL(UNIX_TIMESTAMP(__time), 'PT1S')) group by FROM_UNIXTIME(TIME_FLOOR_WITH_FILL(stat_time, 'PT30S', 'zero')) order by stat_time asc limit 1000\" ,\n   \"output_mode\":\"json\",\n   \"execution_mode\":\"oneshot\"\n\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -4801,7 +4804,7 @@
 									"response": []
 								},
 								{
-									"name": "Average Incoming bits/s, Average Outgoing bits/s and Average bits/s",
+									"name": "Time Series Count Metric for AVG  Statistics",
 									"event": [
 										{
 											"listen": "test",
@@ -4812,7 +4815,8 @@
 													"});",
 													""
 												],
-												"type": "text/javascript"
+												"type": "text/javascript",
+												"packages": {}
 											}
 										},
 										{
@@ -4821,7 +4825,8 @@
 												"exec": [
 													""
 												],
-												"type": "text/javascript"
+												"type": "text/javascript",
+												"packages": {}
 											}
 										}
 									],
@@ -4834,7 +4839,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n   \"statement\" : \"select FROM_UNIXTIME(TIME_FLOOR_WITH_FILL(stat_time, 'PT30S', 'zero')) as stat_time, avg(in_bytes)*8/1 as avg_in_bits_per_sec, avg(out_bytes)*8/1 as avg_out_bits_per_sec, avg(bytes)*8/1 as avg_bits_per_sec from ( select TIME_FLOOR_WITH_FILL(UNIX_TIMESTAMP(__time),'PT1S') as stat_time, sum(in_bytes) as in_bytes, sum(out_bytes) as out_bytes, sum(bytes) as bytes from statistics_rule where __time >= '{{start_time}}' and __time < '{{end_time}}' and vsys_id in (1,2,3,4,5,6,7,8) group by TIME_FLOOR_WITH_FILL(UNIX_TIMESTAMP(__time), 'PT1S')) group by FROM_UNIXTIME(TIME_FLOOR_WITH_FILL(stat_time, 'PT30S', 'zero')) order by stat_time asc limit 1000\" ,\n   \"output_mode\":\"json\",\n   \"execution_mode\":\"oneshot\"\n\n}",
+											"raw": "{\n   \"statement\" : \"select FROM_UNIXTIME(TIME_FLOOR_WITH_FILL(stat_time, 'PT30S', 'zero')) as stat_time, avg(count_1)*8/1 as avg_in_bits_per_sec, avg(count_2)*8/1 as avg_out_bits_per_sec, avg(count_3)*8/1 as avg_bits_per_sec from ( select TIME_FLOOR_WITH_FILL(UNIX_TIMESTAMP(__time),'PT1S') as stat_time, sum(count_1) as count_1, sum(count_2) as count_2, sum(count_3) as count_3 from statistics_rule where __time >= '{{start_time}}' and __time < '{{end_time}}' and vsys_id in (1,2,3,4,5,6,7,8) group by TIME_FLOOR_WITH_FILL(UNIX_TIMESTAMP(__time), 'PT1S')) group by FROM_UNIXTIME(TIME_FLOOR_WITH_FILL(stat_time, 'PT30S', 'zero')) order by stat_time asc limit 1000\" ,\n   \"output_mode\":\"json\",\n   \"execution_mode\":\"oneshot\"\n\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -4858,7 +4863,7 @@
 									"response": []
 								},
 								{
-									"name": "Unique Client IPs and Unique Server IPs",
+									"name": "Time Series  Unique Count Metric Statistics",
 									"event": [
 										{
 											"listen": "test",
@@ -4869,7 +4874,8 @@
 													"});",
 													""
 												],
-												"type": "text/javascript"
+												"type": "text/javascript",
+												"packages": {}
 											}
 										},
 										{
@@ -4878,7 +4884,8 @@
 												"exec": [
 													""
 												],
-												"type": "text/javascript"
+												"type": "text/javascript",
+												"packages": {}
 											}
 										}
 									],
@@ -4891,7 +4898,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n   \"statement\" : \"select FROM_UNIXTIME(TIME_FLOOR_WITH_FILL(stat_time, 'PT30S', 'zero')) as stat_time, APPROX_COUNT_DISTINCT_HLLD(client_ip_sketch) as unique_client_ips, APPROX_COUNT_DISTINCT_HLLD(server_ip_sketch) as unique_server_ips from ( select TIME_FLOOR_WITH_FILL(UNIX_TIMESTAMP(__time),'PT1S') as stat_time, HLLD(client_ip_sketch) as client_ip_sketch, HLLD(server_ip_sketch) as server_ip_sketch from statistics_rule where __time >= '{{start_time}}' and __time < '{{end_time}}' and vsys_id in (1,2,3,4,5,6,7,8) group by TIME_FLOOR_WITH_FILL(UNIX_TIMESTAMP(__time),'PT1S')) group by FROM_UNIXTIME(TIME_FLOOR_WITH_FILL(stat_time, 'PT30S', 'zero')) order by stat_time asc limit 1000\" ,\n   \"output_mode\":\"json\",\n   \"execution_mode\":\"oneshot\"\n\n}",
+											"raw": "{\n   \"statement\" : \"select FROM_UNIXTIME(TIME_FLOOR_WITH_FILL(stat_time, 'PT30S', 'zero')) as stat_time, APPROX_COUNT_DISTINCT_HLLD(unique_count_1) as unique_count_1, APPROX_COUNT_DISTINCT_HLLD(unique_count_2) as unique_count_2 from ( select TIME_FLOOR_WITH_FILL(UNIX_TIMESTAMP(__time),'PT1S') as stat_time, HLLD(unique_count_1) as unique_count_1, HLLD(unique_count_2) as unique_count_2 from statistics_rule where __time >= '{{start_time}}' and __time < '{{end_time}}' and vsys_id in (1,2,3,4,5,6,7,8) group by TIME_FLOOR_WITH_FILL(UNIX_TIMESTAMP(__time),'PT1S')) group by FROM_UNIXTIME(TIME_FLOOR_WITH_FILL(stat_time, 'PT30S', 'zero')) order by stat_time asc limit 10\" ,\n   \"output_mode\":\"json\",\n   \"execution_mode\":\"oneshot\"\n\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -4915,7 +4922,7 @@
 									"response": []
 								},
 								{
-									"name": "95th TCP Latency (ms) and 99th TCP Latency (ms)",
+									"name": "Time Series Distribution Metric Statistics",
 									"event": [
 										{
 											"listen": "test",
@@ -4926,7 +4933,8 @@
 													"});",
 													""
 												],
-												"type": "text/javascript"
+												"type": "text/javascript",
+												"packages": {}
 											}
 										},
 										{
@@ -4935,7 +4943,8 @@
 												"exec": [
 													""
 												],
-												"type": "text/javascript"
+												"type": "text/javascript",
+												"packages": {}
 											}
 										}
 									],
@@ -4948,7 +4957,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n   \"statement\" : \"select FROM_UNIXTIME(TIME_FLOOR_WITH_FILL(stat_time, 'PT30S', 'zero')) as stat_time, QUANTILE_HDR(latency_ms_sketch,0.95) as p95th_tcp_latency_ms, QUANTILE_HDR(latency_ms_sketch,0.99) as p99th_tcp_latency_ms from ( select TIME_FLOOR_WITH_FILL(UNIX_TIMESTAMP(__time),'PT1S') as stat_time, HDR_HISTOGRAM(latency_ms_sketch) as latency_ms_sketch from statistics_rule where __time >= '{{start_time}}' and __time < '{{end_time}}' and vsys_id in (1,2,3,4,5,6,7,8) group by TIME_FLOOR_WITH_FILL(UNIX_TIMESTAMP(__time),'PT1S')) group by FROM_UNIXTIME(TIME_FLOOR_WITH_FILL(stat_time, 'PT30S', 'zero')) order by stat_time asc limit 1000\" ,\n   \"output_mode\":\"json\",\n   \"execution_mode\":\"oneshot\"\n\n}",
+											"raw": "{\n   \"statement\" : \"select FROM_UNIXTIME(TIME_FLOOR_WITH_FILL(stat_time, 'PT30S', 'zero')) as stat_time, QUANTILE_HDR(distribution_1,0.95) as p95th, QUANTILE_HDR(distribution_1,0.99) as p99th from ( select TIME_FLOOR_WITH_FILL(UNIX_TIMESTAMP(__time),'PT1S') as stat_time, HDR_HISTOGRAM(distribution_1) as distribution_1 from statistics_rule where __time >= '{{start_time}}' and __time < '{{end_time}}' and vsys_id in (1,2,3,4,5,6,7,8) group by TIME_FLOOR_WITH_FILL(UNIX_TIMESTAMP(__time),'PT1S')) group by FROM_UNIXTIME(TIME_FLOOR_WITH_FILL(stat_time, 'PT30S', 'zero')) order by stat_time asc limit 1000\" ,\n   \"output_mode\":\"json\",\n   \"execution_mode\":\"oneshot\"\n\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -4972,7 +4981,7 @@
 									"response": []
 								},
 								{
-									"name": "Histogram TCP Latency (ms)",
+									"name": "Distribution Metric Statistics",
 									"event": [
 										{
 											"listen": "test",
@@ -5007,7 +5016,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n   \"statement\" : \"select HDR_DESCRIBE(HDR_HISTOGRAM(latency_ms_sketch)) as tcp_latency_distribution, PERCENTILES_HDR(latency_ms_sketch) as histogram_tcp_latency_ms,HDR_GET_QUANTILES(HDR_HISTOGRAM(latency_ms_sketch), 0.5,0.95,0.99) as tcp_latency_quantiles from statistics_rule where __time >= '{{start_time}}' and __time < '{{end_time}}' and vsys_id in (1,2,3,4,5,6,7,8)\" ,\n   \"output_mode\":\"json\",\n   \"execution_mode\":\"oneshot\"\n\n}",
+											"raw": "{\n   \"statement\" : \"select HDR_DESCRIBE(HDR_HISTOGRAM(distribution_1)) as distribution_1_distribution, PERCENTILES_HDR(distribution_1) as distribution_1_histogram,HDR_GET_QUANTILES(HDR_HISTOGRAM(distribution_1), 0.5,0.95,0.99) as distribution_1_quantiles from statistics_rule where __time >= '{{start_time}}' and __time < '{{end_time}}' and vsys_id in (1,2,3,4,5,6,7,8)\" ,\n   \"output_mode\":\"json\",\n   \"execution_mode\":\"oneshot\"\n\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -5031,7 +5040,7 @@
 									"response": []
 								},
 								{
-									"name": "Histogram Packet Length (Bytes)",
+									"name": "Application Statistics",
 									"event": [
 										{
 											"listen": "test",
@@ -5066,7 +5075,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n   \"statement\" : \"select HDR_GET_PERCENTILES_DESCRIPTION(HDR_HISTOGRAM(pkt_length_sketch),100) as histogram_packet_length_bytes,HDR_GET_QUANTILES(HDR_HISTOGRAM(pkt_length_sketch), 0.5,0.95,0.99) as packet_length_quantiles from statistics_rule where __time >= '{{start_time}}' and __time < '{{end_time}}' and vsys_id in (1,2,3,4,5,6,7,8)\" ,\n   \"output_mode\":\"json\",\n   \"execution_mode\":\"oneshot\"\n\n}",
+											"raw": "{\n   \"statement\" : \"select application, sum(count_1) as count_1, sum(count_2) as count_2,sum(count_3) as count_3,sum(count_4) as count_4 from statistics_rule where __time >= '{{start_time}}' and __time < '{{end_time}}' and vsys_id in (1,2,3,4,5,6,7,8) and application is not null group by application order by count_1 desc limit 1024\" ,\n   \"output_mode\":\"json\",\n   \"execution_mode\":\"oneshot\"\n\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -5090,7 +5099,7 @@
 									"response": []
 								},
 								{
-									"name": "Bytes Sessions and Packets Distributed by Application",
+									"name": "Device Group Statistics",
 									"event": [
 										{
 											"listen": "test",
@@ -5125,7 +5134,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n   \"statement\" : \"select application, sum(bytes) as bytes, sum(sessions) as sessions,sum(pkts) as packets from statistics_rule where __time >= '{{start_time}}' and __time < '{{end_time}}' and vsys_id in (1,2,3,4,5,6,7,8) group by application order by bytes desc limit 1024\" ,\n   \"output_mode\":\"json\",\n   \"execution_mode\":\"oneshot\"\n\n}",
+											"raw": "{\n   \"statement\" : \"select device_group, sum(count_1) as count_1, sum(count_2) as count_2,sum(count_3) as count_3 from statistics_rule where __time >= '{{start_time}}' and __time < '{{end_time}}' and vsys_id in (1,2,3,4,5,6,7,8) group by device_group order by count_1 desc limit 1024\" ,\n   \"output_mode\":\"json\",\n   \"execution_mode\":\"oneshot\"\n\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -5149,7 +5158,7 @@
 									"response": []
 								},
 								{
-									"name": "Bytes Sessions and Packets Distributed by Device Group",
+									"name": "Client Port Statistics",
 									"event": [
 										{
 											"listen": "test",
@@ -5184,7 +5193,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n   \"statement\" : \"select device_group, sum(bytes) as bytes, sum(sessions) as sessions,sum(pkts) as packets from statistics_rule where __time >= '{{start_time}}' and __time < '{{end_time}}' and vsys_id in (1,2,3,4,5,6,7,8) group by device_group order by bytes desc limit 1024\" ,\n   \"output_mode\":\"json\",\n   \"execution_mode\":\"oneshot\"\n\n}",
+											"raw": "{\n   \"statement\" : \"select client_port, sum(count_1) as bytes, sum(count_2) as sessions, sum(count_3) as packets from statistics_rule where __time >= '{{start_time}}' and __time < '{{end_time}}' and vsys_id in (1,2,3,4,5,6,7,8) group by client_port order by bytes desc limit 1024\" ,\n   \"output_mode\":\"json\",\n   \"execution_mode\":\"oneshot\"\n\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -5208,7 +5217,7 @@
 									"response": []
 								},
 								{
-									"name": "Bytes Sessions and PacketsDistributed by Client Port",
+									"name": "Server Port Statistics",
 									"event": [
 										{
 											"listen": "test",
@@ -5243,7 +5252,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n   \"statement\" : \"select client_port, sum(bytes) as bytes, sum(sessions) as sessions, sum(pkts) as packets from statistics_rule where __time >= '{{start_time}}' and __time < '{{end_time}}' and vsys_id in (1,2,3,4,5,6,7,8) group by client_port order by bytes desc limit 1024\" ,\n   \"output_mode\":\"json\",\n   \"execution_mode\":\"oneshot\"\n\n}",
+											"raw": "{\n   \"statement\" : \"select server_port, sum(count_1) as bytes, sum(count_2) as packets,sum(count_3) as sessions from statistics_rule where __time >= '{{start_time}}' and __time < '{{end_time}}' and vsys_id in (1,2,3,4,5,6,7,8) group by server_port order by bytes desc limit 1024\" ,\n   \"output_mode\":\"json\",\n   \"execution_mode\":\"oneshot\"\n\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -5267,7 +5276,7 @@
 									"response": []
 								},
 								{
-									"name": "Bytes Sessions and Packets Distributed by Server Port",
+									"name": "Server IP Statistics",
 									"event": [
 										{
 											"listen": "test",
@@ -5302,7 +5311,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n   \"statement\" : \"select server_port, sum(bytes) as bytes, sum(pkts) as packets,sum(sessions) as sessions from statistics_rule where __time >= '{{start_time}}' and __time < '{{end_time}}' and vsys_id in (1,2,3,4,5,6,7,8) group by server_port order by bytes desc limit 1024\" ,\n   \"output_mode\":\"json\",\n   \"execution_mode\":\"oneshot\"\n\n}",
+											"raw": "{\n   \"statement\" : \"select server_ip, sum(count_1) as bytes, sum(count_2) as sessions,sum(count_3) as packets,APPROX_COUNT_DISTINCT_HLLD(unique_count_1) from statistics_rule where __time >= '{{start_time}}' and __time < '{{end_time}}' and vsys_id in (1,2,3,4,5,6,7,8) group by server_ip order by bytes desc limit 1024\" ,\n   \"output_mode\":\"json\",\n   \"execution_mode\":\"oneshot\"\n\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -5326,7 +5335,7 @@
 									"response": []
 								},
 								{
-									"name": "Bytes Sessions and Packets Distributed by Server IP",
+									"name": "Server IP List  Statistics",
 									"event": [
 										{
 											"listen": "test",
@@ -5361,7 +5370,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n   \"statement\" : \"select server_ip, sum(bytes) as bytes, sum(sessions) as sessions,sum(pkts) as packets from statistics_rule where __time >= '{{start_time}}' and __time < '{{end_time}}' and vsys_id in (1,2,3,4,5,6,7,8) group by server_ip order by bytes desc limit 1024\" ,\n   \"output_mode\":\"json\",\n   \"execution_mode\":\"oneshot\"\n\n}",
+											"raw": "{\n   \"statement\" : \"select server_ip_object_list, sum(count_1) as bytes, sum(count_2) as sessions, sum(count_3) as packets, APPROX_COUNT_DISTINCT_HLLD((unique_count_1)) from statistics_rule where __time >= '{{start_time}}' and __time < '{{end_time}}' and vsys_id in (1,2,3,4,5,6,7,8) group by server_ip_object_list order by bytes desc limit 1024\" ,\n   \"output_mode\":\"json\",\n   \"execution_mode\":\"oneshot\"\n\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -5385,7 +5394,7 @@
 									"response": []
 								},
 								{
-									"name": "Bytes Sessions and Packets Distributed by FQDN Category",
+									"name": "Multi-value Raw Column Distribution of Server IP List",
 									"event": [
 										{
 											"listen": "test",
@@ -5420,7 +5429,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n   \"statement\" : \"select fqdn_category, sum(bytes) as bytes, sum(sessions) as sessions, sum(pkts) as packets from statistics_rule where __time >= '{{start_time}}' and __time < '{{end_time}}' and vsys_id in (1,2,3,4,5,6,7,8) group by fqdn_category order by bytes desc limit 1024\" ,\n   \"output_mode\":\"json\",\n   \"execution_mode\":\"oneshot\"\n\n}",
+											"raw": "{\n   \"statement\" : \"select MV_TO_STRING(server_ip_object_list,',') , sum(count_1) as bytes, sum(count_2) as sessions from statistics_rule where __time >= '{{start_time}}' and __time < '{{end_time}}' and vsys_id in (1,2,3,4,5,6,7,8) and server_ip_object_list is not null group by MV_TO_STRING(server_ip_object_list,',') order by bytes desc limit 1024\" ,\n   \"output_mode\":\"json\",\n   \"execution_mode\":\"oneshot\"\n\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -5444,178 +5453,7 @@
 									"response": []
 								},
 								{
-									"name": "Multi-value Raw Column Distribution of FQDN Category",
-									"event": [
-										{
-											"listen": "test",
-											"script": {
-												"exec": [
-													"pm.test(\"Status code is 200\", function () {",
-													"    pm.response.to.have.status(200);",
-													"});",
-													""
-												],
-												"type": "text/javascript"
-											}
-										},
-										{
-											"listen": "prerequest",
-											"script": {
-												"exec": [
-													""
-												],
-												"type": "text/javascript"
-											}
-										}
-									],
-									"protocolProfileBehavior": {
-										"followOriginalHttpMethod": false,
-										"followRedirects": false
-									},
-									"request": {
-										"method": "POST",
-										"header": [],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n   \"statement\" : \"select MV_TO_STRING(fqdn_category,',') , sum(bytes) as bytes, sum(sessions) as sessions from statistics_rule where __time >= '{{start_time}}' and __time < '{{end_time}}' and vsys_id in (1,2,3,4,5,6,7,8) and fqdn_category is not null group by MV_TO_STRING(fqdn_category,',') order by bytes desc limit 1024\" ,\n   \"output_mode\":\"json\",\n   \"execution_mode\":\"oneshot\"\n\n}",
-											"options": {
-												"raw": {
-													"language": "json"
-												}
-											}
-										},
-										"url": {
-											"raw": "http://{{qgw_ip}}:{{qgw_port}}/v1/query/sql",
-											"protocol": "http",
-											"host": [
-												"{{qgw_ip}}"
-											],
-											"port": "{{qgw_port}}",
-											"path": [
-												"v1",
-												"query",
-												"sql"
-											]
-										}
-									},
-									"response": []
-								},
-								{
-									"name": "Multi-value Distribution of FQDN Category",
-									"event": [
-										{
-											"listen": "test",
-											"script": {
-												"exec": [
-													"pm.test(\"Status code is 200\", function () {",
-													"    pm.response.to.have.status(200);",
-													"});",
-													""
-												],
-												"type": "text/javascript"
-											}
-										},
-										{
-											"listen": "prerequest",
-											"script": {
-												"exec": [
-													""
-												],
-												"type": "text/javascript"
-											}
-										}
-									],
-									"protocolProfileBehavior": {
-										"followOriginalHttpMethod": false,
-										"followRedirects": false
-									},
-									"request": {
-										"method": "POST",
-										"header": [],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n   \"statement\" : \"select fqdn_category , sum(bytes) as bytes, sum(sessions) as sessions from statistics_rule where __time >= '{{start_time}}' and __time < '{{end_time}}' and vsys_id in (1,2,3,4,5,6,7,8) and fqdn_category is not null group by fqdn_category order by bytes desc limit 1024\" ,\n   \"output_mode\":\"json\",\n   \"execution_mode\":\"oneshot\"\n\n}",
-											"options": {
-												"raw": {
-													"language": "json"
-												}
-											}
-										},
-										"url": {
-											"raw": "http://{{qgw_ip}}:{{qgw_port}}/v1/query/sql",
-											"protocol": "http",
-											"host": [
-												"{{qgw_ip}}"
-											],
-											"port": "{{qgw_port}}",
-											"path": [
-												"v1",
-												"query",
-												"sql"
-											]
-										}
-									},
-									"response": []
-								},
-								{
-									"name": "New Unestablished Sessions Distributed by Client IP and Server IP",
-									"event": [
-										{
-											"listen": "test",
-											"script": {
-												"exec": [
-													"pm.test(\"Status code is 200\", function () {",
-													"    pm.response.to.have.status(200);",
-													"});",
-													""
-												],
-												"type": "text/javascript"
-											}
-										},
-										{
-											"listen": "prerequest",
-											"script": {
-												"exec": [
-													""
-												],
-												"type": "text/javascript"
-											}
-										}
-									],
-									"protocolProfileBehavior": {
-										"followOriginalHttpMethod": false,
-										"followRedirects": false
-									},
-									"request": {
-										"method": "POST",
-										"header": [],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n   \"statement\" : \"select client_ip, server_ip, sum(new_unestablished_sessions) as new_unestablished_sessions from statistics_rule where __time >= '{{start_time}}' and __time < '{{end_time}}' and vsys_id in (1,2,3,4,5,6,7,8) group by client_ip, server_ip order by new_unestablished_sessions desc limit 100\" ,\n   \"output_mode\":\"json\",\n   \"execution_mode\":\"oneshot\"\n\n}",
-											"options": {
-												"raw": {
-													"language": "json"
-												}
-											}
-										},
-										"url": {
-											"raw": "http://{{qgw_ip}}:{{qgw_port}}/v1/query/sql",
-											"protocol": "http",
-											"host": [
-												"{{qgw_ip}}"
-											],
-											"port": "{{qgw_port}}",
-											"path": [
-												"v1",
-												"query",
-												"sql"
-											]
-										}
-									},
-									"response": []
-								},
-								{
-									"name": "New Unestablished Sessions Distributed by Client ASN and Server ASN",
+									"name": "Multi-value Distribution of Server IP List",
 									"event": [
 										{
 											"listen": "test",
@@ -5650,7 +5488,184 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n   \"statement\" : \"select client_asn, server_asn, sum(new_unestablished_sessions) as new_unestablished_sessions from statistics_rule where __time >= '{{start_time}}' and __time < '{{end_time}}' and vsys_id in (1,2,3,4,5,6,7,8) group by client_asn, server_asn order by new_unestablished_sessions desc limit 100\" ,\n   \"output_mode\":\"json\",\n   \"exection_mode\":\"oneshot\"\n\n}",
+											"raw": "{\n   \"statement\" : \"select server_ip_object_list , sum(count_1) as bytes, sum(count_2) as sessions from statistics_rule where __time >= '{{start_time}}' and __time < '{{end_time}}' and vsys_id in (1,2,3,4,5,6,7,8) and server_ip_object_list is not null group by server_ip_object_list order by bytes desc limit 1024\" ,\n   \"output_mode\":\"json\",\n   \"execution_mode\":\"oneshot\"\n\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://{{qgw_ip}}:{{qgw_port}}/v1/query/sql",
+											"protocol": "http",
+											"host": [
+												"{{qgw_ip}}"
+											],
+											"port": "{{qgw_port}}",
+											"path": [
+												"v1",
+												"query",
+												"sql"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Top-K Server IP List with over Time",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 200\", function () {",
+													"    pm.response.to.have.status(200);",
+													"});",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"protocolProfileBehavior": {
+										"followOriginalHttpMethod": false,
+										"followRedirects": false
+									},
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n   \"statement\" : \"select client_ip_object_list as \\\"Client IP Object List\\\", __time as \\\"Time\\\", APPROX_COUNT_DISTINCT_HLLD(unique_count_1) as \\\"UNIQUE_COUNT(Client IP Object List)\\\" from statistics_rule where __time >= '{{start_time}}' and __time < '{{end_time}}' and vsys_id in (1) and rule_id = 8841 and template_id = 431 and chart_id = 575 and version = 2 and (client_ip_object_list, __time) in ( select client_ip_object_list, __time from statistics_rule where __time >= '{{start_time}}' and __time < '{{end_time}}' and vsys_id in (1) and rule_id = 8841 and template_id = 431 and chart_id = 575 and version = 2 group by client_ip_object_list, __time order by APPROX_COUNT_DISTINCT_HLLD (unique_count_1) desc limit 10) group by client_ip_object_list, __time limit 100000\" ,\n   \"output_mode\":\"json\",\n   \"execution_mode\":\"oneshot\"\n\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://{{qgw_ip}}:{{qgw_port}}/v1/query/sql",
+											"protocol": "http",
+											"host": [
+												"{{qgw_ip}}"
+											],
+											"port": "{{qgw_port}}",
+											"path": [
+												"v1",
+												"query",
+												"sql"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Client IP and Server IP Statistics",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 200\", function () {",
+													"    pm.response.to.have.status(200);",
+													"});",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"protocolProfileBehavior": {
+										"followOriginalHttpMethod": false,
+										"followRedirects": false
+									},
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n   \"statement\" : \"select client_ip, server_ip, sum(count_1) as new_unestablished_sessions from statistics_rule where __time >= '{{start_time}}' and __time < '{{end_time}}' and vsys_id in (1,2,3,4,5,6,7,8) group by client_ip, server_ip order by new_unestablished_sessions desc limit 100\" ,\n   \"output_mode\":\"json\",\n   \"execution_mode\":\"oneshot\"\n\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://{{qgw_ip}}:{{qgw_port}}/v1/query/sql",
+											"protocol": "http",
+											"host": [
+												"{{qgw_ip}}"
+											],
+											"port": "{{qgw_port}}",
+											"path": [
+												"v1",
+												"query",
+												"sql"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Client ASN and Server ASN Statistics",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 200\", function () {",
+													"    pm.response.to.have.status(200);",
+													"});",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"protocolProfileBehavior": {
+										"followOriginalHttpMethod": false,
+										"followRedirects": false
+									},
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n   \"statement\" : \"select client_asn, server_asn, sum(count_1) as new_unestablished_sessions from statistics_rule where __time >= '{{start_time}}' and __time < '{{end_time}}' and vsys_id in (1,2,3,4,5,6,7,8) group by client_asn, server_asn order by new_unestablished_sessions desc limit 100\" ,\n   \"output_mode\":\"json\",\n   \"exection_mode\":\"oneshot\"\n\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -6354,7 +6369,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\r\n    \"name\": \"ip-learning-fqdn-relate-ip\",\r\n    \"data_source\":\"ip_learnging_view\",\r\n    \"filter\": \"VSYS_ID in (1) AND PROTOCOL in ('SSL', 'HTTP','DNS') AND DEPTH = 1  and UNIQ_CIP > 12 AND FQDN_NAME in ('itunes.apple', 'itunes.apple.com') \",\r\n    \"intervals\": [\"2024-04-01 00:00:00/2024-04-02 00:00:00\"],\r\n    \"execution_mode\":\"oneshot\",\r\n    \"limit\": 4\r\n }",
+											"raw": "{\r\n    \"name\": \"ip-learning-fqdn-relate-ip\",\r\n    \"data_source\":\"ip_learnging_view\",\r\n    \"filter\": \"VSYS_ID in (1) AND PROTOCOL in ('SSL', 'HTTP','DNS') AND DEPTH = 1 and UNIQ_CIP > 12 AND FQDN_NAME in ('itunes.apple', 'itunes.apple.com') \",\r\n    \"intervals\": [\"2024-04-01 00:00:00/2024-04-02 00:00:00\"],\r\n    \"execution_mode\":\"oneshot\",\r\n    \"limit\": 4\r\n }",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -7415,6 +7430,67 @@
 									"key": "is_saved_query",
 									"value": "1"
 								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create DSL Query",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"    // Set an environment variable",
+									"    postman.setEnvironmentVariable(\"normal_job_id\", JSON.parse(responseBody).job.job_id);",
+									"});",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"followOriginalHttpMethod": false,
+						"followRedirects": false
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\":\"customized-statistics\",\"data_source\":\"statistics_rule\",\"filter\":\"rule_id = 14647 and template_id = 1481 and chart_id = 1725 and version = 1\",\"custom.statistics.dimensions\":[{\"dimension_name\":\"__time\",\"label\":\"Time\",\"function\":{\"name\":\"DATETIME_FLOOR_WITH_FILL\"}}],\"custom.statistics.metrics\":[{\"function\":{\"name\":\"BITRATE\"},\"metric_type\":\"count\",\"metric_name\":\"count_1\",\"label\":\"BITRATE(Bytes Sent Bytes Received)\"},{\"function\":{\"name\":\"BITRATE\"},\"metric_type\":\"count\",\"metric_name\":\"count_2\",\"label\":\"BITRATE(Bytes Sent)\"},{\"function\":{\"name\":\"BITRATE\"},\"metric_type\":\"count\",\"metric_name\":\"count_3\",\"label\":\"BITRATE(Bytes Received)\"},{\"function\":{\"name\":\"BITRATE\"},\"metric_type\":\"count\",\"metric_name\":\"count_4\",\"label\":\"BITRATE(Incoming Bytes Outgoing Bytes)\"}],\"intervals\":[\"2024-08-08T09:54:25Z/2024-08-08T09:59:25Z\"],\"execution_mode\":\"oneshot\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{qgw_ip}}:{{qgw_port}}/v1/query/dsl",
+							"protocol": "http",
+							"host": [
+								"{{qgw_ip}}"
+							],
+							"port": "{{qgw_port}}",
+							"path": [
+								"v1",
+								"query",
+								"dsl"
 							]
 						}
 					},
@@ -11002,6 +11078,50 @@
 										"description": "security_event_log"
 									},
 									"response": []
+								},
+								{
+									"name": "Traffic Sketch Metrics",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 200\", function () {",
+													"    pm.response.to.have.status(200);",
+													"});"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/x-www-form-urlencoded",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://{{qgw_ip}}:{{qgw_port}}/v1/database/table/traffic_sketch_metric/schema",
+											"protocol": "http",
+											"host": [
+												"{{qgw_ip}}"
+											],
+											"port": "{{qgw_port}}",
+											"path": [
+												"v1",
+												"database",
+												"table",
+												"traffic_sketch_metric",
+												"schema"
+											]
+										},
+										"description": "security_event_log"
+									},
+									"response": []
 								}
 							]
 						}
@@ -11331,6 +11451,203 @@
 										{
 											"key": "query",
 											"value": "SELECT formatReadableSize(SUM(`total_space`) ) as total_space,formatReadableSize(SUM(`free_space`) ) as free_space,formatReadableSize(SUM(`unreserved_space`) ) as unreserved_space  FROM  system.disks_cluster format Vertical;"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Table Parts",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"followOriginalHttpMethod": false,
+								"followRedirects": false
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n   \"statement\" : \"SELECT database, table, count() AS parts, uniqExact(partition_id) AS partition_cnt, sum(rows), formatReadableSize(sum(data_compressed_bytes)) AS comp_bytes, formatReadableSize(sum(data_uncompressed_bytes)) AS uncomp_bytes, sum(data_uncompressed_bytes) / sum(data_compressed_bytes) AS ratio, formatReadableSize(sum(marks_bytes)) AS mark_sum, sum(marks_bytes) / sum(data_uncompressed_bytes) AS mark_ratio FROM system.parts_cluster WHERE active GROUP BY database, table ORDER BY sum(data_compressed_bytes) DESC\" ,\n   \"output_mode\":\"json\",\n   \"execution_mode\":\"oneshot\"\n\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{qgw_ip}}:{{qgw_port}}/v1/query/sql",
+									"protocol": "http",
+									"host": [
+										"{{qgw_ip}}"
+									],
+									"port": "{{qgw_port}}",
+									"path": [
+										"v1",
+										"query",
+										"sql"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Today Mark cached hits",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"tests[\"Successful POST request\"] = responseCode.code === 200 || responseCode.code === 201;"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://{{clickhouse_ip}}:{{clickhouse_port}}?database={{clickhouse_database}}&user={{clickhouse_user}}&password={{clickhouse_password}}&query=WITH (ProfileEvents.Values[indexOf(ProfileEvents.Names, 'MarkCacheHits')]) AS MARK_CACHE_HITS SELECT toHour(event_time) AS time, countIf(MARK_CACHE_HITS != 0) AS hit_query_count, count() AS total_query_count, hit_query_count / total_query_count AS hit_percent, avg(MARK_CACHE_HITS) AS average_hit_files, min(MARK_CACHE_HITS) AS minimal_hit_files, max(MARK_CACHE_HITS) AS maximal_hit_files, quantile(0.5)(MARK_CACHE_HITS) AS \"50\", quantile(0.9)(MARK_CACHE_HITS) AS \"90\", quantile(0.99)(MARK_CACHE_HITS) AS \"99\" FROM system.query_log_cluster WHERE event_date = toDate(now()) AND (type = 2 OR type = 4) AND query_kind = 'Select' GROUP BY time ORDER BY time ASC FORMAT Vertical;",
+									"protocol": "http",
+									"host": [
+										"{{clickhouse_ip}}"
+									],
+									"port": "{{clickhouse_port}}",
+									"query": [
+										{
+											"key": "database",
+											"value": "{{clickhouse_database}}"
+										},
+										{
+											"key": "user",
+											"value": "{{clickhouse_user}}"
+										},
+										{
+											"key": "password",
+											"value": "{{clickhouse_password}}"
+										},
+										{
+											"key": "query",
+											"value": "WITH (ProfileEvents.Values[indexOf(ProfileEvents.Names, 'MarkCacheHits')]) AS MARK_CACHE_HITS SELECT toHour(event_time) AS time, countIf(MARK_CACHE_HITS != 0) AS hit_query_count, count() AS total_query_count, hit_query_count / total_query_count AS hit_percent, avg(MARK_CACHE_HITS) AS average_hit_files, min(MARK_CACHE_HITS) AS minimal_hit_files, max(MARK_CACHE_HITS) AS maximal_hit_files, quantile(0.5)(MARK_CACHE_HITS) AS \"50\", quantile(0.9)(MARK_CACHE_HITS) AS \"90\", quantile(0.99)(MARK_CACHE_HITS) AS \"99\" FROM system.query_log_cluster WHERE event_date = toDate(now()) AND (type = 2 OR type = 4) AND query_kind = 'Select' GROUP BY time ORDER BY time ASC FORMAT Vertical;"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Current mark cache bytes",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"tests[\"Successful POST request\"] = responseCode.code === 200 || responseCode.code === 201;"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://{{clickhouse_ip}}:{{clickhouse_port}}?database={{clickhouse_database}}&user={{clickhouse_user}}&password={{clickhouse_password}}&query=SELECT formatReadableSize(value) FROM system.asynchronous_metrics WHERE metric = 'MarkCacheBytes' FORMAT Vertical;",
+									"protocol": "http",
+									"host": [
+										"{{clickhouse_ip}}"
+									],
+									"port": "{{clickhouse_port}}",
+									"query": [
+										{
+											"key": "database",
+											"value": "{{clickhouse_database}}"
+										},
+										{
+											"key": "user",
+											"value": "{{clickhouse_user}}"
+										},
+										{
+											"key": "password",
+											"value": "{{clickhouse_password}}"
+										},
+										{
+											"key": "query",
+											"value": "SELECT formatReadableSize(value) FROM system.asynchronous_metrics WHERE metric = 'MarkCacheBytes' FORMAT Vertical;"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Current mark cache files",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"tests[\"Successful POST request\"] = responseCode.code === 200 || responseCode.code === 201;"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://{{clickhouse_ip}}:{{clickhouse_port}}?database={{clickhouse_database}}&user={{clickhouse_user}}&password={{clickhouse_password}}&query=SELECT value FROM system.asynchronous_metrics WHERE metric = 'MarkCacheFiles' FORMAT Vertical;",
+									"protocol": "http",
+									"host": [
+										"{{clickhouse_ip}}"
+									],
+									"port": "{{clickhouse_port}}",
+									"query": [
+										{
+											"key": "database",
+											"value": "{{clickhouse_database}}"
+										},
+										{
+											"key": "user",
+											"value": "{{clickhouse_user}}"
+										},
+										{
+											"key": "password",
+											"value": "{{clickhouse_password}}"
+										},
+										{
+											"key": "query",
+											"value": "SELECT value FROM system.asynchronous_metrics WHERE metric = 'MarkCacheFiles' FORMAT Vertical;"
 										}
 									]
 								}
@@ -12015,7 +12332,8 @@
 							},
 							"response": []
 						}
-					]
+					],
+					"description": "`mark_cache_size`可以调整`.mrk`文件的缓存大小，默认为 5GB。适当调大可以减少查询时 IO 次数，有效降低磁盘压力"
 				},
 				{
 					"name": "Apache Druid",
