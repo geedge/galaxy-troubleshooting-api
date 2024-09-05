@@ -1,3 +1,5 @@
+v24.08过期，已经迁移至 https://git.mesalab.cn/galaxy/platform/tsg-olap-troubleshooting 
+
 # galaxy-troubleshooting-api
 
 使用Postman组件，基于Rest API接口对TSG OLAP 进行功能验证。包括组件健康检查，功能集成测试及故障诊断。
